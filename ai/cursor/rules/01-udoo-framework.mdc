@@ -1,0 +1,45 @@
+---
+description: Core UDOO R&D framework rules — always active
+alwaysApply: true
+---
+
+# UDOO Framework — Core Rules
+
+## The Framework
+UDOO is a 4-layer R&D operating framework: Upstream (discovery) → Downstream (delivery) → Onstream (operations) → Offstream (growth).
+
+## The Story Hierarchy
+Initiative → Feature → Epic → Story → Subtask. Never skip layers. A Bug is a Story-level defect.
+
+## Story Format — Non-Negotiable
+Every user story must follow this exact format:
+```
+As [named persona with context],
+I want [specific user action],
+so that [meaningful outcome for them].
+```
+
+Rules:
+- **Named persona required.** "The user" or "a user" is not a persona. Give them a name (Maya, Avi, Rafi) and a brief life context.
+- **User action, not system action.** "I want to save my entry" not "I want the system to persist the data."
+- **"So that" is mandatory.** Without it, the team cannot make design tradeoffs. It is the most important clause.
+
+## Never Write From Ideas
+Before writing any feature, story, or spec: name whose pain it solves. If you cannot name a person and their pain in two sentences, you are not ready to write a specification.
+
+## The 4-Layer Decision Tree
+When classifying any new piece of work:
+1. New problem space → **Initiative** (needs full discovery)
+2. New capability within known initiative → **Feature** (needs Experience Snapshot)
+3. Cluster of stories within a feature → **Epic** (needs goal + DoD)
+4. Single user action, 1-3 days → **Story** (needs DoR audit)
+5. Defect in existing behaviour → **Bug** (needs severity + steps to reproduce)
+
+## DoR Awareness
+A story is not sprint-ready until: named persona ✓, journey reference ✓, testable ACs ✓, visual reference ✓, copy defined ✓, observability signal ✓, dependencies clear ✓, sized 1-3 days ✓, tech feasibility confirmed ✓.
+
+## DoD Awareness
+A story is not done until: code reviewed ✓, ACs pass ✓, observability confirmed in production ✓, PM verified against story ✓.
+
+## Reference
+Full framework: https://200-nwire.github.io/udoo-playbook/

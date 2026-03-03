@@ -1,0 +1,69 @@
+---
+description: UDOO Downstream rules — coding, implementation, and testing
+globs: ["**/*.ts", "**/*.tsx", "**/*.vue", "**/*.js", "**/*.jsx", "**/*.py", "**/*.go", "**/*.rb", "**/*.java", "**/*.cs"]
+alwaysApply: false
+---
+
+# Downstream Rules — Code & Implementation
+
+These rules apply when writing, reviewing, or modifying code.
+
+## Before Writing Code
+1. **Identify the user story** this code implements. If there isn't one, stop and ask.
+2. **Read the "so that" clause** of the story. This is the design constraint that resolves every ambiguous decision.
+3. **Know the acceptance criteria.** These are your success conditions, not the PR description.
+
+## Naming Conventions
+Name things from the **user's perspective**, not the system's:
+- ✅ `saveReflection()` — matches what Maya does ("save her reflection")
+- ❌ `persistEntryToDatabase()` — describes the system action, not the user intent
+- ✅ `resumeReadingPosition` — matches "Avi resumes reading where he left off"
+- ❌ `loadScrollOffsetFromStorage` — implementation detail, not user value
+
+## Test Coverage
+Tests should **trace back to acceptance criteria**:
+- Each Gherkin scenario should have a corresponding test
+- The test name should reference the user and their goal: `"Maya saves a reflection when offline"` not `"test_save_endpoint_offline"`
+- Cover: happy path, all error states, edge cases named in the story
+
+## Error States
+Every user-facing feature has at least these states. Handle all of them:
+- Empty / initial state
+- Loading / in-progress state
+- Success state
+- Error state (with recovery path)
+- Offline / degraded state (if applicable)
+
+## The "So That" Test
+When making an implementation tradeoff, return to the story's "so that" clause:
+- Story: "As Maya, I want to save my reflection, **so that I can trace the journey of my life over time**."
+- Question: Should save work offline? Answer: Yes — because breaking the moment defeats the purpose.
+- Question: Should we add confetti on save? Answer: No — because dignity in the moment is the felt outcome.
+
+The "so that" clause resolves design disputes without a meeting.
+
+## PR Requirements
+Every PR should include:
+- **Story reference**: Jira story key (e.g., PROJ-123)
+- **What changed**: implementation summary (1–3 bullets)
+- **Why**: traces back to the story's "so that" clause
+- **How to test**: steps that mirror the Gherkin acceptance criteria
+- **Observability**: confirms the event/metric defined in the story is firing
+
+## Observability
+Every user-facing change should emit at least one signal:
+- Event name (e.g., `reflection_saved`, `reading_session_resumed`)
+- Key properties (e.g., `{ user_id, entry_length, is_offline }`)
+- Log line for errors (with enough context to debug)
+
+"We'll add analytics later" = a DoR failure. If it wasn't in the story, add it now or create a follow-up story.
+
+## Definition of Done (Downstream)
+A story is done when:
+- [ ] Code reviewed and approved (min 1 reviewer)
+- [ ] All acceptance criteria pass
+- [ ] Tests cover the Gherkin scenarios
+- [ ] Observability signal confirmed firing in staging
+- [ ] PM has verified the flow matches the story
+- [ ] No new linting errors introduced
+- [ ] Deployed to production (or staging if flagged)

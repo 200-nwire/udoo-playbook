@@ -187,6 +187,59 @@ pnpm run dev
 
 ---
 
+## Use With AI Assistants
+
+This repo ships ready-made AI configurations that embed the UDOO framework into your tools. Clone the repo once — your AI assistant learns the framework.
+
+### Claude Code
+
+```bash
+# Install slash commands globally (available in every session)
+./ai/install.sh --global-claude
+```
+
+This installs 9 slash commands into `~/.claude/commands/`:
+
+| Command | What it does |
+|---|---|
+| `/upstream` | Run a full 5-station discovery session for an initiative |
+| `/story` | Shape a rough idea into a DoR-ready user story with Gherkin |
+| `/triage` | Classify an idea into the right UDOO layer |
+| `/spec` | Write an Experience Snapshot + Feature brief |
+| `/adr` | Document an architecture decision (MADR format) |
+| `/postmortem` | Write a blameless post-mortem for an incident |
+| `/rca` | Root cause analysis with 5 Whys |
+| `/dor` | Audit a story against the 9-point DoR checklist |
+| `/epic` | Write a Jira-ready Epic with candidate stories |
+
+**For a specific project:**
+```bash
+cd your-project
+/path/to/udoo-playbook/ai/install.sh --project-claude
+# Then fill in the [PLACEHOLDER] sections in ./CLAUDE.md
+```
+
+### Cursor
+
+```bash
+# Legacy format (works everywhere)
+cp ai/cursor/.cursorrules your-project/
+
+# Modern MDC format (Cursor 0.40+, activates rules by file type)
+cp -r ai/cursor/rules/ your-project/.cursor/rules/
+```
+
+### Everything at once
+
+```bash
+chmod +x ai/install.sh
+./ai/install.sh --help
+```
+
+See [`ai/README.md`](ai/README.md) for the full setup guide.
+
+---
+
 ## Real Examples Used Throughout
 
 The playbook uses four real project patterns as teaching vehicles:

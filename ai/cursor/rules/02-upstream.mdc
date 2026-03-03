@@ -1,0 +1,59 @@
+---
+description: UDOO Upstream rules — planning, discovery, and specification documents
+globs: ["docs/**", "**/*.md", "**/specs/**", "**/planning/**", "**/initiatives/**", "**/features/**"]
+alwaysApply: false
+---
+
+# Upstream Rules — Planning & Discovery
+
+These rules apply when writing planning documents, initiative briefs, feature specs, and user stories.
+
+## Initiative-Level Work
+Every Initiative must have:
+- **Problem Story** (2 paragraphs): current state with named persona and pain; opportunity with measurable success criteria and "why now"
+- **KPI**: one metric with current value → target value
+- No initiative is valid without a named persona in the problem statement
+
+## Feature-Level Work
+Every Feature must have:
+- **Experience Snapshot** (150–200 words): day-in-the-life narrative, named persona, specific moment, no UI spec — only the felt human experience
+- **In/Out of scope** boundary
+- **Success signal**: one metric with target
+- No feature brief is valid without an Experience Snapshot
+
+## Story-Level Work
+Every Story must:
+- Follow the format: `As [named persona], I want [action], so that [outcome].`
+- Be traceable to a journey step
+- Have at least 3 testable acceptance criteria
+- Pass the INVEST criteria: Independent, Negotiable, Valuable, Estimable, Small (1-3 days), Testable
+
+## Initiative Brief Structure
+When writing an initiative brief, follow the 5 Discovery Stations:
+1. Vision & Context — who, what pain, why now, what success looks like
+2. Problem Framing — assumptions, constraints, risks, explicit non-goals
+3. User Journey & Slices — labelled steps (J1–Jn), in/out of scope
+4. Solution Options — min 2 options with tradeoffs (no recommendation yet)
+5. Decision & Scope — chosen option, MVP scope, first Feature, KPI
+
+## Experience Snapshot — Quality Check
+Read the snapshot aloud. Ask:
+- Does it have a specific person with a name? ✓/✗
+- Is the moment specific (time, place, emotional state)? ✓/✗
+- Are there zero UI elements or technical terms? ✓/✗
+- Does the ending show the user's felt outcome? ✓/✗
+- Is it 150–200 words? ✓/✗
+
+If any answer is ✗, the snapshot is not ready.
+
+## User Journey Rules
+- Number journey steps (J1, J2, J3...)
+- Each step = one moment of user intent and one system response
+- Mark each story with the journey step(s) it covers
+- Journey steps are immutable once agreed — new steps get new numbers
+
+## Acceptance Criteria Rules
+- Observable: user or system can see the outcome
+- Specific: "balance displays '-$125.50' in red" not "displays correctly"
+- Gherkin-convertible: phrased as Given/When/Then
+- Include: happy path, empty/loading states, error states, at least one edge case

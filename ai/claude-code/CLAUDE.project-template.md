@@ -1,0 +1,146 @@
+# CLAUDE.md — [PROJECT NAME]
+
+> **Setup:** Fill in every `[PLACEHOLDER]` before using. Delete this line when done.
+
+---
+
+## Project Overview
+
+**Name:** [PROJECT NAME]
+**Description:** [One sentence: what it does, who it's for]
+**Current UDOO phase:** [Upstream / Downstream / Onstream / Offstream — or "All active"]
+**Jira project key:** [e.g. PROJ]
+**Confluence space:** [e.g. PROJ or link]
+**Repo:** [git URL or monorepo path]
+
+---
+
+## Tech Stack
+
+**Backend:**
+- Runtime: [Node.js / Python / Go / etc.]
+- Framework: [Koa / Express / FastAPI / etc.]
+- Database: [MongoDB + Mongoose / PostgreSQL + Prisma / etc.]
+- Cache: [Redis / none]
+- Auth: [Firebase / JWT / etc.]
+
+**Frontend:**
+- Framework: [Vue 3 / React / Next.js / etc.]
+- Styling: [Tailwind / PrimeVue / etc.]
+- State: [Pinia / Zustand / etc.]
+
+**Infrastructure:**
+- Hosting: [GCP / Azure / AWS / etc.]
+- CI/CD: [GitHub Actions / etc.]
+- Package manager: [pnpm / npm / yarn]
+
+---
+
+## Key File Paths
+
+```
+[src/]             # Main source directory
+[src/routes/]      # API routes or page routes
+[src/models/]      # Data models
+[src/components/]  # UI components
+[src/stores/]      # State management
+[tests/]           # Test files
+[docs/]            # Internal docs (if any)
+```
+
+---
+
+## Team Roles
+
+| Role | Name / Handle |
+|---|---|
+| PM / PO | [name] |
+| Tech Lead | [name] |
+| Frontend | [names] |
+| Backend | [names] |
+| QA | [name] |
+| DevOps | [name] |
+
+---
+
+## Branching Convention
+
+- **Main branch:** `main` (production)
+- **Development:** `develop` (staging)
+- **Features:** `feature/[JIRA-KEY]-short-description`
+- **Bugs:** `fix/[JIRA-KEY]-short-description`
+- **Hotfixes:** `hotfix/[JIRA-KEY]-short-description`
+
+PRs require: [1 / 2] approvals + passing CI.
+
+---
+
+## UDOO Framework Rules
+
+This project follows the [UDOO framework](https://200-nwire.github.io/udoo-playbook/).
+
+### Story format
+Always: `As [named persona], I want [action], so that [outcome].`
+Never write task-format tickets ("implement X", "add Y endpoint").
+
+### Before writing a story
+- Is there a named persona? (Not "the user" — give them a name)
+- Is there a journey step reference?
+- Are all states defined? (empty, loading, success, error, edge cases)
+
+### Before starting a sprint
+- Every story must pass the 9-point DoR checklist
+- Every story must have at least 3 Gherkin acceptance criteria
+- Every story must be sized (1-3 days max)
+
+### Before shipping
+- Story must pass the DoD for this project (see below)
+- Runbook or monitoring signal defined for any new user-facing change
+- PR description traces back to the Jira story and persona
+
+### Definition of Done (customize for this project)
+- [ ] Code reviewed and approved
+- [ ] All Gherkin ACs pass (automated or manual)
+- [ ] No new linting errors
+- [ ] Feature flag / rollout strategy applied (if needed)
+- [ ] Observability signal confirmed (event/metric/log)
+- [ ] Jira story moved to Done
+
+---
+
+## Never Do List
+
+- Never write or merge a story that hasn't passed DoR
+- Never ship a feature without at least one observability signal
+- Never use "the user" — name the persona
+- Never skip the "so that" clause in a user story
+- Never push directly to `main` — always use a PR
+- [Add project-specific rules here]
+
+---
+
+## Current Initiatives
+
+> Update this section as the team's focus evolves.
+
+| Initiative | Phase | Status | Owner |
+|---|---|---|---|
+| [Initiative name] | [Upstream/Downstream] | [Active/Parked] | [name] |
+
+---
+
+## Common Commands
+
+```bash
+# Development
+[pnpm dev / npm run dev / etc.]
+
+# Tests
+[pnpm test / etc.]
+
+# Build
+[pnpm build / etc.]
+
+# Lint
+[pnpm lint / etc.]
+```

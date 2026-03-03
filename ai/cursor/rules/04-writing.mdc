@@ -1,0 +1,86 @@
+---
+description: UDOO writing rules — documentation, guides, and narrative content
+globs: ["docs/**", "**/*.md", "**/*.mdx", "**/README.md", "**/CHANGELOG.md"]
+alwaysApply: false
+---
+
+# Writing Rules — Documentation & Narrative
+
+These rules apply when writing documentation, guides, specs, and any markdown content.
+
+## Voice
+
+**Human, not corporate.**
+Write as if explaining to a thoughtful colleague over coffee — not filing a report.
+
+| ❌ Corporate | ✅ Human |
+|---|---|
+| "Leverage the framework to optimise delivery velocity" | "Use the framework to ship the right thing faster" |
+| "It is recommended that teams utilise the DoR checklist" | "Run the DoR checklist before every sprint" |
+| "The solution provides enhanced user experience" | "Users can now save their work without losing it" |
+| "Stakeholder alignment should be achieved prior to commencement" | "Get everyone in the room before you start building" |
+
+## Structure
+
+**Problem-first, always.**
+Start with the pain or confusion the reader has right now — not the solution. The reader should finish the first sentence nodding.
+
+✅ "There is a moment in every product team's history when things start going wrong — and it doesn't announce itself."
+❌ "This guide explains the importance of narrative in product development."
+
+## Personas
+
+**Named personas, always.**
+Never write "the user." Give them a name, a job, a specific moment.
+
+✅ "Maya comes home at 10pm, tired, with five minutes before she has to face the kitchen."
+❌ "Users often access the app in the evening after a long day."
+
+## Sentence Rules
+
+- **No passive voice.** "The PM writes the story" not "The story is written by the PM."
+- **Short paragraphs.** Maximum 4 sentences, then a line break.
+- **Short sentences.** If a sentence needs a second clause, ask if it should be two sentences.
+- **Active verbs.** "Name the persona" not "The persona should be named."
+
+## Specific Over Vague
+
+Every vague claim should be replaced with a specific one:
+
+| ❌ Vague | ✅ Specific |
+|---|---|
+| "A good user experience" | "A three-sentence input that works offline and saves quietly" |
+| "Improve performance" | "Load time < 500ms on 3G" |
+| "Users struggled" | "140 support tickets in three months" |
+| "Soon" | "By the end of Sprint 14" |
+
+## Section Headings
+
+- Use sentence case: "How to write a user story" not "How To Write A User Story"
+- Make headings a promise: "What happens when a story fails readiness" not "Story Failure"
+- Avoid generic headings: "Overview", "Introduction", "Summary" — tell the reader what's in the section
+
+## Tables
+
+Use tables for comparisons, not for sequential steps. Sequential steps = numbered list. If a table has only one column of real content, it's probably just a list.
+
+## Callout Blocks
+
+Use VitePress callout syntax sparingly:
+- `::: info` — neutral additional context
+- `::: tip` — actionable recommendation
+- `::: warning` — something that will go wrong if ignored
+- `::: danger` — something that will definitely go wrong
+- `::: details` — collapsible content for depth without cluttering the flow
+
+Don't use callouts as decoration. Each one should earn its presence.
+
+## The Read-Aloud Test
+
+Before finishing any narrative section: read it aloud.
+- If the room nods → it's true
+- If someone looks confused → there's a gap
+- If someone says "but what about..." → there's a missing branch
+- If someone laughs (the good kind) → there's a real person in it
+
+If it doesn't feel real when read aloud, it is not ready.
