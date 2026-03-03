@@ -96,8 +96,9 @@ export default withMermaid(
           ],
         },
         {
-          text: 'Operations',
+          text: 'Sprint Operations',
           items: [
+            { text: '24 Activities — Sprint System', link: '/upstream/activities-sprint' },
             { text: 'Cadence & Meeting Recipes', link: '/upstream/cadence' },
             { text: 'Anti-Patterns', link: '/upstream/anti-patterns' },
             { text: 'Initiative Walkthrough', link: '/upstream/initiative-walkthrough' },
