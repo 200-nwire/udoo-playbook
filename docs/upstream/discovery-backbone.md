@@ -1,0 +1,156 @@
+# Discovery Backbone
+
+The discovery backbone is a five-station method for transforming a vague idea into a decision-ready Initiative. Stations are not sequential form fields — they are **conversations that produce artifacts**.
+
+## Station 1 — Vision & Context
+
+**Goal:** Align the team on the problem space before anyone proposes a solution.
+
+**Questions to answer:**
+- Who is the user? What is their job-to-be-done?
+- What is the pain or opportunity? Where does it hurt today?
+- Why now, not six months from now? What changed?
+- What would success look like in measurable terms?
+- What is explicitly out of scope?
+
+**Output:** TL;DR paragraph + Business Context section in the Initiative Brief.
+
+::: tip Example
+**TL;DR:** "SMB customers abandon onboarding at step 3 (account verification) at 60%. We believe the verification UX is unclear and the email confirmation flow is broken on mobile. If we fix this, we expect onboarding completion to reach 70% within 90 days."
+:::
+
+**Anti-pattern:** Skipping this station and writing tickets directly. Teams that skip Station 1 always revisit it — mid-sprint, under pressure, expensively.
+
+---
+
+## Station 2 — Problem Framing
+
+**Goal:** Understand the current state deeply enough that the solution space narrows naturally.
+
+**Questions to answer:**
+- How does the user solve this today? What is their workaround?
+- How much does it hurt? What is the business cost of not fixing it?
+- What are the constraints? (technical, legal, budget, time)
+- What assumptions are we making? State each one explicitly.
+- What do we still not know? What needs investigation?
+
+**Output:** Problem Statement + Assumption Register.
+
+### The Assumption Register
+
+Every assumption that could invalidate the initiative if wrong must be listed. For each:
+
+```
+Assumption: [State the assumption]
+Confidence: [High / Medium / Low]
+If wrong, impact: [What changes or breaks?]
+How to verify: [Research, spike, user interview, analytics?]
+```
+
+::: warning
+Assumption blindness is one of the most common causes of failed Initiatives. Teams that do not surface assumptions carry them as invisible risks until they explode in production.
+:::
+
+---
+
+## Station 3 — User Journey & Slices
+
+**Goal:** Map the full user journey, identify where this Initiative fits, and propose delivery slices.
+
+### Journey Mapping
+
+Map the end-to-end flow a user takes to achieve their goal. Name each step with a verb:
+
+```
+J1 → Discover (user finds the product/feature)
+J2 → Sign Up (user creates an account)
+J3 → Configure (user completes setup)
+J4 → Use (user performs the core action)
+J5 → Share (user invites others or exports data)
+J6 → Return (user comes back)
+```
+
+For each step, note:
+- **Pain points:** What fails or frustrates today?
+- **Risk:** What could go wrong if we change this step?
+- **Opportunity:** What improvement is possible?
+
+### Slices
+
+A slice is an **end-to-end path a real user can walk** — not a feature, not a component, not a layer. Good slices are vertical, not horizontal.
+
+| Slice | Rule |
+|-------|------|
+| **S1 (MVP)** | The minimum path that delivers real value to at least one user segment |
+| **S2** | Extends S1 with the next most valuable capability |
+| **S3** | The full experience for all target segments |
+
+::: tip Good vs Bad Slices
+**Bad:** S1 = Backend API, S2 = Frontend UI, S3 = Mobile app  
+*(This is layering, not slicing. No user can use S1 alone.)*
+
+**Good:** S1 = Admin user can manually verify balance, S2 = User self-serves via email link, S3 = Instant verification via open banking API
+:::
+
+Every Epic must reference which journey steps it covers (e.g., `covers: J2–J4`).
+
+---
+
+## Station 4 — Solution Options
+
+**Goal:** Avoid jumping to one solution. Force the team to compare at least two.
+
+For each option, document:
+- **What:** Plain-language description
+- **Tradeoffs:** What this gives up and what it gains
+- **Rough size:** S / M / L / XL (S = 1 sprint, M = 2–4 sprints, L = quarter, XL = half-year)
+- **Dependencies:** What needs to exist before this can start?
+
+### Architecture Decision Notes (ADRs)
+
+Any solution choice with lasting consequences requires an ADR. ADRs are not essays — they are records. Template:
+
+```markdown
+# ADR-001: [Short title of the decision]
+
+**Date:** YYYY-MM-DD  
+**Status:** Proposed | Accepted | Deprecated | Superseded by ADR-XXX
+
+## Context
+What situation are we in? What forces are at play?
+
+## Decision
+What did we decide to do?
+
+## Rationale
+Why did we choose this over alternatives?
+
+## Consequences
+What becomes easier? What becomes harder?
+```
+
+Run **time-boxed spikes** (max 2 days) for any high-risk technical unknowns before committing to an approach.
+
+---
+
+## Station 5 — Decision & Scope
+
+**Goal:** Freeze the Initiative. Lock the approach. Set the handoff conditions.
+
+**Document:**
+- **Chosen approach** and its rationale: `"We will {X} because {Y}. See {ADR link}."`
+- **MVP slice and sequencing:** What ships first and why?
+- **Success metrics:** How and where will they be measured?
+- **Rollout plan:** Phased, feature-flagged, or big-bang?
+- **Rollback plan:** How do we undo this if it goes wrong?
+
+**Output:** Decision Log + Initiative Brief (frozen at stakeholder approval).
+
+<div class="callout warning">
+  <div class="callout-title">The freeze rule</div>
+  Once the Initiative Brief is approved, scope changes require a formal log entry. This is not bureaucracy — it is the only way to know whether scope creep is happening.
+</div>
+
+---
+
+**Next:** [Initiative Brief Template →](/upstream/initiative-brief)
