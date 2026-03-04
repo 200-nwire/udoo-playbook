@@ -24,7 +24,7 @@ export default withMermaid(
     siteTitle: 'R&D Framework',
 
     nav: [
-      { text: '🚀 Start Here', link: '/guide/start-here' },
+      { text: '🚀 Start Here', link: '/guide/why-teams-fail' },
       { text: 'Guide', link: '/guide/introduction' },
       {
         text: 'Phases',
@@ -45,12 +45,26 @@ export default withMermaid(
     sidebar: {
       '/guide/': [
         {
-          text: '📖 Start Here',
+          text: '📖 Foundations',
           items: [
             { text: '🚀 Where Do I Start?', link: '/guide/start-here' },
+            { text: 'Why Teams Fail', link: '/guide/why-teams-fail' },
+            { text: 'The 5 Core Principles', link: '/guide/principles' },
             { text: 'Introduction', link: '/guide/introduction' },
             { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
             { text: 'The 4-Layer Hierarchy', link: '/guide/hierarchy' },
+          ],
+        },
+        {
+          text: '⚖️ Scale & Roles',
+          items: [
+            { text: 'Scale Tiers (1→3)', link: '/guide/scale-tiers' },
+            { text: 'Roles', link: '/guide/roles' },
+          ],
+        },
+        {
+          text: '🗺️ Using This Book',
+          items: [
             { text: '📖 The Narrative Framework', link: '/guide/narrative' },
             { text: 'How to Use This Book', link: '/guide/how-to-use' },
             { text: 'Lite Mode (Small Teams)', link: '/guide/lite-mode' },
@@ -219,8 +233,9 @@ export default withMermaid(
           text: '🎓 Tutorials',
           items: [
             { text: 'Tutorial Hub', link: '/tutorials/' },
-            { text: 'Your First Upstream Sprint', link: '/tutorials/zero-to-ready' },
+            { text: 'From Chaos to Flow', link: '/tutorials/from-chaos-to-flow' },
             { text: 'The Wrong Way (Then the Right Way)', link: '/tutorials/wrong-way-right-way' },
+            { text: 'Your First Upstream Sprint', link: '/tutorials/zero-to-ready' },
             { text: 'E2E Initiative Lifecycle', link: '/tutorials/e2e-initiative' },
             { text: 'BDD Workshop', link: '/tutorials/bdd-workshop' },
             { text: 'From Incident to Improvement', link: '/tutorials/incident-to-improvement' },

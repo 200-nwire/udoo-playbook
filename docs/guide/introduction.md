@@ -12,6 +12,10 @@ Teams build the wrong thing because the problem was never properly defined. Team
 
 This framework fixes all four.
 
+::: tip Start with the honest version
+Before reading the framework description, read [Why Teams Fail](/guide/why-teams-fail) — a direct account of the seven failure patterns this framework was built to address. If your team is already experiencing any of them, that page will tell you exactly where to start.
+:::
+
 ## Who This Book Is For
 
 This guidebook is written for **everyone involved in building, shipping, and supporting software products**. Whether you are a startup of five or a company of five hundred, the principles apply. The depth scales with your needs.
@@ -81,19 +85,23 @@ Each section maps to one phase or cross-cutting concern:
 You don't have to read this book cover to cover. Choose the path that matches your role:
 
 ::: tip Product Manager Path
-[Introduction](/guide/introduction) → [Lifecycle](/guide/lifecycle) → [4-Layer Hierarchy](/guide/hierarchy) → [Upstream (all)](/upstream/) → [Initiative Walkthrough](/upstream/initiative-walkthrough) → [Story Mapping](/upstream/story-mapping) → [Downstream Overview](/downstream/) → [Feedback Loop](/offstream/feedback-loop) → [E2E Tutorial](/tutorials/e2e-initiative)
+[Why Teams Fail](/guide/why-teams-fail) → [5 Core Principles](/guide/principles) → [Lifecycle](/guide/lifecycle) → [Scale Tiers](/guide/scale-tiers) → [Upstream (all)](/upstream/) → [Initiative Walkthrough](/upstream/initiative-walkthrough) → [Story Mapping](/upstream/story-mapping) → [Downstream Overview](/downstream/) → [Feedback Loop](/offstream/feedback-loop) → [E2E Tutorial](/tutorials/e2e-initiative)
 :::
 
 ::: tip Developer / Tech Lead Path
-[Introduction](/guide/introduction) → [Lifecycle](/guide/lifecycle) → [Definition of Ready](/upstream/definition-of-ready) → [Downstream (all)](/downstream/) → [Feature Branches](/downstream/feature-branches) → [Kanban Flow](/downstream/kanban-flow) → [Developer E2E](/downstream/dev-workflow-e2e) → [BDD Workshop](/tutorials/bdd-workshop)
+[Why Teams Fail](/guide/why-teams-fail) → [Roles](/guide/roles) → [Definition of Ready](/upstream/definition-of-ready) → [Downstream (all)](/downstream/) → [Feature Branches](/downstream/feature-branches) → [Kanban Flow](/downstream/kanban-flow) → [Developer E2E](/downstream/dev-workflow-e2e) → [BDD Workshop](/tutorials/bdd-workshop)
 :::
 
 ::: tip QA Engineer Path
-[Introduction](/guide/introduction) → [Definition of Ready](/upstream/definition-of-ready) → [Station 3 — Journey](/upstream/station-3-journey) → [Gherkin Patterns](/downstream/gherkin) → [Definition of Done](/downstream/definition-of-done) → [Bug Taxonomy](/onstream/bug-taxonomy) → [BDD Workshop](/tutorials/bdd-workshop) → [Bug Labels](/standards/bug-labels)
+[Why Teams Fail](/guide/why-teams-fail) → [Definition of Ready](/upstream/definition-of-ready) → [Station 3 — Journey](/upstream/station-3-journey) → [Gherkin Patterns](/downstream/gherkin) → [Definition of Done](/downstream/definition-of-done) → [Bug Taxonomy](/onstream/bug-taxonomy) → [BDD Workshop](/tutorials/bdd-workshop) → [Bug Labels](/standards/bug-labels)
 :::
 
 ::: tip Manager / Leadership Path
-[Introduction](/guide/introduction) → [Lifecycle](/guide/lifecycle) → [Non-Negotiables](/reference/non-negotiables) → [Phase Gates](/reference/phase-gates) → [Master Cadence](/reference/master-cadence) → Phase overviews ([Upstream](/upstream/), [Downstream](/downstream/), [Onstream](/onstream/), [Offstream](/offstream/)) → [Escalation](/reference/escalation)
+[Why Teams Fail](/guide/why-teams-fail) → [5 Core Principles](/guide/principles) → [Scale Tiers](/guide/scale-tiers) → [Roles](/guide/roles) → [Non-Negotiables](/reference/non-negotiables) → Phase overviews ([Upstream](/upstream/), [Downstream](/downstream/), [Onstream](/onstream/), [Offstream](/offstream/)) → [From Chaos to Flow](/tutorials/from-chaos-to-flow)
+:::
+
+::: tip "Something Isn't Working" Path
+[Why Teams Fail](/guide/why-teams-fail) → [From Chaos to Flow](/tutorials/from-chaos-to-flow) → [5 Core Principles](/guide/principles) → the specific phase that's broken
 :::
 
 ## A Note on Judgment

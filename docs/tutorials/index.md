@@ -21,6 +21,20 @@ These tutorials assume you have read (or at least skimmed) the four phase chapte
 
 ## The Tutorials
 
+### 0. From Chaos to Flow
+
+| | |
+|---|---|
+| **File** | [From Chaos to Flow](./from-chaos-to-flow) |
+| **Difficulty** | 🟡 Intermediate |
+| **Time** | 45–60 minutes |
+| **Best for** | Teams that are already struggling; teams doing a retrospective on how they work; anyone who wants to understand UDOO through a realistic failure story |
+| **What you'll do** | Follow a team that has all seven anti-patterns at once — and watch them fix three of them in one sprint. No framework manifesto, no idealized starting state. Real failure → real change → real difference. |
+
+This is the best first tutorial for a team that already builds software but feels like something isn't working. Start here before you start "following the framework" — because this tutorial shows you what it actually looks like to adopt a practice rather than a vocabulary.
+
+---
+
 ### 1. Your First Upstream Sprint
 
 | | |
@@ -116,6 +130,7 @@ Every tutorial includes a fictional project for practice, but the exercises are 
 If you're working through all five tutorials, this order builds skills progressively:
 
 ```
+0. From Chaos to Flow            → Start from a real failure — understand UDOO through the transition
 1. Your First Upstream Sprint    → Learn the discovery mechanics
 2. The Wrong Way (Then Right)    → Build intuition for anti-patterns
 3. BDD Workshop                  → Master the specification craft
@@ -145,4 +160,6 @@ Each tutorial includes exercises marked with a ✏️ icon. These are not option
 
 ## Ready?
 
-Start with [Your First Upstream Sprint →](./zero-to-ready)
+If your team is already building and something isn't working: start with [From Chaos to Flow →](./from-chaos-to-flow)
+
+If you're adopting UDOO for the first time: start with [Your First Upstream Sprint →](./zero-to-ready)

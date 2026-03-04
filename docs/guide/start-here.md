@@ -5,6 +5,10 @@ You don't need to read this whole book before you begin.
 You need to know where *you* are right now — and this page will point you to the right door. There is no wrong entry. The framework is designed so that wherever you start, you will find something immediately useful.
 
 ::: tip Before anything else
+If your team already builds software and something isn't working — start with [Why Teams Fail](/guide/why-teams-fail). It's an honest audit of the most common failure patterns and takes 10 minutes. You'll know which parts of this framework matter most for you.
+:::
+
+::: info Core rule
 Whatever your situation: **never write a story straight from an idea.**
 
 Every story needs to trace back to a Feature, an Epic, and an Initiative. Not because the framework demands ceremony — but because without that thread, you won't know why you built it, whether it worked, or what to build next. That single habit changes everything.
@@ -149,6 +153,24 @@ What to expect:
 - Capacity planning: how to keep Upstream fed while Downstream is sprinting
 
 The reward: you stop managing chaos and start managing direction.
+
+---
+
+---
+
+## "I don't know which tier applies to my project"
+
+Different projects need different levels of process. A three-week internal tool doesn't need the same ceremonies as a ministry-grade LMS with eight developers.
+
+**Start here:** [Scale Tiers](/guide/scale-tiers)
+
+What to expect:
+- Three tier definitions — Programme (Tier 1), Standard (Tier 2), Lean (Tier 3)
+- What each tier requires and what it drops
+- How the Team Lead role works at each tier
+- When to move up or down
+
+The reward: you know exactly which practices to apply and which to skip — without guilt or confusion.
 
 ---
 
