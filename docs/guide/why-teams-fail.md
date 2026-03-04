@@ -1,5 +1,9 @@
 # Why Teams Fail
 
+::: tip Read the manifesto first
+If you came here directly, consider reading [The Manifesto](/guide/manifesto) first — it frames why we're naming these failures honestly, and the spirit behind what UDOO is trying to be. Then come back here.
+:::
+
 Not in the ways they think they do.
 
 When a project goes wrong, the postmortem usually points to: "we didn't communicate enough," "scope crept," "the spec wasn't clear," "we ran out of time." These are symptoms. The root causes are fewer, uglier, and more predictable than anyone wants to admit.
@@ -108,4 +112,6 @@ They say "DoR" but still let vague stories into sprints. They say "upstream spri
 
 UDOO will not help a team that treats it as a compliance exercise. It helps teams that are genuinely uncomfortable with how they're working today and want to change it.
 
-If that's you, keep reading. The next page explains what this framework actually believes.
+If that's you, keep reading.
+
+**→ Next:** [The 5 Core Principles](/guide/principles) — what this framework actually believes, and why every practice in it exists.

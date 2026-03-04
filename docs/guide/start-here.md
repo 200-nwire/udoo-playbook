@@ -4,14 +4,14 @@ You don't need to read this whole book before you begin.
 
 You need to know where *you* are right now — and this page will point you to the right door. There is no wrong entry. The framework is designed so that wherever you start, you will find something immediately useful.
 
-::: tip Before anything else
-If your team already builds software and something isn't working — start with [Why Teams Fail](/guide/why-teams-fail). It's an honest audit of the most common failure patterns and takes 10 minutes. You'll know which parts of this framework matter most for you.
+::: tip If you have 5 minutes before picking a path
+Read [The Manifesto](/guide/manifesto). It's the spirit behind everything here — short, no tables, no role descriptions. Just what we're trying to do and why it's worth doing together.
 :::
 
-::: info Core rule
+::: info The rule that changes everything
 Whatever your situation: **never write a story straight from an idea.**
 
-Every story needs to trace back to a Feature, an Epic, and an Initiative. Not because the framework demands ceremony — but because without that thread, you won't know why you built it, whether it worked, or what to build next. That single habit changes everything.
+Every story needs to trace back to a Feature, an Epic, and an Initiative. Not because the framework demands ceremony — but because without that thread, you won't know why you built it, whether it worked, or what to build next. That single habit, held consistently, changes more than any other practice in this book.
 :::
 
 ---

@@ -5,6 +5,14 @@
 <p>Idea → Initiative → Feature → Ready Story &nbsp;·&nbsp; <em>Clarity before code.</em></p>
 </div>
 
+## The Moment This Phase Is For
+
+It's Monday morning. The sprint starts today. The PM added a story last week: "Improve the submission flow." The developer pulls it, reads it, and has three immediate questions. They Slack the PM. The PM responds four hours later with a different interpretation than what the developer had built toward. The designer didn't know this was in the sprint at all.
+
+This is Upstream failing. Not dramatically — just quietly, expensively, routinely.
+
+Upstream done well means the developer pulls a story on Monday and starts. Not because the work is simple, but because everything they need was already decided: who they're building for, what the edge cases are, what done looks like, and why this matters enough to build now.
+
 ## Purpose
 
 Upstream exists for one reason: **to ensure teams build the right thing before they build it right**.

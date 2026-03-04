@@ -24,7 +24,7 @@ export default withMermaid(
     siteTitle: 'R&D Framework',
 
     nav: [
-      { text: '🚀 Start Here', link: '/guide/why-teams-fail' },
+      { text: '🚀 Start Here', link: '/guide/manifesto' },
       { text: 'Guide', link: '/guide/introduction' },
       {
         text: 'Phases',
@@ -48,11 +48,18 @@ export default withMermaid(
           text: '📖 Foundations',
           items: [
             { text: '🚀 Where Do I Start?', link: '/guide/start-here' },
+            { text: 'The Manifesto', link: '/guide/manifesto' },
             { text: 'Why Teams Fail', link: '/guide/why-teams-fail' },
             { text: 'The 5 Core Principles', link: '/guide/principles' },
+          ],
+        },
+        {
+          text: '📐 The Framework',
+          items: [
             { text: 'Introduction', link: '/guide/introduction' },
             { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
             { text: 'The 4-Layer Hierarchy', link: '/guide/hierarchy' },
+            { text: '📖 The Narrative Framework', link: '/guide/narrative' },
           ],
         },
         {
@@ -60,14 +67,13 @@ export default withMermaid(
           items: [
             { text: 'Scale Tiers (1→3)', link: '/guide/scale-tiers' },
             { text: 'Roles', link: '/guide/roles' },
+            { text: 'Lite Mode (Small Teams)', link: '/guide/lite-mode' },
           ],
         },
         {
           text: '🗺️ Using This Book',
           items: [
-            { text: '📖 The Narrative Framework', link: '/guide/narrative' },
             { text: 'How to Use This Book', link: '/guide/how-to-use' },
-            { text: 'Lite Mode (Small Teams)', link: '/guide/lite-mode' },
           ],
         },
       ],

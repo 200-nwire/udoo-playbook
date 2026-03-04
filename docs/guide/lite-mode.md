@@ -1,5 +1,9 @@
 # Lite Mode
 
+::: info Lite Mode = Tier 3 in detail
+This page is the practical companion to [Scale Tiers](/guide/scale-tiers) — specifically Tier 3 (Lean). The tiers page explains when to use each configuration; this page gives you the actual compressed formats: the 5-point DoR, the Lite discovery workshop, the ceremony shortcuts. Read both if you're a small team.
+:::
+
 The framework exists to create clarity, not ceremony.
 
 If you are a team of two working on an internal tool, running all 9 points of the DoR checklist in a formal story readiness review twice a week is overkill. But running zero process and shipping straight from conversations is how you end up discovering requirements mid-sprint and shipping things nobody needed.

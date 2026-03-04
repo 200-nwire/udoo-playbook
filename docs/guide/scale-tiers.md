@@ -76,6 +76,10 @@ The lesson: Tier 2 teams need the core practices more than Tier 1, not less. The
 
 ## Tier 3 — Lean
 
+::: info Detailed Tier 3 guide
+[Lite Mode](/guide/lite-mode) is the practical companion to this section — it has the specific compressed formats: the 5-point DoR, the 2–4 hour discovery workshop, the ceremony shortcuts. Read it alongside this page.
+:::
+
 > One to three people. A focused initiative. A short horizon. Fast feedback.
 
 At this scale, ceremony is waste and rigor is survival.

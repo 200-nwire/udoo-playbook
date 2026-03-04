@@ -5,6 +5,16 @@
 <p>Released → Stable → Reliably Operated &nbsp;·&nbsp; <em>Keep the lights on.</em></p>
 </div>
 
+## The Moment This Phase Is For
+
+It's 2am. An alert fires. The developer on call has never seen this service before. There's no runbook. Slack is being pinged by someone from sales who heard from a customer. The developer is making production changes based on intuition and hope.
+
+Forty minutes later the service recovers. Nobody knows exactly why it failed or exactly what fixed it. The post-mortem is scheduled and then cancelled because "the sprint is busy." Three weeks later, a different developer is in the same situation.
+
+This is Onstream failing — not dramatically in the moment, but structurally, before the incident ever happened. The runbook wasn't written. The on-call rotation wasn't defined. The alert threshold wasn't set. The learning from last time wasn't captured.
+
+Onstream done well means the on-call engineer pulls up a runbook with a diagnosis checklist, follows it, resolves the issue, and adds a note for next time. The incident is documented. The post-mortem happens — blameless, curious, useful. Something changes so the same thing doesn't happen again.
+
 ## Purpose
 
 Onstream keeps the lights on — reliably, transparently, and with a clear escalation path. It owns the covenant with customers about availability, performance, and support quality. Everything that leaves Downstream enters Onstream and **must be operated with accountability**.

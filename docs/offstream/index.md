@@ -5,6 +5,18 @@
 <p>Stable → Adopted → Renewed → Expanded &nbsp;·&nbsp; <em>Grow it, learn from it.</em></p>
 </div>
 
+## The Moment This Phase Is For
+
+A customer has been using the product for eight months. Last week they submitted fourteen support tickets. The CS manager knows their name and their frustration. The PM has never heard of them.
+
+Next quarter, that customer doesn't renew. The postmortem says "they were unhappy with the product." Nobody can say with what, specifically — because the signals existed and never went anywhere.
+
+This is Offstream failing. Not because Customer Success was lazy, but because there was no structure for signals to travel from customer to product. The feedback loop was broken.
+
+Offstream done well looks like this: CS raises a structured signal — "three enterprise accounts are all asking for the same export format, here's the data." PM picks it up in the next upstream cycle. It becomes an initiative. It ships. CS tells those three accounts. One of them expands their contract.
+
+That is the loop working. Discovery feeds delivery. Delivery feeds operations. Operations and customers feed the next discovery.
+
 ## Purpose
 
 Offstream turns a working product into a **growing, sustainable business**. It is responsible for customer adoption, retention, expansion, and revenue.

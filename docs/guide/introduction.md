@@ -1,118 +1,108 @@
 # Introduction
 
-<div class="callout upstream">
-<strong>This framework is your operating agreement.</strong> Every team member — from a product manager shaping an idea to a customer success manager managing a renewal — follows the same loop.
-</div>
+## What This Framework Is
 
-## Why This Framework Exists
+UDOO is a product development operating model — a shared language and a set of practices for teams who build software together and want to do it well.
 
-Most R&D failures are not engineering failures. They are **discovery failures**, **handoff failures**, and **feedback loop failures**.
+It covers four connected phases: discovering what to build, building it, keeping it running, and learning from customers. It is not a methodology for any single phase. It is the loop that connects all four.
 
-Teams build the wrong thing because the problem was never properly defined. Teams ship half-finished features because "ready" was never defined. Operations firefight the same incidents because post-mortems generate reports, not actions. Customer signals disappear before they ever reach the product team.
+The reason it exists as a single framework rather than four separate guides is the same reason those phases break down without one: they are not independent. The quality of what gets built depends on how well it was discovered. The reliability of what runs depends on how it was handed from development to operations. The relevance of what comes next depends on how carefully customer signals were heard after the last release.
 
-This framework fixes all four.
+Every phase feeds the next. And the last feeds the first.
 
-::: tip Start with the honest version
-Before reading the framework description, read [Why Teams Fail](/guide/why-teams-fail) — a direct account of the seven failure patterns this framework was built to address. If your team is already experiencing any of them, that page will tell you exactly where to start.
-:::
+---
 
-## Who This Book Is For
+## What Problem This Solves
 
-This guidebook is written for **everyone involved in building, shipping, and supporting software products**. Whether you are a startup of five or a company of five hundred, the principles apply. The depth scales with your needs.
+Most teams we've seen don't struggle from lack of ability. They struggle from lack of shared agreement on how to work.
 
-| Reader | What you will get |
-|--------|-------------------|
-| **Product Manager** | A structured discovery process that turns vague ideas into fully shaped, dependency-aware stories. No more mid-sprint scope creep. |
-| **Developer / Tech Lead** | Stories that arrive with clear acceptance criteria, edge cases, and architecture decisions already made. A predictable workflow from branch to release. |
-| **QA Engineer** | Testable acceptance criteria written in Gherkin before development begins. A clear Definition of Done that removes "is this ready?" ambiguity. |
-| **Designer (UX/UI)** | Involvement from Station 1, not as an afterthought. Design states (empty, loading, error, success) captured in every story. |
-| **Engineering Manager** | Cadences, ceremonies, and escalation paths that create predictable delivery without micromanagement. |
-| **DevOps / SRE** | Runbook templates, SLO frameworks, and incident management playbooks that prevent firefighting. |
-| **Customer Success / Sales** | A feedback loop that actually reaches the product team. Health scores, QBR structures, and account cadences. |
-| **CEO / CTO / VP** | A single operating model that aligns product, engineering, operations, and growth. Visible phase gates. Shared language. |
+The PM writes specs alone and presents them at planning. The designer finishes mockups the team sees for the first time in review. The tech lead raises an architectural concern after two sprints of work. QA joins the last three days of a sprint to test something already built. Customers send feedback to CS that never reaches the product team.
 
-## The Core Insight
+Each of these, taken separately, looks like a communication problem. Together, they are a structural problem: the team has no shared model of what good collaboration looks like at each stage.
 
-There are four distinct jobs in the R&D lifecycle. Each requires a different mindset, different artifacts, and different accountabilities. Conflating them is what creates chaos.
+UDOO names that model. It makes explicit what was previously assumed, different for each team member, and therefore constantly disappointing.
 
-| Phase | Job | Primary Question |
-|-------|-----|-----------------|
-| 🔵 **Upstream** | Clarify and shape | *Are we building the right thing?* |
-| 🟢 **Downstream** | Build and ship | *Are we building it right?* |
-| 🟠 **Onstream** | Operate and protect | *Is it running reliably?* |
-| 🟣 **Offstream** | Grow and learn | *Is it creating value for customers?* |
+---
 
-## The Two Rules That Matter Most
+## The Four Phases
 
-### Rule 1: No phase begins without the previous phase's artifact.
+Each phase answers a different question, involves different people, and produces different outputs:
 
-A story without a proper Definition of Ready (DoR) entering Downstream is not a velocity problem — it is a discovery problem that has been incorrectly moved to the most expensive place to solve it. Every hour of ambiguity absorbed by engineering costs five hours of rework — not because engineers are slow, but because the cost of change grows exponentially the later it is discovered.
+| Phase | Question | Primary job |
+|---|---|---|
+| 🔵 **Upstream** | Are we building the right thing? | Discover, frame, shape |
+| 🟢 **Downstream** | Are we building it right? | Build, review, release |
+| 🟠 **Onstream** | Is it running reliably? | Monitor, respond, improve |
+| 🟣 **Offstream** | Is it creating value? | Listen, measure, feed back |
 
-### Rule 2: Every phase feeds the next, and the last feeds the first.
+These don't run sequentially across the whole team — they run in parallel across different initiatives. While one feature is being built, another is being discovered. While one service is being stabilised, a customer signal from it is already feeding the next discovery cycle.
 
-Offstream is not the end of the loop. It is the beginning of the next one. Customer signals, incident learnings, and NPS themes are the raw material of tomorrow's Upstream Initiatives. A team that treats Offstream as "someone else's job" will never build the right thing — because they will never hear what customers actually need.
+---
 
-## The Narrative Thread
+## The Three Handoffs That Matter
 
-Throughout this book, we follow **three real projects** to illustrate every concept:
+Between each phase, there is a gate. Not bureaucracy — a shared agreement about what the next person needs before they can do their job well.
 
-1. **Pninei Halacha App** — A multilingual, offline-first religious reading companion. We use this project to demonstrate Upstream discovery: how an Initiative Brief takes shape, how epics and stories are carved from a user journey, and what a fully "ready" story looks like.
+**Commitment Point** (Upstream → Downstream): A story crosses this point only when it meets the Definition of Ready. Everything the developer needs to start — and finish — is already decided.
 
-2. **Momentum / Living Wondrously Journal** — A daily reflection feature inside a wellness app. This project provides the end-to-end narrative: from "engagement is flat" (the problem) through Initiative framing, Feature definition, Epic breakdown, Story shaping, BDD scenarios, development, and release.
+**Delivery Point** (Downstream → Onstream): A feature crosses this point only when it meets the Definition of Done. A runbook exists. Observability is in place. The on-call team has been briefed.
 
-3. **Someone for Coffee** — A women-only social networking platform. We use this project for Downstream and Onstream examples: Kanban flow, feature branches, incident management, and the "wrong then right" teaching moments where common mistakes are revealed.
+**Stability Point** (Onstream → Offstream): A feature reaches this point when it has run within SLOs for a meaningful period. Customer Success can now confidently present it.
 
-A fourth project — **Analytics & Graph Intelligence Layer** (Amit LMS) — provides the architecture and technical depth examples: ADRs, data models, graph ontology, and API design.
+The handoffs protect the next person. That is their only purpose.
 
-## What This Book Covers
+---
 
-Each section maps to one phase or cross-cutting concern:
+## The Projects We Follow
 
-| Section | What It Contains |
-|---------|------------------|
-| [Guide](/guide/lifecycle) | The lifecycle map, 4-layer hierarchy, and reading paths |
-| [Upstream](/upstream/) | Product discovery — from idea to Ready Story (5 stations, DoR, cadence) |
-| [Downstream](/downstream/) | Engineering delivery — from Ready to Released (Kanban, SSDLC, DoD) |
-| [Onstream](/onstream/) | Service delivery — SLA, incidents, runbooks, post-mortems |
-| [Offstream](/offstream/) | Customer success — lifecycle, health scores, feedback loops |
-| [Standards](/standards/) | Jira types, Gherkin tags, bug labels, tooling, communication tone |
-| [Tutorials](/tutorials/) | Step-by-step walkthroughs and "aha moment" exercises |
-| [Examples](/examples/) | Real initiative briefs, feature docs, post-mortems, and shaped stories |
-| [Reference](/reference/) | Templates, checklists, escalation paths, glossary |
+Throughout this book we use real project patterns — the kind of problems and decisions that come from building actual software for actual people. The names and details are drawn from 200apps' portfolio, with context compressed for teaching.
+
+**Maya, Avi, and Noa** are the recurring personas — not abstract role labels, but people doing specific jobs in specific moments. When you see Maya writing a journal entry at 10pm, or Avi studying halacha on his commute, or Noa looking for coffee with someone in a new city, you're seeing the Experience Snapshot in action: a named person in a named moment, making every design decision that follows obvious.
+
+The projects:
+- **Living Wondrously / Momentum** — a daily reflection and habit-building app
+- **Pninei Halacha** — a multilingual, offline-first religious study app
+- **Someone for Coffee** — a women-only social networking platform
+- **Amit LMS / Analytics Layer** — a ministry-grade learning management system
+
+---
 
 ## Reading Paths
 
-You don't have to read this book cover to cover. Choose the path that matches your role:
+You don't have to read cover to cover. Start where your team is.
 
-::: tip Product Manager Path
-[Why Teams Fail](/guide/why-teams-fail) → [5 Core Principles](/guide/principles) → [Lifecycle](/guide/lifecycle) → [Scale Tiers](/guide/scale-tiers) → [Upstream (all)](/upstream/) → [Initiative Walkthrough](/upstream/initiative-walkthrough) → [Story Mapping](/upstream/story-mapping) → [Downstream Overview](/downstream/) → [Feedback Loop](/offstream/feedback-loop) → [E2E Tutorial](/tutorials/e2e-initiative)
+::: tip Something isn't working
+[The Manifesto](/guide/manifesto) → [Why Teams Fail](/guide/why-teams-fail) → [From Chaos to Flow](/tutorials/from-chaos-to-flow) → the specific phase that's broken
 :::
 
-::: tip Developer / Tech Lead Path
-[Why Teams Fail](/guide/why-teams-fail) → [Roles](/guide/roles) → [Definition of Ready](/upstream/definition-of-ready) → [Downstream (all)](/downstream/) → [Feature Branches](/downstream/feature-branches) → [Kanban Flow](/downstream/kanban-flow) → [Developer E2E](/downstream/dev-workflow-e2e) → [BDD Workshop](/tutorials/bdd-workshop)
+::: tip New to the framework
+[The Manifesto](/guide/manifesto) → [Why Teams Fail](/guide/why-teams-fail) → [5 Core Principles](/guide/principles) → [Lifecycle](/guide/lifecycle) → [Scale Tiers](/guide/scale-tiers) → your role's phase
 :::
 
-::: tip QA Engineer Path
-[Why Teams Fail](/guide/why-teams-fail) → [Definition of Ready](/upstream/definition-of-ready) → [Station 3 — Journey](/upstream/station-3-journey) → [Gherkin Patterns](/downstream/gherkin) → [Definition of Done](/downstream/definition-of-done) → [Bug Taxonomy](/onstream/bug-taxonomy) → [BDD Workshop](/tutorials/bdd-workshop) → [Bug Labels](/standards/bug-labels)
+::: tip Product Manager
+[Upstream overview](/upstream/) → [Station 1](/upstream/station-1-vision) through [Station 5](/upstream/station-5-decision) → [Initiative Walkthrough](/upstream/initiative-walkthrough) → [Story Mapping](/upstream/story-mapping) → [DoR](/upstream/definition-of-ready) → [E2E Tutorial](/tutorials/e2e-initiative)
 :::
 
-::: tip Manager / Leadership Path
-[Why Teams Fail](/guide/why-teams-fail) → [5 Core Principles](/guide/principles) → [Scale Tiers](/guide/scale-tiers) → [Roles](/guide/roles) → [Non-Negotiables](/reference/non-negotiables) → Phase overviews ([Upstream](/upstream/), [Downstream](/downstream/), [Onstream](/onstream/), [Offstream](/offstream/)) → [From Chaos to Flow](/tutorials/from-chaos-to-flow)
+::: tip Developer / Tech Lead
+[Roles](/guide/roles) → [DoR](/upstream/definition-of-ready) → [Downstream overview](/downstream/) → [Kanban Flow](/downstream/kanban-flow) → [Feature Branches](/downstream/feature-branches) → [Developer E2E](/downstream/dev-workflow-e2e) → [BDD Workshop](/tutorials/bdd-workshop)
 :::
 
-::: tip "Something Isn't Working" Path
-[Why Teams Fail](/guide/why-teams-fail) → [From Chaos to Flow](/tutorials/from-chaos-to-flow) → [5 Core Principles](/guide/principles) → the specific phase that's broken
+::: tip QA Engineer
+[DoR](/upstream/definition-of-ready) → [Station 3 — Journey](/upstream/station-3-journey) → [Gherkin Patterns](/downstream/gherkin) → [DoD](/downstream/definition-of-done) → [Bug Taxonomy](/onstream/bug-taxonomy) → [BDD Workshop](/tutorials/bdd-workshop)
 :::
+
+::: tip Manager / Leadership
+[Scale Tiers](/guide/scale-tiers) → [Roles](/guide/roles) → [Non-Negotiables](/reference/non-negotiables) → [Phase Gates](/reference/phase-gates) → [Master Cadence](/reference/master-cadence)
+:::
+
+---
 
 ## A Note on Judgment
 
-This framework is not a bureaucracy. When a story is simple and obvious, the readiness checklist takes five minutes. When a decision is genuinely reversible, you do not need a full ADR.
+This framework is not a rulebook. It is an operating model — a set of agreements a team makes with itself about how to work.
 
-Use this framework with judgment. What it should **never** do is:
+When a story is simple and the answer is obvious, the DoR checklist takes five minutes. When a technical decision is genuinely reversible, a note in Slack is enough and a full ADR is waste. When a team is three people on a two-week project, Lite Mode is the right configuration.
 
-- Let unclear work enter development
-- Let an incident happen without a learning
-- Let a customer signal disappear before it reaches the product team
-- Let a team member wonder "what does ready actually mean?"
+The non-negotiables are few: don't start building unclear work, don't ship without knowing how you'll monitor it, don't close an incident without a learning, don't let a customer signal disappear.
 
-The framework is the floor, not the ceiling. Master it, then improve it.
+Everything else is calibration. Master the principles. Adapt the practice.
