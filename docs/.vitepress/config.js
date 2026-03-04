@@ -116,9 +116,17 @@ export default withMermaid(
           ],
         },
         {
+          text: 'The Discovery Spiral',
+          items: [
+            { text: '🌀 The Discovery Spiral', link: '/upstream/spiral-model' },
+            { text: 'Initiative Activities (Loop 1)', link: '/upstream/activities-sprint' },
+            { text: 'Feature Activities (Loop 2)', link: '/upstream/feature-activities' },
+            { text: 'Epic Activities (Loop 3)', link: '/upstream/epic-activities' },
+          ],
+        },
+        {
           text: 'Sprint Operations',
           items: [
-            { text: '24 Activities — Sprint System', link: '/upstream/activities-sprint' },
             { text: 'Cadence & Meeting Recipes', link: '/upstream/cadence' },
             { text: 'Anti-Patterns', link: '/upstream/anti-patterns' },
             { text: 'Initiative Walkthrough', link: '/upstream/initiative-walkthrough' },
