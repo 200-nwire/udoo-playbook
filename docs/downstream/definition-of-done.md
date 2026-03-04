@@ -2,6 +2,16 @@
 
 <span class="phase-badge downstream">🟢 Downstream</span>
 
+## The Moment This Page Is For
+
+It's Thursday. The feature has been in testing for two days. QA says it's good. The PM says ship it. Nobody wrote a runbook. Nobody configured an alert. Nobody updated the changelog. The deployment goes through.
+
+Three days later, the feature breaks silently. The monitoring dashboard shows nothing unusual because there are no metrics for the new feature. A support agent notices from tickets. By the time the developer investigates, the context is cold and the trail is hard to follow.
+
+At the post-mortem, someone asks: "Did we have a runbook?" No. "Did we have an alert threshold?" No. "Did PM sign off in the actual environment?" "I think so." Three "no"s that each had one minute of prevention available.
+
+That is what happens without a Definition of Done. Not a catastrophe. Just a slow leak of trust, time, and confidence that compounds sprint by sprint.
+
 ## What Is the DoD?
 
 The Definition of Done is the **quality gate at the Delivery Point** — the moment a Story transitions from "In Test" to "Released." It is the team's shared agreement on what "done" actually means.

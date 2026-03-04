@@ -2,6 +2,14 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+## The Moment This Page Is For
+
+Sprint planning starts in twenty minutes. The PM posted four stories to the backlog last night. The developer pulls the first one: "As a user, I want to export my data so that I can back it up." There are no acceptance criteria. No visual reference. No mention of which data, what format, what happens if the export is large, or whether it's available on mobile. The developer starts asking questions. The PM isn't online yet.
+
+The sprint starts anyway. The developer makes their best guess. Three days later, the PM reviews it and says "that's not what I meant."
+
+That is what happens without a Definition of Ready. Not once — every sprint, on every team that doesn't enforce one.
+
 ## What Is the DoR?
 
 The Definition of Ready is the **quality gate between Upstream and Downstream**. A Story does not enter the sprint until every item on this checklist is true.
