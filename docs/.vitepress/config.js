@@ -119,6 +119,7 @@ export default withMermaid(
           text: 'The Discovery Spiral',
           items: [
             { text: '🌀 The Discovery Spiral', link: '/upstream/spiral-model' },
+            { text: 'Project Master Document', link: '/upstream/project-master-doc' },
             { text: 'Initiative Activities (Loop 1)', link: '/upstream/activities-sprint' },
             { text: 'Feature Activities (Loop 2)', link: '/upstream/feature-activities' },
             { text: 'Epic Activities (Loop 3)', link: '/upstream/epic-activities' },
@@ -248,6 +249,7 @@ export default withMermaid(
           items: [
             { text: 'Tutorial Hub', link: '/tutorials/' },
             { text: 'From Chaos to Flow', link: '/tutorials/from-chaos-to-flow' },
+            { text: 'Recovering an Existing Project', link: '/tutorials/recovery' },
             { text: 'The Wrong Way (Then the Right Way)', link: '/tutorials/wrong-way-right-way' },
             { text: 'Your First Upstream Sprint', link: '/tutorials/zero-to-ready' },
             { text: 'E2E Initiative Lifecycle', link: '/tutorials/e2e-initiative' },

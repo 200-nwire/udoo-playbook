@@ -154,6 +154,106 @@ Skipping the Feature Loop feels like saving a week. It costs 2–3 sprints of re
 
 ---
 
+## The Time Dimension
+
+The spiral doesn't just nest structurally — it runs on four different clocks. Understanding which clock you're on is what lets you work at the right level without over-engineering or under-specifying.
+
+```
+ANNUAL
+  Company vision. Annual goals. OKRs.
+  Personas defined (or refined). These do not change per initiative.
+  Set once. Referenced always.
+
+QUARTERLY
+  2–3 Initiatives selected from the Initiative Backlog.
+  Each selected Initiative runs a 2-week Initiative Loop.
+  Output: approved Initiative Brief + prioritized Feature list.
+
+ROLLING
+  Feature Backlog maintained continuously.
+  As each Initiative completes, its Features enter the Feature Backlog.
+  PM pulls the next Feature into a Feature Loop when team capacity opens.
+  No fixed cadence — just: "next feature when ready."
+
+JUST-IN-TIME
+  Epic Loops run ~1 week before the Epic enters Downstream.
+  Stories are DoR-checked and marked Ready as dev capacity opens.
+  These run continuously — always slightly ahead of the delivery team.
+
+CONTINUOUS
+  New stories added to existing Features as needs arise.
+  If Feature Brief and Epic context both exist → just DoR check.
+  No loops needed. The alignment already exists above.
+```
+
+This is the payoff of doing the upstream work correctly the first time. A team that has a proper Feature Brief, a user journey map, and named Epics can add a new story in 30 minutes. The PM writes the story, the QA lead runs a DoR check, the story enters the sprint. No meetings. No re-alignment. The context is already there.
+
+A team that skipped the Feature Loop adds a new story and immediately discovers that nobody agrees what the feature is supposed to feel like. The 30-minute story becomes a 2-day clarification spiral.
+
+::: tip Personas don't change per initiative
+Personas are defined at the company/product level — not per initiative. Maya is Maya. She was defined when the product was first discovered and her profile lives in the [Project Master Document](/upstream/project-master-doc). When you write a new Feature Snapshot, you reference Maya — you don't recreate her. You may zoom into a specific moment for this Feature, but the persona herself doesn't change unless you've learned something genuinely new about your users.
+:::
+
+---
+
+## Where to Enter the Spiral
+
+You rarely start from zero. Most work lands in an existing product with existing context — or should. The question is not "do I run the whole spiral?" but "where does my current work slot in?"
+
+The answer is determined by one rule:
+
+> **Find the lowest level above your work that has no artifact. Start there.**
+
+```
+You need to add a story or start a new piece of work.
+│
+└── Does a Feature Brief exist for this Feature?
+    │
+    ├── NO → Does an Initiative exist that this Feature belongs to?
+    │         │
+    │         ├── NO → Start at the Initiative Loop.
+    │         │         The work is not traceable to a business goal yet.
+    │         │
+    │         └── YES → Start at the Feature Loop.
+    │                   The initiative context exists; shape the feature.
+    │
+    └── YES → Does an Epic Brief exist for this Epic?
+              │
+              ├── NO → Start at the Epic Loop.
+              │         The feature is shaped; break it into stories.
+              │
+              └── YES → Just check DoR.
+                        All context exists. Write the story, verify the
+                        9 checkpoints, and move it to the sprint backlog.
+                        This should take 30 minutes.
+```
+
+The critical discipline: **never jump levels downward**. Writing stories without a Feature Brief is not a shortcut — it is spending the context you don't have. Two sprints later, the team will pay for it in rework, scope confusion, and edge cases that nobody caught.
+
+If you find yourself wanting to write a story and the Feature Brief doesn't exist, stop. Run the Feature Loop. It takes a week. The stories you write afterward will be right.
+
+---
+
+## Recovering an Existing Project
+
+Most projects don't start with a clean spiral. They start with a Jira board, some stories, and tribal knowledge in the heads of two or three people. The question is not "is this recoverable?" — it always is — but "where do we enter?"
+
+The recovery path is the same decision tree, applied backward:
+
+1. **Audit what exists**: Stories? Epics? Feature Briefs? Initiative Briefs? Business goals documented anywhere?
+2. **Find the highest documented level**: Whatever the highest artifact is, that's where the context exists.
+3. **Find the lowest missing level**: Everything below the highest artifact needs to be backfilled downward.
+4. **Trace up**: Can you connect what exists to a business goal? If not, work upward first.
+5. **Work down from what's solid**: Once the chain connects to business goals, add new work by entering the spiral at the right level.
+
+The reward: once recovered, the team operates with full context. New stories are cheap to add. New developers onboard quickly. The PM who asks "why are we building this?" gets an answer in 30 seconds, not a shrug.
+
+This recovery process is documented step-by-step in the [Recovering an Existing Project](/tutorials/recovery) tutorial.
+
+---
+
 → [Initiative Activities](/upstream/activities-sprint) — the 10 activities in the Initiative Loop
 → [Feature Activities](/upstream/feature-activities) — the 11 activities in the Feature Loop
 → [Epic Activities](/upstream/epic-activities) — the 8 activities in the Epic Loop
+→ [Project Master Document](/upstream/project-master-doc) — the spine that links annual goals to stories
+→ [Recovering an Existing Project](/tutorials/recovery) — entering the spiral mid-stream

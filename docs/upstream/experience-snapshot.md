@@ -92,9 +92,27 @@ None of these decisions required a meeting. They came naturally from one paragra
 
 ---
 
+## Personas Are Company Artifacts
+
+The persona — Maya, Avi, Noa — is not recreated per initiative or per feature.
+
+Personas are defined once, at the product level, and stored in the [Project Master Document](/upstream/project-master-doc). They represent the real user types discovered through research and refined over time. Once a persona exists, every initiative and every feature references her — it does not reinvent her.
+
+What changes per feature is the **moment and context** of the snapshot, not the persona herself.
+
+Maya is always Maya: 34, working mother, healthcare administrator, building a reflection habit. What changes between the Journal Entry feature and the Past Entries Browser feature is the specific moment she finds herself in — Tuesday at 10pm typing a reflection vs. Sunday morning revisiting a memory from last month. Same person. Different scene.
+
+::: info When to create a new persona
+Add a new persona only when user research reveals a genuinely new user type — someone with a different job-to-be-done, a fundamentally different context, or a failure mode that doesn't apply to existing personas. "Another type of professional" is a variant, not a new persona. New personas come from evidence, not brainstorming.
+:::
+
+**The practical rule:** Before writing a new Experience Snapshot, check the Project Master Document. If the persona already exists, use her. Write the new moment, reference the existing character. If a new persona is genuinely needed, add her to the master document first — so she becomes a company artifact, not a feature-specific note.
+
+---
+
 ## When to Write It
 
-The Experience Snapshot is written at **Station 3 (User Journey & Slices)** during the Feature Design Sprint, before epics are defined.
+The Experience Snapshot is written during the **Feature Loop** (F-2), before epics are defined.
 
 **The test:** If you can read the snapshot aloud to the team and they all visualise the same thing, the Feature is real. If people visualise different things — or the narrative has gaps or awkwardness — the Feature needs more definition before it can be broken into epics.
 
