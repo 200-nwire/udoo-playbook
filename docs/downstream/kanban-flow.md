@@ -2,6 +2,20 @@
 
 <span class="phase-badge downstream">🟢 Downstream</span>
 
+## The Moment This Page Is For
+
+Monday morning. Sprint starts. Five developers each pick two stories. Ten things are "In Progress" by noon.
+
+By Wednesday, one developer is blocked waiting for a backend endpoint. Another is in review — but the reviewer hasn't looked because they're deep in their own work. A third just found an edge case that doubles the scope. Nothing is close to done.
+
+By Friday, the team has nine stories "In Progress" and zero Released. At the sprint review, they explain why the most important thing isn't ready. Again.
+
+The problem is not the developers. The problem is a system with no flow control. Work entered freely. Nothing exited. The board became a parking lot.
+
+This page is about how to build a system where things actually finish.
+
+---
+
 ## The Core Insight: Different Phases, Different Methods
 
 UDOO uses **Scrum for Upstream** and **Kanban for Downstream**. This is not an accident, and it is not a compromise. It is a deliberate design decision rooted in the nature of the work.

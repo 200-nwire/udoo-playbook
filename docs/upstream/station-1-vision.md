@@ -2,6 +2,20 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+## The Moment This Page Is For
+
+Six weeks into development, someone asks: "Who actually uses this?"
+
+The room goes quiet. Everyone has a slightly different answer. The PM says "our paying SMB customers." The tech lead says "ops managers — that's who the PM described in the original brief." The developer who built the reporting module says "wait, I thought it was finance teams."
+
+No one is wrong. The feature was shaped from a vague direction and each person filled in the blanks differently. Six weeks of work was built on three separate assumptions about who it was for.
+
+This is what it costs to skip Station 1. Not one bad decision — a hundred small decisions, each made in the absence of a shared frame, each drifting a little further from the others.
+
+Station 1 is not a ceremony. It is the 60-minute conversation that prevents six weeks of drift.
+
+---
+
 ## Purpose
 
 Station 1 sets the frame. Before any team member writes a single line of code, acceptance criterion, or wireframe, the product team must answer four foundational questions with rigour. Vague answers here compound into expensive rework in every downstream phase.

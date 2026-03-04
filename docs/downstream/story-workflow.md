@@ -2,6 +2,16 @@
 
 <span class="phase-badge downstream">🟢 Downstream</span>
 
+## The Moment This Page Is For
+
+It's Wednesday. Three stories are "In Dev." One has a PR open — has been for two days. Another is technically "done" but the developer forgot to move it in Jira so QA hasn't picked it up. The third is blocked on a backend endpoint that isn't ready yet, but nobody flagged the dependency.
+
+The sprint ends Friday. None of the three will make it to Released.
+
+At standup, everyone is busy. The board looks active. But busyness and progress are not the same thing. The difference between a team that ships reliably and one that is always "almost there" is not effort — it is the discipline of moving work through defined states, explicitly, every time.
+
+---
+
 Every story follows a strict state machine from the moment it is pulled into a sprint. States are visible in Jira. Transitions have entry and exit criteria.
 
 ## The State Machine
