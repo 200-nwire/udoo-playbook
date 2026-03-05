@@ -7,14 +7,11 @@ hero:
   tagline: "A battle-tested operating framework for product teams. Upstream discovery. Lean delivery. SRE operations. Customer growth. One continuous loop."
   actions:
     - theme: brand
-      text: Where Do I Start? →
+      text: Start Here →
       link: /guide/start-here
     - theme: alt
-      text: Read the Introduction
-      link: /guide/introduction
-    - theme: alt
-      text: The Narrative Framework
-      link: /guide/narrative
+      text: The Manifesto
+      link: /guide/manifesto
 
 features:
   - icon: 🔵

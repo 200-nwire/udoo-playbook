@@ -67,36 +67,6 @@ The projects:
 
 ---
 
-## Reading Paths
-
-You don't have to read cover to cover. Start where your team is.
-
-::: tip Something isn't working
-[The Manifesto](/guide/manifesto) → [Why Teams Fail](/guide/why-teams-fail) → [From Chaos to Flow](/tutorials/from-chaos-to-flow) → the specific phase that's broken
-:::
-
-::: tip New to the framework
-[The Manifesto](/guide/manifesto) → [Why Teams Fail](/guide/why-teams-fail) → [5 Core Principles](/guide/principles) → [Lifecycle](/guide/lifecycle) → [Scale Tiers](/guide/scale-tiers) → your role's phase
-:::
-
-::: tip Product Manager
-[Upstream overview](/upstream/) → [Station 1](/upstream/station-1-vision) through [Station 5](/upstream/station-5-decision) → [Initiative Walkthrough](/upstream/initiative-walkthrough) → [Story Mapping](/upstream/story-mapping) → [DoR](/upstream/definition-of-ready) → [E2E Tutorial](/tutorials/e2e-initiative)
-:::
-
-::: tip Developer / Tech Lead
-[Roles](/guide/roles) → [DoR](/upstream/definition-of-ready) → [Downstream overview](/downstream/) → [Kanban Flow](/downstream/kanban-flow) → [Feature Branches](/downstream/feature-branches) → [Developer E2E](/downstream/dev-workflow-e2e) → [BDD Workshop](/tutorials/bdd-workshop)
-:::
-
-::: tip QA Engineer
-[DoR](/upstream/definition-of-ready) → [Station 3 — Journey](/upstream/station-3-journey) → [Gherkin Patterns](/downstream/gherkin) → [DoD](/downstream/definition-of-done) → [Bug Taxonomy](/onstream/bug-taxonomy) → [BDD Workshop](/tutorials/bdd-workshop)
-:::
-
-::: tip Manager / Leadership
-[Scale Tiers](/guide/scale-tiers) → [Roles](/guide/roles) → [Non-Negotiables](/reference/non-negotiables) → [Phase Gates](/reference/phase-gates) → [Master Cadence](/reference/master-cadence)
-:::
-
----
-
 ## A Note on Judgment
 
 This framework is not a rulebook. It is an operating model — a set of agreements a team makes with itself about how to work.

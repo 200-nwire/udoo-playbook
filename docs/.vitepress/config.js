@@ -24,7 +24,7 @@ export default withMermaid(
     siteTitle: 'R&D Framework',
 
     nav: [
-      { text: '🚀 Start Here', link: '/guide/manifesto' },
+      { text: '🚀 Start Here', link: '/guide/start-here' },
       { text: 'Guide', link: '/guide/introduction' },
       {
         text: 'Phases',
@@ -47,8 +47,8 @@ export default withMermaid(
         {
           text: '📖 Foundations',
           items: [
-            { text: '🚀 Where Do I Start?', link: '/guide/start-here' },
             { text: 'The Manifesto', link: '/guide/manifesto' },
+            { text: '🚀 Start Here', link: '/guide/start-here' },
             { text: 'Why Teams Fail', link: '/guide/why-teams-fail' },
             { text: 'The 5 Core Principles', link: '/guide/principles' },
           ],

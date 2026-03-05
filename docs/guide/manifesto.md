@@ -54,6 +54,6 @@ That is worth building for.
 
 ---
 
-**→ Next:** [Why Teams Fail](/guide/why-teams-fail) — an honest audit of the seven failure patterns this framework was built to address.
+**→ Ready to begin?** [Start Here](/guide/start-here)
 
-**→ Then:** [The 5 Core Principles](/guide/principles) — the beliefs behind every practice in this book.
+**→** [Why Teams Fail](/guide/why-teams-fail) — the seven failure patterns this framework was built to address.
