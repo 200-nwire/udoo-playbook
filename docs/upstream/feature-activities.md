@@ -30,6 +30,13 @@ With this in hand, the Epic Loop can produce DoR-ready stories reliably. Without
 
 ---
 
+::: tip Station deep-dives for this loop
+The 5 Discovery Stations are detailed question guides that go deeper than the activity descriptions below. For this loop, the most relevant are:
+- **[Station 3 — User Journey & Slices](/upstream/station-3-journey)** → feeds F-3, F-5, F-7
+- **[Station 4 — Solution Options](/upstream/station-4-options)** → feeds F-8, F-9, F-10
+- **[Station 5 — Decision & Scope](/upstream/station-5-decision)** → feeds F-7 (Feature Slice)
+:::
+
 ## The 11 Feature Activities
 
 ---

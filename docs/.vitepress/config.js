@@ -123,6 +123,7 @@ export default withMermaid(
             { text: 'Initiative Activities (Loop 1)', link: '/upstream/activities-sprint' },
             { text: 'Feature Activities (Loop 2)', link: '/upstream/feature-activities' },
             { text: 'Epic Activities (Loop 3)', link: '/upstream/epic-activities' },
+            { text: 'Jira Setup for the Spiral', link: '/upstream/jira-setup' },
           ],
         },
         {
@@ -248,6 +249,7 @@ export default withMermaid(
           text: '🎓 Tutorials',
           items: [
             { text: 'Tutorial Hub', link: '/tutorials/' },
+            { text: 'Your First Week with UDOO', link: '/tutorials/first-week' },
             { text: 'From Chaos to Flow', link: '/tutorials/from-chaos-to-flow' },
             { text: 'Recovering an Existing Project', link: '/tutorials/recovery' },
             { text: 'The Wrong Way (Then the Right Way)', link: '/tutorials/wrong-way-right-way' },

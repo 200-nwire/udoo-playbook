@@ -1,8 +1,24 @@
 # Discovery Backbone
 
-The discovery backbone is a five-station method for transforming a vague idea into a decision-ready Initiative. Stations are not sequential form fields — they are **conversations that produce artifacts**.
+The discovery backbone describes **the five question areas that every loop in the [Discovery Spiral](/upstream/spiral-model) draws from**. Stations are not sequential form fields — they are conversations that produce artifacts.
 
-## Station 1 — Vision & Context
+::: info Stations and Loops
+The five stations are question guides. The [Discovery Spiral](/upstream/spiral-model) defines *when* and *at what scope* those questions get asked. Understanding both is the key to running discovery without wasted effort.
+
+| Station | Question | Asked in |
+|---------|----------|---------|
+| **Station 1 — Vision & Context** | Who is the user? What is the pain? Why now? | [Initiative Loop](/upstream/activities-sprint) (Phase 1) |
+| **Station 2 — Problem Framing** | How bad is it? What are the assumptions? What are the constraints? | [Initiative Loop](/upstream/activities-sprint) (Phase 1–2) |
+| **Station 3 — User Journey & Slices** | What does the user actually do, step by step? What ships first? | [Feature Loop](/upstream/feature-activities) (Phase 1–2) |
+| **Station 4 — Solution Options** | How could we build this? What are the tradeoffs? | [Feature Loop](/upstream/feature-activities) (Phase 3) |
+| **Station 5 — Decision & Scope** | What are we committing to? What's the MVP? | [Initiative Loop](/upstream/activities-sprint) (Scope phase) + [Feature Loop](/upstream/feature-activities) (Slice phase) |
+
+Each station has a detailed guide page. The summaries below are the question sets — go to the station page for full templates, examples, and anti-patterns.
+:::
+
+---
+
+## Station 1 — Vision & Context <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Loop · Phase 1</span>
 
 **Goal:** Align the team on the problem space before anyone proposes a solution.
 
@@ -23,7 +39,7 @@ The discovery backbone is a five-station method for transforming a vague idea in
 
 ---
 
-## Station 2 — Problem Framing
+## Station 2 — Problem Framing <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Loop · Phase 1–2</span>
 
 **Goal:** Understand the current state deeply enough that the solution space narrows naturally.
 
@@ -53,9 +69,9 @@ Assumption blindness is one of the most common causes of failed Initiatives. Tea
 
 ---
 
-## Station 3 — User Journey & Slices
+## Station 3 — User Journey & Slices <span style="font-size: 0.75em; color: var(--vp-c-brand)">Feature Loop · Phase 1–2</span>
 
-**Goal:** Map the full user journey, identify where this Initiative fits, and propose delivery slices.
+**Goal:** Map the full user journey for this Feature, identify where it fits, and propose delivery slices.
 
 ### Journey Mapping
 
@@ -96,7 +112,7 @@ Every Epic must reference which journey steps it covers (e.g., `covers: J2–J4`
 
 ---
 
-## Station 4 — Solution Options
+## Station 4 — Solution Options <span style="font-size: 0.75em; color: var(--vp-c-brand)">Feature Loop · Phase 3</span>
 
 **Goal:** Avoid jumping to one solution. Force the team to compare at least two.
 
@@ -133,9 +149,9 @@ Run **time-boxed spikes** (max 2 days) for any high-risk technical unknowns befo
 
 ---
 
-## Station 5 — Decision & Scope
+## Station 5 — Decision & Scope <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Loop (scope) + Feature Loop (slice)</span>
 
-**Goal:** Freeze the Initiative. Lock the approach. Set the handoff conditions.
+**Goal:** Freeze the scope. Lock the approach. Set the handoff conditions.
 
 **Document:**
 - **Chosen approach** and its rationale: `"We will {X} because {Y}. See {ADR link}."`

@@ -38,6 +38,10 @@ In other words: every story passes all 9 DoR checkpoints.
 
 ---
 
+::: info No dedicated Station for this loop
+The Epic Loop doesn't have its own Discovery Station — its discipline is execution, not exploration. The three-amigos technique (E-2), example mapping (E-4), and the 9-point DoR check (E-7) are the quality gates here. If you find yourself needing to resolve major scope questions during E-2, it means the [Feature Loop](/upstream/feature-activities) ended too early — go back and close the open questions there before continuing.
+:::
+
 ## The 8 Epic Activities
 
 ---
