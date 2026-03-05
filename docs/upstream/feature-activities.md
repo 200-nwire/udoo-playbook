@@ -14,6 +14,18 @@ Three weeks later, the developer building the export asks: "Export to what forma
 
 The one-line Feature description was agreement on a name, not agreement on a feature. The Feature Loop exists to close that gap — to take a Feature from "named" to "understood well enough to build Epic by Epic."
 
+::: warning The most commonly skipped loop — and the most expensive
+The Feature Loop is the level teams skip most often. It feels like overhead: the initiative is approved, why not just start building?
+
+What skipping costs:
+- Stories written without a journey map drift in scope mid-sprint
+- Edge cases surface during QA that a Three Amigos session would have caught in an afternoon
+- Developers ask "what happens when X?" in the middle of implementation — because no Feature Brief exists to answer it
+- The epic ships, but nobody agrees what the *feature* was supposed to feel like
+
+Skipping the Feature Loop feels like saving a week. It costs 2–3 sprints of rework.
+:::
+
 ---
 
 ## What the Feature Loop Produces
@@ -246,7 +258,7 @@ The Feature Loop is your most important loop. You translate the journey map into
 Your job is to find the technical risks before any developer writes a line of code. Spikes run here, not mid-sprint.
 
 **Your activities:** F-3 (participant), F-6 (confirmer), F-8, F-9, F-10
-**Key rule:** If you identify a risk but don't run a spike because there's "no time," that risk will surface mid-delivery sprint. Spikes in the Feature Loop cost 2 days. The same discovery mid-sprint costs 2 weeks.
+**Key rule:** If you identify a risk but don't run a spike because there's "no time," that risk will surface mid-delivery. Spikes in the Feature Loop cost 2 days. The same discovery mid-implementation costs 2 weeks.
 
 ---
 

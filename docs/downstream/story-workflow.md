@@ -12,7 +12,7 @@ At standup, everyone is busy. The board looks active. But busyness and progress 
 
 ---
 
-Every story follows a strict state machine from the moment it is pulled into a sprint. States are visible in Jira. Transitions have entry and exit criteria.
+Every story follows a strict state machine from the moment it is pulled into development. States are visible in Jira. Transitions have entry and exit criteria.
 
 ## The State Machine
 
@@ -20,7 +20,7 @@ Every story follows a strict state machine from the moment it is pulled into a s
 ┌──────────────┐
 │ Ready to Pull│  ← Upstream hands off (DoR met)
 └──────┬───────┘
-       │ Dev pulls into sprint
+       │ Dev pulls
 ┌──────▼───────┐
 │   In Dev     │  ← Implementation + unit tests
 └──────┬───────┘
@@ -50,8 +50,8 @@ Every story follows a strict state machine from the moment it is pulled into a s
 
 | State | Entry Criteria | Work Done in This State | Exit Criteria |
 |-------|---------------|------------------------|---------------|
-| **Ready to Pull** | DoR fully met | — | Team pulls into sprint |
-| **In Dev** | Pulled into sprint | Implementation + unit tests | PR opened; self-tested by dev |
+| **Ready to Pull** | DoR fully met | — | Developer pulls into In Dev |
+| **In Dev** | Pulled from Ready | Implementation + unit tests | PR opened; self-tested by dev |
 | **In Review** | PR opened | Peer code review | At least 1 approval; no blocking comments |
 | **In Test** | Approved + merged to feature branch | QA testing against all AC; Gherkin scenarios run | All AC pass; no P1/P2 bugs open |
 | **Released** | QA sign-off + deployment approved | Deploy to production; smoke test | DoD met; PM notified |
@@ -191,7 +191,7 @@ If any criterion fails, the story moves back to **In Dev** (for a fix) or forwar
 |------|---------|--------|
 | **Bug fix** | Regression or edge case found during Observed | New bug story, linked to original |
 | **Performance tuning** | Latency or resource usage higher than expected | New tech story with SLO target |
-| **UX refinement** | User feedback suggests confusion or friction | New story in next sprint |
+| **UX refinement** | User feedback suggests confusion or friction | New story in next iteration |
 | **Operational hardening** | Missing alerts, runbook gaps, or flaky tests | Tech debt story + runbook update |
 | **No action needed** | Observation period clean, no issues | Story is closed. Learning logged in retro. |
 
@@ -201,7 +201,7 @@ Improved is what separates a reactive team from a learning team. Without it, the
 
 ### Living Wondrously Example: Past Entries Scroll
 
-After releasing the "Past Entries" infinite-scroll feature, the Observed period revealed that scroll performance degraded significantly after 200+ entries. The team logged an Improved story: *"Virtualize past-entries list for users with 200+ entries."* This became a tech story in the next sprint with a clear SLO: render 1,000 entries at 60fps on mid-range Android devices.
+After releasing the "Past Entries" infinite-scroll feature, the Observed period revealed that scroll performance degraded significantly after 200+ entries. The team logged an Improved story: *"Virtualize past-entries list for users with 200+ entries."* This became a tech story in the next iteration with a clear SLO: render 1,000 entries at 60fps on mid-range Android devices.
 
 ---
 
@@ -211,13 +211,13 @@ After releasing the "Past Entries" infinite-scroll feature, the Observed period 
 |----------|----------------|--------|
 | P0 / P1 | Yes | Story goes back to **In Dev**. Sprint goals reassessed. |
 | P2 | Yes (usually) | Discuss with PM and Tech Lead. |
-| P3 | No | Log as bug. Add to next sprint backlog. |
+| P3 | No | Log as bug. Add to backlog for next iteration. |
 
 ---
 
 ## Handling Blocked Stories
 
-A story is **blocked** when it cannot make forward progress due to an external dependency, environment issue, missing information, or upstream failure. Blocked stories are poison to sprint flow — they consume capacity without producing value.
+A story is **blocked** when it cannot make forward progress due to an external dependency, environment issue, missing information, or upstream failure. Blocked stories are poison to flow — they consume capacity without producing value.
 
 ### The 4-Hour Rule
 
@@ -233,7 +233,7 @@ If a story has been blocked for **4 hours**, the developer must escalate. Not to
 ```
 
 ::: warning Don't Let Blockers Silently Age
-The most expensive blockers are the quiet ones. A developer who says "I'm waiting on the API team" in Monday standup and repeats it unchanged on Thursday has lost four days of sprint capacity. The 4-hour rule exists to prevent this.
+The most expensive blockers are the quiet ones. A developer who says "I'm waiting on the API team" in Monday standup and repeats it unchanged on Thursday has lost four days of capacity. The 4-hour rule exists to prevent this.
 :::
 
 ### Visualizing Blockers on the Board
@@ -254,12 +254,12 @@ The DM's job is not to fix the blocker — it is to **remove the organizational 
 
 - Scheduling a cross-team call with the blocking team's lead
 - Escalating to the programme level if the blocker is systemic
-- Re-prioritizing the sprint to swap in unblocked work
+- Re-prioritizing the backlog to swap in unblocked work
 - Communicating the impact to stakeholders if the blocker threatens a milestone
 
 ### Living Wondrously Example: Authentication Blocker
 
-During Sprint 14, the "Social Login" story was blocked because the OAuth provider's sandbox environment was down for maintenance (no ETA). The developer raised the blocker at hour 3. The Tech Lead reassigned the developer to an unblocked story within the hour. The DM contacted the provider's support and got an ETA of 48 hours. The story was moved to the next sprint with no capacity waste.
+During one iteration, the "Social Login" story was blocked because the OAuth provider's sandbox environment was down for maintenance (no ETA). The developer raised the blocker at hour 3. The Tech Lead reassigned the developer to an unblocked story within the hour. The DM contacted the provider's support and got an ETA of 48 hours. The story was pulled back to Ready and picked up once the environment recovered — no capacity waste.
 
 ---
 
@@ -281,7 +281,7 @@ Sometimes a story that passed the Definition of Ready turns out to be larger tha
 1. **Stop coding.** Do not split while continuing to work on the original. Splitting requires clear thinking.
 2. **Identify the vertical slice.** The first story should deliver end-to-end value, even if it is minimal. "User can create a journal entry with a prompt" is a vertical slice. "Build the entry creation API" is not.
 3. **Create the new stories in Jira:**
-   - Original story keeps the work already done. Its AC is narrowed to what is completable this sprint.
+   - Original story keeps the work already done. Its AC is narrowed to what is completable in this iteration.
    - New story (or stories) gets the remaining AC with full context: link to original, copy relevant Gherkin scenarios, reference technical notes from the developer.
 4. **Update estimates.** The original story's estimate is revised down. The new stories are estimated fresh.
 5. **Inform the team.** The split is announced in standup. PM re-prioritizes the new stories.
@@ -293,11 +293,11 @@ Sometimes a story that passed the Definition of Ready turns out to be larger tha
 During development, the team discovered that the matching algorithm needed to account for timezone differences, preferred meeting locations, and dietary preferences — none of which were in the AC.
 
 **Split result:**
-- **Story A (this sprint):** *Show top 5 matches based on shared interests.* Simple scoring: count of overlapping interest tags. No location or timezone logic.
-- **Story B (next sprint):** *Refine matching with timezone and location weighting.* Requires geolocation API integration and timezone-aware scheduling.
-- **Story C (next sprint):** *Add dietary preference filter to matching.* Requires new profile field and database migration.
+- **Story A (this iteration):** *Show top 5 matches based on shared interests.* Simple scoring: count of overlapping interest tags. No location or timezone logic.
+- **Story B (next iteration):** *Refine matching with timezone and location weighting.* Requires geolocation API integration and timezone-aware scheduling.
+- **Story C (next iteration):** *Add dietary preference filter to matching.* Requires new profile field and database migration.
 
-Each story had its own Gherkin file. Story A shipped on time. Stories B and C shipped in the following sprint with proper DoR.
+Each story had its own Gherkin file. Story A shipped in that iteration. Stories B and C shipped in the following iteration with proper DoR.
 :::
 
 ### The Golden Rule of Splitting
@@ -308,7 +308,7 @@ A vertical split delivers a thin slice of end-to-end functionality. A horizontal
 
 ### What Not to Do
 
-- **Don't split and forget.** The new stories must go through DoR before they enter a sprint.
+- **Don't split and forget.** The new stories must go through DoR before they enter development.
 - **Don't split into "Part 1" and "Part 2."** Each story must have independent value.
 - **Don't split to hide scope creep.** If the original estimate was wrong because the story was poorly refined, that is a retrospective item — not just a splitting exercise.
 - **Don't leave orphaned Gherkin.** Every scenario must belong to exactly one story after a split.

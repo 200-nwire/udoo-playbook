@@ -18,11 +18,24 @@ This page is about how to build a system where things actually finish.
 
 ## The Core Insight: Different Phases, Different Methods
 
-UDOO uses **Scrum for Upstream** and **Kanban for Downstream**. This is not an accident, and it is not a compromise. It is a deliberate design decision rooted in the nature of the work.
+UDOO uses **discovery sprints for Upstream** and **Kanban for Downstream**. This is not an accident, and it is not a compromise. It is a deliberate design decision rooted in the nature of the work.
 
-Upstream is **discovery** — time-boxed exploration of an uncertain problem space. Scrum's fixed-length sprints create urgency, force prioritisation, and produce a measurable output (Ready stories). Discovery without a time-box expands indefinitely.
+Upstream is **discovery** — time-boxed exploration of an uncertain problem space. Fixed-length discovery sprints create urgency, force prioritisation, and produce a measurable output (Ready stories). Discovery without a time-box expands indefinitely.
 
-Downstream is **delivery** — continuous execution of work that has already been shaped. Stories arrive meeting the Definition of Ready. The team's job is to flow them through the system as efficiently as possible: implement, review, test, release. There is no "sprint boundary" to wait for. When a developer finishes a story, they pull the next one.
+Downstream is **delivery** — continuous execution of work that has already been shaped. Stories arrive meeting the Definition of Ready. The team's job is to flow them through the system as efficiently as possible: implement, review, test, release. There is no sprint boundary to wait for. When a developer finishes a story, they pull the next one.
+
+### Releases anchor planning; iterations anchor cadence
+
+In Downstream, planning is **release-anchored**, not sprint-anchored. A **release** corresponds to a Slice (S1, S2, S3) — it was defined in the Initiative Loop and represents a coherent unit of user value. Stories in that release flow through the Kanban board continuously until all of them are done.
+
+The **iteration** (typically 2 weeks) provides the ceremonial rhythm — demo, retro, flow review — but it does not gate releases. A release ships when all its stories pass the Definition of Done. That might happen mid-iteration, or it might span two iterations. The calendar does not control the release; the quality gate does.
+
+```
+Release (S1)  ←  what we're working toward  ←  defined in Initiative Loop
+Iteration     ←  how we review and improve  ←  every 2 weeks, regardless of release state
+```
+
+This separation is what allows Downstream to be truly continuous while remaining planned and measurable.
 
 ```mermaid
 flowchart LR

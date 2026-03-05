@@ -2,6 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+::: tip Loops and Stations in one sentence
+**Loops** tell you *when and at what scope* to do discovery. **Stations** tell you *what to ask* while you're doing it. You don't study them separately — you ask the station questions while running the loop.
+:::
+
 ## The Problem With Linear Discovery
 
 When a new initiative arrives, the instinct is to run discovery once — gather context, map the journey, write stories, hand off. Linear. Sequential. Done in two weeks.
@@ -133,6 +137,28 @@ Epic Loop produces:
 ```
 
 A story that enters Downstream without these artifacts — especially the Feature Brief and Journey Map context — is a story that will be misbuilt. The developer has no context. The QA lead has no frame of reference. The PM will be asked questions that should have been answered two loops ago.
+
+---
+
+## Slices Are Releases
+
+The S1/S2/S3 slices defined in the Initiative Loop are not just planning concepts — they map directly to **Jira Releases**.
+
+```
+S1 (defined in Initiative Loop)  →  Jira Release "v1.0" (or "Release 1")
+S2 (defined in Initiative Loop)  →  Jira Release "v2.0"
+S3                               →  Jira Release "v3.0"
+```
+
+Stories in the S1 Feature Slice are assigned to the S1 Jira Release. Stories in the S2 Feature Slice go to the S2 Release. When a Release is opened in Jira, the team can see exactly which stories belong to it, how many are Ready, how many are in progress, and how many are done.
+
+**The release ships when all its stories pass the Definition of Done** — not when a calendar sprint timer expires. This is the key difference from sprint-based delivery: the quality gate is DoD, not the clock.
+
+This is also why slicing matters so much in the Initiative Loop. A well-defined S1 — small, end-to-end, independently valuable — becomes a Release that can ship in 3–5 weeks. A poorly scoped S1 (too much, or not truly end-to-end) becomes a Release that "almost ships" for two months.
+
+::: tip The Release is the unit of value, not the iteration
+Teams often have a 2-week iteration cadence for ceremonies (standups, demos, retros). But the Release is independent of that cadence. S1 might span two iterations. Or a Release might ship mid-iteration when the last story clears. The iteration keeps the team in rhythm. The Release is what actually reaches users.
+:::
 
 ---
 

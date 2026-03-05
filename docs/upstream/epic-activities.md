@@ -74,9 +74,9 @@ A collaborative session where PM (what), Developer (how), and QA (what could go 
 
 The PM reads each journey step aloud. The group asks: what does the user do here? How many distinct stories is this? The developer flags technical concerns. The QA lead asks "what happens when it fails?" for every step.
 
-- **Output:** Agreed story list — each story named as a verb-outcome phrase, linked to its journey step, with rough scope agreed by all three
+- **Output:** Agreed story list — each story named as a verb-outcome phrase (describing a complete user scene), linked to its journey step, with rough scope agreed by all three
 - **Who:** PM + Lead Developer + QA Lead
-- **Done when:** All journey steps for this Epic are covered by at least one story. No story covers more than one distinct user action. The Developer and QA Lead agree the scope is right.
+- **Done when:** All journey steps for this Epic are covered by at least one story. Each story represents a complete user scene — one goal, one moment, all its paths. The Developer and QA Lead agree the scope is right and nothing is missing.
 
 ::: tip Keep it at the story level
 The Three Amigos session is for discovering stories, not designing solutions. If the developer starts designing the implementation, redirect: "How would you test this from the user's perspective?" That question always finds the story shape.
@@ -90,15 +90,28 @@ Turn the Three Amigos output into properly formatted Jira stories.
 
 Format: `As [named persona], I want [action], so that [outcome].`
 
+**A story = a scene.** One user. One moment. One goal. All the paths through that moment — the happy path, the error states, the edge cases — are **acceptance criteria on this story**. They are not separate stories.
+
+| ❌ Too small (technical fragments) | ✅ One scene (complete user moment) |
+|---|---|
+| "Maya sees today's journal prompt" | |
+| "Maya types in the text field" | **"Maya writes a daily journal entry"** |
+| "Maya taps Save" | |
+| "Maya sees error when field is empty" | *ACs on the one story above cover all of these* |
+
+The wrong column produces 4 branches, 4 PRs, 4 review cycles. None of the 4 stories is independently valuable — a user cannot "see a prompt" and walk away satisfied. The right column is one branch, one PR, two days. The developer builds the complete journaling scene as one coherent unit.
+
+**A new story starts when the scene changes** — a different user goal, a different moment, a different visit. "Maya edits an existing entry" is a separate story because it's a different moment with a different intent.
+
 Rules:
 - Named persona — never "a user" or "the system"
 - Action is what the *user* does, not what the *system* does
 - Outcome is the user's goal, not the technical output
-- One story = one user action = one developer's sprint focus
+- One story = one complete scene with all its paths
 
-- **Output:** Stories created in Jira with: title in user story format, Epic link, journey step reference, and at minimum 2 acceptance criteria
+- **Output:** Stories created in Jira with: title in user story format, Epic link, journey step reference, and at minimum 2 acceptance criteria (one happy path, one edge case or error)
 - **Who:** PM (+ BA if available)
-- **Done when:** Every story in this Epic is written. No story is described as a technical task. Every story could be read aloud to the user and make sense to them.
+- **Done when:** Every story in this Epic is written. No story is a technical fragment. Every story covers a complete user moment. Every story could be read aloud to the user it's built for and make sense to them.
 
 ---
 

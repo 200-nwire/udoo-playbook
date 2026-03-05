@@ -12,9 +12,43 @@ That is what happens without a Definition of Ready. Not once — every sprint, o
 
 ## What Is the DoR?
 
-The Definition of Ready is the **quality gate between Upstream and Downstream**. A Story does not enter the sprint until every item on this checklist is true.
+The Definition of Ready is the **quality gate between Upstream and Downstream**. A Story does not enter development until every item on this checklist is true.
 
-Violating the DoR is not a sign of speed. It is a sign of borrowing time from the sprint team at a very high interest rate.
+Violating the DoR is not a sign of speed. It is a sign of borrowing time from the delivery team at a very high interest rate.
+
+---
+
+## Before the Checklist: Trace Up
+
+Before running any DoR checks, ask three questions. These are not bureaucracy — they protect the story from being well-written but wrong.
+
+```
+Does this story belong to a named Epic?
+  └── NO → Create or identify the Epic first.
+            A story without an Epic has no structural context.
+
+Does that Epic belong to a Feature with a Feature Brief?
+  └── NO → Run the Feature Loop first.
+            Without a Feature Brief, nobody agrees what the feature is supposed to feel like.
+            A well-written story for the wrong feature is worse than no story at all.
+
+Does that Feature belong to an Initiative with a business goal?
+  └── NO → Run the Initiative Loop first.
+            Without an Initiative, there is no measure of success.
+            The story might be solving a problem nobody decided was worth solving.
+
+All three exist? → Run the 9-point DoR check below.
+```
+
+If any of these is missing, **the story is premature** — not because it was badly written, but because the context that makes it the *right* story doesn't exist yet. Go up the hierarchy, produce the missing artifact, and come back.
+
+The reward for doing this is proportionate: a story written after the Feature Loop exists takes 30 minutes to shape and rarely bounces. A story written without that context takes 3 days to re-scope and often rebuilds the feature from scratch.
+
+::: tip The fastest path to a ready story
+The fastest way to write a correct story is to not write it first. Run the Initiative Loop, then the Feature Loop, then the Epic Loop. When you finally write the story, it's a 30-minute exercise — because all the decisions that make it right were made in the loops above it.
+:::
+
+---
 
 ## Why DoR Exists: The Economics of Shifting Left
 
@@ -43,7 +77,7 @@ The DoR checklist is not bureaucracy — it's the team's agreement about what "f
 |---|-------|----------------------|-----------------|---------------|
 | 1 | **Story format** | Written as "As a `<persona>`, I want `<action>`, so that `<outcome>`." | "As Avi, I want to resume reading where I left off, so that I don't waste time finding my place." | "Implement bookmark persistence feature." |
 | 2 | **Journey reference** | References at least one journey step ID (e.g., `J4`). | "Journey step(s): J8, J11" | "Journey step(s): N/A" |
-| 3 | **Acceptance criteria** | 3–7 testable ACs; edge and negative cases included. Gherkin-ready phrasing. | See [Writing Good ACs](#writing-good-acceptance-criteria) below | "Balance should display correctly" |
+| 3 | **Acceptance criteria** | 3–7 testable ACs; edge and negative cases included. Gherkin-ready phrasing. **Edge cases are ACs on this story — not separate stories.** | See [Writing Good ACs](#writing-good-acceptance-criteria) below | "Balance should display correctly" |
 | 4 | **Visual reference** | Sketch, lo-fi mockup, or whiteboard photo exists. (Even a napkin drawing is fine.) | Photo of whiteboard sketch linked in story | "Designer will provide later" |
 | 5 | **Copy / text** | All user-facing strings drafted; accessibility labels noted. | "Button text: 'Resume Reading' / aria-label: 'Resume reading from last position'" | "TBD — will figure out during dev" |
 | 6 | **Observability signal** | At least one measurable signal defined (event name, metric, or log line). | "Event: `reading_session_resumed`, props: { book_id, chapter, position }" | "We'll add analytics later" |

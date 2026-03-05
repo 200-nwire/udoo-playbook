@@ -163,32 +163,58 @@ Each Epic gets a boundary. Entry Creation handles daily writing. Past Entries ha
 
 ---
 
-## Layer 4: Stories — The Smallest Units of User Value
+## Layer 4: Stories — One Scene, All Its Paths
 
 ### The pain it solves
 
-Teams often create stories too early or too vaguely:
+Teams create stories at the wrong level — and it usually goes in one of two directions:
 
-- Stories that are too big ("As a user, I want the journal")
-- Stories that are actually tasks ("adjust API")
-- Stories with unclear acceptance criteria
-- Stories without edge cases
-- Stories missing design states (empty, loading, error)
-- Stories that surprise engineering
-- Stories QA doesn't know how to test
+**Too big** — a story that is really a feature or an epic in disguise:
+- "As a user, I want a journal" (that's a Feature)
+- "As a user, I want to manage my notifications" (that's an Epic)
+
+**Too small** — a story that is really a technical subtask:
+- "Display today's prompt" (a UI element, not a user goal)
+- "Handle empty save attempt" (an error case, not a scene)
+- "Save journal entry to API" (an implementation task, not a user moment)
+
+The too-small trap is the more common one, and the more expensive. It produces three branches, three PRs, and three review cycles for what a single developer does in two hours as part of one continuous session. None of the three stories is independently valuable — a user who can only "see the prompt" cannot accomplish anything. The value only exists when all three pieces work together.
+
+### Stories are scenes
+
+A story maps to a **scene** — one user, one goal, one moment in their life. Not a technical component, not a UI state, not one step in a larger action.
+
+A scene includes all the paths through it: the happy path, the error paths, and the edge cases. Those are **acceptance criteria** on the story — not separate stories.
+
+**One developer. One branch. One PR. One review. Everything needed for that scene to work.**
+
+| ❌ Wrong: stories split by technical state | ✅ Right: one story per scene |
+|---|---|
+| "See today's prompt" | |
+| "Write in the text field" | **"Maya writes a daily journal entry"** |
+| "Save the entry" | |
+| "Show error when empty" | |
+
+The right-hand story covers all four of those states — as acceptance criteria. The left-hand stories each fail the V in INVEST: none of them delivers something a user can use alone.
+
+**When does a new story start?** When the *scene* changes — a different user goal, a different moment. "Maya edits an existing entry" is a separate story because it's a different moment with a different intent. "Maya browsing her past entries" is a separate story because it's a different visit entirely.
 
 ### What happens at this layer
 
 Each Story is shaped until it meets the **INVEST** criteria:
 
-| Letter | Meaning | Test |
+| Letter | Meaning | Practical test |
 |--------|---------|------|
-| **I** | Independent | Can be built without waiting for other stories |
-| **N** | Negotiable | Scope can be discussed, not set in stone |
-| **V** | Valuable | Delivers something a user can see or feel |
-| **E** | Estimable | Team can size it with reasonable confidence |
-| **S** | Small | Fits within a sprint (ideally 1–3 days of work) |
-| **T** | Testable | QA can write a pass/fail test for it |
+| **I** | Independent | One developer can build it without waiting for another story to finish |
+| **N** | Negotiable | The exact scope can be discussed; it's not carved in stone |
+| **V** | Valuable | A real user can accomplish a real goal with only this story — not a fragment of a goal |
+| **E** | Estimable | The team can size it with reasonable confidence |
+| **S** | Small | One complete scene that a developer can finish in 1–3 days |
+| **T** | Testable | QA can write a clear pass/fail test for the outcome |
+
+::: tip The S and V test together
+If a story passes S but fails V — it's small but not independently valuable — it's a subtask in disguise. Merge it with its siblings into one scene. If it passes V but fails S — it's a complete scene but too large — split it into two scenes by finding the earliest moment the user gets real value.
+:::
 
 When a Story reaches "Ready for Dev," Upstream ends and Downstream begins.
 
@@ -196,20 +222,25 @@ When a Story reaches "Ready for Dev," Upstream ends and Downstream begins.
 
 From the Entry Creation Epic:
 
-> **Story:** User can save a reflection for today's prompt so they can capture their daily moment of meaning.
+> **Story:** As Maya, I want to write and save my daily journal entry, so that I capture a moment of reflection and feel the small reward of keeping my streak.
 
-Fully shaped, it includes:
+One story. Everything that happens in Maya's 90-second journaling session is in it:
 
 | Artifact | Content |
 |----------|---------|
-| **States** | empty, writing, saved, error |
-| **Edge cases** | no text entered, offline, duplicate save, multiple entries per day |
-| **Acceptance criteria** | Given Maya has selected a prompt and typed at least one character, When she taps "Save," Then her text is stored as today's entry, And when she opens the Journal again today she sees that entry, And her star count increases by one |
-| **Sketches** | Lo-fi wireframe of the save flow |
-| **Data model notes** | `JournalEntry { id, date, index, prompt_id, user_text, created_at }` |
-| **QA scenarios** | Happy path save, empty text rejection, offline queue, duplicate detection |
+| **Acceptance criteria** | AC1: Prompt visible when journal opens · AC2: Tapping prompt starts writing session · AC3: Can skip prompt and write freely · AC4: Min 1 character to save; empty rejected with "Write at least a few words" · AC5: Successful save stores entry for today · AC6: Star count increments by 1 on first save of the day · AC7: Saving again same day edits, not duplicates · AC8: Offline save queues locally, shows sync icon |
+| **Visual reference** | Lo-fi wireframe: prompt card → text field → save button → star animation |
+| **Copy** | Button: "Save" · Empty state: "Write at least a few words" · Offline: "Saved — will sync when back online" |
+| **Observability** | `journal.entry.saved` {user_id, date, char_count, is_first_today, is_offline} |
+| **Data model** | `JournalEntry { id, user_id, date, prompt_id?, text, created_at, updated_at }` |
 
-Only when a story has all of these is it truly ready. No guessing. No surprises.
+One branch. One PR. One review. Two days. The developer builds the complete journaling flow — prompt display, text input, save logic, validation, offline handling, star logic — as one coherent unit of work.
+
+::: details What about the separate states and edge cases?
+They are acceptance criteria — not separate stories. The developer tests all of them in the same branch. QA verifies all of them in one pass. The PR covers all of them. This is faster, not slower: there's no context-switching between stories, no coordination overhead between branches, no question about "which story does this edge case belong to?"
+:::
+
+Only when a story has all of its ACs, a visual reference, copy, observability, and tech feasibility confirmed is it truly ready. No guessing. No surprises.
 
 ---
 
@@ -220,40 +251,36 @@ Initiative: Create a daily ritual that increases emotional connection
   │
   └── Feature: Living Wondrously Journal
         │
-        ├── Epic: Entry Creation & Prompt Flow
-        │     ├── Story: See today's prompts
-        │     ├── Story: Choose a prompt
-        │     ├── Story: Write and save a reflection  ← fully shaped
-        │     └── Story: View today's completion status
+        ├── Epic: Entry Creation (S1)
+        │     ├── Story: Maya writes a daily journal entry      ← one scene: open, prompt, write, save, star
+        │     └── Story: Maya edits a saved entry              ← one scene: return, see entry, update
         │
-        ├── Epic: Past Entries
-        │     ├── Story: Browse entries by day
-        │     └── Story: View a single past entry
+        ├── Epic: Past Entries (S1)
+        │     └── Story: Maya reviews her past journal entries  ← one scene: browse list, read entry, go back
         │
-        ├── Epic: Notifications & Reminders
-        │     └── Story: Set daily reminder time
+        ├── Epic: Return & Reminders (S2)
+        │     ├── Story: Maya receives a daily journal reminder
+        │     └── Story: Maya manages her reminder time
         │
-        ├── Epic: Stars & Habit Loop
-        │     └── Story: See accumulated stars
+        ├── Epic: Stars & Streaks (S2)
+        │     └── Story: Maya sees her writing streak grow
         │
-        └── Epic: AI Reflection (Phase II)   ← out of scope for first slice
+        └── Epic: AI Reflection (S3)   ← out of scope for first release
 ```
 
-## Choosing What to Build First — The First Slice
+Notice the difference: the S1 epics now have 2–3 stories total instead of 5–6. Each story covers a complete scene — everything that happens in one user session. The developer building "Maya writes a daily journal entry" handles the prompt display, text input, save logic, validation, offline handling, and star increment in one branch. That's the right unit of work.
 
-With all four layers clear, a crucial question emerges: *"What is the smallest first step that would actually mean something to the user?"*
+## Choosing What to Build First — The First Release
+
+With all four layers clear, a crucial question emerges: *"What is the smallest release that would actually mean something to the user?"*
 
 Without the hierarchy, the instinct is: "Let's build the whole Journal with everything — past entries, notifications, stars, AI, the works."
 
-With the hierarchy, the team sees a smaller, more honest first slice:
+With the hierarchy, the team defines S1 as two epics: Entry Creation and Past Entries. Together they let Maya write a journal entry and come back to read it. That is a complete loop of value — she creates something, and it persists.
 
-- Show today's prompts
-- Let the user choose one
-- Let them write and save a reflection
+S1 is a **Jira Release**. Stories in those two epics are assigned to that release. When all stories pass their Definition of Done, the release ships. Not when a calendar sprint ends — when the work is done and quality is confirmed.
 
-No notifications yet. No stars yet. No past entries view. Those become later slices.
-
-In that first release, Maya can already do something real: sit down at the end of the day, answer a gentle prompt, and feel like the app gave her a moment that mattered. The next releases add reminders, past entries browsing, habit indicators, and eventually AI reflections — but the core ritual starts simple and strong.
+In that first release, Maya can already do something real: sit down at the end of the day, answer a gentle prompt, feel the small reward of saving it, and return the next week to read what she wrote. The next releases (S2, S3) add reminders, streaks, and AI reflections — but the core ritual is already complete.
 
 ## How the Hierarchy Changes the Team Experience
 

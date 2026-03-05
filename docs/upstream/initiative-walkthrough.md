@@ -188,38 +188,42 @@ Maya taps "Save." A small star appears briefly near the top of the screen, and h
 
 Maya smiles. She closes the app. Total time: 90 seconds.
 
-That is the experience. Six story candidates from 90 seconds of a user's life. Each one is small, specific, and traceable to a moment in Maya's journey.
+That is the experience — four minutes, six moments, all in one continuous session.
+
+The PM now looks at the sticky notes. Six moments. The question is not "what are the stories?" — it is "which of these moments are the *same* story?"
+
+*"Can Maya navigate to the journal, see the prompt, write, and save — and walk away satisfied? Does she need multiple sessions to feel the value?"*
+
+The team agrees: everything from 10:12 to 10:15:30 is **one scene**. Maya arrived with a goal (journal tonight) and completed it. The tab navigation, the prompt display, the text field, the save button, the star animation — these are all moments *within* the same user action. They are not separate stories. They are acceptance criteria.
+
+A new story starts only when the **scene changes**: a different visit, a different intent.
 
 ::: details All Story Candidates from This Walkthrough
-| # | Story | Epic | Journey Step |
-|---|-------|------|-------------|
-| 1 | Maya sees the Journal tab and navigates to it | Entry Creation | J1 |
-| 2 | Maya sees today's prompt when she opens the Journal | Entry Creation | J2 |
-| 3 | The prompt changes daily (sourced from a prompt library) | Entry Creation | J2 |
-| 4 | Maya can skip the prompt and write freely | Entry Creation | J2 |
-| 5 | Maya types her reflection in a plain text field | Entry Creation | J3 |
-| 6 | Maya taps Save and her entry is stored as today's entry | Entry Creation | J4 |
-| 7 | If Maya already saved today, she sees her existing entry and can edit it | Entry Creation | J4 |
-| 8 | Maya's star count increases by one when she saves a new entry | Stars & Streaks | J4a |
-| 9 | Maya views a list of her past journal entries | Past Entries | J5 |
-| 10 | Maya taps a past entry and reads it | Past Entries | J6 |
+| # | Story | Epic | Journey Steps |
+|---|-------|------|--------------|
+| 1 | **Maya writes a daily journal entry** — navigate to journal, see or skip prompt, write reflection, save, earn star | Entry Creation | J1–J4 |
+| 2 | **Maya edits an existing journal entry** — return to today's already-saved entry, modify it, save again | Entry Creation | J4 |
+| 3 | **Maya reviews her past journal entries** — browse entry list, tap one, read it | Past Entries | J5–J6 |
+
+The walkthrough generated ten sticky-note moments. Three of them are stories. The other seven are acceptance criteria on Story 1.
 :::
 
 ---
 
 ## Step 5 — Shaping a Story Fully
 
-Let's take Story #6 — *"Maya taps Save and her entry is stored as today's entry"* — and shape it into a Ready story.
+Let's take Story 1 — *"Maya writes a daily journal entry"* — and shape it into a Ready story. This single story covers everything from opening the journal to earning the star. The moments the walkthrough identified (navigation, prompt display, typing, saving, star increment) are all acceptance criteria on this one story, not separate stories.
 
 ### The Story Card
 
 ```
-Title:       Save journal entry
+Title:       Maya writes a daily journal entry
 Persona:     Maya (post-content wellness app user)
-Story:       As Maya, I want to save my journal entry so that it is
-             preserved and I can see it the next time I open the Journal.
+Story:       As Maya, I want to open the journal, pick a prompt, write
+             my reflection, and save — so that I capture a moment of
+             my day and feel the small reward of keeping up.
 Epic:        E-LW-01 (Entry Creation)
-Journey:     J4 (Save)
+Journey:     J1–J4 (Open → Prompt → Write → Save)
 Slice:       S1 (MVP)
 ```
 
@@ -335,7 +339,7 @@ The team debates:
 - **Option B:** Ship "Save entry" + "View past entries" + "See star count." Three stories. Maya can write, re-read, and feel a small reward. That is a complete experience.
 - **Option C:** Add prompts and notifications too. Five stories. More complete, but doubles the delivery time.
 
-They choose **Option B**. Three stories. One sprint. Maya can journal, revisit her entries, and see her stars grow. If the metrics move (Day-30 retention increases), the team has evidence to invest in S2 (notifications, animations, streaks). If the metrics don't move, the team learned something valuable without spending a quarter.
+They choose **Option B**. Three stories. That is S1 — a Jira Release. Maya can journal, revisit her entries, and see her stars grow. If the metrics move (Day-30 retention increases), the team has evidence to invest in S2 (notifications, animations, streaks). If the metrics don't move, the team learned something valuable without spending a quarter.
 
 ::: tip The First Slice Test
 Ask two questions:
@@ -363,7 +367,7 @@ If both answers are yes, you have a good first slice.
 
 ## Step 7 — How It Changed the Team
 
-Two sprints later, the Living Wondrously Journal S1 is live. Day-7 retention for journal users is 58% (vs. 41% baseline). The PM shares the data at the sprint review. But the bigger change is not in the metrics — it is in the team's behavior.
+Two iterations later, the Living Wondrously Journal S1 is live. Day-7 retention for journal users is 58% (vs. 41% baseline). The PM shares the data at the demo. But the bigger change is not in the metrics — it is in the team's behavior.
 
 ### Before UDOO Discovery
 
@@ -397,31 +401,29 @@ INITIATIVE: Increase Day-30 retention for post-content users
 └── FEATURE: Living Wondrously Journal
     │
     ├── EPIC: Entry Creation (E-LW-01) — covers J1→J4
-    │   ├── Story: Maya sees Journal tab and navigates to it
-    │   ├── Story: Maya sees today's prompt
-    │   ├── Story: Maya types her reflection
-    │   ├── Story: Maya saves her entry ← (the one we shaped above)
-    │   └── Story: Maya edits an existing entry
+    │   ├── Story: Maya writes a daily journal entry        [S1] ← the one we shaped above
+    │   │         (open, see/skip prompt, write, save, earn star — one continuous scene)
+    │   └── Story: Maya edits an existing journal entry     [S1]
+    │             (return to today's saved entry, modify, save — a different visit)
     │
     ├── EPIC: Past Entries (E-LW-02) — covers J5→J6
-    │   ├── Story: Maya views a list of past entries
-    │   └── Story: Maya reads a past entry
+    │   └── Story: Maya reviews her past journal entries    [S1]
+    │             (browse list, tap entry, read, go back — one scene)
     │
-    ├── EPIC: Notifications (E-LW-03) — covers J0 [S2]
-    │   ├── Story: Maya receives a 9pm push notification
-    │   └── Story: Tapping the notification opens the journal
+    ├── EPIC: Notifications (E-LW-03) — covers J0          [S2]
+    │   └── Story: Maya is reminded and returns to journal
+    │             (notification arrives, taps it, journal opens at today's entry)
     │
     ├── EPIC: Stars & Streaks (E-LW-04) — covers J4a
-    │   ├── Story: Star count increments on save [S1]
-    │   ├── Story: Star animation plays on save [S2]
-    │   └── Story: Streak counter shows consecutive days [S2]
+    │   └── Story: Maya sees her writing streak grow        [S2]
+    │             (star animation + consecutive-day streak counter, after save)
     │
-    └── EPIC: AI Reflection (E-LW-05) — covers J7 [S3]
-        ├── Story: Weekly AI summary generated from entries
-        └── Story: Maya reads her weekly reflection
+    └── EPIC: AI Reflection (E-LW-05) — covers J7          [S3]
+        └── Story: Maya reads her weekly AI reflection
+              (AI-generated summary of her entries, delivered at week's end)
 ```
 
-Every story traces back through Epic → Feature → Initiative. Every story references a journey step. Every story has acceptance criteria shaped by Example Mapping and expressed as Gherkin seeds. And every story was born from a single question: *"What is Maya doing right now, and what does she need?"*
+Five epics. Seven stories. Each story is one scene — one user, one goal, one session. Each scene traces back through Epic → Feature → Initiative. Each story references the journey steps it covers. Each story has acceptance criteria shaped by Example Mapping that cover the happy path, the error states, and the edge cases — all on one story, not spread across five. And every story was born from a single question: *"What is Maya doing right now, and what does she need?"*
 
 That is the Upstream process. Not a waterfall document. Not a Jira ticket factory. A conversation — structured by stations, guided by personas, and validated by data — that transforms noise into clarity.
 
