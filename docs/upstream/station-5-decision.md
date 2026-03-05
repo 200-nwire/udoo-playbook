@@ -2,6 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+::: info Where this fits in the spiral
+Station 5 spans two loops. At the **Initiative Loop** level, it corresponds to [Activities I-9 and I-10](/upstream/activities-sprint) — defining the Feature List and slicing S1/S2/S3. At the **Feature Loop** level, it corresponds to [Activity F-7 (Feature Slice)](/upstream/feature-activities) — freezing which Epics ship first. The convergence discipline is the same at both levels: stop exploring, make a defensible decision, document the rationale.
+:::
+
 ## Purpose
 
 Station 5 is where exploration ends and commitment begins. The team **freezes the chosen approach, defines the MVP, plans the rollout, and sets the conditions under which the initiative can be declared a success or a failure**.

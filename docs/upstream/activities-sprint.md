@@ -25,6 +25,13 @@ When those five questions are answered and documented, the initiative is ready t
 
 ---
 
+::: tip Station deep-dives for this loop
+The 5 Discovery Stations are detailed question guides that go deeper than the activity descriptions below. For this loop, the most relevant are:
+- **[Station 1 — Vision & Context](/upstream/station-1-vision)** → feeds I-1, I-2, I-5, I-6
+- **[Station 2 — Problem Framing](/upstream/station-2-problem)** → feeds I-3, I-4, I-8
+- **[Station 5 — Decision & Scope](/upstream/station-5-decision)** → feeds I-9, I-10
+:::
+
 ## The 10 Initiative Activities
 
 Activities are organized into three phases. Each activity is marked:

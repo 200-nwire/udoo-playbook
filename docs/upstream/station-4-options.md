@@ -2,6 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+::: info Where this fits in the spiral
+Station 4 belongs to the **Feature Loop** (Phase 3 — Validate the Approach). It drives [Feature Activities F-8 (Technical Feasibility), F-9 (Spikes), and F-10 (ADR)](/upstream/feature-activities). The discipline of comparing options before committing also applies at the Initiative Loop level, when the team is choosing between fundamentally different initiative directions.
+:::
+
 ## Purpose
 
 Station 4 is where the team transitions from understanding the problem to **exploring how to solve it** — but with discipline. The cardinal rule of this station: **never commit to the first idea**. Always compare at least two viable approaches.

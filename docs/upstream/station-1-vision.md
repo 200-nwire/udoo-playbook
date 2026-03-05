@@ -2,6 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+::: info Where this fits in the spiral
+Station 1 belongs to the **Initiative Loop** (Phase 1 — Frame the Problem). It runs during the first two days of the 2-week Initiative Sprint, and feeds directly into [Initiative Activities I-1, I-2, I-5, and I-6](/upstream/activities-sprint). The questions here are also relevant to the **Feature Loop** when a feature is new enough that the team needs to reestablish who uses it and why.
+:::
+
 ## The Moment This Page Is For
 
 Six weeks into development, someone asks: "Who actually uses this?"

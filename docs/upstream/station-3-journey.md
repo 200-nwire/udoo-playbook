@@ -2,6 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+::: info Where this fits in the spiral
+Station 3 belongs to the **Feature Loop** (Phase 1–2 — Frame and Structure). It is the core of [Feature Activity F-3 (User Journey Mapping)](/upstream/feature-activities) and directly informs F-5 (Define Epics). Every Epic in the system should trace back to the journey steps mapped here. The slicing model (S1/S2/S3) built in this station becomes the Feature Slice in F-7.
+:::
+
 ## Purpose
 
 Station 3 is where the abstract problem becomes a concrete, walkable path. The user journey map is the connective tissue of the entire framework — every Epic, every Story, and every test scenario traces back to a step on this map.

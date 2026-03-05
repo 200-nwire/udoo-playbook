@@ -2,6 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
+::: info Where this fits in the spiral
+Station 2 belongs to the **Initiative Loop** (Phase 1–2 — Frame the Problem). It runs during Days 2–4 of the 2-week Initiative Sprint, and feeds into [Activities I-3, I-4, I-5, and I-8](/upstream/activities-sprint). The discipline of "understand before solving" also applies inside every Feature Loop — particularly when the feature touches an unfamiliar problem area.
+:::
+
 ## Purpose
 
 Station 1 set the frame: who, what, why now, and what success looks like. Station 2 goes deeper. Its job is to **understand the current state with enough rigour that the solution space narrows naturally** — before anyone proposes a solution.
