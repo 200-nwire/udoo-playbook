@@ -60,9 +60,12 @@ const referenceSidebar = [
   {
     text: 'Templates',
     items: [
+      { text: 'Initiative Template', link: '/reference/initiative-template' },
+      { text: 'Master Doc Template', link: '/reference/master-doc-template' },
       { text: 'Epic Template', link: '/reference/epic-template' },
       { text: 'Story Template', link: '/reference/story-template' },
       { text: 'Bug Report Template', link: '/reference/bug-template' },
+      { text: 'Project Health Template', link: '/reference/project-health-template' },
     ],
   },
   {
@@ -74,6 +77,18 @@ const referenceSidebar = [
       { text: 'Gherkin Tagging Standard', link: '/standards/gherkin-tags' },
       { text: 'Tooling Conventions', link: '/standards/tooling' },
       { text: 'Communication Tone', link: '/standards/tone' },
+    ],
+  },
+  {
+    text: '📂 Examples',
+    items: [
+      { text: 'Examples Gallery', link: '/examples/' },
+      { text: 'Initiative — Pninei Halacha', link: '/examples/initiative-pninei-halacha' },
+      { text: 'Initiative — Analytics Layer', link: '/examples/initiative-analytics-layer' },
+      { text: 'Feature — Living Wondrously Journal', link: '/examples/feature-living-wondrously' },
+      { text: 'RCA — Wallet Balance Bug', link: '/examples/rca-wallet-balance' },
+      { text: 'Post-Mortem — JWT Outage', link: '/examples/postmortem-jwt-outage' },
+      { text: 'Story — Journal Entry', link: '/examples/story-journal-entry' },
     ],
   },
 ]
@@ -112,7 +127,6 @@ export default withMermaid(
         ],
       },
       { text: 'Tutorials', link: '/tutorials/' },
-      { text: 'Examples', link: '/examples/' },
       { text: 'Reference', link: '/reference/' },
     ],
 
@@ -282,23 +296,9 @@ export default withMermaid(
         },
       ],
 
-      '/examples/': [
-        {
-          text: '📂 Real Examples',
-          items: [
-            { text: 'Examples Gallery', link: '/examples/' },
-            { text: 'Initiative — Pninei Halacha', link: '/examples/initiative-pninei-halacha' },
-            { text: 'Initiative — Analytics Layer', link: '/examples/initiative-analytics-layer' },
-            { text: 'Feature — Living Wondrously Journal', link: '/examples/feature-living-wondrously' },
-            { text: 'RCA — Wallet Balance Bug', link: '/examples/rca-wallet-balance' },
-            { text: 'Post-Mortem — JWT Outage', link: '/examples/postmortem-jwt-outage' },
-            { text: 'Story — Journal Entry', link: '/examples/story-journal-entry' },
-          ],
-        },
-      ],
-
       '/reference/': referenceSidebar,
       '/standards/': referenceSidebar,
+      '/examples/': referenceSidebar,
     },
 
     socialLinks: [
