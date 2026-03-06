@@ -1,5 +1,11 @@
 # Scale Tiers
 
+Rafi ran a full upstream sprint for an internal tool that three developers would use for six weeks. Portfolio board, ADRs, weekly ceremonies. The tool shipped. No one ever looked at the portfolio board again.
+
+That same month, the ministry LMS engagement — 400 schools, 12-month delivery, regulatory audit requirements — ran lean. No formal DoR, no WIP limits, no Onstream planning. A production incident with no runbook. A regulatory review with no audit trail. Three accounts re-opened after delivery because the acceptance criteria were informal.
+
+Same framework. Wrong configuration in both directions. Different costs. Same mistake.
+
 UDOO scales. Not every project needs every practice, every ceremony, or every artifact. What never scales is using "we're a small team" as the reason to skip the things that protect you.
 
 This page defines three scale tiers. Each tier is a configuration of UDOO — a different emphasis, a different level of formality, and a different set of non-negotiables.

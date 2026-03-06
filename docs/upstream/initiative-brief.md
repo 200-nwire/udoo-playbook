@@ -473,7 +473,3 @@ The PM owns the document, but sections are collaborative. Engineering Lead draft
 
 ---
 
-<div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-  <a href="/upstream/discovery-backbone">← Discovery Backbone</a>
-  <a href="/upstream/user-journey">User Journey Mapping →</a>
-</div>

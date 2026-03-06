@@ -356,7 +356,3 @@ A journey map with 40+ steps covering every possible path. This is unusable — 
 
 ---
 
-<div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-  <a href="/upstream/station-2-problem">← Station 2 — Problem Framing</a>
-  <a href="/upstream/station-4-options">Station 4 — Solution Options →</a>
-</div>

@@ -339,7 +339,3 @@ Print this table and bring it to your next Readiness Review. Run through it for 
 
 ---
 
-<div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-  <a href="/upstream/definition-of-ready">← Definition of Ready</a>
-  <a href="/downstream/">Downstream →</a>
-</div>

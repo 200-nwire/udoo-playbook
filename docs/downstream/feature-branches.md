@@ -2,6 +2,10 @@
 
 <span class="phase-badge downstream">🟢 Downstream</span>
 
+The Someone for Coffee matching algorithm was attempted as a single branch. Two weeks in, main had moved forward with 23 commits from other stories. The merge produced 31 conflicts across 12 files. It took two days to resolve — and the resolution introduced a regression in the chat module. The branch was scrapped and rebuilt as three separate branches, each merged in under two days.
+
+Total time for the three-branch approach: less than the conflict resolution alone.
+
 ## Why Branching Strategy Matters
 
 A branching strategy is the team's agreement on **how code flows from a developer's mind to production**. Without a strategy, you get merge conflicts, broken builds, untested deployments, and the dreaded "it works on my machine." With a good strategy, every change is traceable, reviewable, testable, and reversible.

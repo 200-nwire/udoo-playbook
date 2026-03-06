@@ -1,5 +1,9 @@
 # Roles
 
+The sprint board showed 11 items in progress. The WIP limit was supposed to be 5. Three PRs had been waiting for review for nine days. The last retrospective happened six weeks ago — "we were too busy."
+
+When the new PM asked who was responsible for process health, the answer was: everyone. Which meant: no one. The team knew the vocabulary. Nobody owned the system.
+
 UDOO is a team practice. Individual roles define accountabilities — who is responsible for which outputs, which quality gates, and which ceremonies at each phase.
 
 This page covers who does what, and what breaks when a role is missing or unclear.

@@ -1,8 +1,8 @@
 # The 4-Layer Hierarchy
 
-<div class="callout upstream">
-<strong>People often underestimate how much ambiguity collapses when thinking in layers.</strong> A team jumps to UI too early and the conversation gets stuck on pixels before the problem is even clear. Another team writes stories directly from ideas, and each story ends up oversized or missing context. The 4-layer hierarchy prevents these missteps by separating thinking into deliberate stages.
-</div>
+Avi had a working database schema before anyone asked who needed the journaling feature, or why. The ticket said "Add journaling." That was all. Three weeks later, at the sprint review, the PM asked: "Wait — is this daily or weekly? Prompted or open-ended?" Nobody knew. The work started over.
+
+That's not an execution failure. That's a thinking failure — skipping the layers that make the answers obvious before a line of code is written.
 
 ## Why Layers Matter
 
