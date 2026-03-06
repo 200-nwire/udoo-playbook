@@ -166,8 +166,6 @@ flowchart LR
   D1 -.->|feeds back| E2
 ```
 
-This is the steady-state rhythm. New initiatives are always being shaped. Work is always being built. Services are always being operated. Customer signals are always being collected. The loop never stops.
+Each initiative is in exactly one phase at a time. No initiative spans two phases simultaneously. No initiative enters Downstream without a completed Upstream sprint behind it.
 
-::: tip The RACI Principle Across Phases
-**Accountable** by phase, **Collaborative** across phases. While each role takes ownership in their primary phase, cross-functional involvement ensures smooth transitions. A Tech Lead sits in Upstream architecture sessions. A PM observes Downstream demos. A Support Lead reviews post-mortems. No phase operates in isolation.
-:::
+The diagram makes it look clean. Reality is six people, three initiatives, and a Wednesday grooming session where upstream and downstream collide in one room for exactly 60 minutes. [How Teams Actually Run This](/guide/parallel-work) shows what that looks like on a real team — who's doing what on Monday morning, what the board state is, and the three rules that keep it from becoming chaos.

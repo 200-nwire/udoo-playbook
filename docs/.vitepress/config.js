@@ -59,6 +59,7 @@ export default withMermaid(
             { text: 'Introduction', link: '/guide/introduction' },
             { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
             { text: 'The 4-Layer Hierarchy', link: '/guide/hierarchy' },
+            { text: 'How Teams Actually Run This', link: '/guide/parallel-work' },
             { text: '📖 The Narrative Framework', link: '/guide/narrative' },
           ],
         },
@@ -101,6 +102,7 @@ export default withMermaid(
           items: [
             { text: 'What Kind of Discovery Do I Need?', link: '/upstream/discovery-types' },
             { text: 'Idea Triage — Where Does This Belong?', link: '/upstream/idea-triage' },
+            { text: 'Epic or Feature? How to Tell', link: '/upstream/epic-vs-feature' },
             { text: 'Business Goals → KPIs → Initiatives', link: '/upstream/business-goals' },
           ],
         },
