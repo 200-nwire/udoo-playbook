@@ -129,6 +129,7 @@ export default withMermaid(
         {
           text: 'Sprint Operations',
           items: [
+            { text: 'Grooming Session', link: '/upstream/grooming-session' },
             { text: 'Cadence & Meeting Recipes', link: '/upstream/cadence' },
             { text: 'Anti-Patterns', link: '/upstream/anti-patterns' },
             { text: 'Initiative Walkthrough', link: '/upstream/initiative-walkthrough' },
