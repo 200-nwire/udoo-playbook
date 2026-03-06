@@ -1,6 +1,83 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
+const guideSidebar = [
+  {
+    text: '📖 Foundations',
+    items: [
+      { text: 'The Manifesto', link: '/guide/manifesto' },
+      { text: '🚀 Start Here', link: '/guide/start-here' },
+      { text: 'Why Teams Fail', link: '/guide/why-teams-fail' },
+      { text: 'The 5 Core Principles', link: '/guide/principles' },
+    ],
+  },
+  {
+    text: '📐 The Framework',
+    items: [
+      { text: 'Introduction', link: '/guide/introduction' },
+      { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
+      { text: 'The 4-Layer Hierarchy', link: '/guide/hierarchy' },
+      { text: 'How Teams Actually Run This', link: '/guide/parallel-work' },
+      { text: '📖 The Narrative Framework', link: '/guide/narrative' },
+    ],
+  },
+  {
+    text: '⚖️ Scale & Roles',
+    items: [
+      { text: 'Scale Tiers (1→3)', link: '/guide/scale-tiers' },
+      { text: 'Roles', link: '/guide/roles' },
+      { text: 'Lite Mode (Small Teams)', link: '/guide/lite-mode' },
+    ],
+  },
+  {
+    text: '🗺️ Using This Book',
+    items: [
+      { text: 'How to Use This Book', link: '/guide/how-to-use' },
+    ],
+  },
+  {
+    text: '📋 Portfolio',
+    items: [
+      { text: 'Overview', link: '/portfolio/' },
+      { text: 'Roadmap Planning', link: '/portfolio/roadmap' },
+      { text: 'Cross-team Dependencies', link: '/portfolio/dependencies' },
+    ],
+  },
+]
+
+const referenceSidebar = [
+  {
+    text: '📋 Reference',
+    items: [
+      { text: 'Overview', link: '/reference/' },
+      { text: 'The 10 Non-Negotiables', link: '/reference/non-negotiables' },
+      { text: 'Phase Gate Checklists', link: '/reference/phase-gates' },
+      { text: 'Escalation Paths', link: '/reference/escalation' },
+      { text: 'Master Cadence Table', link: '/reference/master-cadence' },
+      { text: 'Glossary', link: '/reference/glossary' },
+    ],
+  },
+  {
+    text: 'Templates',
+    items: [
+      { text: 'Epic Template', link: '/reference/epic-template' },
+      { text: 'Story Template', link: '/reference/story-template' },
+      { text: 'Bug Report Template', link: '/reference/bug-template' },
+    ],
+  },
+  {
+    text: '📐 Standards',
+    items: [
+      { text: 'Overview', link: '/standards/' },
+      { text: 'Jira Issue Type Guide', link: '/standards/jira-issue-types' },
+      { text: 'Bug Label System', link: '/standards/bug-labels' },
+      { text: 'Gherkin Tagging Standard', link: '/standards/gherkin-tags' },
+      { text: 'Tooling Conventions', link: '/standards/tooling' },
+      { text: 'Communication Tone', link: '/standards/tone' },
+    ],
+  },
+]
+
 export default withMermaid(
   defineConfig({
   base: '/udoo-playbook/',
@@ -24,7 +101,6 @@ export default withMermaid(
     siteTitle: 'R&D Framework',
 
     nav: [
-      { text: '🚀 Start Here', link: '/guide/start-here' },
       { text: 'Guide', link: '/guide/introduction' },
       {
         text: 'Phases',
@@ -35,49 +111,14 @@ export default withMermaid(
           { text: '🟣 Offstream — Growth & Customer Success', link: '/offstream/' },
         ],
       },
-      { text: '📋 Portfolio', link: '/portfolio/' },
-      { text: 'Standards', link: '/standards/' },
       { text: 'Tutorials', link: '/tutorials/' },
       { text: 'Examples', link: '/examples/' },
       { text: 'Reference', link: '/reference/' },
     ],
 
     sidebar: {
-      '/guide/': [
-        {
-          text: '📖 Foundations',
-          items: [
-            { text: 'The Manifesto', link: '/guide/manifesto' },
-            { text: '🚀 Start Here', link: '/guide/start-here' },
-            { text: 'Why Teams Fail', link: '/guide/why-teams-fail' },
-            { text: 'The 5 Core Principles', link: '/guide/principles' },
-          ],
-        },
-        {
-          text: '📐 The Framework',
-          items: [
-            { text: 'Introduction', link: '/guide/introduction' },
-            { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
-            { text: 'The 4-Layer Hierarchy', link: '/guide/hierarchy' },
-            { text: 'How Teams Actually Run This', link: '/guide/parallel-work' },
-            { text: '📖 The Narrative Framework', link: '/guide/narrative' },
-          ],
-        },
-        {
-          text: '⚖️ Scale & Roles',
-          items: [
-            { text: 'Scale Tiers (1→3)', link: '/guide/scale-tiers' },
-            { text: 'Roles', link: '/guide/roles' },
-            { text: 'Lite Mode (Small Teams)', link: '/guide/lite-mode' },
-          ],
-        },
-        {
-          text: '🗺️ Using This Book',
-          items: [
-            { text: 'How to Use This Book', link: '/guide/how-to-use' },
-          ],
-        },
-      ],
+      '/guide/': guideSidebar,
+      '/portfolio/': guideSidebar,
 
       '/upstream/': [
         {
@@ -223,30 +264,6 @@ export default withMermaid(
         },
       ],
 
-      '/portfolio/': [
-        {
-          text: '📋 Portfolio',
-          items: [
-            { text: 'Overview', link: '/portfolio/' },
-            { text: 'Roadmap Planning', link: '/portfolio/roadmap' },
-            { text: 'Cross-team Dependencies', link: '/portfolio/dependencies' },
-          ],
-        },
-      ],
-
-      '/standards/': [
-        {
-          text: '📐 Standards',
-          items: [
-            { text: 'Overview', link: '/standards/' },
-            { text: 'Jira Issue Type Guide', link: '/standards/jira-issue-types' },
-            { text: 'Bug Label System', link: '/standards/bug-labels' },
-            { text: 'Gherkin Tagging Standard', link: '/standards/gherkin-tags' },
-            { text: 'Tooling Conventions', link: '/standards/tooling' },
-            { text: 'Communication Tone', link: '/standards/tone' },
-          ],
-        },
-      ],
 
       '/tutorials/': [
         {
@@ -280,27 +297,8 @@ export default withMermaid(
         },
       ],
 
-      '/reference/': [
-        {
-          text: '📋 Reference',
-          items: [
-            { text: 'Overview', link: '/reference/' },
-            { text: 'The 10 Non-Negotiables', link: '/reference/non-negotiables' },
-            { text: 'Phase Gate Checklists', link: '/reference/phase-gates' },
-            { text: 'Escalation Paths', link: '/reference/escalation' },
-            { text: 'Master Cadence Table', link: '/reference/master-cadence' },
-            { text: 'Glossary', link: '/reference/glossary' },
-          ],
-        },
-        {
-          text: 'Templates',
-          items: [
-            { text: 'Epic Template', link: '/reference/epic-template' },
-            { text: 'Story Template', link: '/reference/story-template' },
-            { text: 'Bug Report Template', link: '/reference/bug-template' },
-          ],
-        },
-      ],
+      '/reference/': referenceSidebar,
+      '/standards/': referenceSidebar,
     },
 
     socialLinks: [
