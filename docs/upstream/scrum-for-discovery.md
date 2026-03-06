@@ -504,4 +504,3 @@ Show & Improve
 
 ---
 
-[← Story Mapping](/upstream/story-mapping) · [Definition of Ready →](/upstream/definition-of-ready)

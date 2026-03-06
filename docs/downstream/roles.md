@@ -280,4 +280,3 @@ When a story moves from Ready to Pull to In Dev, its acceptance criteria are fro
 
 ---
 
-[← Back to Downstream Overview](/downstream/) · [Story Workflow →](/downstream/story-workflow)

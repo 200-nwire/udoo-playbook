@@ -194,4 +194,3 @@ Without Offstream signals flowing to Upstream, the product team operates on assu
 
 ---
 
-[← Back to Offstream Overview](/offstream/) · [Customer Lifecycle Model →](/offstream/customer-lifecycle)

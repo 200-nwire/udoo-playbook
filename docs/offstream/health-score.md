@@ -2,6 +2,20 @@
 
 <span class="phase-badge offstream">🟣 Offstream</span>
 
+## The Moment This Page Is For
+
+Noa manages 32 accounts. It is Monday morning. She has three QBRs this week, a renewal call on Thursday, and two onboarding calls to reschedule. She will spend 95% of her week on the loudest accounts — the ones who email her, who have open tickets, who push back in calls.
+
+Strato is not loud. Strato hasn't emailed in six weeks. Strato's dispatchers haven't logged in to the new template manager in three weeks. The champion who championed the purchase left the company 45 days ago. There are no open tickets. There are no complaints. There is silence.
+
+Silence feels safe. It isn't.
+
+The renewal is in 87 days. Noa hasn't checked in since the kickoff call. She doesn't know that template usage dropped 80% after the champion left. She doesn't know that the replacement never ran training. She doesn't know that the team has gone back to manual entry.
+
+By the time she calls for the renewal conversation, the decision is already made.
+
+The health score exists because Noa cannot watch 32 accounts simultaneously with human attention. It is the system that watches for her — and tells her which silence to pay attention to.
+
 ## Why Health Scores Exist
 
 A CSM managing 30 accounts cannot deeply understand the status of every account at every moment. Without a health score, the CSM relies on gut feeling, recent conversations, and the loudness of the customer. Quiet accounts — the ones that are silently disengaging — get no attention until they announce they are leaving.
@@ -277,4 +291,3 @@ The CSM can manually override the composite score if they have information the d
 
 ---
 
-[← Customer Lifecycle Model](/offstream/customer-lifecycle) · [The Feedback Loop →](/offstream/feedback-loop)

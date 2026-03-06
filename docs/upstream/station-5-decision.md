@@ -322,4 +322,3 @@ Set a specific date — typically Day 7 of the discovery sprint — after which 
 
 ---
 
-[← Station 4 — Solution Options](/upstream/station-4-options) · [Definition of Ready →](/upstream/definition-of-ready)

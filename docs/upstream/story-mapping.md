@@ -479,4 +479,3 @@ If the team finishes the session and everyone has a clear, shared picture of wha
 
 ---
 
-[← Initiative Walkthrough](/upstream/initiative-walkthrough) · [Scrum for Discovery →](/upstream/scrum-for-discovery)

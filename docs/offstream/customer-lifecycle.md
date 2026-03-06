@@ -2,6 +2,18 @@
 
 <span class="phase-badge offstream">🟣 Offstream</span>
 
+## The Moment This Page Is For
+
+Strato — the B2B SaaS from field service companies — shipped Job Templates in Sprint 3. Rachel the PM was proud. The template-creation flow took 28 seconds instead of 3 minutes. Dispatchers loved it.
+
+Six months later, Strato didn't renew.
+
+The CSM, Noa, was stunned. "They never complained. They had no open tickets." She pulled the analytics. Template usage had peaked at week 4, then dropped steadily for three months. Nobody had noticed because nobody was looking. The champion who drove the purchase had left in month 2. The replacement never ran a training session. The dispatchers went back to re-entering job fields manually.
+
+The feature was good. The post-delivery work was not. Strato churned not because of what was built, but because of what happened after it shipped.
+
+The customer lifecycle model exists to prevent exactly this. Every account is somewhere in a journey — from onboarding through to advocacy. Knowing where they are determines what the Offstream team does. Ignoring where they are is how Strato happens.
+
 ## The Six Stages
 
 A customer's relationship with your product is not a single event — it is a journey through distinct stages, each with its own activities, risks, and success criteria. Understanding where each account sits in this lifecycle determines what the Offstream team does for them, what signals they generate, and how those signals feed back to [Upstream](/upstream/).
@@ -274,4 +286,3 @@ Every stage generates data that should flow through the [Feedback Loop](/offstre
 
 ---
 
-[← Roles & Ownership](/offstream/roles) · [Health Score Framework →](/offstream/health-score)

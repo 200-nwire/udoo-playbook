@@ -2,6 +2,16 @@
 
 <span class="phase-badge offstream">🟣 Offstream</span>
 
+## The Moment This Page Is For
+
+Twelve months after Strato churned, Dan — their former tech lead — joined a competitor's platform. In his first week, he mentioned to their PM: "At Strato we had a huge pain point — job templates were great but you couldn't apply a template to recurring jobs automatically. We asked our old vendor about it three times and nothing happened. That's honestly a big part of why we left."
+
+The old vendor's PM had never heard this. The requests had been logged by the CSM in a shared Notion doc that nobody read. They weren't in Jira. They weren't in the product roadmap conversation. They died in a doc.
+
+That feature — recurring template application — would have been 6 days of development. Instead it became a reason for Strato to leave.
+
+The feedback loop is the answer to this. Not a Notion doc. Not a Slack channel. Not "tell us what you need." A formal path from customer signal to PM decision — logged, categorised, routed, and visible. If a signal doesn't have a path into Upstream, it doesn't exist as product intelligence. It's just noise that somebody heard once.
+
 ## The Most Important Connection in the Framework
 
 The feedback loop from Offstream back to Upstream is the mechanism that makes the entire framework **self-improving**. Without it, the product team operates on assumptions. With it, the product team operates on evidence.
@@ -347,4 +357,3 @@ The feedback loop breaks when:
 
 ---
 
-[← Health Score Framework](/offstream/health-score) · [Account & Revenue Cadence →](/offstream/account-cadence)

@@ -289,4 +289,3 @@ If someone who has never heard of this initiative can read your Station 2 output
 
 ---
 
-[← Station 1 — Vision & Context](/upstream/station-1-vision) · [Station 3 — User Journey & Slices →](/upstream/station-3-journey)

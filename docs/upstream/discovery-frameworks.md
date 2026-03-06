@@ -730,4 +730,3 @@ If you take nothing else from this catalog: **never write a Jira ticket that doe
 
 ---
 
-[← Discovery Backbone](/upstream/discovery-backbone) · [Initiative Walkthrough →](/upstream/initiative-walkthrough)

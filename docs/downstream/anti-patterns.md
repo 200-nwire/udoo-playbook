@@ -374,4 +374,3 @@ If more than 2 boxes are checked, the team has systemic issues that individual d
 
 ---
 
-[← Gherkin & AssertThat Patterns](/downstream/gherkin) · [Cadence & Ceremonies →](/downstream/cadence)

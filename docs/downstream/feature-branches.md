@@ -521,4 +521,3 @@ The Someone for Coffee matching algorithm was originally attempted as a single 2
 
 ---
 
-[← Kanban Flow](/downstream/kanban-flow) · [Release Slicing →](/downstream/release-slicing)

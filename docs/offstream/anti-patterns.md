@@ -2,9 +2,13 @@
 
 <span class="phase-badge offstream">🟣 Offstream</span>
 
-Offstream anti-patterns are behaviours and organisational dysfunctions that silently erode customer relationships, block the feedback loop, and turn revenue into churn. They are dangerous precisely because they are invisible — you do not see the customer who left because no one was watching, the signal that never reached product, or the renewal that was lost three months before anyone noticed.
+Noa had 32 accounts. She knew which ones emailed her. She knew which ones complained. She knew which ones were excited about the latest release.
 
-Each anti-pattern below follows the same structure: what it is, what it costs, how to detect it, and how to fix it.
+She did not know which ones were quietly leaving.
+
+Offstream anti-patterns are invisible by nature. You don't see the customer who left because no one was watching. You don't see the signal that died in a Notion doc. You don't see the renewal that was lost 90 days before the contract expired, when the champion left and nobody called.
+
+Each pattern below follows the same structure: what it is, what it costs, how to detect it, and how to fix it. Most teams exhibit at least two of these. Some exhibit all six.
 
 ---
 
@@ -247,4 +251,3 @@ If your team exhibits one of these anti-patterns, resist the urge to blame the C
 
 ---
 
-[← Account & Revenue Cadence](/offstream/account-cadence) · [Back to Offstream Overview →](/offstream/)

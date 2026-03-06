@@ -261,4 +261,3 @@ If you are unsure about severity or impact, do not guess — flag it for triage.
 
 ---
 
-[← Back to Standards Overview](/standards/)

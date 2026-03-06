@@ -261,4 +261,3 @@ QBRs are scheduled individually across weeks 10–13, depending on customer avai
 
 ---
 
-[← The Feedback Loop](/offstream/feedback-loop) · [Anti-Patterns →](/offstream/anti-patterns)

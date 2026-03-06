@@ -817,4 +817,3 @@ After 10 stories, the workflow will feel natural. After 50, it will feel fast. A
 
 ---
 
-[← Release Slicing](/downstream/release-slicing) · [Downstream Anti-Patterns →](/downstream/anti-patterns)

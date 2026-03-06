@@ -551,4 +551,3 @@ The internal notes are detailed, technical, and action-oriented. The external no
 
 ---
 
-[← Feature Branches & SSDLC](/downstream/feature-branches) · [Developer Workflow E2E →](/downstream/dev-workflow-e2e)

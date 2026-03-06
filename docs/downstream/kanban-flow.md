@@ -467,4 +467,3 @@ A team that calls itself "Kanban" but has no WIP limits, no flow metrics, no ret
 
 ---
 
-[← Story Workflow](/downstream/story-workflow) · [Feature Branches & SSDLC →](/downstream/feature-branches)

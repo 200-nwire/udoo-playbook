@@ -429,4 +429,3 @@ That is the Upstream process. Not a waterfall document. Not a Jira ticket factor
 
 ---
 
-[← Discovery Frameworks Catalog](/upstream/discovery-frameworks) · [Story Mapping →](/upstream/story-mapping)

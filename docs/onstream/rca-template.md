@@ -335,4 +335,3 @@ A bad RCA says: *"Developer made a mistake. Fixed. Done."* This is not an RCA �
 
 ---
 
-[← Bug Taxonomy](/onstream/bug-taxonomy) · [Post-Mortem Template →](/onstream/post-mortem-template)

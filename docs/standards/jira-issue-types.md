@@ -421,4 +421,3 @@ Sub-tasks inherit the parent Story's context. Their names are short and action-o
 
 ---
 
-[← Back to Standards Overview](/standards/)

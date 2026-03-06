@@ -359,4 +359,3 @@ Every service maintains three dashboards:
 
 ---
 
-[← Back to Standards Overview](/standards/)

@@ -371,4 +371,3 @@ Ask yourself: "If I were reading this for the first time, with no other context,
 
 ---
 
-[← Back to Standards Overview](/standards/)

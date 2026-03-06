@@ -460,4 +460,3 @@ If a PR is opened without a story link, the reviewer's first action is to reques
 
 ---
 
-[← Back to Downstream Overview](/downstream/) · [Definition of Done →](/downstream/definition-of-done)

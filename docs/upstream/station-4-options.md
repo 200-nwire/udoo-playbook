@@ -392,4 +392,3 @@ Consensus is not the same as agreement. If everyone immediately agrees on one op
 
 ---
 
-[← Station 3 — User Journey & Slices](/upstream/station-3-journey) · [Station 5 — Decision & Scope →](/upstream/station-5-decision)

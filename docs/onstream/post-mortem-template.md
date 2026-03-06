@@ -309,4 +309,3 @@ Before sharing a post-mortem, confirm:
 
 ---
 
-[← RCA Template](/onstream/rca-template) · [Back to Onstream Overview →](/onstream/)

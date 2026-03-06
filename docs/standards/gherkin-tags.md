@@ -340,4 +340,3 @@ Tags enable meaningful test reports beyond simple pass/fail:
 
 ---
 
-[← Back to Standards Overview](/standards/)
