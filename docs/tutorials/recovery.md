@@ -225,8 +225,3 @@ A partial recovery — business goal documented, one persona defined, features l
 
 ---
 
-→ [The Discovery Spiral](/upstream/spiral-model) — the model this recovery is rebuilding toward
-→ [Project Master Document](/upstream/project-master-doc) — the document to create during recovery
-→ [Initiative Activities](/upstream/activities-sprint) — abbreviated version for existing projects
-→ [Feature Activities](/upstream/feature-activities) — pick up here once initiative context exists
-→ [Definition of Ready](/upstream/definition-of-ready) — the gate every story must pass, recovered or not

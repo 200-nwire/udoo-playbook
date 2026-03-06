@@ -32,6 +32,16 @@ The 5 Discovery Stations are detailed question guides that go deeper than the ac
 - **[Station 5 — Decision & Scope](/upstream/station-5-decision)** → feeds I-9, I-10
 :::
 
+::: info If you need the short version
+Four things must happen before this loop ends:
+1. **Initiative Brief** — one page on the problem, the user, and why now (I-1)
+2. **Experience Snapshot** — 150 words, a named person in a specific moment (I-6)
+3. **Stakeholder sign-off** — agreement on the problem before you name any features (I-7)
+4. **Feature List with S1 line** — what ships first, confirmed by stakeholder (I-9, I-10)
+
+Everything else in this loop deepens those four. Read the activities as reference when you're working on a specific one — not as a sequential checklist to complete top to bottom.
+:::
+
 ## The 10 Initiative Activities
 
 Activities are organized into three phases. Each activity is marked:
@@ -297,6 +307,3 @@ A Feature Loop that starts without this package will spend its first two days re
 
 ---
 
-→ [The Discovery Spiral](/upstream/spiral-model) — how Initiative, Feature, and Epic Loops connect
-→ [Feature Activities](/upstream/feature-activities) — next: what happens inside each Feature Loop
-→ [Definition of Ready](/upstream/definition-of-ready) — the gate stories must pass before entering Downstream

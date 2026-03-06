@@ -445,4 +445,3 @@ Track two metrics across 3–4 sprints: (1) stories sent back from Downstream to
 
 ---
 
-[← Anti-Patterns](/upstream/anti-patterns) · [Back to Upstream Overview →](/upstream/)

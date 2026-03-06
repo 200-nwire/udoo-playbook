@@ -338,7 +338,44 @@ Verdict: [ ] Ready  [ ] Almost (action: ___ owner: ___ by: ___)  [ ] Not Ready
 
 ---
 
-<div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-  <a href="/upstream/station-3-journey">← Station 3 — Journey & Slices</a>
-  <a href="/upstream/anti-patterns">Upstream Anti-Patterns →</a>
-</div>
+## Reading a Story With Fresh Eyes
+
+The 9-point checklist tells you what must be true. But a developer often knows within 60 seconds whether a story is actually ready — before running any formal checklist at all.
+
+The signal is simple: **can you start building without asking a question?**
+
+Avi picks up a story on Monday morning. The title is "User can resume reading." He opens it. The story says: *As Avi, a Pninei Halacha reader who uses the app daily across two devices, I want to resume reading from where I left off, so that I don't waste time searching for my place.*
+
+There are five acceptance criteria. One of them covers the offline edge case. There's a Figma link. The button copy is defined. The Tech Lead left a note: "Local storage approach confirmed — see spike report linked."
+
+Avi opens his editor.
+
+Now imagine the story says: *"Implement resume reading functionality."* No persona. No ACs. No design. No technical note. Avi closes it and messages the PM.
+
+That message is the cost.
+
+### The three questions a developer asks first
+
+**1. Who am I building for, and why do they care?**
+
+If the persona is unnamed or generic ("a user"), the story was written for no one. Named persona with a reason — "Avi, who reads daily on his commute and always loses his place" — tells the developer what matters most before they've read a single AC.
+
+**2. Do I know what "done" looks like?**
+
+Read the first acceptance criterion. Is it testable? "The user can see their position" is not testable. "The app opens to the exact chapter and scroll position from the last session, within 2 seconds" is. If the ACs could pass QA and still leave the user confused, they're not done.
+
+**3. Is there anything I'd need to ask before I can start?**
+
+One unanswered question is a warning sign. Two is a broken story. Not a flaw in the AC writing — a signal that the Feature Loop or Epic Loop ended before the decisions were made. The story needs to go back.
+
+### What a ready story feels like
+
+A ready story is boring in the best way. The developer reads it, nods, and knows what to build. There's nothing to interpret. No decisions left open. The design exists. The edge cases are written down. The data model is confirmed.
+
+It takes 30 minutes to write a story that feels this way — but only after the Feature Loop has resolved what the feature is, and the Epic Loop has resolved what this specific scene requires. Those loops take 3–5 days. The payoff is that every developer who picks up the story spends zero time reconstructing context.
+
+The stories that feel uncertain — the ones with "TBD" in the ACs, the missing wireframe, the vague persona — were written fast. They borrow time from the developer, the QA lead, and eventually the user. The interest rate is high.
+
+::: tip For newcomers: trust the feeling
+If you're new to the team and a story feels unclear, it's probably not clear. The DoR checklist exists to make that feeling objective. Run through the 9 points. Find the specific gap. Name it in the story's comments with what needs to happen. That's the right move — not guessing, and not asking the PM to fill in what the loop was supposed to produce.
+:::

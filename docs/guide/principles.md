@@ -108,6 +108,3 @@ That is what UDOO is trying to produce.
 
 ---
 
-**→ Next:** [Introduction](/guide/introduction) — how the four phases are structured and what's in this book.
-
-**→ Or jump straight to practice:** [Scale Tiers](/guide/scale-tiers) to understand which configuration fits your project, or [From Chaos to Flow](/tutorials/from-chaos-to-flow) to see what adopting these practices actually looks like.

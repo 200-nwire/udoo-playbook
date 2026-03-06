@@ -223,7 +223,3 @@ Last updated: [date] | Owner: [PM name]
 
 ---
 
-→ [The Discovery Spiral](/upstream/spiral-model) — how the three loops connect to this document
-→ [Initiative Activities](/upstream/activities-sprint) — Loop 1: produces entries for the Initiative Registry
-→ [Feature Activities](/upstream/feature-activities) — Loop 2: produces entries for the Feature Backlog
-→ [Recovering an Existing Project](/tutorials/recovery) — how to build this document for a project that didn't start with one

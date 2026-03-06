@@ -255,8 +255,3 @@ If your Jira board looks like one of these, the loop structure is breaking down:
 
 ---
 
-→ [Discovery Spiral](/upstream/spiral-model) — how the three loops connect
-→ [Initiative Activities](/upstream/activities-sprint) — what happens in Loop 1
-→ [Feature Activities](/upstream/feature-activities) — what happens in Loop 2
-→ [Epic Activities](/upstream/epic-activities) — what happens in Loop 3
-→ [Definition of Ready](/upstream/definition-of-ready) — the gate before a story enters a sprint

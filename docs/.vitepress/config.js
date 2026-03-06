@@ -103,6 +103,7 @@ export default withMermaid(
             { text: 'What Kind of Discovery Do I Need?', link: '/upstream/discovery-types' },
             { text: 'Idea Triage — Where Does This Belong?', link: '/upstream/idea-triage' },
             { text: 'Epic or Feature? How to Tell', link: '/upstream/epic-vs-feature' },
+            { text: 'What Bad Framing Costs', link: '/upstream/framing-matters' },
             { text: 'Business Goals → KPIs → Initiatives', link: '/upstream/business-goals' },
           ],
         },

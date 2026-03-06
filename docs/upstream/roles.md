@@ -260,4 +260,3 @@ Don't let the PM run every meeting. When the BA facilitates a readiness check, t
 
 ---
 
-[← Back to Upstream Overview](/upstream/) · [Station 1 — Vision & Context →](/upstream/station-1-vision)

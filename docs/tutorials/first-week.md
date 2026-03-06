@@ -260,7 +260,3 @@ Week 4:  Epic Loop (Epic 1 from Feature 1) ──────┐  │  ← sprin
 
 ---
 
-→ [Discovery Spiral](/upstream/spiral-model) — understand the three loops before starting
-→ [Initiative Activities](/upstream/activities-sprint) — the full 10-activity breakdown
-→ [Recovering an Existing Project](/tutorials/recovery) — if you're joining a team that already has work in progress
-→ [Jira Setup](/upstream/jira-setup) — configure your board for the spiral model

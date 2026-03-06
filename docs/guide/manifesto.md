@@ -54,6 +54,3 @@ That is worth building for.
 
 ---
 
-**→ Ready to begin?** [Start Here](/guide/start-here)
-
-**→** [Why Teams Fail](/guide/why-teams-fail) — the seven failure patterns this framework was built to address.

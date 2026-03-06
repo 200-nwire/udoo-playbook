@@ -42,6 +42,16 @@ In other words: every story passes all 9 DoR checkpoints.
 The Epic Loop doesn't have its own Discovery Station — its discipline is execution, not exploration. The three-amigos technique (E-2), example mapping (E-4), and the 9-point DoR check (E-7) are the quality gates here. If you find yourself needing to resolve major scope questions during E-2, it means the [Feature Loop](/upstream/feature-activities) ended too early — go back and close the open questions there before continuing.
 :::
 
+::: info If you need the short version
+Four things happen in every Epic Loop, no exceptions:
+1. **Epic Brief** — one paragraph: goal, journey steps covered, done-when (E-1)
+2. **Three Amigos session** — PM + Dev + QA agree on the story list together (E-2)
+3. **Stories that pass DoR** — all 9 checkpoints, verified by the team (E-7)
+4. **Sprint confirmed** — stories marked Ready in Jira, delivery team knows they're next (E-8)
+
+The loop takes 2–3 days per epic. If it's taking longer, a story needs splitting or a Feature Loop question resurfaced and needs resolving before stories can be written.
+:::
+
 ## The 8 Epic Activities
 
 ---
@@ -292,7 +302,3 @@ When stories are not ready:
 
 ---
 
-→ [The Discovery Spiral](/upstream/spiral-model) — how the three loops connect
-→ [Definition of Ready](/upstream/definition-of-ready) — the 9 checkpoints every story must pass
-→ [Feature Activities](/upstream/feature-activities) — previous: the Feature Loop
-→ [Kanban Flow](/downstream/kanban-flow) — what happens after stories enter Downstream

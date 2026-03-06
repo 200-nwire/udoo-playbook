@@ -498,4 +498,3 @@ A perfectly formatted retro that gets cancelled every other iteration is worse t
 
 ---
 
-[← Anti-Patterns](/downstream/anti-patterns) · [Back to Downstream Overview →](/downstream/)

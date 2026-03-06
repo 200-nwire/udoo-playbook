@@ -472,8 +472,3 @@ That cycle — from discovery to value and back — is the whole framework in mi
 | Acceptance Criteria | State-by-state conditions | 3–8 bullet points | Three Amigos |
 | Gherkin | Given/When/Then scenarios | 3–8 scenarios | Three Amigos |
 
-**→ Next steps:**
-- [Experience Snapshot guide →](/upstream/experience-snapshot)
-- [Story Mapping →](/upstream/story-mapping)
-- [Gherkin & BDD Patterns →](/downstream/gherkin)
-- [The Wrong Way / Right Way tutorial →](/tutorials/wrong-way-right-way)

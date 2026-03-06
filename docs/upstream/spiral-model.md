@@ -180,44 +180,8 @@ Skipping the Feature Loop feels like saving a week. It costs 2–3 sprints of re
 
 ---
 
-## The Time Dimension
-
-The spiral doesn't just nest structurally — it runs on four different clocks. Understanding which clock you're on is what lets you work at the right level without over-engineering or under-specifying.
-
-```
-ANNUAL
-  Company vision. Annual goals. OKRs.
-  Personas defined (or refined). These do not change per initiative.
-  Set once. Referenced always.
-
-QUARTERLY
-  2–3 Initiatives selected from the Initiative Backlog.
-  Each selected Initiative runs a 2-week Initiative Loop.
-  Output: approved Initiative Brief + prioritized Feature list.
-
-ROLLING
-  Feature Backlog maintained continuously.
-  As each Initiative completes, its Features enter the Feature Backlog.
-  PM pulls the next Feature into a Feature Loop when team capacity opens.
-  No fixed cadence — just: "next feature when ready."
-
-JUST-IN-TIME
-  Epic Loops run ~1 week before the Epic enters Downstream.
-  Stories are DoR-checked and marked Ready as dev capacity opens.
-  These run continuously — always slightly ahead of the delivery team.
-
-CONTINUOUS
-  New stories added to existing Features as needs arise.
-  If Feature Brief and Epic context both exist → just DoR check.
-  No loops needed. The alignment already exists above.
-```
-
-This is the payoff of doing the upstream work correctly the first time. A team that has a proper Feature Brief, a user journey map, and named Epics can add a new story in 30 minutes. The PM writes the story, the QA lead runs a DoR check, the story enters the sprint. No meetings. No re-alignment. The context is already there.
-
-A team that skipped the Feature Loop adds a new story and immediately discovers that nobody agrees what the feature is supposed to feel like. The 30-minute story becomes a 2-day clarification spiral.
-
 ::: tip Personas don't change per initiative
-Personas are defined at the company/product level — not per initiative. Maya is Maya. She was defined when the product was first discovered and her profile lives in the [Project Master Document](/upstream/project-master-doc). When you write a new Feature Snapshot, you reference Maya — you don't recreate her. You may zoom into a specific moment for this Feature, but the persona herself doesn't change unless you've learned something genuinely new about your users.
+Personas are defined at the product level, not per initiative. Maya is Maya. When you write a new Feature Snapshot, you reference her — you zoom into a specific moment for this feature, but the person doesn't change unless you've learned something genuinely new about your users. Personas live in the [Project Master Document](/upstream/project-master-doc).
 :::
 
 ---
@@ -278,8 +242,3 @@ This recovery process is documented step-by-step in the [Recovering an Existing 
 
 ---
 
-→ [Initiative Activities](/upstream/activities-sprint) — the 10 activities in the Initiative Loop
-→ [Feature Activities](/upstream/feature-activities) — the 11 activities in the Feature Loop
-→ [Epic Activities](/upstream/epic-activities) — the 8 activities in the Epic Loop
-→ [Project Master Document](/upstream/project-master-doc) — the spine that links annual goals to stories
-→ [Recovering an Existing Project](/tutorials/recovery) — entering the spiral mid-stream

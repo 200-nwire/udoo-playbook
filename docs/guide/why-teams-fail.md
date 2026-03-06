@@ -114,4 +114,3 @@ UDOO will not help a team that treats it as a compliance exercise. It helps team
 
 If that's you, keep reading.
 
-**→ Next:** [The 5 Core Principles](/guide/principles) — what this framework actually believes, and why every practice in it exists.

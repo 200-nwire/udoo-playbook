@@ -49,6 +49,17 @@ The 5 Discovery Stations are detailed question guides that go deeper than the ac
 - **[Station 5 — Decision & Scope](/upstream/station-5-decision)** → feeds F-7 (Feature Slice)
 :::
 
+::: info If you need the short version
+Five things must exist before any story is written for this feature:
+1. **Feature Brief** — purpose, persona, scope, success signal (F-1)
+2. **Experience Snapshot** — specific to this feature's user and moment (F-2)
+3. **Journey map** — every step the user takes, annotated with pain (F-3)
+4. **Named Epics** — each covering a section of the journey (F-5)
+5. **Feature Slice** — what ships first, confirmed by stakeholder (F-7)
+
+Without these five, the Epic Loop builds stories on unstable ground. Read the full activity list as reference while you're doing the work — not as a checklist to complete in order.
+:::
+
 ## The 11 Feature Activities
 
 ---
@@ -303,6 +314,3 @@ Without this package, the Epic Loop starts with a conversation instead of a brie
 
 ---
 
-→ [The Discovery Spiral](/upstream/spiral-model) — how the three loops connect
-→ [Epic Activities](/upstream/epic-activities) — next: what happens inside each Epic Loop
-→ [Initiative Activities](/upstream/activities-sprint) — previous: the Initiative Loop

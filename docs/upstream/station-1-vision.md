@@ -280,7 +280,3 @@ Write these into the **Initiative Brief** in Confluence. This is the document yo
 
 ---
 
-<div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-  <span></span>
-  <a href="/upstream/station-2-problem">Station 2 — Problem Framing →</a>
-</div>
