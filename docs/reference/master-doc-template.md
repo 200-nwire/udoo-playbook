@@ -10,94 +10,101 @@ Six months into a product, someone asks: "Why did we build the reporting module?
 
 ---
 
-## Template
+## Example: The Momentum Master Document
 
-```markdown
-# [Product Name] — Project Master Document
-
-Last updated: YYYY-MM-DD | Owner: [PM name]
+Below is a complete, rendered Master Document for the Momentum product. Use it as the model when creating your own — replace the Momentum data with your product's reality.
 
 ---
 
-## Product Context
-[One paragraph. What is this product? What problem does it solve? For whom?
-What tension does it resolve? Plain language — not marketing, not technical.]
+### Product Context
+
+Momentum is a daily reflection platform for working adults who want to build a journaling habit without adding friction to an already-full day. It serves people who value self-awareness but find existing journaling tools too rigid or too empty. The core tension it resolves: reflection is valuable but friction-heavy. Momentum removes the friction.
+
+**Last updated:** 2025-03-01 &nbsp;·&nbsp; **Owner:** Noa Cohen
 
 ---
 
-## Annual Goals
-Business goals this product directly moves this year. Linked to company OKRs.
+### Annual Goals
+
+Business goals this product directly moves this year, linked to company OKRs. Every Initiative should reference a goal in this table.
 
 | Goal | OKR link | How this product contributes |
 |------|----------|------------------------------|
-| [Goal description] | [OKR-ID or link] | [Specific contribution] |
+| Grow MAU to 50,000 | Q-OKR-2025-R1 | Retention features reduce day-30 churn |
+| Achieve NPS > 45 | Q-OKR-2025-R2 | Journal quality + streaks improve satisfaction |
+| Launch coaching tier | Q-OKR-2025-R3 | Coach dashboard unlocks new segment |
 
-Updated annually when OKRs are set. Every Initiative should reference a goal here.
+Updated annually when OKRs are set.
 
 ---
 
-## Personas
-Named personas for this product. Defined once, reused across all initiatives.
-Never recreated per initiative — only refined when research reveals something genuinely new.
+### Personas
+
+Named personas for this product. Defined once, reused across all initiatives. Never recreated per initiative — only refined when research reveals something genuinely new.
 
 | Persona | Role | Core Job-to-be-Done | Experience Snapshot |
 |---------|------|---------------------|---------------------|
-| [Name] | [Role / segment] | [Primary JTBD] | [Link to full snapshot] |
+| Maya | Working mother, 30s | Build a daily reflection habit without adding friction | [Maya's Snapshot →](#) |
+| Avi | Religious student, 20s | Study sacred texts and track reading progress | [Avi's Snapshot →](#) |
+| Noa | Wellness coach | Track client engagement with reflection tools | [Noa's Snapshot →](#) |
 
 ::: info When to add a new persona
-Only when a user type is genuinely different in their job-to-be-done, context, or failure mode.
-"Another type of busy professional" is a variant, not a new persona. New personas come
-from user research, not brainstorming.
+Only when a user type is genuinely different in their job-to-be-done, context, or failure mode. "Another type of busy professional" is a variant, not a new persona. New personas come from user research, not brainstorming.
 :::
 
 ---
 
-## Initiative Registry
-Every initiative ever run for this product. Past, present, and queued.
+### Initiative Registry
+
+Every initiative ever run for this product — past, present, and queued. Updated quarterly.
 
 | Initiative | Quarter | Status | KPI targeted | Brief |
 |-----------|---------|--------|--------------|-------|
-| [Initiative name] | Q? 20XX | ✅ Done / 🔵 In Progress / 📋 Queued / 💡 Proposed | [Metric + target] | [Link] |
+| Living Wondrously Journal | Q3 2024 | ✅ Done | Day-30 retention +12% | [Brief →](#) |
+| Streak & Reward System | Q4 2024 | ✅ Done | DAU/MAU +8% | [Brief →](#) |
+| Social Sharing | Q1 2025 | 🔵 In Progress | Referral rate +15% | [Brief →](#) |
+| Offline Mode | Q2 2025 | 📋 Queued | Day-7 retention +10% | [Brief →](#) |
+| Coach Dashboard | Q3 2025 | 💡 Proposed | New segment: coaches | — |
 
-**Status key:**
-- ✅ Done — shipped and in Onstream
-- 🔵 In Progress — active in Downstream
-- 📋 Queued — approved, Upstream complete, awaiting team capacity
-- 💡 Proposed — idea logged, not yet started
+**Status key:** ✅ Done · 🔵 In Progress · 📋 Queued · 💡 Proposed
 
 ---
 
-## Feature Backlog
-Every feature across all initiatives — grouped by initiative, showing status.
-This is the PM's queue. Updated when Feature Loops complete.
+### Feature Backlog
+
+Every feature across all initiatives, grouped by initiative. Updated when Feature Loops complete.
 
 | Feature | Initiative | Status | Feature Brief |
 |---------|-----------|--------|---------------|
-| [Feature name] | [Initiative name] | ✅ Done / 🔵 In Progress / 📋 Queued / — | [Link or —] |
+| Journal Entry Creation | Living Wondrously | ✅ Done | [Brief →](#) |
+| Prompt Carousel | Living Wondrously | ✅ Done | [Brief →](#) |
+| Daily Streak Tracker | Streak & Reward | ✅ Done | [Brief →](#) |
+| Social Share Card | Social Sharing | 🔵 In Progress | [Brief →](#) |
+| Friend Activity Feed | Social Sharing | 📋 Queued | — |
 
 ---
 
-## Key Technical Decisions
-ADRs that have shaped this product's architecture. Not a complete technical record —
-just the decisions any new team member should know before making architectural choices.
+### Key Technical Decisions
+
+ADRs that have shaped this product's architecture. Not a complete technical record — just the decisions any new team member should know before making architectural choices.
 
 | Decision | Made | ADR |
 |----------|------|-----|
-| [What was decided] | YYYY-MM-DD | [ADR link] |
+| Vue 3 + Composition API (no Options API) | 2024-05 | [ADR-001 →](#) |
+| MongoDB for user data, Redis for sessions | 2024-05 | [ADR-002 →](#) |
+| Local-first sync with server reconciliation | 2024-09 | [ADR-038 →](#) |
 
 ---
 
-## Team & Ownership
-Who owns what. Updated when the team changes.
+### Team & Ownership
 
 | Role | Person | Owns |
 |------|--------|------|
-| Product Manager | [Name] | Initiative prioritisation, Feature Backlog, DoR quality |
-| Tech Lead | [Name] | Architecture decisions, ADRs, technical feasibility |
-| UX Lead | [Name] | Experience Snapshots, design system, visual references |
-| QA Lead | [Name] | Gherkin scenarios, DoR checks, test coverage |
-| Team Lead | [Name] | Sprint health, WIP limits, cadence, retrospectives |
-```
+| Product Manager | Noa Cohen | Initiative prioritisation, Feature Backlog, DoR quality |
+| Tech Lead | Dan Levi | Architecture decisions, ADRs, technical feasibility |
+| UX Lead | Dana Shapiro | Experience Snapshots, design system, visual references |
+| QA Lead | Yael Katz | Gherkin scenarios, DoR checks, test coverage |
+| Team Lead | Amos Ben-David | Sprint health, WIP limits, cadence, retrospectives |
 
 ---
 
@@ -118,100 +125,41 @@ It is never rewritten from scratch. It accumulates. That accumulation is its val
 
 ## The Traceability Chain
 
-Every story in the system should trace back to this document:
+Every story in the system traces back to this document — and forward through every phase until it becomes an observable signal in production.
+
+**Upstream → Downstream:**
 
 ```
 Project Master Document
-  └── Annual Goal
-        └── Initiative Brief
-              └── Feature Brief
-                    └── Epic
+  └── Annual Goal (OKR)
+        └── Initiative Brief          [Upstream: 5 discovery stations]
+              └── Feature Brief       [Upstream: Feature Loop]
+                    └── Epic          [Upstream: Epic Loop → Jira]
                           └── Story (DoR ✅)
-                                └── Downstream
+                                └── In Dev → In Review → In Test → Released (DoD ✅)
 ```
 
-If you follow this chain and it breaks — a story that doesn't trace to a Feature Brief,
-a Feature that doesn't trace to an Initiative — you've found the gap. Fill the gap before
-writing the story.
+**Released → Operations → Growth → Loop:**
 
----
-
-## Worked Example
-
-```markdown
-# Momentum — Project Master Document
-
-Last updated: 2025-03-01 | Owner: Noa Cohen
-
----
-
-## Product Context
-Momentum is a daily reflection platform for working adults who want to build
-a journaling habit without adding friction to an already-full day. It serves
-people who value self-awareness but find existing journaling tools too rigid
-or too empty. The core tension it resolves: reflection is valuable but
-friction-heavy. Momentum removes the friction.
-
----
-
-## Annual Goals
-| Goal | OKR | How this product contributes |
-|------|-----|------------------------------|
-| Grow MAU to 50,000 | Q-OKR-2025-R1 | Retention features reduce day-30 churn |
-| Achieve NPS > 45 | Q-OKR-2025-R2 | Journal quality + streaks improve satisfaction |
-| Launch coaching tier | Q-OKR-2025-R3 | Coach dashboard unlocks new segment |
-
----
-
-## Personas
-| Persona | Role | Job-to-be-Done | Experience Snapshot |
-|---------|------|----------------|---------------------|
-| Maya | Working mother, 30s | Build a daily reflection habit without adding friction | [Maya's Snapshot →](#) |
-| Avi | Religious student, 20s | Study sacred texts and track reading progress | [Avi's Snapshot →](#) |
-| Noa | Wellness coach | Track client engagement with reflection tools | [Noa's Snapshot →](#) |
-
----
-
-## Initiative Registry
-| Initiative | Quarter | Status | KPI | Brief |
-|-----------|---------|--------|-----|-------|
-| Living Wondrously Journal | Q3 2024 | ✅ Done | Day-30 retention +12% | [Brief →](#) |
-| Streak & Reward System | Q4 2024 | ✅ Done | DAU/MAU +8% | [Brief →](#) |
-| Social Sharing | Q1 2025 | 🔵 In Progress | Referral rate +15% | [Brief →](#) |
-| Offline Mode | Q2 2025 | 📋 Queued | Day-7 retention +10% | [Brief →](#) |
-| Coach Dashboard | Q3 2025 | 💡 Proposed | New segment: coaches | — |
-
----
-
-## Feature Backlog
-| Feature | Initiative | Status | Brief |
-|---------|-----------|--------|-------|
-| Journal Entry Creation | Living Wondrously | ✅ Done | [Brief →](#) |
-| Prompt Carousel | Living Wondrously | ✅ Done | [Brief →](#) |
-| Daily Streak Tracker | Streak & Reward | ✅ Done | [Brief →](#) |
-| Social Share Card | Social Sharing | 🔵 In Progress | [Brief →](#) |
-| Friend Activity Feed | Social Sharing | 📋 Queued | — |
-
----
-
-## Key Technical Decisions
-| Decision | Made | ADR |
-|----------|------|-----|
-| Vue 3 + Composition API (no Options API) | 2024-05 | [ADR-001 →](#) |
-| MongoDB for user data, Redis for sessions | 2024-05 | [ADR-002 →](#) |
-| Local-first sync with server reconciliation | 2024-09 | [ADR-038 →](#) |
-
----
-
-## Team & Ownership
-| Role | Person | Owns |
-|------|--------|------|
-| Product Manager | Noa Cohen | Initiative prioritisation, Feature Backlog |
-| Tech Lead | Dan Levi | Architecture decisions, ADRs |
-| UX Lead | Dana Shapiro | Experience Snapshots, design system |
-| QA Lead | Yael Katz | Gherkin, DoR checks, test coverage |
-| Team Lead | Amos Ben-David | Sprint health, WIP, cadence |
 ```
+Released (DoD ✅)
+  ├── Onstream                        [Service Delivery & SLA]
+  │     ├── 7-day stability observation window
+  │     ├── SLO / SLA monitoring active
+  │     ├── Runbook updated for new behaviour
+  │     └── Incident? → P0–P3 triage → RCA → Post-Mortem → process change
+  │
+  └── Offstream                       [Growth & Customer Success]
+        ├── Customer health score updated
+        ├── NPS / CSAT signal collected
+        ├── Churn & expansion signals tracked
+        └── Feedback signal to PM
+              └── → New Initiative (loop closes back to Upstream)
+```
+
+If the upstream chain breaks — a story with no Feature Brief, a Feature with no Initiative — you've found the gap. **Fill the gap before writing the story.**
+
+If the downstream chain breaks — a released feature with no runbook, no SLO, no health signal — you've found a reliability and growth risk. **Every release is a promise to Onstream. Every release is a signal to Offstream.**
 
 ---
 

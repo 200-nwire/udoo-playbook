@@ -18,19 +18,152 @@ The health review is most valuable when there's nothing obviously wrong. That's 
 
 ---
 
-## Template
+## Example: Momentum — Sprint 22
 
-```markdown
-# Project Health Review — [Product Name]
-
-**Date:** YYYY-MM-DD
-**Sprint:** [Sprint number]
-**Owner:** [Team Lead name]
-**Overall status:** 🟢 Healthy / 🟡 Watch / 🔴 At Risk
+**Date:** 2025-03-14 &nbsp;·&nbsp; **Sprint:** 22 &nbsp;·&nbsp; **Owner:** Amos Ben-David &nbsp;·&nbsp; **Overall status:** 🟡 Watch
 
 ---
 
-## Overall RAG Summary
+### Overall RAG Summary
+
+| Dimension | Status | Trend | One-line summary |
+|-----------|--------|-------|-----------------|
+| Delivery | 🟢 | ↔ | 88% completion, cycle time holding at 2.5 days |
+| Quality | 🟡 | ↓ | 3 P2 bugs opened this sprint; one is aging (sprint 20) |
+| Upstream | 🔴 | ↓ | Only 3 Ready stories — half a sprint's capacity |
+| Process | 🟢 | ↑ | All ceremonies ran; all retro actions closed |
+| People | 🟢 | ↔ | Full team available; morale 4/5 |
+
+---
+
+### 1. Delivery Health
+
+| Metric | This sprint | Last sprint | Threshold |
+|--------|------------|-------------|-----------|
+| Stories completed / committed | 7 / 8 (88%) | 9 / 10 (90%) | ≥ 80% |
+| Average cycle time | 2.5 days | 2.8 days | ≤ 3 days |
+| WIP | 2 | 3 | ≤ 4 |
+| Stale items | 0 | 1 | 0 |
+| PRs open > 2 days | 0 | 0 | 0 |
+
+**Blockers this sprint:** None.
+
+**Status:** 🟢 — Delivery is stable. One story deferred (MOM-341, design not ready in time).
+
+---
+
+### 2. Quality Health
+
+| Priority | Open | New | Closed | Oldest |
+|----------|------|-----|--------|--------|
+| P0 | 0 | 0 | 0 | — |
+| P1 | 0 | 0 | 0 | — |
+| P2 | 3 | 2 | 1 | 21 days (MOM-298) |
+| P3 | 7 | 1 | 2 | 45 days |
+
+P0 target: 0 open. P1 target: all closed within same sprint. P2 target: no item > 4 sprints old.
+
+MOM-298 has been open 3 sprints. Assigning to Dan this sprint — must close. Flaky tests: 2 (within threshold). DoD pass rate: 87%.
+
+**Status:** 🟡 — MOM-298 aging P2 is the watchpoint. All else normal.
+
+---
+
+### 3. Upstream Health
+
+| Metric | Current | Threshold |
+|--------|---------|-----------|
+| Stories in Ready state | 3 | ≥ 6 |
+| Stories failing DoR first check | 1 | ≤ 2 |
+| Active initiatives in discovery | 1 | ≥ 1 |
+| Oldest story with no progress | Sprint 18 | < 6 sprints |
+
+| Sprint | Stories entering sprint | % DoR-ready on day 1 |
+|--------|------------------------|----------------------|
+| Sprint 22 | 8 | 75% |
+| Sprint 21 | 9 | 88% |
+| Sprint 20 | 10 | 90% |
+
+Only 3 stories are Ready — half capacity. Sprint 23 will be thin unless refinement this week produces 4+ more Ready stories.
+
+**Status:** 🔴 — Upstream pipeline is starved. PM to run refinement Wed + Fri. Action: Noa to bring 6 candidate stories to refinement Wednesday.
+
+---
+
+### 4. Process Health
+
+| Ceremony | Last held | Frequency | Owner | Status |
+|----------|-----------|-----------|-------|--------|
+| Daily standup | Daily | Daily | Amos | ✅ Running |
+| Sprint planning | 2025-03-03 | Fortnightly | Amos | ✅ Running |
+| Sprint review | 2025-03-03 | Fortnightly | Noa | ✅ Running |
+| Retrospective | 2025-03-03 | Fortnightly | Amos | ✅ Running |
+| Refinement | 2025-03-07 | Weekly | Noa | ✅ Running |
+
+Retrospective actions from Sprint 21: 2 of 2 closed on time.
+
+**Status:** 🟢 — All ceremonies running. All retro actions resolved.
+
+---
+
+### 5. People Health
+
+| Person | Role | Available | Notes |
+|--------|------|-----------|-------|
+| Amos | Team Lead | 100% | — |
+| Dan | Tech Lead | 100% | On-call this sprint |
+| Noa | PM | 80% | Off Friday |
+| Dana | UX | 100% | — |
+| Yael | QA | 100% | — |
+
+On-call: Dan is on his second sprint in a row — rotate next sprint.
+
+| Dimension | Score (1–5) | Notes |
+|-----------|-------------|-------|
+| Morale | 4 | Strong sprint close last cycle |
+| Clarity | 4 | Upstream gap is known and owned |
+| Pace | 4 | Sustainable — no crunch this sprint |
+
+**Status:** 🟢 — Full team available. On-call rotation needs attention next sprint.
+
+---
+
+### Actions Required
+
+| # | Action | Owner | Due | Priority |
+|---|--------|-------|-----|----------|
+| 1 | Close MOM-298 (aging P2, 3 sprints old) | Dan | Sprint 22 end | 🔴 This sprint |
+| 2 | Run 2 refinement sessions to fill Ready backlog | Noa | Wed + Fri | 🔴 This sprint |
+| 3 | Investigate why MOM-341 design wasn't ready (process gap?) | Noa + Dana | Retro | 🟡 Next sprint |
+| 4 | Rotate on-call — Dan has been on 2 sprints | Amos | Sprint 23 plan | 🟡 Next sprint |
+
+---
+
+### Trend View — Last 4 Sprints
+
+| Dimension | Sprint 19 | Sprint 20 | Sprint 21 | Sprint 22 |
+|-----------|-----------|-----------|-----------|-----------|
+| Delivery | 🟢 | 🟢 | 🟢 | 🟢 |
+| Quality | 🟢 | 🟡 | 🟡 | 🟡 |
+| Upstream | 🟢 | 🟢 | 🟡 | 🔴 |
+| Process | 🟢 | 🟢 | 🟢 | 🟢 |
+| People | 🟢 | 🟢 | 🟢 | 🟢 |
+
+::: warning Upstream trend is the signal to watch
+The upstream pipeline has been degrading for 3 sprints. One 🟡 is a yellow light. Two consecutive 🟡 requires a named owner and plan. 🔴 this sprint — if not resolved within one sprint, escalate to the PM's manager.
+:::
+
+---
+
+## Template Skeleton
+
+::: details Copy-paste this structure into Confluence for a new health review
+
+**Date:** YYYY-MM-DD &nbsp;·&nbsp; **Sprint:** [#] &nbsp;·&nbsp; **Owner:** [Team Lead] &nbsp;·&nbsp; **Overall status:** 🟢 / 🟡 / 🔴
+
+---
+
+**Overall RAG Summary**
 
 | Dimension | Status | Trend | One-line summary |
 |-----------|--------|-------|-----------------|
@@ -42,153 +175,25 @@ The health review is most valuable when there's nothing obviously wrong. That's 
 
 ---
 
-## 1. Delivery Health
+**1. Delivery** — Cycle time · WIP · Stale items · PRs > 2 days · Sprint completion % → **Status:** 🟢 / 🟡 / 🔴
 
-### Sprint Completion
-| Metric | This sprint | Last sprint | Threshold |
-|--------|------------|------------|-----------|
-| Stories committed | [#] | [#] | — |
-| Stories completed | [#] | [#] | ≥ 80% of committed |
-| Points committed | [#] | [#] | — |
-| Points completed | [#] | [#] | ≥ 80% of committed |
-| Stories that bounced (returned from QA/PM) | [#] | [#] | ≤ 1 per sprint |
+**2. Quality** — P0–P3 open counts · Flaky tests · DoD pass rate → **Status:** 🟢 / 🟡 / 🔴
 
-### Flow Metrics
-| Metric | Current | Last sprint | Threshold |
-|--------|---------|------------|-----------|
-| Average cycle time (Ready → Released) | [X days] | [X days] | ≤ 3 days |
-| Current WIP (stories In Dev or In Review) | [#] | [#] | ≤ WIP limit |
-| Stale items (no movement in > 5 days) | [#] | [#] | 0 |
-| PRs open > 2 days | [#] | [#] | 0 |
+**3. Upstream** — Stories in Ready state · DoR pass rate · Active initiatives → **Status:** 🟢 / 🟡 / 🔴
 
-### Blockers
-| Blocker | Impact | Owner | Days blocked | Resolution plan |
-|---------|--------|-------|-------------|-----------------|
-| [Description] | [Story or Epic blocked] | @name | [#] | [Plan] |
+**4. Process** — Ceremonies running · Retro actions resolved → **Status:** 🟢 / 🟡 / 🔴
 
-**Status:** 🟢 / 🟡 / 🔴 — [One sentence explanation]
+**5. People** — Availability · On-call load · Morale / Clarity / Pace → **Status:** 🟢 / 🟡 / 🔴
 
 ---
 
-## 2. Quality Health
-
-### Bug Inventory
-| Priority | Open this sprint | New this sprint | Closed this sprint | Age of oldest |
-|----------|-----------------|-----------------|-------------------|---------------|
-| P0 | [#] | [#] | [#] | [days] |
-| P1 | [#] | [#] | [#] | [days] |
-| P2 | [#] | [#] | [#] | [days] |
-| P3 | [#] | [#] | [#] | [days] |
-
-P0 target: 0 open. P1 target: all closed within same sprint. P2 target: no item > 4 sprints old.
-
-### Test Health
-| Metric | Current | Threshold |
-|--------|---------|-----------|
-| Flaky tests (@flaky tag count) | [#] | ≤ 5 |
-| Smoke suite pass rate (last 5 runs) | [%] | 100% |
-| DoD pass rate (stories passing first QA review) | [%] | ≥ 85% |
-| Stories returned from QA for rework | [#] | ≤ 1/sprint |
-
-**Status:** 🟢 / 🟡 / 🔴 — [One sentence explanation]
-
----
-
-## 3. Upstream Health
-
-### Discovery Pipeline
-| Metric | Current | Threshold |
-|--------|---------|-----------|
-| Stories in Ready state (DoR passed) | [#] | ≥ 1 sprint's capacity |
-| Stories failing DoR on first check | [#] | ≤ 2/sprint |
-| Initiatives in active discovery | [#] | ≥ 1 |
-| Oldest story in backlog with no progress | [age] | < 6 sprints |
-
-### Readiness Trend
-| Sprint | Stories entering sprint | % DoR-ready on day 1 |
-|--------|-----------------------|----------------------|
-| Current | [#] | [%] |
-| Last | [#] | [%] |
-| 2 sprints ago | [#] | [%] |
-
-**Status:** 🟢 / 🟡 / 🔴 — [One sentence explanation]
-
----
-
-## 4. Process Health
-
-### Ceremonies
-| Ceremony | Last held | Frequency | Owner | Status |
-|----------|-----------|-----------|-------|--------|
-| Daily standup | [date] | Daily | Team Lead | Running / Skipped |
-| Sprint planning | [date] | Fortnightly | Team Lead | Running / Skipped |
-| Sprint review | [date] | Fortnightly | PM | Running / Skipped |
-| Retrospective | [date] | Fortnightly | Team Lead | Running / Skipped |
-| Refinement | [date] | Weekly | PM | Running / Skipped |
-
-Any ceremony skipped 2 weeks in a row → 🔴.
-
-### Retrospective Actions
-| Action | Owner | Sprint due | Status |
-|--------|-------|-----------|--------|
-| [Action from last retro] | @name | Sprint [#] | ✅ Done / 🔵 In progress / ❌ Missed |
-
-**Status:** 🟢 / 🟡 / 🔴 — [One sentence explanation]
-
----
-
-## 5. People Health
-
-### Load & Availability
-| Person | Role | Available this sprint | Notes |
-|--------|------|----------------------|-------|
-| [Name] | [Role] | [%] | [Leave / on-call / other project] |
-
-### On-Call
-| Metric | Current |
-|--------|---------|
-| Current on-call rotation size | [# people] |
-| P0 incidents last sprint | [#] |
-| Hours spent on incidents last sprint | [hours] |
-| Same person on-call 2+ sprints in a row? | Yes / No |
-
-### Team Signal
-| Dimension | Score (1–5) | Notes |
-|-----------|-------------|-------|
-| Morale | [1–5] | [Optional context] |
-| Clarity (do we know what to build and why?) | [1–5] | |
-| Pace (is the workload sustainable?) | [1–5] | |
-
-Self-assessed by Team Lead based on standups, 1:1s, and retro sentiment.
-Anything ≤ 2 → address in the current sprint, not next quarter.
-
-**Status:** 🟢 / 🟡 / 🔴 — [One sentence explanation]
-
----
-
-## Actions Required
+**Actions Required**
 
 | # | Action | Owner | Due | Priority |
 |---|--------|-------|-----|----------|
 | 1 | [What needs to happen] | @name | [Date] | 🔴 This sprint / 🟡 Next sprint |
-| 2 | | | | |
 
----
-
-## Notes & Context
-[Anything that doesn't fit in the metrics above — context about a spike in bugs, a team change, an incident that skewed the numbers, etc.]
-
----
-
-## Trend View (last 4 sprints)
-| Dimension | Sprint N-3 | Sprint N-2 | Sprint N-1 | Sprint N |
-|-----------|-----------|-----------|-----------|---------|
-| Delivery | 🟢/🟡/🔴 | 🟢/🟡/🔴 | 🟢/🟡/🔴 | 🟢/🟡/🔴 |
-| Quality | | | | |
-| Upstream | | | | |
-| Process | | | | |
-| People | | | | |
-```
+:::
 
 ---
 
@@ -217,84 +222,3 @@ Anything ≤ 2 → address in the current sprint, not next quarter.
 | DoR pass rate (first check) | ≥ 85% | 70–84% | < 70% |
 | Days since last retrospective | ≤ 14 | 15–21 | > 21 |
 | On-call: same person 2+ sprints | No | — | Yes |
-
----
-
-## Worked Example
-
-```markdown
-# Project Health Review — Momentum
-
-**Date:** 2025-03-14
-**Sprint:** Sprint 22
-**Owner:** Amos Ben-David
-**Overall status:** 🟡 Watch
-
----
-
-## Overall RAG Summary
-
-| Dimension | Status | Trend | One-line summary |
-|-----------|--------|-------|-----------------|
-| Delivery | 🟢 | ↔ | 88% completion, cycle time holding at 2.5 days |
-| Quality | 🟡 | ↓ | 3 P2 bugs opened this sprint; one is aging (sprint 20) |
-| Upstream | 🔴 | ↓ | Only 3 Ready stories — half a sprint's capacity |
-| Process | 🟢 | ↑ | All ceremonies ran; all retro actions closed |
-| People | 🟢 | ↔ | Full team available; morale 4/5 |
-
----
-
-## 1. Delivery Health
-
-| Metric | This sprint | Last sprint | Threshold |
-|--------|------------|------------|-----------|
-| Stories completed / committed | 7 / 8 (88%) | 9 / 10 (90%) | ≥ 80% |
-| Average cycle time | 2.5 days | 2.8 days | ≤ 3 days |
-| WIP | 2 | 3 | ≤ 4 |
-| Stale items | 0 | 1 | 0 |
-| PRs open > 2 days | 0 | 0 | 0 |
-
-**Status:** 🟢 — Delivery is stable. One story deferred (MOM-341, design not ready in time).
-
----
-
-## 2. Quality Health
-
-| Priority | Open | New | Closed | Oldest |
-|----------|------|-----|--------|--------|
-| P0 | 0 | 0 | 0 | — |
-| P1 | 0 | 0 | 0 | — |
-| P2 | 3 | 2 | 1 | 21 days (MOM-298) |
-| P3 | 7 | 1 | 2 | 45 days |
-
-MOM-298 has been open 3 sprints. Assigning to Dan this sprint — must close.
-Flaky tests: 2 (within threshold).
-
-**Status:** 🟡 — MOM-298 aging P2 is the watchpoint. All else normal.
-
----
-
-## 3. Upstream Health
-
-| Metric | Current | Threshold |
-|--------|---------|-----------|
-| Stories in Ready state | 3 | ≥ 6 |
-| Stories failing DoR first check | 1 | ≤ 2 |
-| Active initiatives in discovery | 1 | ≥ 1 |
-
-Only 3 stories are Ready — half capacity. Sprint 23 will be thin unless
-refinement this week produces 4+ more Ready stories.
-
-**Status:** 🔴 — Upstream pipeline is starved. PM to run refinement Wed + Fri.
-             Action: Noa to bring 6 candidate stories to refinement Wednesday.
-
----
-
-## Actions Required
-
-| # | Action | Owner | Due | Priority |
-|---|--------|-------|-----|----------|
-| 1 | Close MOM-298 (aging P2, 3 sprints old) | Dan | Sprint 22 end | 🔴 This sprint |
-| 2 | Run 2 refinement sessions to fill Ready backlog | Noa | Wed + Fri | 🔴 This sprint |
-| 3 | Investigate why MOM-341 design wasn't ready (process gap?) | Noa + Dana | Retro | 🟡 Next sprint |
-```
