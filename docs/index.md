@@ -20,7 +20,7 @@ features:
     link: /upstream/
     linkText: Explore Upstream
   - icon: 🟢
-    title: "Downstream — Engineering & Delivery"
+    title: "Downstream — Engineering & Execution"
     details: "Lean Kanban for execution. Story state machine, Definition of Done, BDD with Gherkin, WIP limits, and feature branches. Ship with discipline."
     link: /downstream/
     linkText: Explore Downstream

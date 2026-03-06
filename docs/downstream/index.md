@@ -1,4 +1,4 @@
-# Downstream — Engineering & Delivery
+# Downstream — Engineering & Execution
 
 <div class="phase-header downstream">
 <h1>🟢 Downstream</h1>

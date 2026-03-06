@@ -121,7 +121,7 @@ export default withMermaid(
         text: 'Phases',
         items: [
           { text: '🔵 Upstream — Product & Discovery', link: '/upstream/' },
-          { text: '🟢 Downstream — Engineering & Delivery', link: '/downstream/' },
+          { text: '🟢 Downstream — Engineering & Execution', link: '/downstream/' },
           { text: '🟠 Onstream — Service Delivery & SLA', link: '/onstream/' },
           { text: '🟣 Offstream — Growth & Customer Success', link: '/offstream/' },
         ],
