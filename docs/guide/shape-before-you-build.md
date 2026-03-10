@@ -42,7 +42,7 @@ These are different artifacts, and confusing them is one of the most common mist
 
 A story map is spatial. The horizontal axis is the user's journey — the steps they take, left to right, through the feature. The vertical axis is depth — the must-have story at the top, the should-have below it, the nice-to-have below that.
 
-You build it in a workshop. The PM, the designer, a developer, and QA in one room for three to four hours. Sticky notes on a wall, or a Miro board if the team is remote. The journey map is already on the wall — the story map reads from it.
+You build it in a workshop. The PM, the designer, a developer, and QA in one room for three to four hours. Sticky notes on a wall, or a digital whiteboard if the team is remote. The journey map is already on the wall — the story map reads from it.
 
 Phase 1: lay out the activities across the top. These are the big steps — "Open app," "See return screen," "Choose action," "Write reflection," "See confirmation." These come directly from the journey map.
 
@@ -85,7 +85,11 @@ Every feature needs one page that captures what it is, who it's for, and what su
 5. **Epic list.** Read from the journey map — each epic is a section of the flow.
 6. **Success metric.** One number, current state and target. "Return-to-write rate: 12% → 30%."
 
-The Feature Brief is the handoff document. When the PM finishes it and the Core Trio (PM, designer, tech lead) signs it, the feature is shaped. The story mapping workshop reads from it. The stories trace back to it. A developer who wants to understand why a story exists follows the chain: story → epic → feature brief → journey map → persona.
+The Feature Brief is the handoff document. When the PM finishes it and the **Core Trio** signs it, the feature is shaped.
+
+The Core Trio is PM, designer, and tech lead — the three people who together see the problem (PM), the experience (designer), and the constraints (tech lead). They own discovery. They are not the same group as the Three Amigos from the grooming session (PO, tech lead, QA) who own refinement. Different work, different people. The tech lead sits in both groups — that's intentional. They are the bridge between "what should we build?" and "can we actually build it?"
+
+The story mapping workshop reads from the Feature Brief. The stories trace back to it. A developer who wants to understand why a story exists follows the chain: story → epic → feature brief → journey map → persona.
 
 → [Feature Activities](/upstream/feature-activities) — the full Feature Discovery outcome checklist
 

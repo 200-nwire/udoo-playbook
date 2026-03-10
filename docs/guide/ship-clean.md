@@ -12,6 +12,10 @@ Avi rewrites it. Two days of work become four. The sprint slips. The retrospecti
 
 ---
 
+::: details About the examples in this path
+The Growth Path follows a team building a reflective journaling app — an app where users write daily reflections, track streaks, and return to their entries over time. The personas (Sara, Maya, Avi, Noa, Roee) appear across all five steps, and the problems that surface at each step are drawn from real patterns across multiple products.
+:::
+
 This is not a communication problem. It is a structural problem.
 
 The story entered development without a shared agreement about what "done" looks like. There was no gate between "someone had an idea" and "a developer is building it." The PM's mental model and Avi's mental model diverged the moment Avi started reading — and nobody knew until the PR review, which is the most expensive place to discover a misunderstanding.

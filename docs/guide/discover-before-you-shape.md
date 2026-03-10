@@ -91,7 +91,11 @@ The reopen triggers make it safe. "We said we'd reopen if the metric didn't move
 
 Discovery is not a phase you do before the "real work." It is work — and it needs the same discipline as delivery.
 
-Run discovery in sprints. A two-week discovery sprint with a backlog of discovery activities, daily standups, and a sprint review where the team presents what they learned — not what they built, what they learned. The Initiative Brief is the definition of done for the discovery sprint.
+Noa's first discovery attempt ran six weeks. The team interviewed users, mapped journeys, debated options — and never converged. There was always one more question to answer, one more assumption to validate. The delivery team sat idle for a month waiting for "discovery to finish." Discovery didn't finish. It just faded out when the pressure to ship became unbearable, and the team started building from whatever they had.
+
+The fix: run discovery in sprints. A two-week discovery sprint with a backlog of discovery activities, daily standups, and a sprint review where the team presents what they learned — not what they built, what they learned.
+
+The standup is three questions: "What did I learn yesterday? What am I investigating today? What's blocking my understanding?" The sprint review is the Core Trio presenting: "Here's who we think the user is, here's the problem as we understand it, here's what we're still unsure about." The Initiative Brief is the definition of done.
 
 This prevents the two most common discovery failures: discovery that never ends (because there's always more to learn) and discovery that never starts (because the team "doesn't have time" for it). A sprint has a start, an end, and a deliverable. Discovery deserves the same.
 
@@ -105,7 +109,7 @@ Once Discover Before You Shape is working — initiatives are validated, feature
 
 **Better discovery workshops.** Move from PM-led workshops to shared facilitation. When the designer facilitates Station 3, they catch journey issues the PM would miss. When the tech lead facilitates Station 4, the PM focuses on listening instead of defending. Rotation builds shared ownership of the discovery output. → [Roles & Ownership](/upstream/roles)
 
-**Better initiative sequencing.** Move from "gut feel" prioritization to structured methods. RICE, WSJF, Impact Mapping — each has strengths for different situations. The Discovery Frameworks Catalog shows when to use which. → [Discovery Frameworks Catalog](/upstream/discovery-frameworks)
+**Better initiative sequencing.** Noa has four candidate initiatives and no principled way to choose between them. Move from gut-feel to a structured method: score each initiative on reach, impact, confidence, and effort. The candidate with the highest score per unit of effort goes first — not the one the loudest stakeholder wants. → [Discovery Frameworks Catalog](/upstream/discovery-frameworks)
 
 **Better assumption management.** The Assumption Register from Station 2 is powerful when maintained. After each feature ships, revisit the assumptions: which were validated? Which were wrong? The register becomes the team's learning record — a living document of what they believed, what they tested, and what they know. → [Station 2 — Problem Framing](/upstream/station-2-problem)
 

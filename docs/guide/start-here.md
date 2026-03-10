@@ -30,15 +30,15 @@ While one initiative is being built, another is being shaped. Your job is to mak
 
 A story is a scene, not a chapter. It traces back up the chain or it isn't ready.
 
-### The 3 gates
+### The 3 handoffs
 
-Three handoffs you never skip:
+Three boundaries you never skip:
 
-- **DoR** (Definition of Ready) — protects the developer. A story doesn't start until all 9 checkpoints pass.
-- **DoD** (Definition of Done) — protects QA and ops. A story isn't done until it ships with monitoring and a runbook.
-- **Stability Point** — protects Customer Success. A feature doesn't move to Offstream until it's run clean within SLOs.
+- **DoR** (Definition of Ready) — protects the developer. A story doesn't start until all 9 checkpoints pass. → [DoR checklist](/upstream/definition-of-ready)
+- **DoD** (Definition of Done) — protects QA and ops. A story isn't done until it ships with monitoring and a runbook. → [DoD checklist](/downstream/definition-of-done)
+- **SLO check** — protects Customer Success. A feature isn't handed to Offstream until it's running reliably within SLOs. → [SLA & SLO Framework](/onstream/sla-slo)
 
-Each gate protects the person who comes next.
+Each boundary protects the person who comes next.
 
 ### The spiral
 
@@ -82,17 +82,7 @@ Discovery nests: Initiative Loop → Feature Loop → Epic Loop.
 
 ## Reading Paths by Role
 
-**Product Manager**
-[Upstream overview](/upstream/) · [Stations 1–5](/upstream/station-1-vision) · [Experience Snapshot](/upstream/experience-snapshot) · [Initiative Walkthrough](/upstream/initiative-walkthrough) · [DoR](/upstream/definition-of-ready)
-
-**Developer / Tech Lead**
-[Downstream overview](/downstream/) · [Kanban Flow](/downstream/kanban-flow) · [Feature Branches](/downstream/feature-branches) · [Developer E2E](/downstream/dev-workflow-e2e) · [BDD Workshop](/tutorials/bdd-workshop)
-
-**QA Engineer**
-[DoR](/upstream/definition-of-ready) · [Gherkin Patterns](/downstream/gherkin) · [DoD](/downstream/definition-of-done) · [Bug Taxonomy](/onstream/bug-taxonomy) · [BDD Workshop](/tutorials/bdd-workshop)
-
-**Manager / Leadership**
-[Scale Tiers](/guide/scale-tiers) · [Roles](/guide/roles) · [Non-Negotiables](/reference/non-negotiables) · [Phase Gates](/reference/phase-gates) · [Master Cadence](/reference/master-cadence)
+For detailed 10-step reading paths for each role (PM, Developer, QA, Designer, DevOps, CS), see → [How to Use This Book](/guide/how-to-use#role-based-reading-paths)
 
 ---
 

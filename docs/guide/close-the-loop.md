@@ -79,6 +79,8 @@ An OKR retrospective asks four questions:
 
 The recommendation is the most important output. Without it, the retrospective is an autopsy. With it, it's a prescription. "Continue the initiative, but the next feature should focus on the return experience specifically, because the data shows that's where the 17%-to-25% gap lives." That recommendation becomes the input to the next discovery cycle.
 
+→ [Strategic Synthesis](/offstream/strategic-synthesis) — where the OKR retro output feeds the quarterly direction decision
+
 ### Strategic Synthesis
 
 Once the team has health scores, a feedback loop, and OKR retrospectives, a synthesis practice becomes possible — and necessary.
@@ -107,9 +109,9 @@ The strategic synthesis is where Offstream becomes Upstream. The loop closes. Wh
 
 ### The Direction Map
 
-When strategic synthesis says the direction needs updating, someone needs to write down the new direction. That document is the Direction Map.
+When strategic synthesis says the direction needs updating, someone needs to write down the new direction. That document is the Direction Map — the strategic anchor that everything else traces to.
 
-It's simple. One page:
+It's deliberately simple. One page:
 
 - **Who we serve.** The primary customer — not a segment, a named archetype with a specific pain.
 - **What problem we exist to solve.** One sentence, diagnostic, not vague.
@@ -156,6 +158,6 @@ Each step solved a real pain. Each pain was revealed by the previous step workin
 
 That's how frameworks actually work. Not by compliance. By solving the next problem that the previous solution made visible.
 
-The manifesto said it: *"You don't need to adopt everything at once. You need to adopt the thing that addresses your worst current pain, and hold to it until it becomes habit. Then the next thing. And the next."*
+The [manifesto](/guide/manifesto) said it: *"You don't need to adopt everything at once. You need to adopt the thing that addresses your worst current pain, and hold to it until it becomes habit. Then the next thing. And the next."*
 
 This is the path. Start where it hurts. Go from there.

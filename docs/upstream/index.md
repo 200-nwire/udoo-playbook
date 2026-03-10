@@ -23,13 +23,16 @@ It is the craft of building clarity — not code. Every hour invested in discove
 
 ```
 Input:   A vague idea, a client request, an incident learning, an NPS theme
-         
-Process: 5 Discovery Stations + Stakeholder Alignment + QA Readiness Check
-         
-Output:  Initiative Brief (frozen)
-         Feature page with journey map
+
+Discovery (PM + Core Trio):
+         Initiative Brief (frozen)
+         Feature Brief with journey map
+         Experience Snapshot
+
+Refinement (PO + Three Amigos):
+         Story map with The Cut drawn
          Epics with journey coverage
-         Stories meeting the Definition of Ready (DoR)
+         DoR-ready Stories → enter Downstream
 ```
 
 ## The Commitment Point
@@ -42,17 +45,43 @@ Not 90% ready. Not "mostly there." Fully ready.
 
 ## Chapter Contents
 
+**Discovery Workshop (Initiative + Feature)**
+
 | Page | What you will learn |
 |------|---------------------|
-| [Roles & Ownership](/upstream/roles) | Who does what in Upstream |
 | [Station 1 — Vision & Context](/upstream/station-1-vision) | Audience, problem, why now, success signals |
 | [Station 2 — Problem Framing](/upstream/station-2-problem) | Current state, pains, constraints, assumptions |
 | [Station 3 — User Journey & Slices](/upstream/station-3-journey) | Journey mapping, step IDs, slice planning |
 | [Station 4 — Solution Options](/upstream/station-4-options) | 2–3 options, tradeoffs, ADRs, spikes |
 | [Station 5 — Decision & Scope](/upstream/station-5-decision) | Chosen approach, MVP, rollout, rollback |
-| [Definition of Ready](/upstream/definition-of-ready) | The 9-point checklist |
-| [Anti-Patterns](/upstream/anti-patterns) | The 6 most common Upstream failures |
+| [Initiative Brief](/upstream/initiative-brief) | The discovery output document |
+| [Experience Snapshot](/upstream/experience-snapshot) | The 150-word narrative that makes the problem real |
+
+**Refinement Practices (Epic + Story)**
+
+| Page | What you will learn |
+|------|---------------------|
+| [Story Mapping](/upstream/story-mapping) | Spatial mapping of the user's journey into stories |
+| [The Cut](/upstream/the-cut) | Focus decision — which stories to refine now vs. later |
+| [Grooming Session](/upstream/grooming-session) | The Three Amigos ceremony for story readiness |
+| [Definition of Ready](/upstream/definition-of-ready) | The 9-point checklist every story must pass |
+
+**Entry Points & Navigation**
+
+| Page | What you will learn |
+|------|---------------------|
+| [What Kind of Discovery Do I Need?](/upstream/discovery-types) | Choose the right entry point |
+| [Idea Triage](/upstream/idea-triage) | Classify incoming work before it enters the spiral |
+| [Epic vs Feature](/upstream/epic-vs-feature) | How to tell the difference |
+| [The Discovery Spiral](/upstream/spiral-model) | How loops, stations, and refinement fit together |
+
+**Operations & Reference**
+
+| Page | What you will learn |
+|------|---------------------|
+| [Roles & Ownership](/upstream/roles) | Who does what in Upstream |
 | [Cadence](/upstream/cadence) | Ceremonies, frequency, owners |
+| [Anti-Patterns](/upstream/anti-patterns) | The 6 most common Upstream failures |
 
 ## The Discovery Workshop
 

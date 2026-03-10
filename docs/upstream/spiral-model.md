@@ -139,7 +139,7 @@ The spiral adapts to project size, not the other way around.
 
 | Tier | Initiative Loop | Feature Loop | Epic Loop |
 |------|----------------|--------------|-----------|
-| **Tier 1 — Programme** | Full 2-week sprint, all 10 activities | Full 1-week sprint, all 11 activities | Full 2–3 day session, all 8 activities |
+| **Tier 1 — Programme** | Full 2-week sprint, all activities | Full 1-week sprint, all activities | Full 2–3 day session, all activities |
 | **Tier 2 — Standard** | 2-week sprint, MUST activities only | 3-day sprint, MUST activities | 1-day session |
 | **Tier 3 — Lean** | Initiative + Feature loops combined: 1 week | — (merged into initiative loop) | Informal Three Amigos per story |
 

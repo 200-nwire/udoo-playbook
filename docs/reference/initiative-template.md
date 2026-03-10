@@ -1,6 +1,6 @@
 # Initiative Template
 
-Copy this template into a new Confluence page when starting an initiative. Link a Jira Epic before writing anything else — the ticket is the anchor, not the doc.
+Copy this template into a new Confluence page when starting an initiative. Create a Jira ticket for the initiative before writing anything else — the ticket is the anchor, not the doc. Use an Epic or Initiative issue type depending on your Jira configuration.
 
 ::: info What makes a good initiative name?
 Frame the initiative as a problem, not a solution. "Pninei Halacha — Calm Digital Reading Experience" works. "Build a Reading App" does not. If the name describes a solution, the team will skip discovery and jump to building the predetermined answer.
@@ -16,7 +16,7 @@ Frame the initiative as a problem, not a solution. "Pninei Halacha — Calm Digi
 **Status:** Backlog | Discovery In Progress | Discovery Drafting | Discovery Review
            | Ready for Approval | Approved | Ready for Dev
 **Owner:** [Product Manager name]
-**Jira Epic:** [Epic ID + link]
+**Jira Ticket:** [Initiative or Epic ID + link]
 **Created:** YYYY-MM-DD
 **Last updated:** YYYY-MM-DD
 
@@ -81,16 +81,7 @@ Not a spec — enough for an engineer to estimate and a stakeholder to understan
 
 ---
 
-## 7. API Contracts (if applicable)
-| Endpoint | Method | Request | Response | Auth |
-|----------|--------|---------|----------|------|
-| /api/... | GET | — | { ... } | Bearer token |
-
-Skip this section for non-API initiatives.
-
----
-
-## 8. Risks & Mitigations
+## 7. Risks & Mitigations
 | Risk | Likelihood | Impact | Mitigation | Owner |
 |------|-----------|--------|------------|-------|
 | [Risk description] | H / M / L | H / M / L | [Strategy] | @name |
@@ -105,14 +96,14 @@ Skip this section for non-API initiatives.
 
 ---
 
-## 9. Success Metrics
+## 8. Success Metrics
 | Signal | Type | Current baseline | Target | Measurement | Review date |
 |--------|------|-----------------|--------|-------------|-------------|
 | [Metric name] | Leading / Lagging | [Current] | [Target] | [Tool/method] | Day 7 / Day 30 |
 
 ---
 
-## 10. Story Mapping
+## 9. Story Mapping
 
 ### Journey Map
 [Link to Confluence journey page or whiteboard photo]
@@ -130,16 +121,7 @@ Skip this section for non-API initiatives.
 
 ---
 
-## 11. BDD Scenario Coverage
-Key scenarios for the most critical acceptance criteria:
-
-| Scenario | Epic | Journey Step |
-|----------|------|-------------|
-| Given [precondition] / When [action] / Then [outcome] | E1 | J3 |
-
----
-
-## 12. Rollout Plan
+## 10. Rollout Plan
 - **Feature flag:** [Flag name or "none"]
 - **Canary %:** [Initial rollout percentage]
 - **Ramp schedule:** [Timeline — e.g., 5% day 1, 25% day 3, 100% day 7]
@@ -148,7 +130,7 @@ Key scenarios for the most critical acceptance criteria:
 
 ---
 
-## 13. Approval Signatures
+## 11. Approval Signatures
 
 | Role | Name | Decision | Date |
 |------|------|----------|------|
@@ -210,15 +192,19 @@ Before moving to "Ready for Approval", verify:
 
 ## Scaling the Template
 
-Not every initiative needs all 13 sections. Scale based on scope:
+Not every initiative needs all 11 sections. Scale based on scope:
 
 | Initiative size | Sections to complete | Sections to skip |
 |----------------|---------------------|-----------------|
-| **Small** (1 Epic, 1 sprint) | 1–5, 8–10 | API Contracts, Systems, BDD, Rollout |
-| **Medium** (2–4 Epics, 2–3 sprints) | 1–11 | Skip BDD and Rollout if no API change |
-| **Large** (5+ Epics, multi-team) | All 13 | — |
+| **Small** (1 Epic, 1 sprint) | 1–5, 7–8 | Systems, Rollout |
+| **Medium** (2–4 Epics, 2–3 sprints) | 1–9 | Skip Rollout if no staged release |
+| **Large** (5+ Epics, multi-team) | All 11 | — |
 
 Rule of thumb: if the initiative spans more than one team or requires a formal approval gate, complete all sections.
+
+::: tip API contracts and BDD belong later
+API contracts, detailed BDD scenarios, and technical specifications are refinement artifacts — they belong in Feature Briefs and Epic Briefs, not in the Initiative Brief. The initiative is a discovery document: it validates the problem and commits to an approach. Implementation details come later, when the [Feature Loop](/upstream/spiral-model#the-three-loops-at-a-glance) begins.
+:::
 
 ---
 

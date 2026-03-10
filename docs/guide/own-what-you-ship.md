@@ -2,7 +2,7 @@
 
 It's a Thursday night. Roee is on call. He's been on the team for four months and this is his second rotation.
 
-At 11:47pm, an alert fires. The return screen for Momentum is throwing 500 errors. Users who open the app see a blank white screen instead of their reflection count.
+At 11:47pm, an alert fires. The return screen is throwing 500 errors. Users who open the app see a blank white screen instead of their reflection count.
 
 Roee opens the monitoring dashboard. He can see the error rate spike. He can see it started twelve minutes ago. What he can't see is: what changed? Was there a deployment? Is this a database issue? Is this one service or three? Who built this feature? What's the expected behavior when the count service is down — should it show a cached value, a fallback message, or is blank-screen-on-failure actually a bug?
 
@@ -37,13 +37,11 @@ This gate doesn't add weeks of work. It adds hours — and it saves the 40 minut
 
 ### SLA & SLO Framework
 
-"The service should be reliable" is not a reliability target. It's a wish.
+Roee's team said "the service should be reliable" in three consecutive retros. Nothing changed — because "reliable" isn't a target, it's a wish. Nobody could say when the wish was being met and when it wasn't.
 
-An SLO — Service Level Objective — is a measurable reliability target. "The return screen loads in under 2 seconds for 99.5% of requests, measured weekly." That's testable. That's monitorable. That's a number the team can alert on, report on, and make decisions against.
+Then they wrote a number: the return screen loads in under 2 seconds for 99.5% of requests, measured weekly. That number changed everything. The Monday after they set it, Roee checked the dashboard and saw 98.7%. Not a feeling — a fact. The team could decide: do we fix this now, or accept the degradation this week? That's a real decision with real data, not a debate about whether "it seems slow sometimes."
 
-When the SLO is breached, it's not an opinion that something is wrong — it's a fact. The team can decide: do we fix this now, or accept the degradation this week? That's a real decision with real data, not a debate about whether "it seems slow sometimes."
-
-Start simple. Pick the three most critical user actions — the ones that, if broken, mean the product is broken. Define an SLO for each. Set up alerts. Review weekly. That's enough.
+Start simple. Pick the three most critical user actions — the ones that, if broken, mean the product is broken. Write a number for each. Set up alerts. Review weekly. That's enough. The number is the SLO. The conversation it enables is the point.
 
 → [SLA & SLO Framework](/onstream/sla-slo)
 
@@ -79,9 +77,9 @@ The developer who builds the feature writes the runbook. Not later. Not "when we
 
 ### Bug Taxonomy
 
-Not all bugs are the same. A visual glitch on one screen is not the same as a data corruption issue. A bug that affects one user is not the same as a bug that affects everyone. Without a classification system, bugs compete with features for attention based on who yells loudest, not on what matters most.
+Three weeks after the connection pool fix, a different bug appears. A visual glitch — the reflection count shows "NaN" for users who haven't written an entry yet. One user reports it. The PM says "fix it this sprint." The same week, a CSM mentions that three enterprise accounts are seeing stale balance data — amounts that don't update after transactions. Nobody escalates it because the visual glitch got all the attention.
 
-A taxonomy gives bugs structure: severity (how bad), scope (how many users), data risk (is data being lost or corrupted), reproducibility (always, sometimes, once). The taxonomy determines priority — not the reporter's urgency, not the PM's intuition, but a consistent rubric that the team agrees on before the bugs arrive.
+Without a classification system, bugs compete for attention based on who yells loudest. The NaN glitch is visible and embarrassing but affects a small edge case. The stale balance data is invisible and affects revenue-critical accounts. A taxonomy gives bugs structure: severity (how bad), scope (how many users), data risk (is data being lost or corrupted), reproducibility (always, sometimes, once). The taxonomy determines priority — a consistent rubric the team agrees on before the bugs arrive, not after.
 
 → [Bug Taxonomy](/onstream/bug-taxonomy)
 

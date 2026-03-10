@@ -86,7 +86,7 @@ Market signals are the lowest-frequency input but can have the highest impact. A
 
 ## The Two Outcomes
 
-Strategic synthesis produces one of two outcomes. There is no middle ground.
+Strategic synthesis produces one of two outcomes. The binary is deliberate — it forces a clear recommendation, even when the signals are mixed. "Mostly confirmed with some concerns" is a confirmed direction with adjusted tactics, not a third category.
 
 ### Direction Confirmed
 
@@ -177,9 +177,10 @@ Where the signals agree. Where they conflict. What the implication is.]
 Recommend returning to Station [N] with the following new evidence: [specifics].
 
 ## Reopen triggers hit
-- [ ] Success metric hasn't moved after two shipped features → [status]
-- [ ] Offstream data contradicts the primary persona → [status]
-- [ ] P0 incident revealed a core assumption was wrong → [status]
+[Review each trigger from the Initiative Brief's Reopen Triggers section.
+Mark each as triggered or not, with evidence.]
+
+See [Initiative Template — Reopen Triggers](/reference/initiative-template) for the standard triggers.
 ```
 
 ---
