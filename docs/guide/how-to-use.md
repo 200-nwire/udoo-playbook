@@ -1,12 +1,25 @@
 # How to Use This Book
 
-This book is designed to work three ways: as a **learning resource** you read progressively, as a **reference** you consult when needed, and as a **checklist** your team follows daily.
+This book is designed to work four ways: as an **adoption guide** you follow progressively, as a **learning resource** for understanding the full framework, as a **reference** you consult when needed, and as a **checklist** your team follows daily.
 
-## Three Modes of Use
+## Four Modes of Use
 
-### Mode 1: Learning (Read Progressively)
+### Mode 1: Adoption (The Growth Path)
 
-If you are new to the UDOO framework, follow the **Guide** section first, then read each phase in order. The book builds up from simple concepts to full framework mastery — like the framework itself, it starts with the big picture and drills into specifics.
+If you are building a team or scaling a company, start here. The Growth Path is the primary adoption guide — five steps, each solving a real problem that the previous step makes visible.
+
+**The path:**
+1. [Ship Clean](/guide/ship-clean) — stories start and finish with discipline
+2. [Shape Before You Build](/guide/shape-before-you-build) — features are mapped before stories are written
+3. [Discover Before You Shape](/guide/discover-before-you-shape) — initiatives are validated before features are shaped
+4. [Own What You Ship](/guide/own-what-you-ship) — production is monitored, incidents have playbooks
+5. [Close the Loop](/guide/close-the-loop) — customer signals feed the next discovery cycle
+
+Start at the step that matches your team's worst current pain. Each step has horizontal scale (what to adopt) and vertical scale (how to go deeper once it's working).
+
+### Mode 2: Learning (Read Progressively)
+
+If you want to understand the full framework conceptually, follow the **Guide** section first, then read each phase in order.
 
 **Recommended order:**
 1. [Introduction](/guide/introduction) — understand the "why"
@@ -15,7 +28,7 @@ If you are new to the UDOO framework, follow the **Guide** section first, then r
 4. Walk through each phase: [Upstream](/upstream/) → [Downstream](/downstream/) → [Onstream](/onstream/) → [Offstream](/offstream/)
 5. Explore [Tutorials](/tutorials/) for hands-on practice
 
-### Mode 2: Reference (Look Things Up)
+### Mode 3: Reference (Look Things Up)
 
 When you need a template, a checklist, or a specific process:
 
@@ -35,7 +48,7 @@ When you need a template, a checklist, or a specific process:
 | Understand escalation | [Escalation Paths](/reference/escalation) |
 | See a real initiative example | [Examples Gallery](/examples/) |
 
-### Mode 3: Checklist (Daily Operations)
+### Mode 4: Checklist (Daily Operations)
 
 Pin these pages for daily use:
 

@@ -35,5 +35,6 @@ Offstream does not wait passively for features to ship. It engages from Day 1 of
 | [Customer Lifecycle Model](/offstream/customer-lifecycle) | The stages from onboarding to advocacy |
 | [Health Score Framework](/offstream/health-score) | How to measure and act on account health |
 | [The Feedback Loop](/offstream/feedback-loop) | How Offstream signals enter Upstream |
+| [Strategic Synthesis](/offstream/strategic-synthesis) | Reading all signals to confirm or challenge direction |
 | [Account & Revenue Cadence](/offstream/account-cadence) | Ceremonies and rituals |
 | [Anti-Patterns](/offstream/anti-patterns) | The 6 most common Offstream failures |

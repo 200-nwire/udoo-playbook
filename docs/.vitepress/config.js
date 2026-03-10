@@ -22,6 +22,16 @@ const guideSidebar = [
     ],
   },
   {
+    text: '🧭 The Growth Path',
+    items: [
+      { text: 'Ship Clean', link: '/guide/ship-clean' },
+      { text: 'Shape Before You Build', link: '/guide/shape-before-you-build' },
+      { text: 'Discover Before You Shape', link: '/guide/discover-before-you-shape' },
+      { text: 'Own What You Ship', link: '/guide/own-what-you-ship' },
+      { text: 'Close the Loop', link: '/guide/close-the-loop' },
+    ],
+  },
+  {
     text: '⚖️ Scale & Roles',
     items: [
       { text: 'Scale Tiers (1→3)', link: '/guide/scale-tiers' },
@@ -169,6 +179,7 @@ export default withMermaid(
             { text: 'Experience Snapshot', link: '/upstream/experience-snapshot' },
             { text: 'Initiative Brief', link: '/upstream/initiative-brief' },
             { text: 'Story Mapping', link: '/upstream/story-mapping' },
+            { text: 'The Cut', link: '/upstream/the-cut' },
             { text: 'Discovery Frameworks Catalog', link: '/upstream/discovery-frameworks' },
             { text: 'Scrum for Discovery', link: '/upstream/scrum-for-discovery' },
           ],
@@ -272,6 +283,7 @@ export default withMermaid(
             { text: 'Customer Lifecycle Model', link: '/offstream/customer-lifecycle' },
             { text: 'Health Score Framework', link: '/offstream/health-score' },
             { text: 'The Feedback Loop', link: '/offstream/feedback-loop' },
+            { text: 'Strategic Synthesis', link: '/offstream/strategic-synthesis' },
             { text: 'Account & Revenue Cadence', link: '/offstream/account-cadence' },
             { text: 'Anti-Patterns', link: '/offstream/anti-patterns' },
           ],

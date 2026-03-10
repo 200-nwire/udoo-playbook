@@ -2,8 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-::: info Where this fits in the spiral
-Station 1 belongs to the **Initiative Loop** (Phase 1 — Frame the Problem). It runs during the first two days of the 2-week Initiative Sprint, and feeds directly into [Initiative Activities I-1, I-2, I-5, and I-6](/upstream/activities-sprint). The questions here are also relevant to the **Feature Loop** when a feature is new enough that the team needs to reestablish who uses it and why.
+::: info Where this fits
+Station 1 is the first step of the **Discovery Workshop** — the structured practice for validating whether a problem is worth solving. It belongs to the **Initiative Loop** and **Feature Loop** of the [Discovery Spiral](/upstream/spiral-model). The PM and Core Trio (PM, Designer, Tech Lead) run it together.
+
+This is not a refinement practice. For breaking features into stories, see [Story Mapping](/upstream/story-mapping) and the [Three Amigos grooming session](/upstream/grooming-session).
 :::
 
 ## The Moment This Page Is For

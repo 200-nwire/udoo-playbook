@@ -54,7 +54,29 @@ Not 90% ready. Not "mostly there." Fully ready.
 | [Anti-Patterns](/upstream/anti-patterns) | The 6 most common Upstream failures |
 | [Cadence](/upstream/cadence) | Ceremonies, frequency, owners |
 
-## The 5 Discovery Stations
+## The Discovery Workshop
+
+The 5 stations are a structured workshop — not a phase, not a process, not a ceremony. A workshop for thinking through a problem you don't fully understand yet.
+
+Think of it like a doctor's visit. You don't walk into a clinic and say "give me antibiotics." You describe your symptoms. The doctor examines you, runs tests, considers what could be wrong. They present options — medication, lifestyle change, surgery. You decide together. The prescription comes last, after the diagnosis.
+
+The stations work the same way:
+
+| Station | The Doctor Metaphor | What It Produces |
+|---------|-------------------|------------------|
+| **Station 1 — Vision & Context** | "What brings you in today?" | Who has the problem, why it matters now |
+| **Station 2 — Problem Framing** | "Let me examine — where does it hurt?" | Root cause diagnosis, assumption register |
+| **Station 3 — Journey & Slices** | "Walk me through your daily routine" | The full picture of the experience, before and after |
+| **Station 4 — Solution Options** | "Here are three treatment options" | 2–3 approaches with tradeoffs, not one predetermined answer |
+| **Station 5 — Decision & Scope** | "Here's the prescription" | Chosen approach, MVP scope, success metric |
+
+::: warning The stations are for discovery — not for story refinement
+The 5-station workshop is designed for **Initiative and Feature discovery** — when you're validating whether a problem is worth solving and how to approach it. It's where the PM and Core Trio (PM, Designer, Tech Lead) work.
+
+For **Epic and Story refinement** — breaking known features into buildable stories — the team uses [Story Mapping](/upstream/story-mapping), [The Cut](/upstream/the-cut), and the [Three Amigos grooming session](/upstream/grooming-session). That's where the PO, Tech Lead, and QA work.
+
+Different questions, different people, different practices.
+:::
 
 ```
 Station 1        Station 2        Station 3        Station 4        Station 5

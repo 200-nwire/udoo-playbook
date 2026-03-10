@@ -6,6 +6,37 @@
 **Loops** tell you *when and at what scope* to do discovery. **Stations** tell you *what to ask* while you're doing it. You don't study them separately — you ask the station questions while running the loop.
 :::
 
+## Three Types of Work
+
+Before understanding the spiral, you need to understand that not all Upstream work is the same. The hierarchy — Initiative → Feature → Epic → Story — isn't just a nesting structure. It represents three fundamentally different types of work, each with different people, different practices, and different outputs.
+
+```
+Strategic Alignment          Discovery                    Refinement
+───────────────────          ─────────────────            ────────────────────
+Direction · OKRs · KPIs      Initiative · Feature         Epic · Story
+
+Who: Leadership + PM         Who: PM + Core Trio          Who: PO + Tech Lead + QA
+                             (PM, Designer, Tech Lead)    (the Three Amigos)
+
+Practice: Direction Map,     Practice: 5-Station          Practice: Story Mapping,
+OKR setting, Strategic       Discovery Workshop           The Cut, Three Amigos
+Synthesis                                                 Grooming, DoR
+
+Output: Which problems       Output: Initiative Brief,    Output: DoR-ready stories
+are worth solving            Feature Brief, journey       with Gherkin, sizing,
+this quarter                 maps, validated persona      and design reference
+```
+
+Strategic Alignment answers: **"What problems are worth our next quarter?"** It draws on evidence from [Strategic Synthesis](/offstream/strategic-synthesis), OKR retrospectives, and the [Feedback Loop](/offstream/feedback-loop). It produces the Direction Map and initiative themes (Now / Next / Later).
+
+Discovery answers: **"Is this the right problem, for the right person, and what's the best approach?"** The PM and Core Trio run the [5-station workshop](/upstream/station-1-vision) to validate the problem, map the journey, evaluate options, and commit to a scope. It produces the Initiative Brief and Feature Briefs.
+
+Refinement answers: **"What exactly are we building, and is every story ready for a developer to start?"** The PO and Three Amigos run [story mapping](/upstream/story-mapping), draw [The Cut](/upstream/the-cut), and refine stories through [grooming sessions](/upstream/grooming-session) until every story passes the [9-point DoR](/upstream/definition-of-ready).
+
+These are not phases you move through sequentially. They run concurrently — the PM discovers the next feature while the PO refines stories for the current one. The spiral is the mechanism that makes this pipeline work.
+
+---
+
 ## The Problem With Linear Discovery
 
 When a new initiative arrives, the instinct is to run discovery once — gather context, map the journey, write stories, hand off. Linear. Sequential. Done in two weeks.
@@ -55,12 +86,21 @@ This is the spiral: the same structure, repeated three times, each iteration tig
 
 | | Initiative Loop | Feature Loop | Epic Loop |
 |--|----------------|--------------|-----------|
+| **Type of work** | Discovery | Discovery | Refinement |
 | **Core question** | What are we building and why? | How does this feature work? | What exactly are we building next? |
-| **Participants** | PM, UX Lead, Tech Lead, Stakeholders | PM, UX Designer, Tech Lead | PM, Lead Dev, QA Lead |
+| **Participants** | PM, Designer, Tech Lead (Core Trio) | PM, Designer, Tech Lead (Core Trio) | PO, Tech Lead, QA (Three Amigos) |
+| **Key practice** | 5-Station Workshop | 5-Station Workshop (scoped to feature) | Story Mapping → The Cut → Grooming |
 | **Duration** | 2-week sprint | 1-week sprint | 2–3 days |
-| **Output** | Prioritized Feature list | Prioritized Epic list | DoR-ready Stories |
+| **Output** | Initiative Brief + Feature list | Feature Brief + Epic list | DoR-ready Stories |
 | **Done when** | Team agrees on what the initiative is and what ships in S1 | Journey mapped, Epics named, tech feasibility confirmed | Every story passes all 9 DoR checkpoints |
-| **Activities** | 10 | 11 | 8 |
+
+::: tip Discovery vs Refinement — different questions, different people
+The Initiative and Feature loops are **discovery** — validating the problem, choosing an approach, mapping the journey. The PM leads. The Core Trio participates. The 5-station workshop is the tool.
+
+The Epic loop is **refinement** — breaking a known feature into buildable stories with full acceptance criteria. The PO leads. The Three Amigos (PO, Tech Lead, QA) do the work. Story Mapping, The Cut, and Grooming are the tools.
+
+This distinction matters because teams that use discovery practices for refinement (running five stations to write a story) waste time, and teams that use refinement practices for discovery (jumping straight to story mapping without validating the problem) waste sprints.
+:::
 
 ---
 
@@ -239,6 +279,20 @@ The recovery path is the same decision tree, applied backward:
 The reward: once recovered, the team operates with full context. New stories are cheap to add. New developers onboard quickly. The PM who asks "why are we building this?" gets an answer in 30 seconds, not a shrug.
 
 This recovery process is documented step-by-step in the [Recovering an Existing Project](/tutorials/recovery) tutorial.
+
+---
+
+## How This Connects to the Growth Path
+
+You don't adopt the full spiral on day one. The [Growth Path](/guide/ship-clean) builds toward it progressively:
+
+1. **[Ship Clean](/guide/ship-clean)** — The team learns to write and finish stories with discipline. This is the Epic Loop working: DoR, grooming, DoD.
+2. **[Shape Before You Build](/guide/shape-before-you-build)** — The team adds story mapping and The Cut. The Epic Loop gets sharper. The Feature Loop begins.
+3. **[Discover Before You Shape](/guide/discover-before-you-shape)** — The team adds the 5-station workshop. The Initiative Loop begins. The full spiral is now running.
+4. **[Own What You Ship](/guide/own-what-you-ship)** — Onstream practices ensure what ships keeps running.
+5. **[Close the Loop](/guide/close-the-loop)** — Offstream practices feed [Strategic Synthesis](/offstream/strategic-synthesis) back into strategic alignment, completing the cycle.
+
+The spiral is the destination. The growth path is how you get there.
 
 ---
 

@@ -161,6 +161,19 @@ Key scenarios for the most critical acceptance criteria:
 
 ---
 
+## Reopen Triggers
+
+Reopen this initiative's discovery if any of the following occur:
+
+- [ ] The success metric hasn't moved after two shipped features
+- [ ] Offstream data contradicts the primary persona (a different segment is actually affected)
+- [ ] A P0 incident reveals that a core assumption was wrong
+- [ ] [Add initiative-specific trigger]
+
+**When triggered:** Stop feature delivery. Return to Station 2 (Problem Framing) with the new evidence. Update the Assumption Register and re-evaluate the Feature Map before resuming.
+
+---
+
 ## Decision Log
 | Date | Decision | Rationale | Decided by |
 |------|----------|-----------|-----------|
@@ -185,6 +198,7 @@ Before moving to "Ready for Approval", verify:
 - [ ] All risks have mitigations and owners
 - [ ] All open questions have owners and due dates
 - [ ] Decision Log captures any choices made during discovery
+- [ ] Reopen Triggers include at least one initiative-specific condition
 - [ ] All required approval signatures are in place before moving to Approved
 
 ::: warning The two most common template failures

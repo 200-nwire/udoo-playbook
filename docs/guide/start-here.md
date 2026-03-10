@@ -72,6 +72,9 @@ Discovery nests: Initiative Loop → Feature Loop → Epic Loop.
 4. [Wrong Way / Right Way tutorial](/tutorials/wrong-way-right-way) — the fastest 30 minutes
 5. [How to Use This Book](/guide/how-to-use) — your role-specific path
 
+**Building a team or scaling a company** — want to adopt the framework progressively, solving real problems at each step.
+→ [The Growth Path](/guide/ship-clean) — start with Ship Clean, grow from there
+
 **Small team (2–3 people)** — same thinking model, compressed ceremonies.
 → [Lite Mode](/guide/lite-mode)
 
@@ -92,6 +95,8 @@ Discovery nests: Initiative Loop → Feature Loop → Epic Loop.
 [Scale Tiers](/guide/scale-tiers) · [Roles](/guide/roles) · [Non-Negotiables](/reference/non-negotiables) · [Phase Gates](/reference/phase-gates) · [Master Cadence](/reference/master-cadence)
 
 ---
+
+**→** [The Growth Path](/guide/ship-clean) — adopt the framework step by step, starting where it hurts
 
 **→** [The Manifesto](/guide/manifesto) — the spirit behind the practices
 
