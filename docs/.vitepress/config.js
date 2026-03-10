@@ -303,6 +303,7 @@ export default withMermaid(
             { text: 'Your First Upstream Sprint', link: '/tutorials/zero-to-ready' },
             { text: 'E2E Initiative Lifecycle', link: '/tutorials/e2e-initiative' },
             { text: 'BDD Workshop', link: '/tutorials/bdd-workshop' },
+            { text: 'Two Products, One Team', link: '/tutorials/two-products-one-team' },
             { text: 'From Incident to Improvement', link: '/tutorials/incident-to-improvement' },
           ],
         },

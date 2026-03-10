@@ -91,7 +91,21 @@ If your team has adopted BDD in theory but scenarios are inconsistent, too vague
 
 ---
 
-### 5. From Incident to Improvement
+### 5. Two Products, One Team
+
+| | |
+|---|---|
+| **File** | [Two Products, One Team](./two-products-one-team) |
+| **Difficulty** | 🔴 Advanced |
+| **Time** | 90 minutes |
+| **Best for** | PMs managing multiple products, team leads, anyone who wants to see the full framework under real pressure |
+| **What you'll do** | Follow Noa through a full quarter managing two products (Reflect and PathFinder) with one shared team. A reopen trigger fires mid-quarter. Strategic synthesis forces a direction change. A P1 incident tests the runbook. The feedback loop connects two insights that no single dashboard could surface. Every phase runs concurrently. |
+
+This is the framework's stress test. If you've read the Growth Path and wonder "but does this actually work when things go wrong?" — this tutorial is the answer.
+
+---
+
+### 6. From Incident to Improvement
 
 | | |
 |---|---|
@@ -135,7 +149,8 @@ If you're working through all five tutorials, this order builds skills progressi
 2. The Wrong Way (Then Right)    → Build intuition for anti-patterns
 3. BDD Workshop                  → Master the specification craft
 4. E2E Initiative Lifecycle      → See the full system in action
-5. From Incident to Improvement  → Close the operational loop
+5. Two Products, One Team        → The stress test — full framework under real pressure
+6. From Incident to Improvement  → Close the operational loop
 ```
 
 Each tutorial stands alone — you can jump to any one that addresses your current need. But the sequence above ensures that each tutorial builds on skills practised in the previous one.
