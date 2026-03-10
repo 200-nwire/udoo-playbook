@@ -1,8 +1,8 @@
-# Epic Activities — The Epic Loop
+# Epic Activities — Epic Refinement
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-> **Where this fits:** This is Loop 3 of the [Discovery Spiral](/upstream/spiral-model). It runs once per Epic — after the [Feature Loop](/upstream/feature-activities) has produced the Epic List. Its output — DoR-ready Stories — goes directly into Downstream.
+> **Where this fits:** This is [Epic Refinement](/upstream/spiral-model) — a fundamentally different practice from the Discovery Workshop. The PO and Three Amigos (PO, Tech Lead, QA) lead it, not the PM and Core Trio. It runs once per Epic — after [Feature Discovery](/upstream/feature-activities) has produced the Epic List. Its output — DoR-ready Stories — goes directly into Downstream.
 
 ---
 
@@ -14,15 +14,15 @@ The developer picks up the first story on Monday morning. The acceptance criteri
 
 It's Monday morning and the developer can't start.
 
-That conversation — the one happening at 9am on the first day of the sprint — should have happened during the Epic Loop. Not a single edge case it covers should be new information on the sprint board.
+That conversation — the one happening at 9am on the first day of the sprint — should have happened during Epic Refinement. Not a single edge case it covers should be new information on the sprint board.
 
-The Epic Loop exists to make sure it isn't.
+Epic Refinement exists to make sure it isn't.
 
 ---
 
-## What the Epic Loop Produces
+## What the Epic Refinement Produces
 
-By the end of the Epic Loop, every story in the Epic is:
+By the end of the Epic Refinement, every story in the Epic is:
 
 - Written in the correct format (`As [persona], I want [action], so that [outcome]`)
 - Linked to its journey step
@@ -39,17 +39,17 @@ In other words: every story passes all 9 DoR checkpoints.
 ---
 
 ::: info No dedicated Station for this loop
-The Epic Loop doesn't have its own Discovery Station — its discipline is execution, not exploration. The three-amigos technique (E-2), example mapping (E-4), and the 9-point DoR check (E-7) are the quality gates here. If you find yourself needing to resolve major scope questions during E-2, it means the [Feature Loop](/upstream/feature-activities) ended too early — go back and close the open questions there before continuing.
+The Epic Refinement doesn't have its own Discovery Station — its discipline is execution, not exploration. The three-amigos technique (E-2), example mapping (E-4), and the 9-point DoR check (E-7) are the quality gates here. If you find yourself needing to resolve major scope questions during E-2, it means the [Feature Discovery](/upstream/feature-activities) ended too early — go back and close the open questions there before continuing.
 :::
 
 ::: info If you need the short version
-Four things happen in every Epic Loop, no exceptions:
+Four things happen in every Epic Refinement, no exceptions:
 1. **Epic Brief** — one paragraph: goal, journey steps covered, done-when (E-1)
 2. **Three Amigos session** — PM + Dev + QA agree on the story list together (E-2)
 3. **Stories that pass DoR** — all 9 checkpoints, verified by the team (E-7)
 4. **Sprint confirmed** — stories marked Ready in Jira, delivery team knows they're next (E-8)
 
-The loop takes 2–3 days per epic. If it's taking longer, a story needs splitting or a Feature Loop question resurfaced and needs resolving before stories can be written.
+The loop takes 2–3 days per epic. If it's taking longer, a story needs splitting or a Feature Discovery question resurfaced and needs resolving before stories can be written.
 :::
 
 ## The 8 Epic Activities
@@ -165,7 +165,7 @@ The Tech Lead (or lead developer for this Epic) reviews each story and confirms:
 
 - **Output:** Stories updated with: technical approach note (1–2 sentences), confirmed size, and any dependency links
 - **Who:** Tech Lead / Lead Developer
-- **Done when:** Every story has a confirmed size. No story is marked "unknown" on feasibility. Any story that surfaces a new technical unknown triggers either a spike (go back to F-9 in the Feature Loop) or a scope change.
+- **Done when:** Every story has a confirmed size. No story is marked "unknown" on feasibility. Any story that surfaces a new technical unknown triggers either a spike (go back to F-9 in the Feature Discovery) or a scope change.
 
 ---
 
@@ -193,7 +193,7 @@ Before the Epic enters Downstream, confirm that its stories fit within the plann
 
 ---
 
-## The 2–3 Day Epic Loop Schedule
+## The 2–3 Day Epic Refinement Schedule
 
 ```
 DAY 1: BRIEF AND SHAPE
@@ -248,15 +248,15 @@ You write every story and ensure it is traceable back to the Feature Brief and j
 ---
 
 ### Lead Developer — The Feasibility Voice
-Your job in the Epic Loop is to make sure you can build what's being written — and to flag anything that can't be built as described before the sprint starts.
+Your job in the Epic Refinement is to make sure you can build what's being written — and to flag anything that can't be built as described before the sprint starts.
 
 **Your activities:** E-2 (co-lead), E-4 (participant), E-6 (owner)
-**Key rule:** If you pick up a story at sprint planning and have a question the Epic Loop should have answered, that question goes in the sprint retro — and the Epic Loop process gets fixed. Your goal is to never have that question.
+**Key rule:** If you pick up a story at sprint planning and have a question the Epic Refinement should have answered, that question goes in the sprint retro — and the Epic Refinement process gets fixed. Your goal is to never have that question.
 
 ---
 
 ### QA Lead — The Scenario Architect
-The QA Lead is at their most powerful in the Epic Loop. You write the Gherkin seeds. You run the DoR check. You find the edge cases that will otherwise be bugs in production.
+The QA Lead is at their most powerful in the Epic Refinement. You write the Gherkin seeds. You run the DoR check. You find the edge cases that will otherwise be bugs in production.
 
 **Your activities:** E-2 (co-lead), E-4 (participant), E-5 (owner), E-7 (co-lead)
 **Key question for every story:** "What does failure look like here? Is it in the ACs? Is it testable?" If the answer is no, the story is not ready.
@@ -264,10 +264,10 @@ The QA Lead is at their most powerful in the Epic Loop. You write the Gherkin se
 ---
 
 ### UX Designer — The Reference Provider
-By the time the Epic Loop runs, the UX Designer's main job is to make sure design references exist for every story. The design direction was set in the Feature Loop (F-11). The Epic Loop is about attaching the right frame to the right story.
+By the time the Epic Refinement runs, the UX Designer's main job is to make sure design references exist for every story. The design direction was set in the Feature Discovery (F-11). The Epic Refinement is about attaching the right frame to the right story.
 
 **Your activities:** E-5 (design references)
-**Key rule:** A story without a visual reference cannot pass DoR. If a story's design doesn't exist, either create a lo-fi sketch (30 minutes) or defer the story to a later Epic Loop.
+**Key rule:** A story without a visual reference cannot pass DoR. If a story's design doesn't exist, either create a lo-fi sketch (30 minutes) or defer the story to a later Epic Refinement.
 
 ---
 
@@ -289,7 +289,7 @@ If these activities are incomplete, no story from this Epic enters Downstream:
 
 ## The DoR Gate
 
-The Epic Loop ends at the DoR gate. A story that does not pass DoR does not enter Downstream — regardless of schedule pressure, regardless of how confident the developer feels, regardless of how close the deadline is.
+The Epic Refinement ends at the DoR gate. A story that does not pass DoR does not enter Downstream — regardless of schedule pressure, regardless of how confident the developer feels, regardless of how close the deadline is.
 
 When stories are not ready:
 1. Name the specific failing checkpoints

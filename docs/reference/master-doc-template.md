@@ -72,7 +72,7 @@ Every initiative ever run for this product — past, present, and queued. Update
 
 ### Feature Backlog
 
-Every feature across all initiatives, grouped by initiative. Updated when Feature Loops complete.
+Every feature across all initiatives, grouped by initiative. Updated when Feature Discovery completes.
 
 | Feature | Initiative | Status | Feature Brief |
 |---------|-----------|--------|---------------|
@@ -115,7 +115,7 @@ The Master Document is updated at four specific moments — not continuously:
 | When | What changes |
 |------|-------------|
 | **Quarterly** | Initiative Registry updated. Annual Goals reviewed against OKRs. |
-| **Feature Loop completes** | Feature Backlog updated — completed features marked Done, new features added. |
+| **Feature Discovery completes** | Feature Backlog updated — completed features marked Done, new features added. |
 | **User research reveals something new** | Persona entry updated, or new persona added if genuinely different. |
 | **Architecture decision is made** | Key Technical Decisions table updated with new ADR link. |
 
@@ -133,8 +133,8 @@ Every story in the system traces back to this document — and forward through e
 Project Master Document
   └── Annual Goal (OKR)
         └── Initiative Brief          [Upstream: 5 discovery stations]
-              └── Feature Brief       [Upstream: Feature Loop]
-                    └── Epic          [Upstream: Epic Loop → Jira]
+              └── Feature Brief       [Upstream: Feature Discovery]
+                    └── Epic          [Upstream: Epic Refinement → Jira]
                           └── Story (DoR ✅)
                                 └── In Dev → In Review → In Test → Released (DoD ✅)
 ```

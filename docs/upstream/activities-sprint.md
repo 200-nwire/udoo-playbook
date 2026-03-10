@@ -1,8 +1,8 @@
-# Initiative Activities — The Initiative Loop
+# Initiative Activities — Initiative Discovery
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-> **Where this fits:** This is Loop 1 of the [Discovery Spiral](/upstream/spiral-model). Its output — an approved initiative brief and a prioritized Feature list — feeds directly into the Feature Loop for each Feature.
+> **Where this fits:** This is the first level of [Initiative Discovery](/upstream/spiral-model) — a 2-week sprint where the PM and Core Trio (PM, Designer, Tech Lead) run the 5-station Discovery Workshop at initiative scope. Its output — an approved Initiative Brief and a prioritized Feature list — feeds directly into Feature Discovery for each Feature.
 
 ---
 
@@ -14,14 +14,14 @@ Nobody has written down who the primary user is. Nobody has agreed on what S1 lo
 
 Two weeks later, the team reconvenes. The developer's architecture assumes Feature A is an admin tool. The PM assumed it was user-facing. The stakeholder who approved the initiative had a third interpretation entirely.
 
-The Initiative Loop exists to answer five questions before anyone opens a code editor or a Figma file:
+Initiative Discovery exists to answer five questions before anyone opens a code editor or a Figma file:
 1. Who is the primary user, and what is their actual pain?
 2. What does success look like, in measurable terms?
 3. What are the 3–6 features that make up this initiative?
 4. What ships in S1 — and what explicitly does not?
 5. Do the stakeholders agree with all of the above?
 
-When those five questions are answered and documented, the initiative is ready to enter the Feature Loop.
+When those five questions are answered and documented, the initiative is ready to enter Feature Discovery.
 
 ---
 
@@ -221,7 +221,7 @@ Monday (Day 6) — Feature Thinking
 
 Tuesday (Day 7) — Feature Review
   ├── I-9: Feature List reviewed with UX and QA Lead
-  └── Gaps: which features need more research before Feature Loop?
+  └── Gaps: which features need more research before Feature Discovery?
 
 Wednesday (Day 8) — Prioritize
   ├── I-10: Feature prioritization with stakeholder (S1/S2/S3)
@@ -234,7 +234,7 @@ Thursday (Day 9) — Final Review
 
 Friday (Day 10) — Handoff
   ├── Initiative Brief frozen (any changes now require a decision log entry)
-  ├── Feature Loops scheduled — which features enter the Feature Loop first?
+  ├── Feature Discovery scheduled — which features enter Feature Discovery first?
   └── Retro: what helped, what hurt, what to improve
 ```
 
@@ -251,7 +251,7 @@ You own this sprint. Every activity either starts with you or requires your deci
 ---
 
 ### UX Designer — The Human Translator
-Your job in the Initiative Loop is narrower than in the Feature Loop. You focus on the persona and the snapshot.
+Your job in Initiative Discovery is narrower than in Feature Discovery. You focus on the persona and the snapshot.
 
 **Your activities:** I-3 (co-lead), I-6 (owner)
 **Key rule:** The Experience Snapshot must be specific enough to design from. "A busy professional who wants to stay organized" is not specific. "Maya, a 34-year-old team lead at a 12-person agency who rebuilds her weekly status update from scratch every Monday morning" is.
@@ -262,12 +262,12 @@ Your job in the Initiative Loop is narrower than in the Feature Loop. You focus 
 Your job here is to confirm feasibility at the initiative level — not the story level. You're asking "can we build features of this scope with this team?" not "can we build this specific API endpoint?"
 
 **Your activities:** I-8 (co-lead), I-9 (co-author), I-10 (confirmer)
-**Key rule:** If any S1 feature is architecturally impossible or will require 3× the estimated capacity, say so now — in the Initiative Loop. Not mid-sprint, not at the sprint review.
+**Key rule:** If any S1 feature is architecturally impossible or will require 3× the estimated capacity, say so now — in Initiative Discovery. Not mid-sprint, not at the sprint review.
 
 ---
 
 ### QA Lead — The Testability Signal
-Your presence in the Initiative Loop is light — but one question from you is worth hours of PM thinking.
+Your presence in Initiative Discovery is light — but one question from you is worth hours of PM thinking.
 
 **Your activities:** I-7 (participant), I-8 (participant)
 **Key question:** "How will we know if each KPI is actually moving?" Ask it during the stakeholder alignment session. If the answer is vague, the measurement plan is broken.
@@ -276,7 +276,7 @@ Your presence in the Initiative Loop is light — but one question from you is w
 
 ## Non-Negotiables
 
-If these activities are incomplete at Day 10, the initiative is not ready to enter Feature Loops:
+If these activities are incomplete at Day 10, the initiative is not ready to enter Feature Discovery:
 
 ```
 ✓ I-1: Initiative Brief exists and is readable
@@ -292,9 +292,9 @@ GOOD and NICE activities (I-3, I-4, I-8) can be skipped with a documented reason
 
 ---
 
-## Handoff to Feature Loops
+## Handoff to Feature Discovery
 
-At Day 10, the PM hands off to Feature Loops. Each S1 Feature enters its own Feature Loop — in parallel if capacity allows, or sequentially if the team is small.
+At Day 10, the PM hands off to Feature Discovery. Each S1 Feature enters its own Feature Discovery — in parallel if capacity allows, or sequentially if the team is small.
 
 The handoff package for each Feature:
 - Link to the Initiative Brief (frozen)
@@ -303,7 +303,7 @@ The handoff package for each Feature:
 - S1 confirmation (this feature ships first)
 - Any known constraints or dependencies from the Assumption Log
 
-A Feature Loop that starts without this package will spend its first two days reconstructing context that should have been produced in the Initiative Loop.
+A Feature Discovery that starts without this package will spend its first two days reconstructing context that should have been produced in Initiative Discovery.
 
 ---
 

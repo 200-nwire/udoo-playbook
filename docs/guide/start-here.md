@@ -42,9 +42,9 @@ Each boundary protects the person who comes next.
 
 ### The spiral
 
-Discovery nests: Initiative Loop → Feature Loop → Epic Loop.
+Discovery nests: Initiative Discovery → Feature Discovery → Epic Refinement.
 
-"Loop" means you revisit. You don't finish Station 1 and never return — you cycle through, adding fidelity each time. Each loop produces a concrete output (Initiative Brief, Feature Brief, DoR-ready stories) that unlocks the next loop.
+Each level means you revisit. You don't finish Station 1 and never return — you cycle through, adding fidelity each time. Each level produces a concrete output (Initiative Brief, Feature Brief, DoR-ready stories) that unlocks the next.
 
 ---
 

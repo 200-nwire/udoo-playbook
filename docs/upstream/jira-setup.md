@@ -1,8 +1,8 @@
-# Jira Setup for the Discovery Spiral
+# Jira Setup for the Upstream Spiral
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-> **What this page covers:** How to configure Jira to reflect the three-loop Discovery Spiral — the right hierarchy, naming conventions, board views, and labels for each loop. This is not a Jira tutorial; it assumes you know the basics and need the UDOO-specific configuration.
+> **What this page covers:** How to configure Jira to reflect the three-loop Upstream Spiral — the right hierarchy, naming conventions, board views, and labels for each loop. This is not a Jira tutorial; it assumes you know the basics and need the UDOO-specific configuration.
 
 ---
 
@@ -12,10 +12,10 @@ The UDOO hierarchy maps directly onto Jira's issue hierarchy:
 
 | UDOO Level | Jira Type | Scope | Loop that creates it |
 |---|---|---|---|
-| **Initiative** | Epic (or Portfolio Epic, or Initiative if enabled) | Quarterly bet | Initiative Loop |
-| **Feature** | Epic | 1–4 weeks of discovery | Initiative Loop (named), Feature Loop (specified) |
-| **Epic** | Epic | 2–5 sprints of delivery | Feature Loop |
-| **Story** | Story | 1–3 days | Epic Loop |
+| **Initiative** | Epic (or Portfolio Epic, or Initiative if enabled) | Quarterly bet | Initiative Discovery |
+| **Feature** | Epic | 1–4 weeks of discovery | Initiative Discovery (named), Feature Discovery (specified) |
+| **Epic** | Epic | 2–5 sprints of delivery | Feature Discovery |
+| **Story** | Story | 1–3 days | Epic Refinement |
 | **Subtask** | Subtask | Hours | During sprint |
 | **Bug** | Bug | — | Reported anytime |
 | **Tech Chore** | Task | — | Backlog at any time |
@@ -53,7 +53,7 @@ Backlog → Selected for Development → In Progress → In Review → Done
 
 Use **Swimlanes by Epic** to group stories under their Delivery Epic.
 
-Use the **Backlog** view for Epic Loop refinement sessions — drag stories from backlog into sprint during the E-7 DoR Readiness Check.
+Use the **Backlog** view for Epic Refinement sessions — drag stories from backlog into sprint during the E-7 DoR Readiness Check.
 
 ---
 
@@ -150,9 +150,9 @@ No "As a user..." in the title — that goes in the description. The title shoul
 
 ## Workflow per Loop
 
-### Initiative Loop (2 weeks)
+### Initiative Discovery (2 weeks)
 
-During the Initiative Loop, you are working above the story level. Jira is light here.
+During Initiative Discovery, you are working above the story level. Jira is light here.
 
 **Create:**
 - One Initiative Epic
@@ -169,13 +169,13 @@ During the Initiative Loop, you are working above the story level. Jira is light
 - Assumption Register
 - Feature prioritization (S1/S2/S3 groupings)
 
-Jira's job in the Initiative Loop is to hold the named list of Features with their Slice label so the team can see what's in S1 vs. S2 at a glance.
+Jira's job in Initiative Discovery is to hold the named list of Features with their Slice label so the team can see what's in S1 vs. S2 at a glance.
 
 ---
 
-### Feature Loop (1 week per Feature)
+### Feature Discovery (1 week per Feature)
 
-The Feature Loop produces the Delivery Epics and the Feature Slice.
+Feature Discovery produces the Delivery Epics and the Feature Slice.
 
 **Create:**
 - Delivery Epics for each Epic in this Feature (from F-5: Define Epics)
@@ -183,15 +183,15 @@ The Feature Loop produces the Delivery Epics and the Feature Slice.
 - Set `Slice` (`s1`, `s2`, `s3`) on each Delivery Epic
 - Link each Delivery Epic to its parent Feature Epic
 
-**Do not create stories yet** — the Feature Loop produces Epic briefs, not stories. Stories come in the Epic Loop.
+**Do not create stories yet** — Feature Discovery produces Epic briefs, not stories. Stories come in Epic Refinement.
 
-**Create a spike ticket** (Task, labelled `spike`) for any technical unknowns from F-8/F-9 that need investigation before the Epic Loop.
+**Create a spike ticket** (Task, labelled `spike`) for any technical unknowns from F-8/F-9 that need investigation before Epic Refinement.
 
 ---
 
-### Epic Loop (2–3 days per Epic)
+### Epic Refinement (2–3 days per Epic)
 
-The Epic Loop produces the DoR-ready stories.
+Epic Refinement produces the DoR-ready stories.
 
 **Create:**
 - Stories for every step in the Epic
@@ -207,9 +207,9 @@ After all Stories in the Epic pass E-7, move them from Backlog → Selected for 
 
 ---
 
-## The Epic Loop Board View
+## The Epic Refinement Board View
 
-For Epic Loop refinement, use the Backlog view — not the sprint board. Configure a filter:
+For Epic Refinement, use the Backlog view — not the sprint board. Configure a filter:
 
 ```jql
 project = LW
@@ -247,10 +247,10 @@ If your Jira board looks like one of these, the loop structure is breaking down:
 
 | What you see | What went wrong | Fix |
 |---|---|---|
-| Epics with no stories | Feature Loop produced Epics but Epic Loop hasn't run yet | Run the Epic Loop before pulling into sprint |
+| Epics with no stories | Feature Discovery produced Epics but Epic Refinement hasn't run yet | Run Epic Refinement before pulling into sprint |
 | Stories with no Epic link | Stories written outside the loop model | Assign to the correct Delivery Epic, add Journey Steps |
 | 20+ stories in a single Epic | Epic is too large — it's actually a Feature | Split: create sub-Epics or a new Feature Epic |
-| Stories in sprint with no AC | Epic Loop ended too early or was skipped | Block the story with `blocked` label; run E-4/E-5 before picking up |
+| Stories in sprint with no AC | Epic Refinement ended too early or was skipped | Block the story with `blocked` label; run E-4/E-5 before picking up |
 | Initiative Epic with 50+ linked stories | Hierarchy not being used | Add Feature Epic layer between Initiative and Stories |
 
 ---

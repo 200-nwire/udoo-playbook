@@ -2,8 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-::: info Where this fits in the spiral
-Station 4 belongs to the **Feature Loop** (Phase 3 — Validate the Approach). It drives [Feature Activities F-8 (Technical Feasibility), F-9 (Spikes), and F-10 (ADR)](/upstream/feature-activities). The discipline of comparing options before committing also applies at the Initiative Loop level, when the team is choosing between fundamentally different initiative directions.
+::: info Where this fits
+Station 4 is the fourth step of the **Discovery Workshop** — where the team explores *how* to solve the validated problem. It runs during [Feature Discovery](/upstream/feature-activities) (evaluating technical approaches) and at the [Initiative Discovery](/upstream/activities-sprint) level when the team is choosing between fundamentally different initiative directions. The PM and Core Trio (PM, Designer, Tech Lead) run it together.
+
+This is not a refinement practice. The options evaluated here inform architecture decisions (ADRs), not story-level implementation choices.
 :::
 
 ## Purpose

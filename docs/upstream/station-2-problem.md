@@ -2,8 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-::: info Where this fits in the spiral
-Station 2 belongs to the **Initiative Loop** (Phase 1–2 — Frame the Problem). It runs during Days 2–4 of the 2-week Initiative Sprint, and feeds into [Activities I-3, I-4, I-5, and I-8](/upstream/activities-sprint). The discipline of "understand before solving" also applies inside every Feature Loop — particularly when the feature touches an unfamiliar problem area.
+::: info Where this fits
+Station 2 is the second step of the **Discovery Workshop** — the Core Trio's structured practice for validating problems before the team commits to building. It runs during [Initiative Discovery](/upstream/activities-sprint) and again (scoped to a single feature) during [Feature Discovery](/upstream/feature-activities). The PM and Core Trio (PM, Designer, Tech Lead) run it together.
+
+This is not a refinement practice. For breaking features into stories, see [Story Mapping](/upstream/story-mapping) and the [Three Amigos grooming session](/upstream/grooming-session).
 :::
 
 ## Purpose

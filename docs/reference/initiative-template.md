@@ -203,7 +203,7 @@ Not every initiative needs all 11 sections. Scale based on scope:
 Rule of thumb: if the initiative spans more than one team or requires a formal approval gate, complete all sections.
 
 ::: tip API contracts and BDD belong later
-API contracts, detailed BDD scenarios, and technical specifications are refinement artifacts — they belong in Feature Briefs and Epic Briefs, not in the Initiative Brief. The initiative is a discovery document: it validates the problem and commits to an approach. Implementation details come later, when the [Feature Loop](/upstream/spiral-model#the-three-loops-at-a-glance) begins.
+API contracts, detailed BDD scenarios, and technical specifications are refinement artifacts — they belong in Feature Briefs and Epic Briefs, not in the Initiative Brief. The initiative is a discovery document: it validates the problem and commits to an approach. Implementation details come later, when [Feature Discovery](/upstream/spiral-model#the-three-loops-at-a-glance) begins.
 :::
 
 ---

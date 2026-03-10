@@ -1,8 +1,8 @@
-# Feature Activities — The Feature Loop
+# Feature Activities — Feature Discovery
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-> **Where this fits:** This is Loop 2 of the [Discovery Spiral](/upstream/spiral-model). It runs once per Feature — after the [Initiative Loop](/upstream/activities-sprint) has produced the Feature List and before any [Epic Loop](/upstream/epic-activities) can begin.
+> **Where this fits:** This is the second level of [the Upstream Spiral](/upstream/spiral-model) — a 1-week sprint where the PM and Core Trio run the 5-station Discovery Workshop scoped to a single feature. It runs once per Feature — after [Initiative Discovery](/upstream/activities-sprint) has produced the Feature List and before any [Epic Refinement](/upstream/epic-activities) can begin.
 
 ---
 
@@ -12,10 +12,10 @@ The initiative is approved. The Feature List exists. Feature A is called "User R
 
 Three weeks later, the developer building the export asks: "Export to what format? CSV? PDF? Can they filter by date range? What happens if the dataset is 50,000 rows?" The PM says "let me check with the stakeholder." The stakeholder says "we actually meant a dashboard, not an export." The developer scraps two weeks of work.
 
-The one-line Feature description was agreement on a name, not agreement on a feature. The Feature Loop exists to close that gap — to take a Feature from "named" to "understood well enough to build Epic by Epic."
+The one-line Feature description was agreement on a name, not agreement on a feature. Feature Discovery exists to close that gap — to take a Feature from "named" to "understood well enough to build Epic by Epic."
 
-::: warning The most commonly skipped loop — and the most expensive
-The Feature Loop is the level teams skip most often. It feels like overhead: the initiative is approved, why not just start building?
+::: warning The most commonly skipped level — and the most expensive
+Feature Discovery is the level teams skip most often. It feels like overhead: the initiative is approved, why not just start building?
 
 What skipping costs:
 - Stories written without a journey map drift in scope mid-sprint
@@ -23,14 +23,14 @@ What skipping costs:
 - Developers ask "what happens when X?" in the middle of implementation — because no Feature Brief exists to answer it
 - The epic ships, but nobody agrees what the *feature* was supposed to feel like
 
-Skipping the Feature Loop feels like saving a week. It costs 2–3 sprints of rework.
+Skipping Feature Discovery feels like saving a week. It costs 2–3 sprints of rework.
 :::
 
 ---
 
-## What the Feature Loop Produces
+## What the Feature Discovery Produces
 
-By the end of the Feature Loop, the team knows:
+By the end of the Feature Discovery, the team knows:
 
 - The specific user journey for this Feature, step by step
 - What the Epics are, and which one ships first
@@ -38,7 +38,7 @@ By the end of the Feature Loop, the team knows:
 - What the technical risks are, and whether they're resolved
 - What the design direction is — not the final design, but the approach
 
-With this in hand, the Epic Loop can produce DoR-ready stories reliably. Without it, each Epic Loop starts from scratch — rebuilding context, relitigating scope decisions, and discovering technical blockers one sprint too late.
+With this in hand, the Epic Refinement can produce DoR-ready stories reliably. Without it, each Epic Refinement starts from scratch — rebuilding context, relitigating scope decisions, and discovering technical blockers one sprint too late.
 
 ---
 
@@ -57,7 +57,7 @@ Five things must exist before any story is written for this feature:
 4. **Named Epics** — each covering a section of the journey (F-5)
 5. **Feature Slice** — what ships first, confirmed by stakeholder (F-7)
 
-Without these five, the Epic Loop builds stories on unstable ground. Read the full activity list as reference while you're doing the work — not as a checklist to complete in order.
+Without these five, the Epic Refinement builds stories on unstable ground. Read the full activity list as reference while you're doing the work — not as a checklist to complete in order.
 :::
 
 ## The 11 Feature Activities
@@ -163,7 +163,7 @@ Draw the line between what ships in the first release of this Feature and what s
 
 ### Phase 3: Validate the Approach
 
-> *The structure is clear. Now confirm you can build it — technically, visually, and architecturally — before any Epic Loop begins.*
+> *The structure is clear. Now confirm you can build it — technically, visually, and architecturally — before any Epic Refinement begins.*
 
 ---
 
@@ -199,7 +199,7 @@ For every significant architectural decision within this Feature, write an Archi
 
 **[F-11] UX Design Direction + Prototype** — GOOD
 
-Before Epic Loops begin producing stories with visual references, establish the design direction. Explore 2–3 interaction patterns. Choose one. Build a prototype for the highest-risk journey steps.
+Before Epic Refinements begin producing stories with visual references, establish the design direction. Explore 2–3 interaction patterns. Choose one. Build a prototype for the highest-risk journey steps.
 
 - **Output:** Design direction documented (rationale for why this approach over alternatives) + clickable Figma prototype for the Feature's primary flow and at least 2 edge cases
 - **Who:** UX Designer + PM
@@ -238,11 +238,11 @@ Friday (Day 5) — Lock and Hand Off
   ├── F-10: ADR accepted (Tech Lead + PM sign-off)
   ├── F-11: Design direction agreed (UX + PM)
   ├── Feature Brief updated with all findings
-  └── Epic Loop scheduled for top-priority Epic(s)
+  └── Epic Refinement scheduled for top-priority Epic(s)
 ```
 
 ::: warning If the Feature is large
-Some features are complex enough that 1 week isn't sufficient. Signs: the journey map has more than 15 steps, there are more than 6 Epics, or the Tech Lead identifies 3+ unknowns requiring spikes. In this case, extend the Feature Loop to 2 weeks — but do not skip activities. The alternative (running Epic Loops on an insufficiently shaped Feature) costs more than the extra week.
+Some features are complex enough that 1 week isn't sufficient. Signs: the journey map has more than 15 steps, there are more than 6 Epics, or the Tech Lead identifies 3+ unknowns requiring spikes. In this case, extend the Feature Discovery to 2 weeks — but do not skip activities. The alternative (running Epic Refinements on an insufficiently shaped Feature) costs more than the extra week.
 :::
 
 ---
@@ -258,10 +258,10 @@ You produce the Feature Brief, lead the journey mapping, and make the final call
 ---
 
 ### UX Designer — The Experience Architect
-The Feature Loop is your most important loop. You translate the journey map into something buildable.
+The Feature Discovery is your most important loop. You translate the journey map into something buildable.
 
 **Your activities:** F-2, F-3, F-4, F-11
-**Key rule:** The lo-fi wireframe (F-4) must exist before Epic Loops begin. Stories without a visual reference cannot pass DoR. A rough sketch is better than nothing — but nothing is not acceptable.
+**Key rule:** The lo-fi wireframe (F-4) must exist before Epic Refinements begin. Stories without a visual reference cannot pass DoR. A rough sketch is better than nothing — but nothing is not acceptable.
 
 ---
 
@@ -269,21 +269,21 @@ The Feature Loop is your most important loop. You translate the journey map into
 Your job is to find the technical risks before any developer writes a line of code. Spikes run here, not mid-sprint.
 
 **Your activities:** F-3 (participant), F-6 (confirmer), F-8, F-9, F-10
-**Key rule:** If you identify a risk but don't run a spike because there's "no time," that risk will surface mid-delivery. Spikes in the Feature Loop cost 2 days. The same discovery mid-implementation costs 2 weeks.
+**Key rule:** If you identify a risk but don't run a spike because there's "no time," that risk will surface mid-delivery. Spikes in the Feature Discovery cost 2 days. The same discovery mid-implementation costs 2 weeks.
 
 ---
 
 ### QA Lead — The Early Edge Case Spotter
-The QA Lead's role in the Feature Loop is to read the journey map with a "what breaks here?" lens — before stories are written.
+The QA Lead's role in the Feature Discovery is to read the journey map with a "what breaks here?" lens — before stories are written.
 
 **Participation:** F-3 (review the journey map for testability gaps)
-**Key question:** For every journey step, ask: "What does failure look like here? Is it testable?" If the answer is vague, the step needs more definition before Epic Loops begin.
+**Key question:** For every journey step, ask: "What does failure look like here? Is it testable?" If the answer is vague, the step needs more definition before Epic Refinements begin.
 
 ---
 
 ## Non-Negotiables
 
-If these activities are incomplete, the Feature is not ready to enter Epic Loops:
+If these activities are incomplete, the Feature is not ready to enter Epic Refinements:
 
 ```
 ✓ F-1: Feature Brief exists and is scoped to this feature
@@ -295,13 +295,13 @@ If these activities are incomplete, the Feature is not ready to enter Epic Loops
 ✓ F-8: Technical feasibility confirmed; dependencies mapped
 ```
 
-GOOD activities (F-4, F-11) can be deferred one loop — but no story in the Epic Loop can pass DoR without a visual reference (F-4 output). Defer F-4 and it will block F-4 in every Epic Loop that follows.
+GOOD activities (F-4, F-11) can be deferred one loop — but no story in the Epic Refinement can pass DoR without a visual reference (F-4 output). Defer F-4 and it will block F-4 in every Epic Refinement that follows.
 
 ---
 
-## Handoff to Epic Loops
+## Handoff to Epic Refinements
 
-Each Epic enters its own Epic Loop — in priority order, or in parallel if the team has capacity. The handoff package for each Epic:
+Each Epic enters its own Epic Refinement — in priority order, or in parallel if the team has capacity. The handoff package for each Epic:
 
 - Feature Brief (finalized)
 - Journey Map section covering this Epic's steps
@@ -310,7 +310,7 @@ Each Epic enters its own Epic Loop — in priority order, or in parallel if the 
 - Technical constraints from F-8 that affect this Epic
 - ADR links if any decisions affect this Epic's stories
 
-Without this package, the Epic Loop starts with a conversation instead of a brief. That conversation reconstructs what the Feature Loop already produced — at the cost of the developer's time.
+Without this package, the Epic Refinement starts with a conversation instead of a brief. That conversation reconstructs what the Feature Discovery already produced — at the cost of the developer's time.
 
 ---
 

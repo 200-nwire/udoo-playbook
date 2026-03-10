@@ -2,8 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-::: info Where this fits in the spiral
-Station 3 belongs to the **Feature Loop** (Phase 1–2 — Frame and Structure). It is the core of [Feature Activity F-3 (User Journey Mapping)](/upstream/feature-activities) and directly informs F-5 (Define Epics). Every Epic in the system should trace back to the journey steps mapped here. The slicing model (S1/S2/S3) built in this station becomes the Feature Slice in F-7.
+::: info Where this fits
+Station 3 is the third step of the **Discovery Workshop** — where the abstract problem becomes a walkable path. It runs during both [Initiative Discovery](/upstream/activities-sprint) (broad journey) and [Feature Discovery](/upstream/feature-activities) (detailed journey for one feature). The PM and Core Trio (PM, Designer, Tech Lead) run it together. Every Epic in the system should trace back to the journey steps mapped here.
+
+This is not a refinement practice. For breaking a mapped journey into buildable stories, see [Story Mapping](/upstream/story-mapping) and [The Cut](/upstream/the-cut).
 :::
 
 ## Purpose

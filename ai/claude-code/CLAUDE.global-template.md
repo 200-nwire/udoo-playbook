@@ -45,40 +45,64 @@ To use nvm in scripts: source `~/.nvm/nvm.sh` first.
 
 ---
 
-## UDOO Framework
+## UDOO Framework — Automatic Behavior Rules
 
-I follow the **UDOO R&D framework** (https://200-nwire.github.io/udoo-playbook/) for all product and feature work.
+I follow the **UDOO R&D framework** (https://200-nwire.github.io/udoo-playbook/) for all product and feature work. These rules apply automatically.
 
-### When I ask you to help with product work:
+### Classification (always do this first)
 
-**Always apply these rules:**
-- Stories must follow: `As [named persona], I want [action], so that [outcome].`
-- Features must have an Experience Snapshot before any implementation details
-- Initiatives must have a 2-paragraph Problem Story (current pain + opportunity)
-- Never write solutions before naming whose problem we're solving
+When I describe a piece of work, classify it before doing anything else:
 
-**Story hierarchy:** Initiative → Feature → Epic → Story → Subtask
+| What it is | Classification | What you produce |
+|---|---|---|
+| New problem space never worked on | **Initiative** | 5-station discovery (conversational, one station at a time) |
+| New capability within known initiative | **Feature** | Experience Snapshot + Feature Brief + Epics |
+| Cluster of stories for a known feature | **Epic** | Epic brief + candidate stories + DoD |
+| Single user action (1–3 days) | **Story** | DoR-checked story + ACs + Gherkin |
+| Something that was built but doesn't work | **Bug** | Severity + steps to reproduce + expected vs actual |
+| Something with no direct user change | **Tech chore** | Justification + what it unblocks |
 
-**Before a story can start:** It must pass the 9-point DoR (format, journey reference, ACs, visual, copy, observability, dependencies, sizing, tech feasibility).
+If the classification is ambiguous, say which it is and why before proceeding.
 
-**When I describe an idea:** Use `/triage` logic to classify it before expanding:
-1. Can you articulate whose pain this solves? (No → parking lot)
-2. New problem space? → Initiative
-3. New capability within known initiative? → Feature
-4. Structural piece of a known feature? → Epic
-5. Single user action? → Story
-6. Defect? → Bug
+### The Agentic Discipline
 
-### When writing specs or planning docs:
-- Require Experience Snapshot for any Feature-level work
-- Require KPI for any Initiative-level work
-- Use INVEST criteria to validate Stories
+**Enter at the right level.** Check what artifacts exist before producing anything:
+- No Initiative Brief? → Start at Initiative Discovery (5-station workshop)
+- Initiative exists but no Feature Brief? → Start at Feature Discovery
+- Feature Brief exists but no Epic Brief? → Start at Epic Refinement
+- All context exists? → Write the story, check DoR (30 minutes)
 
-### When writing code:
-- Reference the user story before implementing
-- Name things from the user's perspective (not the system's)
-- Consider the Gherkin acceptance criteria when writing tests
-- Tests should trace back to the story's "so that" clause
+**Work in sessions, not monologues.** Discovery is conversational:
+- Run one station at a time. Ask questions. Wait for answers. Synthesise.
+- Don't dump a complete brief from a one-sentence prompt.
+- After each station, review the output before moving on.
+
+**Pause at gates.** After producing an artifact:
+- Initiative Brief → review before starting Feature Discovery
+- Feature Brief → review before starting Epic Refinement
+- Stories → DoR check before marking ready
+- No level is skipped, no gate is bypassed.
+
+**Recover, don't restart.** For existing work:
+- Audit what exists. Find the highest documented level.
+- Trace up: can you connect it to a business goal?
+- Backfill gaps downward from what's solid.
+- Don't throw away existing work — build on it.
+
+### Three types of upstream work
+
+- **Discovery** (PM + Core Trio): 5-station workshop. Validates the problem. Produces Initiative Briefs and Feature Briefs.
+- **Refinement** (PO + Three Amigos): Story mapping, The Cut, grooming, DoR. Breaks validated features into buildable stories.
+- **The boundary:** if you don't have a Feature Brief, you're still in discovery. If you do, you're in refinement.
+
+### Universal rules
+
+- **Never write solutions before naming whose problem we're solving.**
+- **Never use anonymous personas.** Named people only.
+- **Always name the journey step** a story belongs to.
+- **If a story doesn't have a success metric, ask for one.**
+- **Every spec must be verifiable.** If QA can't test it, it's not a spec.
+- **Cross-reference what exists.** Before designing something, check the codebase.
 
 ---
 
@@ -99,3 +123,6 @@ I follow the **UDOO R&D framework** (https://200-nwire.github.io/udoo-playbook/)
 - Adding error handling for scenarios that can't happen
 - Guessing at requirements — ask if unclear
 - Auto-committing code without asking
+- Writing "the user" — always a named persona
+- Skipping the DoR checklist on stories
+- Dumping a complete spec without walking through discovery stations first

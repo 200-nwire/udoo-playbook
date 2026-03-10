@@ -2,8 +2,10 @@
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-::: info Where this fits in the spiral
-Station 5 spans two loops. At the **Initiative Loop** level, it corresponds to [Activities I-9 and I-10](/upstream/activities-sprint) — defining the Feature List and slicing S1/S2/S3. At the **Feature Loop** level, it corresponds to [Activity F-7 (Feature Slice)](/upstream/feature-activities) — freezing which Epics ship first. The convergence discipline is the same at both levels: stop exploring, make a defensible decision, document the rationale.
+::: info Where this fits
+Station 5 is the final step of the **Discovery Workshop** — where exploration ends and commitment begins. At the [Initiative Discovery](/upstream/activities-sprint) level, it produces the Feature List and S1/S2/S3 slices. At the [Feature Discovery](/upstream/feature-activities) level, it freezes which Epics ship first. The PM and Core Trio (PM, Designer, Tech Lead) run it together.
+
+After Station 5, stories move into [Epic Refinement](/upstream/epic-activities) — a different practice, led by a different team (PO + Three Amigos). The convergence discipline is the same at both levels: stop exploring, make a defensible decision, document the rationale.
 :::
 
 ## Purpose

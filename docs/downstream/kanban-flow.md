@@ -26,12 +26,12 @@ Downstream is **delivery** — continuous execution of work that has already bee
 
 ### Releases anchor planning; iterations anchor cadence
 
-In Downstream, planning is **release-anchored**, not sprint-anchored. A **release** corresponds to a Slice (S1, S2, S3) — it was defined in the Initiative Loop and represents a coherent unit of user value. Stories in that release flow through the Kanban board continuously until all of them are done.
+In Downstream, planning is **release-anchored**, not sprint-anchored. A **release** corresponds to a Slice (S1, S2, S3) — it was defined in Initiative Discovery and represents a coherent unit of user value. Stories in that release flow through the Kanban board continuously until all of them are done.
 
 The **iteration** (typically 2 weeks) provides the ceremonial rhythm — demo, retro, flow review — but it does not gate releases. A release ships when all its stories pass the Definition of Done. That might happen mid-iteration, or it might span two iterations. The calendar does not control the release; the quality gate does.
 
 ```
-Release (S1)  ←  what we're working toward  ←  defined in Initiative Loop
+Release (S1)  ←  what we're working toward  ←  defined in Initiative Discovery
 Iteration     ←  how we review and improve  ←  every 2 weeks, regardless of release state
 ```
 

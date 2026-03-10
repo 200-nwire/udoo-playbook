@@ -58,7 +58,7 @@ Noa opens the quarter with two initiative briefs on the wall.
 - Primary persona: Yossi, searching for a learning path
 - Problem: users can't find paths that match their level — they browse randomly and abandon
 - Success metric: path-start rate from 12% → 35%
-- Status: Discovery complete. Feature A (Path Recommendations) is ready for the Epic Loop. Feature B (Path Preview) is in Feature Discovery.
+- Status: Discovery complete. Feature A (Path Recommendations) is ready for the Epic Refinement. Feature B (Path Preview) is in Feature Discovery.
 
 ### The Portfolio Decision
 
@@ -73,7 +73,7 @@ Noa makes the call:
 
 | Product | Phase | Allocation | What happens this sprint |
 |---------|-------|-----------|------------------------|
-| PathFinder | Downstream | 2 developers | Epic Loop for Path Recommendations → stories → dev starts |
+| PathFinder | Downstream | 2 developers | Epic Refinement for Path Recommendations → stories → dev starts |
 | Reflect | Upstream | Noa + Tal + Oren (Core Trio) | Feature Discovery for Gentle Re-engagement |
 | Reflect | Downstream | 1.5 developers | Finishing last stories from Return Screen |
 | Both | Onstream | 0.5 developer (rotating) | On-call, monitoring, tech debt |
@@ -129,9 +129,9 @@ Noa picks Option A for Now, Option B for Next. Option C goes to Later — too ex
 
 The Feature Brief is written. The Core Trio signs it.
 
-### Downstream: PathFinder Enters the Epic Loop
+### Downstream: PathFinder Enters the Epic Refinement
 
-While Noa discovers Reflect's next feature, Lior runs the Epic Loop for PathFinder's Path Recommendations feature.
+While Noa discovers Reflect's next feature, Lior runs the Epic Refinement for PathFinder's Path Recommendations feature.
 
 Lior, Oren, and Dina — the Three Amigos — sit down with the [story map](/upstream/story-mapping). Twelve stories across three epics. Lior draws [The Cut](/upstream/the-cut): four stories above the line (the minimum for Yossi to see a recommendation and start a path), eight below.
 
@@ -161,7 +161,7 @@ The first trigger is hit.
 
 Noa doesn't panic. The framework told her this might happen. The reopen trigger says: stop feature delivery, return to Station 2 with new evidence.
 
-She pauses the Gentle Re-engagement feature. The stories that were about to enter the Epic Loop go back to "mapped, not refined." The developers allocated to Reflect shift to PathFinder, which has a healthy backlog of ready stories below The Cut.
+She pauses the Gentle Re-engagement feature. The stories that were about to enter the Epic Refinement go back to "mapped, not refined." The developers allocated to Reflect shift to PathFinder, which has a healthy backlog of ready stories below The Cut.
 
 ::: warning This is the framework working, not failing
 A PM who doesn't have reopen triggers keeps building. Three more features ship. The metric stays at 17%. A quarter is wasted. The reopen trigger caught the problem in week 5 — early enough to redirect, late enough to have real evidence.
@@ -267,7 +267,7 @@ Noa reruns Station 2 with the new evidence. The problem statement changes:
 
 The Gentle Re-engagement feature is redesigned. Instead of hiding the streak (treating the symptom), the return screen now surfaces Sara's best past entries and offers a low-friction prompt: "You wrote this three weeks ago. Want to add to it?" The prompt gives Sara a reason to write — not guilt, not obligation, but curiosity about her own past words.
 
-The Feature Brief is rewritten. The Core Trio signs it. The Epic Loop begins.
+The Feature Brief is rewritten. The Core Trio signs it. The Epic Refinement begins.
 
 ### PathFinder: Delivery Continues, Discovery Starts
 
@@ -336,7 +336,7 @@ Every practice in the playbook appeared in this quarter. Here's where:
 |----------|-----------------|-------------------|
 | [Portfolio allocation](/portfolio/) | Week 1 — capacity split | Idle developers, starved discovery |
 | [Discovery Workshop (5 stations)](/upstream/station-1-vision) | Weeks 2–3 — Reflect Feature B | Building without validating assumptions |
-| [Story Mapping + The Cut](/upstream/the-cut) | Week 3 — PathFinder Epic Loop | Refining 12 stories when 5 would do |
+| [Story Mapping + The Cut](/upstream/the-cut) | Week 3 — PathFinder Epic Refinement | Refining 12 stories when 5 would do |
 | [Three Amigos grooming](/upstream/grooming-session) | Week 3 — PathFinder DoR | "What about new users?" edge case missed |
 | [Reopen Triggers](/reference/initiative-template) | Week 5 — metric didn't move | Another quarter of building against wrong framing |
 | [Feedback Loop](/offstream/feedback-loop) | Week 5 — Yael's CS data | Evidence invisible to PM, decision made on gut |
@@ -359,4 +359,4 @@ That path is the framework. This tutorial is what it looks like when the path ho
 → [The Growth Path](/guide/ship-clean) — adopt the framework progressively
 → [Portfolio Overview](/portfolio/) — managing multiple initiatives
 → [Strategic Synthesis](/offstream/strategic-synthesis) — the quarterly direction check
-→ [The Discovery Spiral](/upstream/spiral-model) — how discovery and refinement pipeline
+→ [The Upstream Spiral](/upstream/spiral-model) — how discovery and refinement pipeline

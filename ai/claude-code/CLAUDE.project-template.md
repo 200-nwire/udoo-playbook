@@ -50,7 +50,7 @@
 
 ---
 
-## Team Roles
+## Team & Personas
 
 | Role | Name / Handle |
 |---|---|
@@ -60,6 +60,12 @@
 | Backend | [names] |
 | QA | [name] |
 | DevOps | [name] |
+
+**Named personas used in stories:**
+| Persona | Who they are |
+|---|---|
+| [e.g. Maya] | [e.g. Team lead at a 12-person agency, uses the app daily for reporting] |
+| [e.g. Avi] | [e.g. First-time user evaluating the product during a trial] |
 
 ---
 
@@ -79,19 +85,33 @@ PRs require: [1 / 2] approvals + passing CI.
 
 This project follows the [UDOO framework](https://200-nwire.github.io/udoo-playbook/).
 
+### Agentic approach — how to work on this project
+
+**Classify first.** When I describe work, determine the level (Initiative / Feature / Epic / Story / Bug) before producing anything.
+
+**Check what exists.** Before writing an artifact, check whether the level above it has been documented:
+- Writing a story? → Does a Feature Brief exist? If not, start there.
+- Writing an epic? → Does the Feature have a journey map? If not, start there.
+- Writing a feature brief? → Does an Initiative Brief exist? If not, start there.
+
+**Work in sessions.** Don't produce a complete brief from a one-line description. Ask questions, synthesise, review. One level at a time.
+
+**Pause at gates.** After producing an Initiative Brief, Feature Brief, or Epic — pause for review before moving to the next level.
+
 ### Story format
 Always: `As [named persona], I want [action], so that [outcome].`
 Never write task-format tickets ("implement X", "add Y endpoint").
 
 ### Before writing a story
-- Is there a named persona? (Not "the user" — give them a name)
+- Is there a named persona? (Not "the user" — use a persona from the table above)
 - Is there a journey step reference?
 - Are all states defined? (empty, loading, success, error, edge cases)
+- Does the Feature Brief exist above this story?
 
 ### Before starting a sprint
 - Every story must pass the 9-point DoR checklist
 - Every story must have at least 3 Gherkin acceptance criteria
-- Every story must be sized (1-3 days max)
+- Every story must be sized (1–3 days max)
 
 ### Before shipping
 - Story must pass the DoD for this project (see below)
@@ -108,24 +128,26 @@ Never write task-format tickets ("implement X", "add Y endpoint").
 
 ---
 
-## Never Do List
-
-- Never write or merge a story that hasn't passed DoR
-- Never ship a feature without at least one observability signal
-- Never use "the user" — name the persona
-- Never skip the "so that" clause in a user story
-- Never push directly to `main` — always use a PR
-- [Add project-specific rules here]
-
----
-
 ## Current Initiatives
 
 > Update this section as the team's focus evolves.
 
-| Initiative | Phase | Status | Owner |
+| Initiative | Level | Status | Owner |
 |---|---|---|---|
-| [Initiative name] | [Upstream/Downstream] | [Active/Parked] | [name] |
+| [Initiative name] | [Initiative Discovery / Feature Discovery / Epic Refinement / Downstream] | [Active / Parked] | [name] |
+
+---
+
+## Never Do List
+
+- Never write or merge a story that hasn't passed DoR
+- Never skip a level — no stories without a Feature Brief above them
+- Never ship a feature without at least one observability signal
+- Never use "the user" — name the persona
+- Never skip the "so that" clause in a user story
+- Never push directly to `main` — always use a PR
+- Never dump a complete spec without walking through discovery first
+- [Add project-specific rules here]
 
 ---
 

@@ -1,14 +1,22 @@
-# The Discovery Spiral
+# The Upstream Spiral
 
 <span class="phase-badge upstream">🔵 Upstream</span>
 
-::: tip Loops and Stations in one sentence
-**Loops** tell you *when and at what scope* to do discovery. **Stations** tell you *what to ask* while you're doing it. You don't study them separately — you ask the station questions while running the loop.
-:::
+## The Problem This Page Solves
+
+A new initiative arrives. The instinct is to run through discovery once — gather context, map the journey, write stories, hand off. Linear. Sequential. Done in two weeks.
+
+This works for a feature with one epic and five stories. It does not work for anything real.
+
+A real initiative has three to six features. Each feature has four to eight epics. Each epic has three to eight stories. If you try to run all of that through a single two-week sprint, one of two things happens: you rush and ship unprepared stories, or you spend six weeks in a room and the delivery team sits idle.
+
+The solution is not to run everything longer. It is to run different kinds of work at different levels — and to pipeline them so delivery never waits for discovery.
+
+---
 
 ## Three Types of Work
 
-Before understanding the spiral, you need to understand that not all Upstream work is the same. The hierarchy — Initiative → Feature → Epic → Story — isn't just a nesting structure. It represents three fundamentally different types of work, each with different people, different practices, and different outputs.
+Not all Upstream work is the same. The hierarchy — Initiative → Feature → Epic → Story — represents three fundamentally different types of work. Different people, different practices, different outputs.
 
 ```
 Strategic Alignment          Discovery                    Refinement
@@ -22,215 +30,198 @@ Practice: Direction Map,     Practice: 5-Station          Practice: Story Mappin
 OKR setting, Strategic       Discovery Workshop           The Cut, Three Amigos
 Synthesis                                                 Grooming, DoR
 
-Output: Which problems       Output: Initiative Brief,    Output: DoR-ready stories
-are worth solving            Feature Brief, journey       with Gherkin, sizing,
-this quarter                 maps, validated persona      and design reference
+Question: What problems      Question: Is this the        Question: What exactly
+are worth our next           right problem, and           are we building, and is
+quarter?                     what's the best approach?    every story ready to start?
+
+Output: Initiative themes    Output: Initiative Brief,    Output: DoR-ready stories
+(Now / Next / Later)         Feature Brief, journey       with Gherkin, sizing,
+                             maps, validated persona      and design reference
 ```
 
-Strategic Alignment answers: **"What problems are worth our next quarter?"** It draws on evidence from [Strategic Synthesis](/offstream/strategic-synthesis), OKR retrospectives, and the [Feedback Loop](/offstream/feedback-loop). It produces the Direction Map and initiative themes (Now / Next / Later).
+**Strategic Alignment** draws on evidence from [Strategic Synthesis](/offstream/strategic-synthesis), OKR retrospectives, and the [Feedback Loop](/offstream/feedback-loop). It happens quarterly and produces the Direction Map.
 
-Discovery answers: **"Is this the right problem, for the right person, and what's the best approach?"** The PM and Core Trio run the [5-station workshop](/upstream/station-1-vision) to validate the problem, map the journey, evaluate options, and commit to a scope. It produces the Initiative Brief and Feature Briefs.
+**Discovery** is the [5-station workshop](/upstream/station-1-vision) — the doctor's visit. The PM and Core Trio validate the problem, map the journey, evaluate options, and commit to a scope. It produces Initiative Briefs and Feature Briefs.
 
-Refinement answers: **"What exactly are we building, and is every story ready for a developer to start?"** The PO and Three Amigos run [story mapping](/upstream/story-mapping), draw [The Cut](/upstream/the-cut), and refine stories through [grooming sessions](/upstream/grooming-session) until every story passes the [9-point DoR](/upstream/definition-of-ready).
+**Refinement** is [story mapping](/upstream/story-mapping), [The Cut](/upstream/the-cut), and [grooming](/upstream/grooming-session). The PO and Three Amigos break known features into buildable stories. Every story passes the [9-point DoR](/upstream/definition-of-ready) before entering Downstream.
 
-These are not phases you move through sequentially. They run concurrently — the PM discovers the next feature while the PO refines stories for the current one. The spiral is the mechanism that makes this pipeline work.
+These run concurrently. While the PM discovers the next feature, the PO refines stories for the current one. The spiral is the pipeline that makes this possible.
 
 ---
 
-## The Problem With Linear Discovery
+## How Discovery Works: The Initiative and Feature Levels
 
-When a new initiative arrives, the instinct is to run discovery once — gather context, map the journey, write stories, hand off. Linear. Sequential. Done in two weeks.
-
-This works for a feature with one epic and five stories. It does not work for anything real.
-
-A real initiative has three to six features. Each feature has four to eight epics. Each epic has three to eight stories. If you try to run all of that through a single two-week sprint, one of two things happens: you rush and ship unprepared stories, or you spend six weeks in discovery and the delivery team sits idle.
-
-Neither outcome is acceptable.
-
-The solution is not to run discovery longer. It is to run it at the right level — and to run it multiple times, on a pipeline.
-
----
-
-## Discovery Is Recursive
-
-The same questions appear at every level of the hierarchy. They just narrow in scope.
-
-*Who is this for? What does done look like? What are the risks? What ships first?*
-
-At the Initiative level, those questions span the whole product bet. At the Feature level, they scope down to one user capability. At the Epic level, they focus on a single user goal and the stories that deliver it.
-
-This is the spiral: the same structure, repeated three times, each iteration tighter and more concrete than the last.
+Discovery repeats at two levels. The same five stations, the same Core Trio, the same workshop — but scoped differently each time.
 
 ```
-🔵 INITIATIVE LOOP (2 weeks)
+🔵 INITIATIVE DISCOVERY (2 weeks)
+   Stations 1–5, full scope
    Who is the primary user? Why this, why now?
    What features make up this initiative?
    What does success look like in 90 days?
-   OUTPUT: Approved initiative brief + prioritized Feature list
+   OUTPUT → Initiative Brief + prioritized Feature list + S1/S2/S3 slices
 
-      🔵 FEATURE LOOP (1 week, per feature)
-         How does this Feature work end-to-end?
-         What are the Epics inside it?
-         What are the technical and UX risks?
-         OUTPUT: Feature brief + User journey + Epic list
-
-            🔵 EPIC LOOP (2–3 days, per epic)
-               What stories deliver this Epic's user goal?
-               Are they all DoR-ready?
-               OUTPUT: DoR-ready Stories → enter Downstream
+      🔵 FEATURE DISCOVERY (1 week, per feature)
+         Stations 1–5, scoped to one feature
+         How does this feature work end-to-end?
+         What are the Epics? What are the technical risks?
+         OUTPUT → Feature Brief + journey map + Epic list + ADRs
 ```
+
+Initiative Discovery runs once per initiative. Feature Discovery runs once per feature — in parallel if the team has capacity, or sequentially if it doesn't.
+
+→ [Initiative Discovery outcomes](/upstream/activities-sprint)
+→ [Feature Discovery outcomes](/upstream/feature-activities)
+
+---
+
+## How Refinement Works: Epic Refinement
+
+Refinement is different from discovery. The problem is validated. The feature is shaped. The journey is mapped. Now the team needs buildable stories.
+
+Different people lead. The PO owns the backlog, not the PM. The Three Amigos (PO, Tech Lead, QA) do the work, not the Core Trio. The practices are different: story mapping, The Cut, example mapping, Gherkin, DoR.
+
+```
+      🟢 EPIC REFINEMENT (2–3 days, per epic)
+         Story map the epic's journey section
+         Draw The Cut — which stories to refine now
+         Three Amigos grooming for each story
+         OUTPUT → DoR-ready Stories → enter Downstream
+```
+
+::: warning Discovery and refinement are not the same practice at different scales
+Teams that use discovery practices for refinement — running five stations to write a story — waste time on questions that are already answered. Teams that use refinement practices for discovery — jumping straight to story mapping without validating the problem — waste sprints building the wrong thing.
+
+The boundary is clear: **if you don't have a Feature Brief, you're still in discovery. If you do, you're in refinement.**
+:::
+
+→ [Epic Refinement outcomes](/upstream/epic-activities)
+→ [Story Mapping](/upstream/story-mapping)
+→ [The Cut](/upstream/the-cut)
+
+---
+
+## The Pipeline: Discovery and Refinement Run Concurrently
+
+The spiral does not run sequentially. Discovery feeds refinement. Refinement feeds delivery. All three run at the same time on different features.
+
+```
+Week 1–2  │ Initiative Discovery → Feature List (A, B, C)
+           │
+Week 3    │ Feature Discovery: A ─────────────────────► Epic List (A1, A2, A3)
+           │ Feature Discovery: B begins
+           │
+Week 4    │ Epic Refinement: A1 ──────────────────────► Ready Stories → Dev starts
+           │ Epic Refinement: A2 begins
+           │ Feature Discovery: B ────────────────────► Epic List (B1, B2)
+           │ Feature Discovery: C begins
+           │
+Week 5    │ [Feature A stories in Downstream]
+           │ Epic Refinement: A2 → Ready Stories
+           │ Epic Refinement: B1 → Ready Stories
+           │ Feature Discovery: C → Epics
+```
+
+The delivery team starts building Epic A1's stories while Epic A2 is still being refined and Feature C is still being discovered. Upstream continuously feeds Downstream — no six-week wait, no idle developers.
+
+::: tip Feeding velocity
+Downstream needs roughly 3–5 DoR-ready stories per developer per sprint. Epic Refinement must produce stories fast enough to stay ahead. One Epic Refinement every 2–3 days is the target cadence for a team of four developers.
+:::
 
 ---
 
 ## The Three Loops at a Glance
 
-| | Initiative Loop | Feature Loop | Epic Loop |
-|--|----------------|--------------|-----------|
-| **Type of work** | Discovery | Discovery | Refinement |
+| | Initiative Discovery | Feature Discovery | Epic Refinement |
+|--|---------------------|-------------------|----------------|
+| **Type** | Discovery | Discovery | Refinement |
 | **Core question** | What are we building and why? | How does this feature work? | What exactly are we building next? |
-| **Participants** | PM, Designer, Tech Lead (Core Trio) | PM, Designer, Tech Lead (Core Trio) | PO, Tech Lead, QA (Three Amigos) |
-| **Key practice** | 5-Station Workshop | 5-Station Workshop (scoped to feature) | Story Mapping → The Cut → Grooming |
+| **Who leads** | PM | PM | PO |
+| **Participants** | Core Trio (PM, Designer, Tech Lead) | Core Trio | Three Amigos (PO, Tech Lead, QA) |
+| **Key practice** | 5-Station Workshop | 5-Station Workshop (feature scope) | Story Mapping → The Cut → Grooming |
 | **Duration** | 2-week sprint | 1-week sprint | 2–3 days |
 | **Output** | Initiative Brief + Feature list | Feature Brief + Epic list | DoR-ready Stories |
-| **Done when** | Team agrees on what the initiative is and what ships in S1 | Journey mapped, Epics named, tech feasibility confirmed | Every story passes all 9 DoR checkpoints |
-
-::: tip Discovery vs Refinement — different questions, different people
-The Initiative and Feature loops are **discovery** — validating the problem, choosing an approach, mapping the journey. The PM leads. The Core Trio participates. The 5-station workshop is the tool.
-
-The Epic loop is **refinement** — breaking a known feature into buildable stories with full acceptance criteria. The PO leads. The Three Amigos (PO, Tech Lead, QA) do the work. Story Mapping, The Cut, and Grooming are the tools.
-
-This distinction matters because teams that use discovery practices for refinement (running five stations to write a story) waste time, and teams that use refinement practices for discovery (jumping straight to story mapping without validating the problem) waste sprints.
-:::
+| **Done when** | Problem validated, S1 scope agreed | Journey mapped, Epics named, feasibility confirmed | Every story passes 9 DoR checkpoints |
 
 ---
 
-## The Pipeline: Loops Run in Parallel
+## Handoff Artifacts
 
-The spiral does not run sequentially. You do not finish all Feature Loops before starting any Epic Loop. You pipeline.
+Each loop produces artifacts that the next loop reads. These are the memory of decisions already made — so the next team doesn't remake them.
 
-```
-Week 1–2  │ Initiative Loop → Feature List (A, B, C)
-           │
-Week 3    │ Feature Loop: A ──────────────────────────► Epic List (A1, A2, A3)
-           │ Feature Loop: B begins
-           │
-Week 4    │ Epic Loop: A1 ──────────────────────────► Ready Stories → Dev starts
-           │ Epic Loop: A2 begins
-           │ Feature Loop: B ────────────────────────► Epic List (B1, B2)
-           │ Feature Loop: C begins
-           │
-Week 5    │ [Feature A stories in Downstream]
-           │ Epic Loop: A2 → Ready Stories
-           │ Epic Loop: B1 → Ready Stories
-           │ Feature Loop: C → Epics
-```
+**Initiative Discovery produces:**
+- Initiative Brief (frozen on approval)
+- Feature list with one-line descriptions
+- S1 / S2 / S3 slice at the Feature level
+- Primary Experience Snapshot
+- Success KPIs with measurement method
+- Reopen triggers
 
-The delivery team starts building Epic A1 while Epic A2 is still being shaped and Feature C is still being scoped. Upstream continuously feeds Downstream — no six-week wait at the start, no delivery team idling while discovery runs.
+**Feature Discovery produces:**
+- Feature Brief (linked to Initiative Brief)
+- User Journey Map for this feature
+- Lo-fi wireframe or flow for the main path
+- Prioritized Epic list
+- Technical feasibility confirmation
+- ADR(s) for key architectural decisions
 
-::: tip The feeding velocity insight
-Downstream needs roughly 3–5 DoR-ready stories per developer per sprint. That means the Epic Loop must produce stories fast enough to stay ahead. One Epic Loop every 2–3 days, per epic, is the target cadence for a team of four developers.
-:::
+**Epic Refinement produces:**
+- DoR-ready Stories in Jira (all 9 checkpoints)
+- Gherkin seeds
+- Design references attached to stories
+- Sizing confirmed by lead developer
+
+A story that enters Downstream without these artifacts — especially the Feature Brief and Journey Map context — is a story that will be misbuilt.
 
 ---
 
-## Why This Matters at Each Scale
+## Scaling the Spiral
 
 The spiral adapts to project size, not the other way around.
 
-| Tier | Initiative Loop | Feature Loop | Epic Loop |
-|------|----------------|--------------|-----------|
-| **Tier 1 — Programme** | Full 2-week sprint, all activities | Full 1-week sprint, all activities | Full 2–3 day session, all activities |
+| Tier | Initiative Discovery | Feature Discovery | Epic Refinement |
+|------|---------------------|-------------------|----------------|
+| **Tier 1 — Programme** | Full 2-week sprint, all activities | Full 1-week sprint, all activities | Full 2–3 day session |
 | **Tier 2 — Standard** | 2-week sprint, MUST activities only | 3-day sprint, MUST activities | 1-day session |
-| **Tier 3 — Lean** | Initiative + Feature loops combined: 1 week | — (merged into initiative loop) | Informal Three Amigos per story |
+| **Tier 3 — Lean** | Initiative + Feature combined: 1 week | — (merged into initiative) | Informal Three Amigos per story |
 
 ::: info Tier 3 note
-At Tier 3, the team is typically small enough that one person holds the initiative context, the feature context, and the epic context simultaneously. The loops collapse into a single lightweight sprint. The output still matters — Ready stories, a feature brief, an initiative direction — but the ceremony is minimal.
+At Tier 3, the team is typically small enough that one person holds the initiative, feature, and epic context simultaneously. The loops collapse into a single lightweight sprint. The output still matters — Ready stories, a feature brief, an initiative direction — but the ceremony is minimal. → [Lite Mode](/guide/lite-mode)
 :::
-
----
-
-## The Handoff Artifacts
-
-Each loop produces specific artifacts. These are not bureaucracy — they are the memory of decisions made so that the next loop doesn't have to remake them.
-
-```
-Initiative Loop produces:
-  ✓ Initiative Brief (frozen on approval)
-  ✓ Feature list with one-line descriptions
-  ✓ S1 / S2 / S3 slice at the Feature level
-  ✓ Primary Experience Snapshot
-  ✓ Success KPIs with measurement method
-
-Feature Loop produces:
-  ✓ Feature Brief (linked to Initiative Brief)
-  ✓ User Journey Map for this feature
-  ✓ Lo-fi wireframe or flow for the main path
-  ✓ Prioritized Epic list
-  ✓ Technical feasibility confirmation
-  ✓ ADR(s) for key architectural decisions
-
-Epic Loop produces:
-  ✓ DoR-ready Stories in Jira (all 9 checkpoints)
-  ✓ Gherkin seeds in AssertThat
-  ✓ Design references attached to stories
-  ✓ Sizing confirmed by lead developer
-```
-
-A story that enters Downstream without these artifacts — especially the Feature Brief and Journey Map context — is a story that will be misbuilt. The developer has no context. The QA lead has no frame of reference. The PM will be asked questions that should have been answered two loops ago.
 
 ---
 
 ## Slices Are Releases
 
-The S1/S2/S3 slices defined in the Initiative Loop are not just planning concepts — they map directly to **Jira Releases**.
+The S1/S2/S3 slices defined in Initiative Discovery map directly to **Jira Releases**. Stories in S1 are assigned to the S1 Release. When all stories in a Release pass DoD, it ships — not when a calendar sprint expires.
 
-```
-S1 (defined in Initiative Loop)  →  Jira Release "v1.0" (or "Release 1")
-S2 (defined in Initiative Loop)  →  Jira Release "v2.0"
-S3                               →  Jira Release "v3.0"
-```
+A well-defined S1 — small, end-to-end, independently valuable — becomes a Release that ships in 3–5 weeks. A poorly scoped S1 becomes a Release that "almost ships" for two months. This is why slicing matters so much in Initiative Discovery.
 
-Stories in the S1 Feature Slice are assigned to the S1 Jira Release. Stories in the S2 Feature Slice go to the S2 Release. When a Release is opened in Jira, the team can see exactly which stories belong to it, how many are Ready, how many are in progress, and how many are done.
-
-**The release ships when all its stories pass the Definition of Done** — not when a calendar sprint timer expires. This is the key difference from sprint-based delivery: the quality gate is DoD, not the clock.
-
-This is also why slicing matters so much in the Initiative Loop. A well-defined S1 — small, end-to-end, independently valuable — becomes a Release that can ship in 3–5 weeks. A poorly scoped S1 (too much, or not truly end-to-end) becomes a Release that "almost ships" for two months.
-
-::: tip The Release is the unit of value, not the iteration
-Teams often have a 2-week iteration cadence for ceremonies (standups, demos, retros). But the Release is independent of that cadence. S1 might span two iterations. Or a Release might ship mid-iteration when the last story clears. The iteration keeps the team in rhythm. The Release is what actually reaches users.
-:::
+→ [Release Slicing](/downstream/release-slicing)
 
 ---
 
 ## The Failure Mode: Skipping Levels
 
-The most common failure: teams run the Initiative Loop, skip the Feature Loop, and go straight to writing stories.
+The most common failure: teams run Initiative Discovery, skip Feature Discovery, and go straight to writing stories.
 
 What happens:
 - Stories written without a journey map drift in scope mid-sprint
 - Edge cases discovered during QA that a Three Amigos session would have caught in an afternoon
-- Developers ask "what happens when X?" in the middle of implementation — because the Feature Brief didn't exist to answer it
-- The epic ships, but nobody is sure what the *feature* was supposed to feel like
+- Developers ask "what happens when X?" in the middle of implementation — because no Feature Brief exists to answer it
+- The epic ships, but nobody agrees what the *feature* was supposed to feel like
 
-The Feature Loop is the most commonly skipped level. It is also where the most expensive ambiguity lives.
+Feature Discovery is the most commonly skipped level. It is also where the most expensive ambiguity lives.
 
 ::: warning The expensive skip
-Skipping the Feature Loop feels like saving a week. It costs 2–3 sprints of rework, scope confusion, and QA bounces.
-:::
-
----
-
-::: tip Personas don't change per initiative
-Personas are defined at the product level, not per initiative. Maya is Maya. When you write a new Feature Snapshot, you reference her — you zoom into a specific moment for this feature, but the person doesn't change unless you've learned something genuinely new about your users. Personas live in the [Project Master Document](/upstream/project-master-doc).
+Skipping Feature Discovery feels like saving a week. It costs 2–3 sprints of rework, scope confusion, and QA bounces.
 :::
 
 ---
 
 ## Where to Enter the Spiral
 
-You rarely start from zero. Most work lands in an existing product with existing context — or should. The question is not "do I run the whole spiral?" but "where does my current work slot in?"
-
-The answer is determined by one rule:
+You rarely start from zero. The question is not "do I run the whole spiral?" but "where does my current work slot in?"
 
 > **Find the lowest level above your work that has no artifact. Start there.**
 
@@ -241,15 +232,15 @@ You need to add a story or start a new piece of work.
     │
     ├── NO → Does an Initiative exist that this Feature belongs to?
     │         │
-    │         ├── NO → Start at the Initiative Loop.
+    │         ├── NO → Start at Initiative Discovery.
     │         │         The work is not traceable to a business goal yet.
     │         │
-    │         └── YES → Start at the Feature Loop.
+    │         └── YES → Start at Feature Discovery.
     │                   The initiative context exists; shape the feature.
     │
     └── YES → Does an Epic Brief exist for this Epic?
               │
-              ├── NO → Start at the Epic Loop.
+              ├── NO → Start at Epic Refinement.
               │         The feature is shaped; break it into stories.
               │
               └── YES → Just check DoR.
@@ -258,27 +249,24 @@ You need to add a story or start a new piece of work.
                         This should take 30 minutes.
 ```
 
-The critical discipline: **never jump levels downward**. Writing stories without a Feature Brief is not a shortcut — it is spending the context you don't have. Two sprints later, the team will pay for it in rework, scope confusion, and edge cases that nobody caught.
+The critical discipline: **never jump levels downward**. Writing stories without a Feature Brief is not a shortcut — it is spending the context you don't have.
 
-If you find yourself wanting to write a story and the Feature Brief doesn't exist, stop. Run the Feature Loop. It takes a week. The stories you write afterward will be right.
+::: tip Personas don't change per initiative
+Personas are defined at the product level, not per initiative. Maya is Maya. When you write a new Feature Snapshot, you zoom into a specific moment for this feature, but the person doesn't change unless you've learned something genuinely new. Personas live in the [Project Master Document](/upstream/project-master-doc).
+:::
 
 ---
 
 ## Recovering an Existing Project
 
-Most projects don't start with a clean spiral. They start with a Jira board, some stories, and tribal knowledge in the heads of two or three people. The question is not "is this recoverable?" — it always is — but "where do we enter?"
+Most projects don't start with a clean spiral. The recovery path is the decision tree above, applied backward:
 
-The recovery path is the same decision tree, applied backward:
+1. **Audit what exists**: Stories? Epics? Feature Briefs? Initiative Briefs?
+2. **Find the highest documented level** — that's where the context exists.
+3. **Trace up**: Can you connect what exists to a business goal? If not, work upward first.
+4. **Work down from what's solid**: Enter the spiral at the right level.
 
-1. **Audit what exists**: Stories? Epics? Feature Briefs? Initiative Briefs? Business goals documented anywhere?
-2. **Find the highest documented level**: Whatever the highest artifact is, that's where the context exists.
-3. **Find the lowest missing level**: Everything below the highest artifact needs to be backfilled downward.
-4. **Trace up**: Can you connect what exists to a business goal? If not, work upward first.
-5. **Work down from what's solid**: Once the chain connects to business goals, add new work by entering the spiral at the right level.
-
-The reward: once recovered, the team operates with full context. New stories are cheap to add. New developers onboard quickly. The PM who asks "why are we building this?" gets an answer in 30 seconds, not a shrug.
-
-This recovery process is documented step-by-step in the [Recovering an Existing Project](/tutorials/recovery) tutorial.
+The full recovery process is in the [Recovering an Existing Project](/tutorials/recovery) tutorial.
 
 ---
 
@@ -286,13 +274,10 @@ This recovery process is documented step-by-step in the [Recovering an Existing 
 
 You don't adopt the full spiral on day one. The [Growth Path](/guide/ship-clean) builds toward it progressively:
 
-1. **[Ship Clean](/guide/ship-clean)** — The team learns to write and finish stories with discipline. This is the Epic Loop working: DoR, grooming, DoD.
-2. **[Shape Before You Build](/guide/shape-before-you-build)** — The team adds story mapping and The Cut. The Epic Loop gets sharper. The Feature Loop begins.
-3. **[Discover Before You Shape](/guide/discover-before-you-shape)** — The team adds the 5-station workshop. The Initiative Loop begins. The full spiral is now running.
+1. **[Ship Clean](/guide/ship-clean)** — The team learns to write and finish stories with discipline. This is Epic Refinement working: DoR, grooming, DoD.
+2. **[Shape Before You Build](/guide/shape-before-you-build)** — The team adds story mapping and The Cut. Refinement gets sharper. Feature Discovery begins.
+3. **[Discover Before You Shape](/guide/discover-before-you-shape)** — The team adds the 5-station workshop. Initiative Discovery begins. The full spiral is now running.
 4. **[Own What You Ship](/guide/own-what-you-ship)** — Onstream practices ensure what ships keeps running.
 5. **[Close the Loop](/guide/close-the-loop)** — Offstream practices feed [Strategic Synthesis](/offstream/strategic-synthesis) back into strategic alignment, completing the cycle.
 
 The spiral is the destination. The growth path is how you get there.
-
----
-

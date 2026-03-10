@@ -105,7 +105,7 @@ Day 2 is about current knowledge, not new research. Write what you know, mark wh
 
 **Time required:** 2 hours
 
-**What you're doing:** Identifying the 3–6 Features that make up this Initiative. This is Activity I-9 from the [Initiative Loop](/upstream/activities-sprint).
+**What you're doing:** Identifying the 3–6 Features that make up this Initiative. This is Activity I-9 from the [Initiative Discovery](/upstream/activities-sprint).
 
 ### Session: Feature Identification (PM + Tech Lead, 90 min)
 
@@ -182,11 +182,11 @@ If the stakeholder raises a new Feature idea: note it. It goes into S2 or S3 unl
 
 ---
 
-## Day 5 — Friday: Finalize and Begin Feature Loop
+## Day 5 — Friday: Finalize and Begin Feature Discovery
 
 **Time required:** 2 hours
 
-**What you're doing:** Finalizing the Initiative Brief and starting the Feature Loop for the first S1 Feature.
+**What you're doing:** Finalizing the Initiative Brief and starting the Feature Discovery for the first S1 Feature.
 
 ### Morning (1 hour): Freeze the Initiative Brief
 
@@ -199,39 +199,39 @@ Update the Initiative Brief with everything learned this week:
 
 Mark the Initiative Brief status as "Active". Any changes after this point require a Decision Log entry.
 
-### Afternoon (1 hour): First Feature Loop Kickoff
+### Afternoon (1 hour): First Feature Discovery Kickoff
 
-Pick the first S1 Feature. Run a 45-minute Feature Loop kickoff with PM + Tech Lead + UX Designer:
+Pick the first S1 Feature. Run a 45-minute Feature Discovery kickoff with PM + Tech Lead + UX Designer:
 
 1. Read the Feature's one-line description aloud.
 2. Ask: "Who uses this Feature specifically? Is it the same persona as the Initiative, or a different moment?"
 3. Write the Feature Brief stub (goal, persona, journey scope, what's out, success signal).
-4. Schedule the User Journey Mapping session for next week (Feature Loop, Day 1).
+4. Schedule the User Journey Mapping session for next week (Feature Discovery, Day 1).
 
 **What you have at the end of Day 5:**
 - A frozen Initiative Brief with confirmed S1 scope
 - An approved primary persona and Experience Snapshot
 - 3–6 named Features, S1/S2/S3 labeled
 - Confirmed KPIs with data sources
-- The Feature Loop for Feature 1 scheduled
+- The Feature Discovery for Feature 1 scheduled
 
-That is a complete Initiative Loop in one week.
+That is a complete Initiative Discovery in one week.
 
 ---
 
-## Week 2 and Beyond: The Feature Loop Runs
+## Week 2 and Beyond: The Feature Discovery Runs
 
-Starting next Monday, the Feature Loop runs for each S1 Feature — [1 week per Feature](/upstream/feature-activities). In parallel if the team has capacity; sequentially if not.
+Starting next Monday, the Feature Discovery runs for each S1 Feature — [1 week per Feature](/upstream/feature-activities). In parallel if the team has capacity; sequentially if not.
 
-The Initiative Loop does not run again until the next quarterly planning cycle (unless a major assumption is invalidated, which triggers a brief re-framing session).
+The Initiative Discovery does not run again until the next quarterly planning cycle (unless a major assumption is invalidated, which triggers a brief re-framing session).
 
-The feature backlog grows as the Feature Loop runs — each completed Feature Loop adds 3–8 Delivery Epics to the backlog, each with Journey Step coverage and a Slice label. Epic Loops run on-demand as the team pulls Delivery Epics into refinement.
+The feature backlog grows as the Feature Discovery runs — each completed Feature Discovery adds 3–8 Delivery Epics to the backlog, each with Journey Step coverage and a Slice label. Epic Refinement runs on-demand as the team pulls Delivery Epics into refinement.
 
 ```
-Week 1:  Initiative Loop ─────────────────────────────────────────────────────┐
-Week 2:  Feature Loop (Feature 1) ──────────────────┐                         │
-Week 3:  Feature Loop (Feature 2) ──────────────────┐                         │
-Week 4:  Epic Loop (Epic 1 from Feature 1) ──────┐  │  ← sprint work begins  │
+Week 1:  Initiative Discovery ─────────────────────────────────────────────────────┐
+Week 2:  Feature Discovery (Feature 1) ──────────────────┐                         │
+Week 3:  Feature Discovery (Feature 2) ──────────────────┐                         │
+Week 4:  Epic Refinement (Epic 1 from Feature 1) ──────┐  │  ← sprint work begins  │
                                                   ↓  ↓                         ↓
                                             Stories in sprint         Backlog growing
 ```
@@ -243,8 +243,8 @@ Week 4:  Epic Loop (Epic 1 from Feature 1) ──────┐  │  ← sprin
 | What teams do | What to do instead |
 |---|---|
 | Skip Day 2 because "we already know the problem" | Write the Assumption Register. You don't know what you're assuming until you write it down. |
-| Jump to stories on Day 1 | No stories until the Epic Loop. Stories without a Feature Brief above them don't have direction. |
-| Run a Feature Loop before the Initiative Brief is done | The Initiative Brief anchors every Feature Brief. Without it, each Feature Brief starts from scratch. |
+| Jump to stories on Day 1 | No stories until the Epic Refinement. Stories without a Feature Brief above them don't have direction. |
+| Run a Feature Discovery before the Initiative Brief is done | The Initiative Brief anchors every Feature Brief. Without it, each Feature Brief starts from scratch. |
 | Invite 10 people to every session | Keep sessions to 3–4 people. PM + Tech Lead + UX minimum. Larger groups slow down, not up. |
 | Wait until Day 4 to involve the Tech Lead | Include the Tech Lead in Day 1 and Day 3. Feasibility questions at Day 8 are expensive. |
 | Write perfect documents before sharing | Share rough drafts on Day 2. You want disagreement early, not after Day 5. |
@@ -255,7 +255,7 @@ Week 4:  Epic Loop (Epic 1 from Feature 1) ──────┐  │  ← sprin
 
 - A fully configured Jira board — you need a backlog and a way to create Epics. That's it. Configure the board later.
 - Pixel-perfect designs — lo-fi wireframes or even sketches are enough for the Experience Snapshot and stakeholder session.
-- Everyone's availability — 4 people working 2–3 hours a day is enough for a complete Initiative Loop.
+- Everyone's availability — 4 people working 2–3 hours a day is enough for a complete Initiative Discovery.
 - Certainty — you will have open assumptions and unanswered questions at the end of Day 5. That is normal. Write them down and own them.
 
 ---

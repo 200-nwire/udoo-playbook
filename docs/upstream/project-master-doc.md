@@ -87,7 +87,7 @@ Without this registry, teams sometimes start work on an initiative that was alre
 
 ### 5. Feature Backlog
 
-Every feature across all initiatives — grouped by initiative, showing status. This is the PM's queue. When a Feature Loop completes and an initiative wraps up, its features graduate to this backlog. The PM picks the next feature to enter the Feature Loop from here.
+Every feature across all initiatives — grouped by initiative, showing status. This is the PM's queue. When a Feature Discovery completes and an initiative wraps up, its features graduate to this backlog. The PM picks the next feature to enter Feature Discovery from here.
 
 | Feature | Initiative | Status | Feature Brief |
 |---------|-----------|--------|---------------|
@@ -99,7 +99,7 @@ Every feature across all initiatives — grouped by initiative, showing status. 
 | Friend Activity Feed | Social Sharing | 📋 Queued | — |
 | Offline Reading | Offline Mode | 📋 Queued | — |
 
-The Feature Backlog makes the answer to "what do we work on next?" a decision, not a debate. The PM looks at the backlog, picks the next highest-priority feature with capacity to enter a Feature Loop, and starts.
+The Feature Backlog makes the answer to "what do we work on next?" a decision, not a debate. The PM looks at the backlog, picks the next highest-priority feature with capacity to enter Feature Discovery, and starts.
 
 ---
 
@@ -136,7 +136,7 @@ The Project Master Document is not written once and forgotten. It is updated at 
 | When | What changes |
 |------|-------------|
 | **Quarterly** | Initiative Registry updated — new initiatives added, completed ones marked done. Annual Goals reviewed. |
-| **When a Feature Loop completes** | Feature Backlog updated — new features added, in-progress ones marked done. |
+| **When a Feature Discovery completes** | Feature Backlog updated — new features added, in-progress ones marked done. |
 | **When user research reveals something new** | Persona entries updated. New persona added if genuinely new user type discovered. |
 | **When an architectural decision is made** | Key Technical Decisions table updated with new ADR link. |
 

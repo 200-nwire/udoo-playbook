@@ -8,7 +8,7 @@ Development begins.
 
 ---
 
-## What Happens Without a Feature Loop
+## What Happens Without Feature Discovery
 
 **Week 1–2: Building confidently**
 
@@ -36,11 +36,11 @@ The one-line description — *"Users can view and export their activity data"* �
 
 "View" could mean a dashboard. "Export" could mean a CSV download. The PM imagined a dashboard. The tech lead imagined an export. The developer imagined what they'd built before at a previous job. Nobody said it out loud. The ambiguity wasn't hiding — it was invisible, because nobody had made it visible.
 
-This is not a communication failure. It's a framing failure. The team had a Feature name without a Feature understanding. The [Feature Loop](/upstream/feature-activities) exists specifically to convert one into the other — before any story is written.
+This is not a communication failure. It's a framing failure. The team had a Feature name without a Feature understanding. The [Feature Discovery](/upstream/feature-activities) exists specifically to convert one into the other — before any story is written.
 
 ---
 
-## The Same Situation With a Feature Loop
+## The Same Situation With Feature Discovery
 
 **F-2: Experience Snapshot (Day 1, 60 minutes)**
 
@@ -60,17 +60,17 @@ Thirty minutes in it's obvious — the journey map splits in two at step 3. Thes
 
 **The outcome**
 
-The Feature Loop produces two Feature Briefs instead of one. "Weekly dashboard" — Feature A. "Ministry export" — Feature B. The team starts with Feature A. Lior builds charts, not a download button. Tali builds a read API with aggregation, not a CSV writer.
+The Feature Discovery produces two Feature Briefs instead of one. "Weekly dashboard" — Feature A. "Ministry export" — Feature B. The team starts with Feature A. Lior builds charts, not a download button. Tali builds a read API with aggregation, not a CSV writer.
 
-Sprint 1 ships Feature A. Noa uses it every Monday. Feature B enters the Feature Loop in Sprint 3. When the export ships, it's built for her manager's actual workflow — not as an afterthought.
+Sprint 1 ships Feature A. Noa uses it every Monday. Feature B enters the Feature Discovery in Sprint 3. When the export ships, it's built for her manager's actual workflow — not as an afterthought.
 
 ---
 
 ## The Pattern
 
-This story plays out on every team that skips the Feature Loop:
+This story plays out on every team that skips the Feature Discovery:
 
-| Without Feature Loop | With Feature Loop |
+| Without Feature Discovery | With Feature Discovery |
 |---|---|
 | "User Reporting" starts as a one-liner | "User Reporting" starts as an Experience Snapshot |
 | Developer fills in the blank with an assumption | Assumption is surfaced and resolved on Day 1 |
@@ -78,20 +78,20 @@ This story plays out on every team that skips the Feature Loop:
 | 40–60% of sprint work discarded or rewritten | Scope is right before the first story is written |
 | Feature ships late, incomplete, or wrong | Feature ships on time, for the right person |
 
-The Feature Loop costs one week. The rework costs two to three sprints. This arithmetic never changes.
+The Feature Discovery costs one week. The rework costs two to three sprints. This arithmetic never changes.
 
 ---
 
 ## The Hardest Part
 
-The hardest part is not doing the Feature Loop. It's believing it's worth doing when the initiative is already approved and everyone is ready to build.
+The hardest part is not doing the Feature Discovery. It's believing it's worth doing when the initiative is already approved and everyone is ready to build.
 
 The pressure is real: *"We have the brief, we have the epics, why are we spending a week on a 'feature sprint' before we start?"*
 
 The answer: you're not spending a week before you start. You're spending a week to make sure what starts is the right thing. The alternative isn't starting faster — it's discovering the scope is wrong in Week 3 instead of Week 1.
 
 ::: tip The week you think you're saving
-If skipping the Feature Loop feels like saving a week, consider: what did the last sprint review conversation cost? How long did it take to re-scope, re-brief, and re-plan after the stakeholder said "that's not what I meant"? The Feature Loop is cheap compared to the conversation it prevents.
+If skipping the Feature Discovery feels like saving a week, consider: what did the last sprint review conversation cost? How long did it take to re-scope, re-brief, and re-plan after the stakeholder said "that's not what I meant"? The Feature Discovery is cheap compared to the conversation it prevents.
 :::
 
 ---

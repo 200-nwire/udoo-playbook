@@ -73,7 +73,7 @@ Not 90% ready. Not "mostly there." Fully ready.
 | [What Kind of Discovery Do I Need?](/upstream/discovery-types) | Choose the right entry point |
 | [Idea Triage](/upstream/idea-triage) | Classify incoming work before it enters the spiral |
 | [Epic vs Feature](/upstream/epic-vs-feature) | How to tell the difference |
-| [The Discovery Spiral](/upstream/spiral-model) | How loops, stations, and refinement fit together |
+| [The Upstream Spiral](/upstream/spiral-model) | How loops, stations, and refinement fit together |
 
 **Operations & Reference**
 

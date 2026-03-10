@@ -36,7 +36,7 @@ This page defines three scale tiers. Each tier is a configuration of UDOO — a 
 At this scale, the framework is a programme operating model, not a team practice.
 
 **What Tier 1 adds:**
-- A company-wide upstream sprint running the [Discovery Spiral](/upstream/spiral-model) across all active initiatives — Initiative Loops, Feature Loops, and Epic Loops running in parallel on a shared board
+- A company-wide upstream sprint running the [Upstream Spiral](/upstream/spiral-model) across all active initiatives — Initiative Discovery, Feature Discovery, and Epic Refinement running in parallel on a shared board
 - Cross-initiative dependency management — initiatives block each other, and someone must own that map
 - A portfolio board that gives leadership visibility across all active work without requiring status meetings
 - Change order management — any scope change is documented, estimated, and signed before work begins

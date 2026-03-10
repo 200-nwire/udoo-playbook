@@ -1,24 +1,24 @@
 # Discovery Backbone
 
-The discovery backbone describes **the five question areas that every loop in the [Discovery Spiral](/upstream/spiral-model) draws from**. Stations are not sequential form fields — they are conversations that produce artifacts.
+The discovery backbone describes **the five question areas that every loop in the [Upstream Spiral](/upstream/spiral-model) draws from**. Stations are not sequential form fields — they are conversations that produce artifacts.
 
 ::: info Stations and Loops
-The five stations are question guides. The [Discovery Spiral](/upstream/spiral-model) defines *when* and *at what scope* those questions get asked. Understanding both is the key to running discovery without wasted effort.
+The five stations are question guides. The [Upstream Spiral](/upstream/spiral-model) defines *when* and *at what scope* those questions get asked. Understanding both is the key to running discovery without wasted effort.
 
 | Station | Question | Asked in |
 |---------|----------|---------|
-| **Station 1 — Vision & Context** | Who is the user? What is the pain? Why now? | [Initiative Loop](/upstream/activities-sprint) (Phase 1) |
-| **Station 2 — Problem Framing** | How bad is it? What are the assumptions? What are the constraints? | [Initiative Loop](/upstream/activities-sprint) (Phase 1–2) |
-| **Station 3 — User Journey & Slices** | What does the user actually do, step by step? What ships first? | [Feature Loop](/upstream/feature-activities) (Phase 1–2) |
-| **Station 4 — Solution Options** | How could we build this? What are the tradeoffs? | [Feature Loop](/upstream/feature-activities) (Phase 3) |
-| **Station 5 — Decision & Scope** | What are we committing to? What's the MVP? | [Initiative Loop](/upstream/activities-sprint) (Scope phase) + [Feature Loop](/upstream/feature-activities) (Slice phase) |
+| **Station 1 — Vision & Context** | Who is the user? What is the pain? Why now? | [Initiative Discovery](/upstream/activities-sprint) (Phase 1) |
+| **Station 2 — Problem Framing** | How bad is it? What are the assumptions? What are the constraints? | [Initiative Discovery](/upstream/activities-sprint) (Phase 1–2) |
+| **Station 3 — User Journey & Slices** | What does the user actually do, step by step? What ships first? | [Feature Discovery](/upstream/feature-activities) (Phase 1–2) |
+| **Station 4 — Solution Options** | How could we build this? What are the tradeoffs? | [Feature Discovery](/upstream/feature-activities) (Phase 3) |
+| **Station 5 — Decision & Scope** | What are we committing to? What's the MVP? | [Initiative Discovery](/upstream/activities-sprint) (Scope phase) + [Feature Discovery](/upstream/feature-activities) (Slice phase) |
 
 Each station has a detailed guide page. The summaries below are the question sets — go to the station page for full templates, examples, and anti-patterns.
 :::
 
 ---
 
-## Station 1 — Vision & Context <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Loop · Phase 1</span>
+## Station 1 — Vision & Context <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Discovery · Phase 1</span>
 
 **Goal:** Align the team on the problem space before anyone proposes a solution.
 
@@ -39,7 +39,7 @@ Each station has a detailed guide page. The summaries below are the question set
 
 ---
 
-## Station 2 — Problem Framing <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Loop · Phase 1–2</span>
+## Station 2 — Problem Framing <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Discovery · Phase 1–2</span>
 
 **Goal:** Understand the current state deeply enough that the solution space narrows naturally.
 
@@ -69,7 +69,7 @@ Assumption blindness is one of the most common causes of failed Initiatives. Tea
 
 ---
 
-## Station 3 — User Journey & Slices <span style="font-size: 0.75em; color: var(--vp-c-brand)">Feature Loop · Phase 1–2</span>
+## Station 3 — User Journey & Slices <span style="font-size: 0.75em; color: var(--vp-c-brand)">Feature Discovery · Phase 1–2</span>
 
 **Goal:** Map the full user journey for this Feature, identify where it fits, and propose delivery slices.
 
@@ -112,7 +112,7 @@ Every Epic must reference which journey steps it covers (e.g., `covers: J2–J4`
 
 ---
 
-## Station 4 — Solution Options <span style="font-size: 0.75em; color: var(--vp-c-brand)">Feature Loop · Phase 3</span>
+## Station 4 — Solution Options <span style="font-size: 0.75em; color: var(--vp-c-brand)">Feature Discovery · Phase 3</span>
 
 **Goal:** Avoid jumping to one solution. Force the team to compare at least two.
 
@@ -149,7 +149,7 @@ Run **time-boxed spikes** (max 2 days) for any high-risk technical unknowns befo
 
 ---
 
-## Station 5 — Decision & Scope <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Loop (scope) + Feature Loop (slice)</span>
+## Station 5 — Decision & Scope <span style="font-size: 0.75em; color: var(--vp-c-brand)">Initiative Discovery (scope) + Feature Discovery (slice)</span>
 
 **Goal:** Freeze the scope. Lock the approach. Set the handoff conditions.
 

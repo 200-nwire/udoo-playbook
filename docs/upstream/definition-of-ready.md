@@ -28,12 +28,12 @@ Does this story belong to a named Epic?
             A story without an Epic has no structural context.
 
 Does that Epic belong to a Feature with a Feature Brief?
-  └── NO → Run the Feature Loop first.
+  └── NO → Run the Feature Discovery first.
             Without a Feature Brief, nobody agrees what the feature is supposed to feel like.
             A well-written story for the wrong feature is worse than no story at all.
 
 Does that Feature belong to an Initiative with a business goal?
-  └── NO → Run the Initiative Loop first.
+  └── NO → Run the Initiative Discovery first.
             Without an Initiative, there is no measure of success.
             The story might be solving a problem nobody decided was worth solving.
 
@@ -42,10 +42,10 @@ All three exist? → Run the 9-point DoR check below.
 
 If any of these is missing, **the story is premature** — not because it was badly written, but because the context that makes it the *right* story doesn't exist yet. Go up the hierarchy, produce the missing artifact, and come back.
 
-The reward for doing this is proportionate: a story written after the Feature Loop exists takes 30 minutes to shape and rarely bounces. A story written without that context takes 3 days to re-scope and often rebuilds the feature from scratch.
+The reward for doing this is proportionate: a story written after the Feature Discovery exists takes 30 minutes to shape and rarely bounces. A story written without that context takes 3 days to re-scope and often rebuilds the feature from scratch.
 
 ::: tip The fastest path to a ready story
-The fastest way to write a correct story is to not write it first. Run the Initiative Loop, then the Feature Loop, then the Epic Loop. When you finally write the story, it's a 30-minute exercise — because all the decisions that make it right were made in the loops above it.
+The fastest way to write a correct story is to not write it first. Run the Initiative Discovery, then the Feature Discovery, then the Epic Refinement. When you finally write the story, it's a 30-minute exercise — because all the decisions that make it right were made in the loops above it.
 :::
 
 ---
@@ -366,13 +366,13 @@ Read the first acceptance criterion. Is it testable? "The user can see their pos
 
 **3. Is there anything I'd need to ask before I can start?**
 
-One unanswered question is a warning sign. Two is a broken story. Not a flaw in the AC writing — a signal that the Feature Loop or Epic Loop ended before the decisions were made. The story needs to go back.
+One unanswered question is a warning sign. Two is a broken story. Not a flaw in the AC writing — a signal that the Feature Discovery or Epic Refinement ended before the decisions were made. The story needs to go back.
 
 ### What a ready story feels like
 
 A ready story is boring in the best way. The developer reads it, nods, and knows what to build. There's nothing to interpret. No decisions left open. The design exists. The edge cases are written down. The data model is confirmed.
 
-It takes 30 minutes to write a story that feels this way — but only after the Feature Loop has resolved what the feature is, and the Epic Loop has resolved what this specific scene requires. Those loops take 3–5 days. The payoff is that every developer who picks up the story spends zero time reconstructing context.
+It takes 30 minutes to write a story that feels this way — but only after the Feature Discovery has resolved what the feature is, and the Epic Refinement has resolved what this specific scene requires. Those loops take 3–5 days. The payoff is that every developer who picks up the story spends zero time reconstructing context.
 
 The stories that feel uncertain — the ones with "TBD" in the ACs, the missing wireframe, the vague persona — were written fast. They borrow time from the developer, the QA lead, and eventually the user. The interest rate is high.
 

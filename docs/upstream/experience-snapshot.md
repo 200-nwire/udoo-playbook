@@ -112,7 +112,7 @@ Add a new persona only when user research reveals a genuinely new user type — 
 
 ## When to Write It
 
-The Experience Snapshot is written during the **Feature Loop** (F-2), before epics are defined.
+The Experience Snapshot is written during **Feature Discovery** (F-2), before epics are defined.
 
 **The test:** If you can read the snapshot aloud to the team and they all visualise the same thing, the Feature is real. If people visualise different things — or the narrative has gaps or awkwardness — the Feature needs more definition before it can be broken into epics.
 

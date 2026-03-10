@@ -185,13 +185,13 @@ export default withMermaid(
           ],
         },
         {
-          text: 'The Discovery Spiral',
+          text: 'The Upstream Spiral',
           items: [
-            { text: '🌀 The Discovery Spiral', link: '/upstream/spiral-model' },
+            { text: '🌀 The Upstream Spiral', link: '/upstream/spiral-model' },
             { text: 'Project Master Document', link: '/upstream/project-master-doc' },
-            { text: 'Initiative Activities (Loop 1)', link: '/upstream/activities-sprint' },
-            { text: 'Feature Activities (Loop 2)', link: '/upstream/feature-activities' },
-            { text: 'Epic Activities (Loop 3)', link: '/upstream/epic-activities' },
+            { text: 'Initiative Discovery', link: '/upstream/activities-sprint' },
+            { text: 'Feature Discovery', link: '/upstream/feature-activities' },
+            { text: 'Epic Refinement', link: '/upstream/epic-activities' },
             { text: 'Jira Setup for the Spiral', link: '/upstream/jira-setup' },
           ],
         },

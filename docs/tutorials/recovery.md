@@ -16,7 +16,7 @@ The PM who started the project is gone. The tech lead who made the architectural
 
 This is not a special case. This is most projects.
 
-And this is recoverable. You do not need a greenfield. You do not need to stop and restart. You enter the [Discovery Spiral](/upstream/spiral-model) at the right level and backfill upward until the chain connects to a business goal. Then you build forward from a position of alignment.
+And this is recoverable. You do not need a greenfield. You do not need to stop and restart. You enter the [Upstream Spiral](/upstream/spiral-model) at the right level and backfill upward until the chain connects to a business goal. Then you build forward from a position of alignment.
 
 ---
 
@@ -79,9 +79,9 @@ Look at the audit results. The entry point is the lowest level where you have a 
 | Your audit shows | Your entry point | What you do first |
 |-----------------|-----------------|-------------------|
 | ❌ No business goal documented | Business context | Talk to a stakeholder. Find the original intent. Write it down. |
-| ❌ No Initiative Brief | Initiative Loop | Run [Initiative Activities](/upstream/activities-sprint) — abbreviated, since the product exists and you have real data to draw from |
+| ❌ No Initiative Brief | Initiative Discovery | Run [Initiative Activities](/upstream/activities-sprint) — abbreviated, since the product exists and you have real data to draw from |
 | ❌ No personas documented | Persona definition | Run [Experience Snapshot](/upstream/experience-snapshot) sessions. Even one session produces a persona that can anchor the whole project. |
-| ❌ No Feature Briefs | Feature Loop | Run [Feature Activities](/upstream/feature-activities) for each feature — using existing Jira epics as the starting material |
+| ❌ No Feature Briefs | Feature Discovery | Run [Feature Activities](/upstream/feature-activities) for each feature — using existing Jira epics as the starting material |
 | ❌ Epics without goal statements | Epic Brief | Add a goal statement to each epic (E-1 from [Epic Activities](/upstream/epic-activities)) |
 | ❌ Stories not DoR-ready | DoR check | Run the [DoR checklist](/upstream/definition-of-ready) against existing stories. Fix or park what fails. |
 
@@ -134,7 +134,7 @@ Now that the upper levels are documented (even partially), map your existing Jir
 
 For each epic in Jira:
 - Does it belong to a Feature? Which one?
-- Does that Feature have a Brief? If not, that's your next Feature Loop.
+- Does that Feature have a Brief? If not, that's your next Feature Discovery.
 - What user goal does this epic serve? Write it as the Epic Brief.
 
 For each story in Jira:
@@ -153,9 +153,9 @@ This mapping exercise usually takes 2–4 hours. It produces three things:
 
 Now you build forward — not from the old, disconnected backlog, but from the recovered structure.
 
-**For new features:** Enter at the Feature Loop. You have the Initiative context now. Run F-1 through F-11. One week. The output is a Feature Brief and Epic list that the whole team agrees on.
+**For new features:** Enter at the Feature Discovery. You have the Initiative context now. Run F-1 through F-11. One week. The output is a Feature Brief and Epic list that the whole team agrees on.
 
-**For new epics in existing features:** Enter at the Epic Loop. The Feature Brief exists. Run E-1 through E-8. 2–3 days. The output is DoR-ready stories.
+**For new epics in existing features:** Enter at the Epic Refinement. The Feature Brief exists. Run E-1 through E-8. 2–3 days. The output is DoR-ready stories.
 
 **For new stories in existing epics:** Just DoR check. All context exists above. Write the story, run the 9-point checklist, move to sprint. This should take 30 minutes.
 

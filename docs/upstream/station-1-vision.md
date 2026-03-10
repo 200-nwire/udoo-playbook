@@ -3,7 +3,7 @@
 <span class="phase-badge upstream">🔵 Upstream</span>
 
 ::: info Where this fits
-Station 1 is the first step of the **Discovery Workshop** — the structured practice for validating whether a problem is worth solving. It belongs to the **Initiative Loop** and **Feature Loop** of the [Discovery Spiral](/upstream/spiral-model). The PM and Core Trio (PM, Designer, Tech Lead) run it together.
+Station 1 is the first step of the **Discovery Workshop** — the structured practice for validating whether a problem is worth solving. It runs during both [Initiative Discovery](/upstream/activities-sprint) and [Feature Discovery](/upstream/feature-activities) of the [Upstream Spiral](/upstream/spiral-model). The PM and Core Trio (PM, Designer, Tech Lead) run it together.
 
 This is not a refinement practice. For breaking features into stories, see [Story Mapping](/upstream/story-mapping) and the [Three Amigos grooming session](/upstream/grooming-session).
 :::

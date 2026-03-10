@@ -4,14 +4,14 @@
 
 This chapter tells a single story from beginning to end: how the **Living Wondrously Journal** went from a vague feeling ("engagement is flat") to a set of ready stories that a developer could pick up and start building the same day. It is not a template — it is a narrative. Follow along, and watch the UDOO framework in motion.
 
-::: info The Discovery Spiral in this story
-This walkthrough passes through all three loops. Watch for the loop markers as you read — they show when the scope changes level.
+::: info The Upstream Spiral in this story
+This walkthrough passes through all three phases. Watch for the phase markers as you read — they show when the scope changes level.
 
-| Steps 1–2 | [Initiative Loop](/upstream/activities-sprint) — 2 weeks | Problem framing, alignment, feature list |
-| Steps 3–6 (per Feature) | [Feature Loop](/upstream/feature-activities) — 1 week | Journey mapping, Epic shaping, slice decision |
-| Steps 4–5 (per Epic) | [Epic Loop](/upstream/epic-activities) — 2–3 days | Story writing, Example Mapping, DoR |
+| Steps 1–2 | [Initiative Discovery](/upstream/activities-sprint) — 2 weeks | Problem framing, alignment, feature list |
+| Steps 3–6 (per Feature) | [Feature Discovery](/upstream/feature-activities) — 1 week | Journey mapping, Epic shaping, slice decision |
+| Steps 4–5 (per Epic) | [Epic Refinement](/upstream/epic-activities) — 2–3 days | Story writing, Example Mapping, DoR |
 
-In practice these loops run in parallel as features are picked from the backlog — but this walkthrough shows them in sequence so the logic is clear.
+In practice these phases run in parallel as features are picked from the backlog — but this walkthrough shows them in sequence so the logic is clear.
 :::
 
 ---
@@ -34,7 +34,7 @@ This is the noise. The entire purpose of the Upstream phase is to turn this nois
 
 ---
 
-## Step 1 — The Initiative Emerges <span style="font-size: 0.75em; padding: 2px 6px; background: #e8f4fd; border-radius: 4px; color: #1565c0">Initiative Loop begins</span>
+## Step 1 — The Initiative Emerges <span style="font-size: 0.75em; padding: 2px 6px; background: #e8f4fd; border-radius: 4px; color: #1565c0">Initiative Discovery begins</span>
 
 ### Find the Pattern
 
@@ -98,13 +98,13 @@ The PM tells the team: *"Every story we write, every AC, every design decision �
 A persona is not a demographics chart. It is a decision-making tool. When the team argues about whether the journal should support rich text formatting, the answer is obvious: Maya at 10:15 PM does not want to bold her words. She wants to type a sentence and feel done. The persona resolves the argument before it starts.
 :::
 
-::: tip Initiative Loop completes here
-The Initiative Loop ends with: an approved Initiative Brief, named KPIs, confirmed primary persona (Maya), a one-sentence Feature (Living Wondrously Journal), and stakeholder sign-off on the S1 scope. **The Feature Loop for the Living Wondrously Journal now begins.** In practice, multiple features run in parallel once the initiative brief is frozen.
+::: tip Initiative Discovery completes here
+The Initiative Discovery ends with: an approved Initiative Brief, named KPIs, confirmed primary persona (Maya), a one-sentence Feature (Living Wondrously Journal), and stakeholder sign-off on the S1 scope. **The Feature Discovery for the Living Wondrously Journal now begins.** In practice, multiple features run in parallel once the initiative brief is frozen.
 :::
 
 ---
 
-## Step 3 — Epics Take Shape <span style="font-size: 0.75em; padding: 2px 6px; background: #e8f5e9; border-radius: 4px; color: #2e7d32">Feature Loop begins</span>
+## Step 3 — Epics Take Shape <span style="font-size: 0.75em; padding: 2px 6px; background: #e8f5e9; border-radius: 4px; color: #2e7d32">Feature Discovery begins</span>
 
 The team runs a Story Mapping session (60 minutes, whiteboard, sticky notes). They walk through Maya's complete evening journey with the journal and identify five major activities:
 
@@ -144,7 +144,7 @@ The team draws the slice lines on the whiteboard:
 
 ---
 
-## Step 4 — Stories Emerge <span style="font-size: 0.75em; padding: 2px 6px; background: #fff3e0; border-radius: 4px; color: #e65100">Epic Loop begins</span>
+## Step 4 — Stories Emerge <span style="font-size: 0.75em; padding: 2px 6px; background: #fff3e0; border-radius: 4px; color: #e65100">Epic Refinement begins</span>
 
 Now the team walks through Maya's evening in slow motion. Every moment, every tap, every hesitation becomes a story candidate.
 
@@ -329,7 +329,7 @@ The developer sketches the state diagram:
 
 ---
 
-## Step 6 — The First Slice <span style="font-size: 0.75em; padding: 2px 6px; background: #e8f5e9; border-radius: 4px; color: #2e7d32">Feature Loop · Validate Phase</span>
+## Step 6 — The First Slice <span style="font-size: 0.75em; padding: 2px 6px; background: #e8f5e9; border-radius: 4px; color: #2e7d32">Feature Discovery · Validate Phase</span>
 
 The PM looks at the story map and asks: *"What is the smallest thing we can ship that proves the journal concept has value?"*
 
