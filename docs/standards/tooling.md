@@ -332,7 +332,7 @@ Every service maintains three dashboards:
 - **Alert fatigue.** If the team ignores alerts because there are too many false positives, the alerting thresholds are wrong. Fix them — do not mute the channel.
 - **No dashboard for a service.** Every service that handles user traffic needs a health dashboard before it goes to production. "We'll add monitoring later" means "we'll discover problems from user complaints."
 - **Alerting on symptoms, not causes.** "High CPU" is a symptom. "Request queue depth exceeding capacity" is a cause. Alert on the cause when possible.
-- **No runbook linked to an alert.** Every P0 and P1 alert must link to a [runbook](/onstream/runbook) that describes the first-response steps.
+- **No runbook linked to an alert.** Every P0 and P1 alert must link to a [runbook](/onstream/runbook-template) that describes the first-response steps.
 :::
 
 ---

@@ -114,7 +114,7 @@ Resolution means the service is fully restored and the incident is confirmed clo
 
 ### Phase 6: Review (Post-Incident)
 
-Within **48 hours** of resolution, the team conducts a blameless post-incident review. See the [Post-Mortem](/onstream/post-mortem) page for the full template.
+Within **48 hours** of resolution, the team conducts a blameless post-incident review. See the [Post-Mortem Template](/onstream/post-mortem-template) page for the full template.
 
 ---
 

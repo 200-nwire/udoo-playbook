@@ -1,6 +1,6 @@
 # RCA — Wallet Balance Display Bug
 
-This is a real-world Root Cause Analysis annotated against the framework. Read it alongside the [Bug Taxonomy](/onstream/bug-taxonomy) and [Post-Mortem Guide](/onstream/post-mortem).
+This is a real-world Root Cause Analysis annotated against the framework. Read it alongside the [Bug Taxonomy](/onstream/bug-taxonomy) and [Post-Mortem Template](/onstream/post-mortem-template).
 
 ---
 

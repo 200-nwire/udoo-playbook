@@ -32,7 +32,7 @@ The PO draws The Cut. Not the PM, not the tech lead — the PO, because the PO o
 
 The PO draws it by asking one question: **"What is the smallest set of stories that delivers a coherent experience?"**
 
-Not the smallest set that's easy to build. Not the set the developer is most excited about. The set that, if a user encountered only these stories and nothing else, would feel like something real happened. A user can complete a meaningful action. The feature feels like a feature, not a fragment.
+Not the smallest set that's easy to build. Not the set the developer is most excited about. The set that, if Yossi encountered only these stories and nothing else, would feel like something real happened. Yossi can complete a meaningful action. The feature feels like a feature, not a fragment.
 
 Dana looks at the Path Discovery map and asks: what does Yossi need to feel that the site has changed? He needs to see a path name when he lands on an article (PD-101). He needs to see where he is in the path — "Step 3 of 8" (PD-102). He needs the option to continue to the next article (PD-103). And if it's his first time seeing a path, it can't break (PD-104, the edge case).
 
@@ -87,7 +87,7 @@ A team that draws The Cut after mapping only half the stories will miss dependen
 
 ### Drawing The Cut by Engineering Effort Instead of User Value
 
-"Let's put the easy stories above The Cut." This produces a first delivery that's technically simple and experientially hollow. The user can see a label but can't do anything with it. The Cut should be drawn by asking "what does the user need to feel the product changed?" — not "what can we ship fastest?"
+"Let's put the easy stories above The Cut." This produces a first delivery that's technically simple and experientially hollow. Yossi can see a label but can't do anything with it. The Cut should be drawn by asking "what does Yossi need to feel the product changed?" — not "what can we ship fastest?"
 
 ### Never Moving The Cut
 

@@ -123,4 +123,4 @@ A Story is the **smallest testable unit of user value**. It follows the INVEST p
 
 ---
 
-**Next:** [How to Use This Book →](/how-to-use)
+**Next:** [How to Use This Book →](/guide/how-to-use)

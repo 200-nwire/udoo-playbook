@@ -177,7 +177,7 @@ Three process failures compounded:
 
 This incident sits squarely in the **Onstream** phase. The [Incident Management](/onstream/incident-management) process worked as designed for detection and escalation, but failed at prevention — the change that caused the incident should have been caught by deployment gates that didn't exist.
 
-The post-mortem follows the [Post-Mortem Guide](/onstream/post-mortem) structure:
+The post-mortem follows the [Post-Mortem Template](/onstream/post-mortem-template) structure:
 
 | Section | Purpose | Present? |
 |---------|---------|----------|

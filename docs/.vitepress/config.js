@@ -17,6 +17,8 @@ const guideSidebar = [
       { text: 'Introduction', link: '/guide/introduction' },
       { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
       { text: 'The 4-Layer Hierarchy', link: '/guide/hierarchy' },
+      { text: 'The 4-Layer Hierarchy (Deep Dive)', link: '/four-layers' },
+      { text: 'Framework Overview', link: '/framework-overview' },
       { text: 'How Teams Actually Run This', link: '/guide/parallel-work' },
       { text: '📖 The Narrative Framework', link: '/guide/narrative' },
     ],
@@ -143,6 +145,8 @@ export default withMermaid(
     sidebar: {
       '/guide/': guideSidebar,
       '/portfolio/': guideSidebar,
+      '/four-layers': guideSidebar,
+      '/framework-overview': guideSidebar,
 
       '/upstream/': [
         {
@@ -180,6 +184,8 @@ export default withMermaid(
             { text: 'Initiative Brief', link: '/upstream/initiative-brief' },
             { text: 'Story Mapping', link: '/upstream/story-mapping' },
             { text: 'The Cut', link: '/upstream/the-cut' },
+            { text: 'Discovery Backbone', link: '/upstream/discovery-backbone' },
+            { text: 'User Journey Mapping', link: '/upstream/user-journey' },
             { text: 'Discovery Frameworks Catalog', link: '/upstream/discovery-frameworks' },
             { text: 'Scrum for Discovery', link: '/upstream/scrum-for-discovery' },
           ],
