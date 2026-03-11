@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter Four — The Client'
+  link: '/novel/chapter-04'
+next:
+  text: 'Chapter Six — Eran Writes a Document'
+  link: '/novel/chapter-06'
+---
+
 # Chapter Five — Alignment
+
+<span class="part-label">Part One — Upstream</span>
 
 They met on a Thursday, on a video call that Michal had arranged with the careful orchestration of someone seating guests at a wedding — Lior on one side, Avi on the other, herself in the middle, the agenda typed into the invite: Dashboard alignment — 30 min.
 
@@ -10,7 +22,7 @@ He had looked at what he'd built. Then at the wireframe. Then at what he'd built
 
 He had opened a new file and started writing questions.
 
-Now he was on the call, the questions on a notepad beside the keyboard, and Avi Shapiro was on the screen — older than Lior had imagined, with the kind of face that had earned its lines — and Michal was saying something about exciting opportunity to align and Lior was watching Avi's eyes and thinking: this man knows something is wrong and has been too polite to say so.
+Now he was on the call, the questions on a notepad beside the keyboard, and Avi Shapiro was on the screen — older than Lior had imagined, with the kind of face that had earned its lines — and Michal was saying something about exciting opportunity to align and Lior was watching Avi's eyes and thinking: *this man knows something is wrong and has been too polite to say so.*
 
 "Avi," Lior said, at the first pause. "Can I ask — when you made the wireframes. The dashboard. Can you tell me about the moment you were designing for?"
 

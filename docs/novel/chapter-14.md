@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 13 — Bounded Context'
+  link: '/novel/chapter-13'
+next:
+  text: "Chapter 15 — Dani's Spreadsheet"
+  link: '/novel/chapter-15'
+---
+
 # Chapter 14 — The Language of the Domain
+
+<span class="part-label">Part Two — Downstream</span>
 
 Avi had been in many workshops.
 
@@ -10,7 +22,7 @@ He left it at the door within twenty minutes.
 
 The room was not large. A meeting room in the office — whiteboard on one wall, the kind of chairs that are comfortable for forty minutes and punishing for two hours, a table that someone had pushed to the side to create space. On the whiteboard, in Eran's handwriting, a single instruction:
 
-Write one thing that happens in a veterinary clinic on a sticky note. One event. Past tense. One color per role.
+> Write one thing that happens in a veterinary clinic on a sticky note. One event. Past tense. One color per role.
 
 Orange for vets. Blue for receptionists. Green for owners. Yellow for the system — things the software currently did or should do.
 
@@ -28,50 +40,50 @@ Lior watched them accumulate with the focused attention of someone reading a tex
 
 Orange notes — Ronit's, written in a hand that moved fast and didn't second-guess itself:
 
-Patient arrived for appointment.
-Owner described symptoms.
-Diagnosis made.
-Treatment administered.
-Follow-up scheduled.
-Prescription written.
+> Patient arrived for appointment.
+> Owner described symptoms.
+> Diagnosis made.
+> Treatment administered.
+> Follow-up scheduled.
+> Prescription written.
 
 Then, after a pause, smaller, as if these were different in kind:
 
-Previous visit notes not found.
-Wrong patient file opened.
-Double-booking discovered at appointment time.
-Owner called to say pet worse — no record of last visit in system.
+> Previous visit notes not found.
+> Wrong patient file opened.
+> Double-booking discovered at appointment time.
+> Owner called to say pet worse — no record of last visit in system.
 
 Blue notes — from a receptionist at one of Carmit's clinics, a woman named Sigal who had said almost nothing so far but wrote with the velocity of someone who had been waiting for exactly this kind of question:
 
-Appointment booked by phone.
-Appointment booked online — no vet preference specified.
-Appointment rescheduled — third time.
-Owner arrived without appointment.
-Owner arrived twenty minutes early.
-Owner arrived twenty minutes late — vet now running behind.
-Emergency walk-in — no space in schedule.
-Vet called in sick — thirty appointments to redistribute.
+> Appointment booked by phone.
+> Appointment booked online — no vet preference specified.
+> Appointment rescheduled — third time.
+> Owner arrived without appointment.
+> Owner arrived twenty minutes early.
+> Owner arrived twenty minutes late — vet now running behind.
+> Emergency walk-in — no space in schedule.
+> Vet called in sick — thirty appointments to redistribute.
 
 Green notes from Avi — owner perspective, which he wrote with the care of someone who has spent years trying to understand it:
 
-Made appointment online.
-Forgot appointment.
-Received reminder — wrong date.
-Arrived to find vet doesn't have the file.
-Was asked questions already answered at previous visit.
-Left without understanding the diagnosis.
-Received follow-up call — felt cared for.
-Did not receive follow-up call — worried.
-Switched to different clinic.
+> Made appointment online.
+> Forgot appointment.
+> Received reminder — wrong date.
+> Arrived to find vet doesn't have the file.
+> Was asked questions already answered at previous visit.
+> Left without understanding the diagnosis.
+> Received follow-up call — felt cared for.
+> Did not receive follow-up call — worried.
+> Switched to different clinic.
 
 Yellow notes from Lior and Oren — system events, current and planned:
 
-Appointment created.
-Notification sent.
-Record accessed.
-Briefing generated.
-Payment processed.
+> Appointment created.
+> Notification sent.
+> Record accessed.
+> Briefing generated.
+> Payment processed.
 
 Eran let them go for twenty minutes. Then he stopped them and stood back and looked at the wall.
 
@@ -101,7 +113,7 @@ A pause. "When I can. When the system shows me I need to."
 
 Another pause. Longer. "It doesn't," she said. "I check."
 
-Lior wrote in his notebook: Vet checks. System doesn't prompt. History retrieval is manual, triggered by vet memory, not by system awareness.
+Lior wrote in his notebook: *Vet checks. System doesn't prompt. History retrieval is manual, triggered by vet memory, not by system awareness.*
 
 Eran moved Patient history reviewed on the timeline. Not after Patient arrived. Before. Before the morning started. Before the first appointment. In the gap between Vet arrives and Clinic opens — the seven minutes he now knew about.
 
@@ -119,9 +131,9 @@ She looked at him.
 
 Lior looked at the yellow notes. Record accessed. Passive. Reactive. A system that waited to be asked.
 
-He thought about the briefing engine. Oren's redesign. The morning prep. It runs when she opens the app. It knows what she needs to know.
+He thought about the briefing engine. Oren's redesign. The morning prep. *It runs when she opens the app. It knows what she needs to know.*
 
-He thought: we already figured this out. But we figured it out from Dina's description. Hearing Ronit say it — a different vet, same truth — is the difference between a hypothesis and evidence.
+He thought: *we already figured this out. But we figured it out from Dina's description. Hearing Ronit say it — a different vet, same truth — is the difference between a hypothesis and evidence.*
 
 The second conversation happened around the emergency walk-in.
 
@@ -179,7 +191,7 @@ Ronit spoke first. "It's two different things," she said. "The morning — the p
 
 Eran nodded slowly. Wrote on the whiteboard, separating the timeline into two zones with a vertical line:
 
-PREPARATION | FLOW
+> PREPARATION | FLOW
 
 "Two contexts," he said. "Different information. Different timing. Different users, almost — the morning Ronit and the in-clinic Ronit need different things from the system."
 
@@ -187,7 +199,7 @@ PREPARATION | FLOW
 
 Another line. Three zones now.
 
-PREPARATION | FLOW | RECEPTION
+> PREPARATION | FLOW | RECEPTION
 
 "Three bounded contexts," Lior said. "We've been building one."
 
@@ -213,7 +225,7 @@ He drew a circle around the PREPARATION zone.
 
 He wrote two words on the whiteboard, separated by a space.
 
-FEATURE | INITIATIVE
+> FEATURE | INITIATIVE
 
 "The briefing engine is a feature. It has a specific user, Ronit, a specific moment, the morning, a specific job to be done, knowing what Tuesday is. We can define it. We can build it. We can measure whether we got it right within two weeks of shipping."
 

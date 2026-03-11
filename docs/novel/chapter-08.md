@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter Seven — Velocity'
+  link: '/novel/chapter-07'
+next:
+  text: 'Chapter Nine — The Sprint That Solved Nothing'
+  link: '/novel/chapter-09'
+---
+
 # Chapter Eight — The Offer
+
+<span class="part-label">Part One — Upstream</span>
 
 Avi's office was smaller than Lior had imagined from the video calls — a converted apartment, as he'd thought, but intimate in a way the screen hadn't conveyed. Books on every surface, not decoratively but functionally, with the creased spines and Post-it flags of books that had been used. A whiteboard covered in writing that had been partially erased and written over, the ghost of previous thoughts visible underneath the current ones like a palimpsest.
 
@@ -28,7 +40,7 @@ Outside the window, a city went about its business, magnificently unaware that i
 
 "The dashboard." Avi looked at Lior. "The real one. The one we talked about on Thursday. The one that shows Ronit what Tuesday is."
 
-Lior thought about the notepad. The questions. One place. Without effort. She just knows.
+Lior thought about the notepad. The questions. One place. Without effort. *She just knows.*
 
 He thought about what he'd built. The chronological list. The eight-point font.
 

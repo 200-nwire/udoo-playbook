@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 20 — Story Mapping'
+  link: '/novel/chapter-20'
+next:
+  text: 'Chapter 22 — Tamir'
+  link: '/novel/chapter-22'
+---
+
 # Chapter 21 — Releases
+
+<span class="part-label">Part Two — Downstream</span>
 
 The Kanban board had been running for two weeks.
 

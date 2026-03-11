@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 14 — The Language of the Domain'
+  link: '/novel/chapter-14'
+next:
+  text: 'Chapter 16 — The Product Owner'
+  link: '/novel/chapter-16'
+---
+
 # Chapter 15 — Dani's Spreadsheet
+
+<span class="part-label">Part Two — Downstream</span>
 
 The spreadsheet had 847 rows.
 
@@ -16,7 +28,7 @@ He had changed it from Green to Amber on Wednesday, after the call with Michal i
 
 Michal had been quiet for a moment.
 
-Dani, she had said. The timeline isn't the problem.
+— Dani, she had said. The timeline isn't the problem.
 
 He had understood what she meant. He had also not known what to do with it.
 
@@ -32,9 +44,13 @@ Below the standard columns, below the RAG status, below the revised timeline he 
 
 It wasn't a formula. It had no conditional formatting. It didn't feed into any summary dashboard.
 
-It said: What did we learn this week about what the product actually needs to do?
+It said:
 
-Below it, in the adjacent cell, he had written: Clinic day has three distinct phases with different information needs. We were building for one. The briefing engine addresses morning prep. Scheduling intelligence needs discovery. Sigal's emergency triage problem is real and unaddressed.
+> What did we learn this week about what the product actually needs to do?
+
+Below it, in the adjacent cell, he had written:
+
+> Clinic day has three distinct phases with different information needs. We were building for one. The briefing engine addresses morning prep. Scheduling intelligence needs discovery. Sigal's emergency triage problem is real and unaddressed.
 
 He read it back.
 
@@ -42,17 +58,21 @@ It was, he recognized, a different kind of information than anything else in the
 
 He thought about the lessons-learned session after the Strato incident. The slide with four bullet points. The but that Eran hadn't said.
 
-He thought: I made that room safe for the bullet points and unsafe for the but. I did it deliberately, because the but would have made the slide messy and the slide had to go to the steering committee and the steering committee needed clean.
+He thought: *I made that room safe for the bullet points and unsafe for the but. I did it deliberately, because the but would have made the slide messy and the slide had to go to the steering committee and the steering committee needed clean.*
 
-He thought: and the but was the thing that mattered.
+He thought: *and the but was the thing that mattered.*
 
 He had known this, on some level, in the lessons-learned session. Had felt Eran's unsaid sentence the way you feel a change in air pressure — not consciously, but in the body, before the mind has named it. Had moved the conversation forward anyway because moving the conversation forward was his job and the job had, over seventeen years, become so thoroughly his identity that he had stopped being able to see where his judgment ended and his role began.
 
 He opened a new document. Not the spreadsheet. Something else.
 
-He wrote: The things I have been making it safe to say.
+He wrote:
 
-Then: The things I have been making it unsafe to say.
+> The things I have been making it safe to say.
+
+Then:
+
+> The things I have been making it unsafe to say.
 
 He sat with the second list for a long time. It was longer than the first, and more specific, and each item on it was something he recognized — a conversation he had redirected, a question he had absorbed and translated into something more manageable before it reached the people who needed to hear it, a concern he had logged privately and not escalated because escalation would have disturbed the motion and the motion was what he was paid to maintain.
 
@@ -62,13 +82,13 @@ All true. All insufficient.
 
 He thought about Carmit. The way she had said what's the slice and waited for an answer that came from understanding, not from a spreadsheet. The way she had looked at Eran when he said you've done this before. The way she had almost smiled.
 
-He thought: she knows. She has been in client services for long enough that she knows the difference between a project manager and someone who understands the project.
+He thought: *she knows. She has been in client services for long enough that she knows the difference between a project manager and someone who understands the project.*
 
-He thought: I have been the first kind for seventeen years. I am not sure I know how to be the second kind.
+He thought: *I have been the first kind for seventeen years. I am not sure I know how to be the second kind.*
 
 He looked at the new row in the spreadsheet.
 
-What did we learn this week about what the product actually needs to do?
+> What did we learn this week about what the product actually needs to do?
 
 It was a small thing. One row. The spreadsheet had 847 rows and this one didn't connect to any of them.
 

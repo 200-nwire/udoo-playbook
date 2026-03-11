@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter Eight — The Offer'
+  link: '/novel/chapter-08'
+next:
+  text: 'Chapter Ten'
+  link: '/novel/chapter-10'
+---
+
 # Chapter Nine — The Sprint That Solved Nothing
+
+<span class="part-label">Part One — Upstream</span>
 
 They ran the sprint anyway.
 
@@ -76,17 +88,21 @@ She looked at him again with that assessing quality.
 
 "Yes," she said. "It should."
 
+---
+
 Back in the office — his kitchen, his laptop, the Eilat photo — Lior opened Jira.
 
 The sprint was running. Three stories in progress. Oren had moved two tickets to done. The velocity was on track for another twenty-something points.
 
 He looked at the tickets.
 
-As a user I can sort appointments by status.
-As a user I can add a note to an appointment.
-As a user I can view patient history.
+> As a user I can sort appointments by status.
 
-He thought about Dina. The physical folder. The frown at the fourth entry. I need to see the last visit notes before he comes in.
+> As a user I can add a note to an appointment.
+
+> As a user I can view patient history.
+
+He thought about Dina. The physical folder. The frown at the fourth entry. *I need to see the last visit notes before he comes in.*
 
 As a user I can view patient history was in the done column. He clicked it. The implementation showed a separate screen, accessible from the patient profile, three taps from the appointment list.
 
@@ -96,7 +112,9 @@ He sat with this for a long time.
 
 Then he opened a new document. Not Jira. Not Confluence. Just a blank page.
 
-He wrote at the top: What Dina's Tuesday actually needs.
+He wrote at the top:
+
+> What Dina's Tuesday actually needs.
 
 And underneath it, for the first time in eleven weeks, he wrote not a list of features but a description of a morning. A real morning, with a real person, with the specific texture of what it felt like to do a hard job well when the tools cooperated and badly when they didn't.
 
@@ -116,11 +134,15 @@ Looked at the three stories in progress — the sorting, the notes, the history 
 
 Opened a message to Michal.
 
-Typed: I need to talk to you before we go any further with the sprint. I know this is bad timing. But I think we're building the wrong things again, and I'd rather say it now.
+Typed:
+
+> I need to talk to you before we go any further with the sprint. I know this is bad timing. But I think we're building the wrong things again, and I'd rather say it now.
 
 He looked at the message.
 
-Added: I also think I know what the right things are. Finally.
+Added:
+
+> I also think I know what the right things are. Finally.
 
 Sent it.
 

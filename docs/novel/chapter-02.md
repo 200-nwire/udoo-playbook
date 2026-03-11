@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter One — Tuesday'
+  link: '/novel/chapter-01'
+next:
+  text: "Chapter Three — The Postmortem That Wasn't"
+  link: '/novel/chapter-03'
+---
+
 # Chapter Two — The Standup
+
+<span class="part-label">Part One — Upstream</span>
 
 The call started at nine.
 
@@ -34,7 +46,7 @@ Lior looked at his coffee.
 
 Energy. He thought about energy. He thought about what it meant that the client was measuring energy rather than — he searched for the word — outcomes. He thought about the dashboard component he had been working on for three days, which was technically progressing, in that lines of code were being written, and which was practically meaningless, in that he had no confirmed idea what it was supposed to do.
 
-He thought: someone told the client we have good energy and the client believed them and somewhere in that gap is the whole problem.
+He thought: *someone told the client we have good energy and the client believed them and somewhere in that gap is the whole problem.*
 
 He did not say this.
 
@@ -62,7 +74,12 @@ The call ended. Nine-fourteen. Fourteen minutes exactly, the same as every morni
 
 His phone buzzed.
 
-Michal: Can we talk? Just 5 min
+<div class="chat-log">
+
+**Michal**
+Can we talk? Just 5 min
+
+</div>
 
 He typed: Sure.
 

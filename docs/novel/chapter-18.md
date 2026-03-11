@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 17 — The Board'
+  link: '/novel/chapter-17'
+next:
+  text: 'Chapter 19 — The Story That Bounced'
+  link: '/novel/chapter-19'
+---
+
 # Chapter 18 — Yoav
+
+<span class="part-label">Part Two — Downstream</span>
 
 He arrived with a laptop, a drawing tablet, and the specific confidence of someone who has been told he is good at his job often enough and by enough different people that he has stopped questioning it and started, in certain moments, depending on it.
 

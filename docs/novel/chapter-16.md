@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: "Chapter 15 — Dani's Spreadsheet"
+  link: '/novel/chapter-15'
+next:
+  text: 'Chapter 17 — The Board'
+  link: '/novel/chapter-17'
+---
+
 # Chapter 16 — The Product Owner
+
+<span class="part-label">Part Two — Downstream</span>
 
 Her name was Tamar and she had been a product owner for three years at a company that did it properly, which meant she arrived with fluency in a language that the Kelev project didn't yet speak and had been trying, for two weeks, to determine whether this was her problem or theirs.
 
@@ -110,7 +122,9 @@ Michal thought about this. The gravity metaphor. Work falling toward available c
 
 "Both," Tamar agreed. "So. If we're being explicit about ownership —"
 
-She opened her laptop. Created a new document. Typed at the top: Who owns what on Kelev.
+She opened her laptop. Created a new document. Typed at the top:
+
+> Who owns what on Kelev.
 
 "Discovery and problem framing — that's mine. I need to be in the clinic with Lior next time. I need to understand Ronit and Sigal the way he does."
 

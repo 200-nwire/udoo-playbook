@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'The Weight of Knowing'
+  link: '/novel/'
+next:
+  text: 'Chapter Two — The Standup'
+  link: '/novel/chapter-02'
+---
+
 # Chapter One — Tuesday
+
+<span class="part-label">Part One — Upstream</span>
 
 The IV drip counted seconds.
 
@@ -24,25 +36,42 @@ That person was currently unavailable.
 
 He picked up the phone again.
 
-Yossi 09:48
+<div class="chat-log">
+
+**Yossi** 09:48
 anyone know what PAYMENT_TIMEOUT_MS is supposed to be set to in prod
+
+</div>
 
 Below it, nothing. A three-minute gap that felt, reading it now, like a held breath.
 
 Then:
 
-Yossi 09:51
+<div class="chat-log">
+
+**Yossi** 09:51
 going with 3000, same as staging
+
+</div>
 
 Eran closed his eyes.
 
-No, he thought, with the calm clarity of a man who cannot do anything. No no no no no.
+No, he thought, with the calm clarity of a man who cannot do anything. *No no no no no.*
 
-He typed: Yossi wait —
+He typed:
+
+> Yossi wait —
 
 And then stopped. Because Yossi had sent that message seventeen minutes ago. And the next message in the channel, from two minutes after that, was from Dani, and it said only:
 
+<div class="chat-log">
+
+**Dani**
 it's down
+
+</div>
+
+---
 
 Three floors above a city that was going about its Tuesday, in an office that smelled of takeaway coffee and the particular tension of people trying to appear composed, Dani was on a call.
 
@@ -52,20 +81,24 @@ He was good at calls. This was known about him — that he could hold a difficul
 
 On his second monitor, the Slack channel scrolled.
 
-Yossi 10:09
+<div class="chat-log">
+
+**Yossi** 10:09
 I rolled back but the rollback is also not working
 
-Roni 10:11
+**Roni** 10:11
 which version did you roll back to
 
-Yossi 10:12
+**Yossi** 10:12
 the last one
 
-Roni 10:12
+**Roni** 10:12
 which is
 
-Yossi 10:13
+**Yossi** 10:13
 I don't know it was just the previous one in the list
+
+</div>
 
 Dani kept his face neutral. Seventeen years in client services had given him a face that could be neutral about almost anything.
 
@@ -87,11 +120,15 @@ The call ended. Dani sat for a moment in the silence of a man who has just made 
 
 He opened a new message to Eran.
 
-Typed: Eran I know you're sick and I'm sorry but I need —
+Typed:
+
+> Eran I know you're sick and I'm sorry but I need —
 
 Deleted it.
 
-Typed: Is there anyone else who knows the —
+Typed:
+
+> Is there anyone else who knows the —
 
 Deleted it.
 
@@ -99,11 +136,15 @@ Stared at the screen.
 
 Outside his window, pigeons were doing whatever pigeons do. The city continued its Tuesday with magnificent indifference.
 
-He typed: Eran, when you have a moment.
+He typed:
+
+> Eran, when you have a moment.
 
 Sent it. Hated himself slightly. Opened the spreadsheet again.
 
 Eighty-three percent.
+
+---
 
 In another city, in a kitchen, Lior was making his second coffee of the morning and thinking about the word meaningful.
 
@@ -115,7 +156,11 @@ The board was as he had left it. His name on four tickets in the To Do column. H
 
 Implement user dashboard.
 
-He clicked it. The description said: User should be able to see their data. There was a comment from himself, from two weeks ago: Which data specifically? All fields or a subset? Below it, nothing. The comment sat there like a question written on water.
+He clicked it. The description said:
+
+> User should be able to see their data.
+
+There was a comment from himself, from two weeks ago: Which data specifically? All fields or a subset? Below it, nothing. The comment sat there like a question written on water.
 
 Add notification system.
 
@@ -135,11 +180,11 @@ He picked up his coffee. Through the window, the street was wet from last night'
 
 Lior watched them for a while.
 
-He thought: I am being paid to build something. I don't know what it is. I don't know if it matters. I don't know if anyone will use it.
+He thought: *I am being paid to build something. I don't know what it is. I don't know if it matters. I don't know if anyone will use it.*
 
-He thought: I have asked. I have waited. I have read the tickets and attended the calls and moved the cards across the board.
+He thought: *I have asked. I have waited. I have read the tickets and attended the calls and moved the cards across the board.*
 
-He thought, carefully, the way you think something you're not quite ready to say out loud: I don't think it's going to get better.
+He thought, carefully, the way you think something you're not quite ready to say out loud: *I don't think it's going to get better.*
 
 His phone buzzed. A message from his friend Amit, who worked at a product company in Tel Aviv and had been trying to recruit him for four months.
 
@@ -150,6 +195,8 @@ Lior looked at the message for a long time.
 Then he looked at the Jira board.
 
 Then he typed: Yes.
+
+---
 
 The drip counted seconds.
 
@@ -167,7 +214,9 @@ He had not written it down because some part of him had liked being the person w
 
 The drip fell. The city continued its Tuesday. Somewhere, production was down, and Yossi was trying things, and Dani had made a promise, and Lior was typing yes to a recruiter, and a client who had trusted them was sitting with his hand on a phone he hadn't picked up yet, looking at the edges of his patience and deciding whether he'd reached them.
 
-Eran typed: PAYMENT_TIMEOUT_MS should be 8000 in prod. 3000 will cause failures under load. I should have documented this. I'm sorry.
+Eran typed:
+
+> PAYMENT_TIMEOUT_MS should be 8000 in prod. 3000 will cause failures under load. I should have documented this. I'm sorry.
 
 He sent it.
 
@@ -175,7 +224,7 @@ Watched the channel.
 
 Watched the drip.
 
-Thought: I should have documented this was not the whole truth. The whole truth was larger and less comfortable and had something to do with the word knowing and what it means to carry knowledge that no one else has, and whether that is a form of competence or a form of fear dressed up as competence.
+Thought: *I should have documented this* was not the whole truth. The whole truth was larger and less comfortable and had something to do with the word knowing and what it means to carry knowledge that no one else has, and whether that is a form of competence or a form of fear dressed up as competence.
 
 He wasn't ready to think that thought all the way to the end.
 

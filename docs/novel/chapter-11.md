@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 10 — Technical Debt Has a Half-Life'
+  link: '/novel/chapter-10'
+next:
+  text: 'Chapter 12 — What Michal Learned at the Conference'
+  link: '/novel/chapter-12'
+---
+
 # Chapter 11 — The Shape of Debt
+
+<span class="part-label">Part Two — Downstream</span>
 
 Shira arrived on a Wednesday.
 
@@ -24,7 +36,7 @@ This last question was the one nobody had asked yet. She could tell because the 
 
 She opened a message to Lior.
 
-Hey — I've been reading through the project. I want to talk about the appointment data model before I start writing test cases. When's a good time?
+> Hey — I've been reading through the project. I want to talk about the appointment data model before I start writing test cases. When's a good time?
 
 Lior read the message and felt something he couldn't immediately classify.
 
@@ -96,7 +108,7 @@ Lior was quiet for a long moment.
 
 "You start," she said, "by knowing what Dina needs to see on Tuesday morning."
 
-He thought about the document. What Dina's Tuesday actually needs. The hours he'd spent writing it. The way it had felt like finally seeing clearly.
+He thought about the document. *What Dina's Tuesday actually needs.* The hours he'd spent writing it. The way it had felt like finally seeing clearly.
 
 "I have that," he said.
 

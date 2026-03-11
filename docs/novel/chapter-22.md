@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 21 — Releases'
+  link: '/novel/chapter-21'
+next:
+  text: 'Chapter 23 — Netta'
+  link: '/novel/chapter-23'
+---
+
 # Chapter 22 — Tamir
+
+<span class="part-label">Part Three — Onstream</span>
 
 He was in the server room.
 
@@ -70,9 +82,11 @@ Lior thought about Eran. The hospital bed. The knowledge that was never shared b
 
 Tamir looked at him for a long moment.
 
-Then he sat down. Pulled up a document that had been minimized — Lior could see from the title bar that it was called Infrastructure Concerns — Kelev Project. The document was long.
+Then he sat down. Pulled up a document that had been minimized — Lior could see from the title bar that it was called *Infrastructure Concerns — Kelev Project*. The document was long.
 
 "This," Tamir said.
+
+---
 
 They spent two hours in the server room.
 
@@ -106,7 +120,7 @@ Tamir looked at the ceiling. "Eighteen months. The whole project."
 
 A silence that was its own answer.
 
-Lior thought about what Eran had said in the corridor outside the lessons-learned session. Single points of failure should be identified and mitigated. The bullet point on the clean slide. The abstraction that had stood in for the specific human being who had been on call for eighteen months, alone, without a runbook, without a rotation, without anyone asking what it cost.
+Lior thought about what Eran had said in the corridor outside the lessons-learned session. *Single points of failure should be identified and mitigated.* The bullet point on the clean slide. The abstraction that had stood in for the specific human being who had been on call for eighteen months, alone, without a runbook, without a rotation, without anyone asking what it cost.
 
 "We need to talk about SLOs," Lior said.
 
@@ -142,7 +156,7 @@ Tamir looked at his monitors. The lines moving in real time, the system breathin
 
 "Because I thought I could fix it," he said. "Each incident — I thought it was the last one. I fixed the cause. The numbers improved. Then the next one came." He paused. "And because every time I tried to raise infrastructure concerns in team meetings, the conversation moved on. There were features to ship. There were client deadlines. The infrastructure stuff felt like my problem to solve." He looked at Lior. "I thought that was my job. To solve it invisibly."
 
-Lior thought: this is Eran's story. Different domain, same structure. The person who kept the knowledge, who carried the weight, who confused indispensability with competence.
+Lior thought: *this is Eran's story. Different domain, same structure. The person who kept the knowledge, who carried the weight, who confused indispensability with competence.*
 
 "What would you need," he said, "to sleep through a night without worrying about this system?"
 
@@ -172,4 +186,4 @@ The question had caught him somewhere unprotected.
 
 Tamir looked at him.
 
-"Nobody asked," he said.
+— Nobody asked, he said.

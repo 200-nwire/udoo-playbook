@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter Two — The Standup'
+  link: '/novel/chapter-02'
+next:
+  text: 'Chapter Four — The Client'
+  link: '/novel/chapter-04'
+---
+
 # Chapter Three — The Postmortem That Wasn't
+
+<span class="part-label">Part One — Upstream</span>
 
 They called it a lessons-learned session, which Eran had noticed was what you called a postmortem when you wanted it to feel less like an autopsy.
 
@@ -10,12 +22,12 @@ The lessons-learned session had four attendees: Eran, Dani, Yossi, and a woman n
 
 Dani ran it. He had a slide. One slide, which Eran found both impressive and heartbreaking — that the entire collapse of the Strato production environment, the lost client hours, the three days of chaos, had been distilled into one slide with four bullet points.
 
-Key Learnings:
-
-Documentation should be kept up to date
-Deploy processes should be shared across the team
-Communication during incidents can be improved
-Single points of failure should be identified and mitigated
+> Key Learnings:
+>
+> Documentation should be kept up to date
+> Deploy processes should be shared across the team
+> Communication during incidents can be improved
+> Single points of failure should be identified and mitigated
 
 Eran read the slide. Read it again.
 
@@ -35,7 +47,7 @@ He stopped.
 
 But was the beginning of the sentence he had been rehearsing for twelve days. In the hospital, in the slow textured time of the drip and the ceiling and the forty-three Slack messages. He had thought about it the way you think about something when you have nothing to do but think — from every angle, setting it down and picking it up, wearing it smooth.
 
-The sentence was: But the problem isn't that I didn't document it. The problem is that we built a system where one person knowing something feels the same as the team knowing it. And we don't see that as a problem until the person isn't there.
+The sentence was: *But the problem isn't that I didn't document it. The problem is that we built a system where one person knowing something feels the same as the team knowing it. And we don't see that as a problem until the person isn't there.*
 
 He looked at Shira's pen moving across her notebook.
 

@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: "Chapter Three — The Postmortem That Wasn't"
+  link: '/novel/chapter-03'
+next:
+  text: 'Chapter Five — Alignment'
+  link: '/novel/chapter-05'
+---
+
 # Chapter Four — The Client
+
+<span class="part-label">Part One — Upstream</span>
 
 Avi Shapiro had built three companies.
 
@@ -22,13 +34,17 @@ He watched it twice.
 
 Then he opened a new message to Michal.
 
-Typed: Can I talk directly to the developer?
+Typed:
+
+> Can I talk directly to the developer?
 
 Looked at the message for a moment.
 
 Deleted directly — it implied something he didn't mean to imply.
 
-Sent: Can I talk to the developer? I have some thoughts on the dashboard I want to share.
+Sent:
+
+> Can I talk to the developer? I have some thoughts on the dashboard I want to share.
 
 He closed the laptop and drank his coffee and watched the street outside, where a woman was standing at the corner looking at her phone with the expression of someone who has just received news that requires a moment to absorb before the next thing can happen.
 

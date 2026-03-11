@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 16 — The Product Owner'
+  link: '/novel/chapter-16'
+next:
+  text: 'Chapter 18 — Yoav'
+  link: '/novel/chapter-18'
+---
+
 # Chapter 17 — The Board
+
+<span class="part-label">Part Two — Downstream</span>
 
 The sprint ended on a Friday.
 
@@ -24,11 +36,11 @@ He thought about Tamar. The conversation she'd had with Michal, which Michal had
 
 The room had gone slightly still.
 
-Lior and I shaped it in a refinement session on Tuesday, Michal had said.
+— Lior and I shaped it in a refinement session on Tuesday, Michal had said.
 
-Was Tamar in that session? Tamar had asked. Referring to herself in the third person with a lightness that took the edge off the directness.
+— Was Tamar in that session? Tamar had asked. Referring to herself in the third person with a lightness that took the edge off the directness.
 
-No, Michal had said. I'll fix that.
+— No, Michal had said. I'll fix that.
 
 It had been a small moment. The conversation had moved on. But Lior had noticed that the next two stories in the planning session had been walked through differently — Tamar asking questions, the team answering, the acceptance criteria emerging from the conversation rather than arriving pre-formed. It had taken longer. The stories had been better.
 
@@ -36,7 +48,7 @@ He closed the board.
 
 Opened a message to Tamar.
 
-I want to talk about the sprint format. I think it might be the wrong shape for where we are.
+> I want to talk about the sprint format. I think it might be the wrong shape for where we are.
 
 She came to his desk twenty minutes later, which he appreciated. Not a meeting, not a calendar invite. Just — I'm here, talk.
 

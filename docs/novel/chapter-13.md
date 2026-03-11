@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 12 — What Michal Learned at the Conference'
+  link: '/novel/chapter-12'
+next:
+  text: 'Chapter 14 — The Language of the Domain'
+  link: '/novel/chapter-14'
+---
+
 # Chapter 13 — Bounded Context
+
+<span class="part-label">Part Two — Downstream</span>
 
 The architecture conversation started, as most important conversations do, as something else.
 
@@ -76,8 +88,8 @@ The difference was, once seen, impossible to unsee.
 
 Lior was writing. Not code. Notes. The same kind of notes he had taken in Ramat Gan, in the clinic, watching Dina work.
 
-He thought: we've been building a system in our language and calling it hers.
+He thought: *we've been building a system in our language and calling it hers.*
 
-He thought: every assumption in the data model is a failure of translation.
+He thought: *every assumption in the data model is a failure of translation.*
 
-He thought, with the particular clarity of someone who has just seen something they can't unsee: the document I wrote about Dina's Tuesday is the glossary. We already have it. We just haven't used it as the foundation.
+He thought, with the particular clarity of someone who has just seen something they can't unsee: *the document I wrote about Dina's Tuesday is the glossary. We already have it. We just haven't used it as the foundation.*

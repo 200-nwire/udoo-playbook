@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter Nine — The Sprint That Solved Nothing'
+  link: '/novel/chapter-09'
+next:
+  text: 'Chapter 11 — The Shape of Debt'
+  link: '/novel/chapter-11'
+---
+
 # Chapter 10 — Technical Debt Has a Half-Life
+
+<span class="part-label">Part Two — Downstream</span>
 
 The pull request had been open for four days.
 
@@ -54,13 +66,19 @@ He had built something Dina would dismiss in week one and disable in week two if
 
 He opened a new document.
 
-At the top he wrote: The notification system is technically complete and functionally wrong.
+At the top he wrote:
 
-Below it he wrote: This is not a bug. This is a category error. We built a push system for a person who needs a pull system. We assumed Dina would be waiting for information. She is never waiting. She is moving. The information needs to be there when she arrives at it, not arriving at her when she's somewhere else.
+> The notification system is technically complete and functionally wrong.
+
+Below it he wrote:
+
+> This is not a bug. This is a category error. We built a push system for a person who needs a pull system. We assumed Dina would be waiting for information. She is never waiting. She is moving. The information needs to be there when she arrives at it, not arriving at her when she's somewhere else.
 
 He thought about this for a while.
 
-Then he wrote: The architecture is wrong. Not the code — the premise. And refactoring the code won't fix the premise.
+Then he wrote:
+
+> The architecture is wrong. Not the code — the premise. And refactoring the code won't fix the premise.
 
 He looked at two thousand and forty-one lines of good, careful, well-tested, wrong code.
 
@@ -68,11 +86,13 @@ In his previous company — a product company, stable, well-funded, the kind of 
 
 Here, there had been no design review. There had been a ticket. Add notification system. He had added a notification system. He had done his job in the only direction the job had been pointed.
 
-He thought about the word accountability and how it was used in retrospectives to mean whose fault is this when what it should mean was whose job was it to know this before we built it.
+He thought: *accountability and how it was used in retrospectives to mean whose fault is this when what it should mean was whose job was it to know this before we built it.*
 
 He opened the message to Lior.
 
 Added to it: I think I need to walk you through something. Can we call?
+
+---
 
 The call lasted forty minutes.
 
@@ -102,7 +122,7 @@ Lior was quiet.
 
 "I wanted to think it through before I said it. Because it means the sprint is wrong. The PR is wrong. The velocity is wrong. And I didn't want to say that without knowing what right looked like."
 
-Lior thought about the message he had sent Michal. I think we're building the wrong things again. The risk of that message. The way it had felt — not heroic, just necessary, and also frightening in the specific way that naming a true thing is frightening when you're not sure if the truth will be welcomed.
+Lior thought about the message he had sent Michal. *I think we're building the wrong things again.* The risk of that message. The way it had felt — not heroic, just necessary, and also frightening in the specific way that naming a true thing is frightening when you're not sure if the truth will be welcomed.
 
 "Write the design up," he said. "Whatever you have. And Oren —" He stopped. "Next time you see this in the first week, say it in the first week. Even if you don't know what right looks like yet. Say what you see."
 

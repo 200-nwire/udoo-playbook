@@ -1,20 +1,32 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 25 — The SLO Conversation'
+  link: '/novel/chapter-25'
+next:
+  text: 'Chapter 27 — What Carmit Said'
+  link: '/novel/chapter-27'
+---
+
 # Chapter 26 — Shira's Postmortem
+
+<span class="part-label">Part Three — Onstream</span>
 
 She called it what it was.
 
-Not a lessons-learned session. Not a retrospective. A postmortem — and blameless, she said this at the beginning, before anything else, because in her experience the word blameless needed to be said explicitly and early and with enough weight that the room understood it was a commitment rather than a courtesy.
+Not a lessons-learned session. Not a retrospective. A postmortem — and *blameless*, she said this at the beginning, before anything else, because in her experience the word *blameless* needed to be said explicitly and early and with enough weight that the room understood it was a commitment rather than a courtesy.
 
 Eight people. The full team plus Avi plus Tamir. The room was the big one, the one with the long wall, still faintly marked from the story mapping session — the ghost of brown paper tape at the edges, a few sticky notes that had been missed in the cleanup.
 
 Shira stood at the whiteboard.
 
-We are here, she said, to understand what happened. Not who caused it. Not what went wrong in the moral sense. What the system made inevitable — what combination of conditions, decisions, and gaps produced this outcome. Because if we understand the system, we can change the system. If we assign blame, we change the person, and the system produces the same outcome with a different person in the same role.
+— We are here, she said, to understand what happened. Not who caused it. Not what went wrong in the moral sense. What the system made inevitable — what combination of conditions, decisions, and gaps produced this outcome. Because if we understand the system, we can change the system. If we assign blame, we change the person, and the system produces the same outcome with a different person in the same role.
 
 She wrote at the top of the whiteboard:
 
-What happened. When. Who was involved. What they knew at the time. What the system made it rational for them to do.
+> What happened. When. Who was involved. What they knew at the time. What the system made it rational for them to do.
 
-The last one, she said, is the important one. Every person in an incident was acting rationally given what they knew and what the system rewarded. The postmortem's job is to understand the rationality, not to question the people.
+— The last one, she said, is the important one. Every person in an incident was acting rationally given what they knew and what the system rewarded. The postmortem's job is to understand the rationality, not to question the people.
 
 The room was quiet in the way rooms are quiet when a frame has just been offered that reorganizes what everyone thought they were there for.
 
@@ -24,59 +36,69 @@ They went through the incident in order.
 
 The three AM alert. Tamir's response. The eleven-minute resolution. Then — and this was where Shira took the conversation somewhere most postmortems didn't go — the six months before the incident.
 
-The connection pool, she said. When was it first identified as a risk?
+— The connection pool, she said. When was it first identified as a risk?
 
-Tamir: It was on my list from the beginning of the pilot. I flagged it to Lior three weeks before the incident.
+— It was on my list from the beginning of the pilot. I flagged it to Lior three weeks before the incident, Tamir said.
 
-In what form?
+— In what form?
 
-A Slack message.
+— A Slack message.
 
-What happened to the message?
+— What happened to the message?
 
-Lior: I acknowledged it. We didn't schedule the follow-up conversation.
+— I acknowledged it. We didn't schedule the follow-up conversation, Lior said.
 
-Why not?
+— Why not?
 
 Lior thought about this honestly.
 
-Because the sprint was full. And because the flag felt like a future problem, not an immediate one. And because Tamir said it wasn't urgent tonight — he said we needed to talk about it that week, and the week filled up.
+— Because the sprint was full. And because the flag felt like a future problem, not an immediate one. And because Tamir said it wasn't urgent tonight — he said we needed to talk about it that week, and the week filled up.
 
-What would have needed to be different for the conversation to happen?
+— What would have needed to be different for the conversation to happen?
 
 A silence.
 
-Tamar: A path. An explicit path from infrastructure concern to product planning. Tamir had nowhere to put it except a Slack message to Lior. If there had been a standing infrastructure review — even monthly — it would have been on an agenda.
+— A path, Tamar said. An explicit path from infrastructure concern to product planning. Tamir had nowhere to put it except a Slack message to Lior. If there had been a standing infrastructure review — even monthly — it would have been on an agenda.
 
-Shira wrote: No forum for infrastructure concerns to enter product planning.
+Shira wrote:
 
-Then: Slack message as the only escalation path for technical risk.
+> No forum for infrastructure concerns to enter product planning.
 
-What else?
+Then:
 
-Oren: The staging environment. If staging had mirrored production, we might have seen the connection pressure earlier. In the staging tests, the pool never got close to ceiling because the synthetic data doesn't generate realistic connection load.
+> Slack message as the only escalation path for technical risk.
 
-Shira wrote: Staging environment does not reflect production data patterns.
+— What else?
 
-And the SLA, Dani said.
+— The staging environment, Oren said. If staging had mirrored production, we might have seen the connection pressure earlier. In the staging tests, the pool never got close to ceiling because the synthetic data doesn't generate realistic connection load.
+
+Shira wrote:
+
+> Staging environment does not reflect production data patterns.
+
+— And the SLA, Dani said.
 
 Everyone looked at him.
 
 He was looking at his notebook. Not reading from it — looking at it in the way he looked at his spreadsheet sometimes, as though the act of looking helped him think.
 
-The SLA was set without consulting the person responsible for meeting it, he said. Tamir was never in the conversation where ninety-nine point five was committed to. The number was agreed between the sales process and the client. Tamir inherited it.
+— The SLA was set without consulting the person responsible for meeting it, he said. Tamir was never in the conversation where ninety-nine point five was committed to. The number was agreed between the sales process and the client. Tamir inherited it.
 
-Did you know that? Shira said.
+— Did you know that? Shira said.
 
-I knew it, Dani said. I was in the sales conversation. Carmit asked about uptime and I said ninety-nine point five because that's what enterprise clients expect and I thought it was achievable. He paused. I didn't ask Tamir. I should have.
+— I knew it, Dani said. I was in the sales conversation. Carmit asked about uptime and I said ninety-nine point five because that's what enterprise clients expect and I thought it was achievable. He paused. — I didn't ask Tamir. I should have.
 
 The sentence arrived in the room with the specific weight of a person taking responsibility without defense.
 
-Shira wrote: SLA commitment made without infrastructure input.
+Shira wrote:
+
+> SLA commitment made without infrastructure input.
 
 She looked at Dani.
 
-Thank you, she said. That's exactly what this is for.
+— Thank you, she said. That's exactly what this is for.
+
+---
 
 They spent ninety minutes building the map.
 
@@ -88,41 +110,43 @@ Changing the system meant changing the conditions that made those behaviors rati
 
 Shira wrote on the whiteboard:
 
-Action items — not for people. For the system.
-
-1. Monthly infrastructure review. Standing agenda item. Tamir presents open risks. Product and delivery leads attend. Owner: Tamar.
-
-2. SLA consultation protocol. Before any SLA or SLO commitment is made to a client, infrastructure sign-off required. Owner: Dani.
-
-3. Staging environment data mirror. Anonymized production data in staging within two weeks. Owner: Tamir, sign-off: Avi.
-
-4. On-call rotation. Three-person rotation documented and operational within one week. Owner: Tamir, Lior, Oren.
-
-5. Infrastructure risk field in story template. Every story that touches infrastructure has a risk assessment. Owner: Shira.
+> Action items — not for people. For the system.
+>
+> 1. Monthly infrastructure review. Standing agenda item. Tamir presents open risks. Product and delivery leads attend. Owner: Tamar.
+>
+> 2. SLA consultation protocol. Before any SLA or SLO commitment is made to a client, infrastructure sign-off required. Owner: Dani.
+>
+> 3. Staging environment data mirror. Anonymized production data in staging within two weeks. Owner: Tamir, sign-off: Avi.
+>
+> 4. On-call rotation. Three-person rotation documented and operational within one week. Owner: Tamir, Lior, Oren.
+>
+> 5. Infrastructure risk field in story template. Every story that touches infrastructure has a risk assessment. Owner: Shira.
 
 She read them back.
 
-These are not aspirational, she said. They are specific, owned, and dated. If they're not done by the date on them, that's the next postmortem agenda item.
+— These are not aspirational, she said. They are specific, owned, and dated. If they're not done by the date on them, that's the next postmortem agenda item.
 
 She looked at the room.
 
-One more thing, she said. This postmortem will be shared with the full team. Not a summary. The whole thing. Because a blameless postmortem that's kept private is just a therapy session. The learning has to be visible to be useful.
+— One more thing, she said. This postmortem will be shared with the full team. Not a summary. The whole thing. Because a blameless postmortem that's kept private is just a therapy session. The learning has to be visible to be useful.
 
-Avi: Can we share it with Carmit?
+— Can we share it with Carmit? Avi said.
 
 The room looked at him.
 
-She's the enterprise client, he said. She's about to trust us with forty-two clinics. If we're the kind of company that shares our postmortems with clients — that says here is what happened, here is what we learned, here is what we changed — that's either a relationship-ending conversation or a trust-building one. I think with Carmit it's the second.
+— She's the enterprise client, he said. She's about to trust us with forty-two clinics. If we're the kind of company that shares our postmortems with clients — that says *here is what happened, here is what we learned, here is what we changed* — that's either a relationship-ending conversation or a trust-building one. I think with Carmit it's the second.
 
 Shira looked at him for a long moment.
 
-Yes, she said. I think so too.
+— Yes, she said. I think so too.
 
 She wrote at the bottom of the whiteboard, in larger letters than the rest:
 
-Shared with: Full team. Carmit, Vetcare. Date: Friday.
+> Shared with: Full team. Carmit, Vetcare. Date: Friday.
 
 The room sat with this.
+
+---
 
 Outside the window the city was doing its ordinary Thursday. A delivery van was double-parked. A woman was eating a sandwich on a bench with the focused pleasure of someone who had found a good spot. A dog was investigating something in the gutter with the professional commitment of a specialist.
 
@@ -132,16 +156,20 @@ It was uncomfortable.
 
 It was also, Lior thought, the most useful ninety minutes the team had spent together.
 
-He thought about Eran. The lessons-learned session. The but that hadn't arrived. The bullet points that had been clean and safe and had changed nothing.
+He thought about Eran. The lessons-learned session. The *but* that hadn't arrived. The bullet points that had been clean and safe and had changed nothing.
 
-He thought: this is what Eran was trying to say. This is the version of that conversation that actually happens.
+He thought: *this is what Eran was trying to say. This is the version of that conversation that actually happens.*
 
 He made a note.
 
 Not in Jira. In his own notebook, which he had started carrying since Ramat Gan, since the morning he had understood that the most important things didn't fit in ticket fields.
 
-Blameless postmortem = the system made it rational. Change the system, not the person.
+> Blameless postmortem = the system made it rational. Change the system, not the person.
 
-Below it: Share everything. The learning only travels as far as the document does.
+Below it:
 
-Below that, smaller: Eran should see this.
+> Share everything. The learning only travels as far as the document does.
+
+Below that, smaller:
+
+> Eran should see this.

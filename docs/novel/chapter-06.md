@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter Five — Alignment'
+  link: '/novel/chapter-05'
+next:
+  text: 'Chapter Seven — Velocity'
+  link: '/novel/chapter-07'
+---
+
 # Chapter Six — Eran Writes a Document
+
+<span class="part-label">Part One — Upstream</span>
 
 It started small.
 
@@ -8,15 +20,15 @@ He had been sitting with it for twenty minutes, which was longer than it had tak
 
 The problem was not knowing what to write. He knew exactly what to write. The problem was something underneath the writing — a resistance he was trying to locate before he could dissolve it. Something about the act of writing it all down that felt, in a way he was still circling, like loss.
 
-He thought about what Yossi had said in the corridor. He needs the slide to be clean.
+He thought about what Yossi had said in the corridor. *He needs the slide to be clean.*
 
 He thought about the Tuesday in April, the payment gateway, the 8000.
 
-He thought: I have been, without meaning to, the person who keeps the lights on. And I have liked being that person. And writing this document is the beginning of not being that person anymore.
+He thought: *I have been, without meaning to, the person who keeps the lights on. And I have liked being that person. And writing this document is the beginning of not being that person anymore.*
 
 He started writing.
 
-PAYMENT_TIMEOUT_MS — Production value: 8000. Staging value: 3000. Why they differ:
+> PAYMENT_TIMEOUT_MS — Production value: 8000. Staging value: 3000. Why they differ:
 
 And then the reason, fully, in plain language, with the name of the support engineer at the payment gateway who had explained it, and the date, and the behavior you would observe if you got it wrong, and what to do if you observed that behavior.
 

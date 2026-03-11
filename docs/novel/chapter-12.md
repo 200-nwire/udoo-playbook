@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 11 — The Shape of Debt'
+  link: '/novel/chapter-11'
+next:
+  text: 'Chapter 13 — Bounded Context'
+  link: '/novel/chapter-13'
+---
+
 # Chapter 12 — What Michal Learned at the Conference
+
+<span class="part-label">Part Two — Downstream</span>
 
 She had the notes somewhere.
 
@@ -8,14 +20,14 @@ She found the notebook. A Moleskine, black, her handwriting in blue ink, neater 
 
 She was looking for something specific. A conversation — not a session, a conversation — with a woman she had met on the second day. German, fifties, had been running development teams for twenty years, had the specific quality of someone who had been through enough cycles to have achieved a kind of equanimity about the whole enterprise of building software.
 
-The retrospective is a diagnostic tool, the woman had said. Most teams use it as a therapy session. There's a difference.
+— The retrospective is a diagnostic tool, the woman had said. Most teams use it as a therapy session. There's a difference.
 
 Michal had written it down. Found it now, in the afternoon of day two, the handwriting slightly compressed, the pen pressed harder than usual — the mark of something she'd wanted to capture before it dissolved.
 
-Therapy: process feelings, restore equilibrium, maintain the relationship.
-Diagnostic: find the malfunction, name it precisely, change something.
+> Therapy: process feelings, restore equilibrium, maintain the relationship.
+> Diagnostic: find the malfunction, name it precisely, change something.
 
-Most teams need therapy. Some teams need diagnosis. Almost no team knows which they need at any given moment.
+> Most teams need therapy. Some teams need diagnosis. Almost no team knows which they need at any given moment.
 
 Below that, in different ink — she had gone back, later, and added: How do you tell?
 
@@ -27,7 +39,7 @@ Looked at the wall above her desk where she had, for reasons she no longer entir
 
 She thought about what Shira had said, in their call this morning. Not the content — the content she was still processing — but the way she had said it. The specific register of someone who was not asking for permission and was not looking for validation and was not adjusting the message to protect the listener.
 
-I've been in that situation. It's a different conversation.
+*I've been in that situation. It's a different conversation.*
 
 Michal had spent seventeen years becoming very good at protecting listeners. It was a skill she had cultivated consciously, from the observation that projects with high psychological safety outperformed projects without it, that the PM who created a safe environment for honest communication got more honest communication, that honesty required safety and safety required management and management was her job.
 
@@ -43,7 +55,9 @@ She had maintained the motion. The motion had been maintained. The sprint had co
 
 She opened a new document.
 
-At the top she wrote: What I have been managing around.
+At the top she wrote:
+
+> What I have been managing around.
 
 Below it she wrote for twenty minutes without stopping. The half-sentences she had heard and not followed. The design decisions she knew were provisional and had not pushed to formalize. The conversations with Avi where she had said progressing well when she had meant moving forward which was a different thing.
 
@@ -71,9 +85,9 @@ She hung up.
 
 Looked at the notebook. The German woman's words. Almost no team knows which they need at any given moment.
 
-She thought: we needed diagnosis for a long time. I gave us therapy.
+She thought: *we needed diagnosis for a long time. I gave us therapy.*
 
-Then, more slowly: I gave us therapy because diagnosis felt like my failure. Because if I named the malfunction, I was naming something I had watched develop and not stopped.
+Then, more slowly: *I gave us therapy because diagnosis felt like my failure. Because if I named the malfunction, I was naming something I had watched develop and not stopped.*
 
 She sat with this for a while. Not comfortably. But with the particular quality of attention you give to something you've decided to stop looking away from.
 

@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 18 — Yoav'
+  link: '/novel/chapter-18'
+next:
+  text: 'Chapter 20 — Story Mapping'
+  link: '/novel/chapter-20'
+---
+
 # Chapter 19 — The Story That Bounced
+
+<span class="part-label">Part Two — Downstream</span>
 
 It happened on a Tuesday.
 
@@ -14,7 +26,7 @@ Lior looked at it for a moment.
 
 Then he sent a message to Yoav.
 
-Can you look at something?
+> Can you look at something?
 
 Yoav looked at the implementation on the staging environment. Then at Tamar's sketch. Then at the implementation again.
 

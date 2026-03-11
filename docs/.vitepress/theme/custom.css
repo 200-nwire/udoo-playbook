@@ -450,6 +450,133 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--vp-c-divider); border-radius: 3px; }
 
+/* ─── NOVEL ─────────────────────────────────────────────────────────────── */
+.novel-page .vp-doc .content-container {
+  max-width: 680px;
+}
+
+.novel-page .vp-doc h1 {
+  font-family: 'DM Serif Display', serif;
+  text-align: center;
+  font-size: 1.8rem;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.25rem;
+}
+
+.novel-page .vp-doc .part-label {
+  display: block;
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--vp-c-text-3);
+  margin-bottom: 2.5rem;
+}
+
+.novel-page .vp-doc p {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: var(--vp-c-text-1);
+  margin: 0.6em 0;
+}
+
+.novel-page .vp-doc em {
+  font-style: italic;
+  color: var(--vp-c-text-2);
+}
+
+/* Scene break — renders --- as centered asterisks */
+.novel-page .vp-doc hr {
+  border: none;
+  text-align: center;
+  margin: 2.5rem 0;
+  height: auto;
+  overflow: visible;
+  background: none;
+}
+
+.novel-page .vp-doc hr::after {
+  content: '✦   ✦   ✦';
+  color: var(--vp-c-text-3);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+}
+
+/* Slack / chat messages */
+.novel-page .chat-log {
+  background: var(--vp-c-bg-mute);
+  border-left: 3px solid var(--vp-c-text-3);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.novel-page .chat-log p {
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin: 0.3em 0;
+  color: var(--vp-c-text-2);
+}
+
+.novel-page .chat-log strong {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* In-text documents / written text */
+.novel-page .vp-doc blockquote {
+  border-left: 3px solid var(--vp-c-brand-soft);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 0 6px 6px 0;
+}
+
+.novel-page .vp-doc blockquote p {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.75;
+}
+
+/* Chapter nav footer */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.chapter-nav a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.chapter-nav a:hover {
+  color: var(--vp-c-brand-3);
+}
+
+.chapter-nav .prev::before {
+  content: '← ';
+}
+
+.chapter-nav .next::after {
+  content: ' →';
+}
+
 /* ─── PRINT ──────────────────────────────────────────────────────────────── */
 @media print {
   .VPNav, .VPSidebar, .VPDocFooter { display: none !important; }

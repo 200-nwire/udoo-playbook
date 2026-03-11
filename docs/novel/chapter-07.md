@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter Six — Eran Writes a Document'
+  link: '/novel/chapter-06'
+next:
+  text: 'Chapter Eight — The Offer'
+  link: '/novel/chapter-08'
+---
+
 # Chapter Seven — Velocity
+
+<span class="part-label">Part One — Upstream</span>
 
 The sprint board had a satisfying quality that Michal had learned, over years, to distrust.
 
@@ -14,17 +26,25 @@ She had been thinking about this since Thursday. Since the call with Lior and Av
 
 Part of it was relief. She recognized this, examined it, put it aside.
 
-Part of it was something that felt uncomfortably like: this should have happened in week one.
+Part of it was something that felt uncomfortably like: *this should have happened in week one.*
 
-And underneath that, the question she hadn't asked aloud: whose job was it to make it happen?
+And underneath that, the question she hadn't asked aloud: *whose job was it to make it happen?*
 
 She opened the sprint board again.
 
 Three stories done.
 
-As a user I can view my appointments. Done.
-As a user I can filter appointments by date. Done.
-As a user I can see patient name and appointment type. Done.
+> As a user I can view my appointments.
+
+Done.
+
+> As a user I can filter appointments by date.
+
+Done.
+
+> As a user I can see patient name and appointment type.
+
+Done.
 
 She read them the way Lior had taught her, without meaning to, to read them — not as checkboxes but as experiences. As Ronit, on a Tuesday morning, seven minutes before the clinic opened.
 
@@ -34,7 +54,7 @@ I can filter by date. Yes, with a date picker in the top right corner that requi
 
 I can see patient name and appointment type. Yes. In eight-point font.
 
-She thought about Ronit. The seven minutes. She just knows.
+She thought about Ronit. The seven minutes. *She just knows.*
 
 She closed the board.
 
@@ -42,9 +62,13 @@ This was the problem with velocity as a metric — it measured the speed of the 
 
 She opened a new document.
 
-Typed, then deleted: We need to talk about direction.
+Typed, then deleted:
 
-Typed, then kept: Retrospective agenda — Friday.
+> We need to talk about direction.
+
+Typed, then kept:
+
+> Retrospective agenda — Friday.
 
 She had been running retrospectives for eleven weeks. They followed a format she had learned at a conference in 2019 — a facilitator had used sticky notes and a timer and the energy of someone who genuinely believed that structured reflection produced change. What went well. What didn't. What we'll do differently.
 
@@ -54,8 +78,13 @@ And then the next week, the same board, the same motion, the slightly wrong thin
 
 She stared at the document.
 
-Thought: a retrospective about the process of building the wrong thing is still a retrospective about the wrong thing.
+Thought: *a retrospective about the process of building the wrong thing is still a retrospective about the wrong thing.*
 
 Her phone buzzed.
 
-Avi Shapiro: Michal — something has come up. Can we talk today? It's good news. I think.
+<div class="chat-log">
+
+**Avi Shapiro**
+Michal — something has come up. Can we talk today? It's good news. I think.
+
+</div>

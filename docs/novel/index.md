@@ -1,3 +1,7 @@
+---
+pageClass: novel-page
+---
+
 # The Weight of Knowing
 
 **A novel about how teams learn to work — and what it costs when they don't.**

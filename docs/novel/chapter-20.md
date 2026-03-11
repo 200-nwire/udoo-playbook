@@ -1,4 +1,16 @@
+---
+pageClass: novel-page
+prev:
+  text: 'Chapter 19 — The Story That Bounced'
+  link: '/novel/chapter-19'
+next:
+  text: 'Chapter 21 — Releases'
+  link: '/novel/chapter-21'
+---
+
 # Chapter 20 — Story Mapping
+
+<span class="part-label">Part Two — Downstream</span>
 
 Tamar had been waiting for the right moment to do this and had decided, after two weeks, that the right moment was a myth and the next available Thursday would have to do.
 
@@ -24,21 +36,23 @@ Six activities. Written on blue notes, pinned to the brown paper in a horizontal
 
 "We've been building a column," he said. "Records. Scheduling. Notifications. We should have been building a row." He gestured at the backbone. "This row. Ronit's day."
 
-Tamar nodded. Wrote on the whiteboard beside the map: Features are vertical. User activities are horizontal. We've been building vertically into a problem that lives horizontally.
+Tamar nodded. Wrote on the whiteboard beside the map:
+
+> Features are vertical. User activities are horizontal. We've been building vertically into a problem that lives horizontally.
 
 Second layer: the tasks within each activity. Smaller, more specific. Orange notes.
 
 Under Prepare for the day:
 
-Review tomorrow's appointments. Check flagged patients. Read overnight messages. Prepare materials for complex cases. Brief the vet assistant.
+> Review tomorrow's appointments. Check flagged patients. Read overnight messages. Prepare materials for complex cases. Brief the vet assistant.
 
 Under See patients:
 
-Review patient file before entering room. Take history from owner. Examine patient. Diagnose. Administer treatment. Write notes. Schedule follow-up.
+> Review patient file before entering room. Take history from owner. Examine patient. Diagnose. Administer treatment. Write notes. Schedule follow-up.
 
 Under Handle emergencies:
 
-Assess urgency. Adjust schedule. Communicate with waiting patients. Triage.
+> Assess urgency. Adjust schedule. Communicate with waiting patients. Triage.
 
 This layer took longer. The room argued — not badly, productively. Shira kept asking when exactly does this happen? which forced precision. Yoav kept asking does she do this on the tablet or does she switch to desktop? which forced context. Oren kept asking does the system know this is happening or does it find out afterward? which was the most important question, the one that distinguished reactive software from anticipatory software.
 
@@ -102,7 +116,7 @@ Lior looked at it.
 
 Thought about the Figma file. Avi's forty-seven screens, organized by feature, each one internally coherent and externally disconnected from the one before and after.
 
-Thought about the morning prep screen. Five points. It knew about Mitzpeh before I did.
+Thought about the morning prep screen. Five points. *It knew about Mitzpeh before I did.*
 
 "The journey map is the design system," he said.
 
@@ -116,7 +130,7 @@ Looked at his portfolio, in his head, the twelve projects with their clean photo
 
 Thought about thirty-one deleted screens.
 
-Thought about the word obvious.
+Thought about the word *obvious*.
 
 "I need to redesign my process," he said. Not to the room. To himself, quietly, the way you say something when it becomes true.
 
