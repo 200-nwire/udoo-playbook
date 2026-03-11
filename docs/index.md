@@ -39,6 +39,11 @@ features:
     details: "Manage multiple initiatives across teams. Now/Next/Later roadmap model, cross-team dependency management, and Upstream capacity planning."
     link: /portfolio/
     linkText: Manage Portfolio
+  - icon: 📕
+    title: "The Weight of Knowing"
+    details: "A novel about how teams learn to work. Follow Lior, Eran, Michal and Dani through the slow, painful, eventually transformative discovery of what it means to build as a team."
+    link: /novel/
+    linkText: Start Reading
   - icon: 📖
     title: "The Narrative Framework"
     details: "Why storytelling is the core skill of product development. Experience Snapshots, user stories, and the natural bridge from narrative to Gherkin."

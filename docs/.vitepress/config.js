@@ -140,6 +140,7 @@ export default withMermaid(
       },
       { text: 'Tutorials', link: '/tutorials/' },
       { text: 'Reference', link: '/reference/' },
+      { text: 'The Weight of Knowing', link: '/novel/' },
     ],
 
     sidebar: {
@@ -311,6 +312,70 @@ export default withMermaid(
             { text: 'BDD Workshop', link: '/tutorials/bdd-workshop' },
             { text: 'Two Products, One Team', link: '/tutorials/two-products-one-team' },
             { text: 'From Incident to Improvement', link: '/tutorials/incident-to-improvement' },
+          ],
+        },
+      ],
+
+      '/novel/': [
+        {
+          text: '📕 The Weight of Knowing',
+          items: [
+            { text: 'About the Novel', link: '/novel/' },
+          ],
+        },
+        {
+          text: 'Part One — Upstream',
+          items: [
+            { text: '1. Tuesday', link: '/novel/chapter-01' },
+            { text: '2. The Standup', link: '/novel/chapter-02' },
+            { text: '3. The Postmortem That Wasn\'t', link: '/novel/chapter-03' },
+            { text: '4. The Client', link: '/novel/chapter-04' },
+            { text: '5. Alignment', link: '/novel/chapter-05' },
+            { text: '6. Eran Writes a Document', link: '/novel/chapter-06' },
+            { text: '7. Velocity', link: '/novel/chapter-07' },
+            { text: '8. The Offer', link: '/novel/chapter-08' },
+            { text: '9. The Sprint That Solved Nothing', link: '/novel/chapter-09' },
+          ],
+        },
+        {
+          text: 'Part Two — Downstream',
+          items: [
+            { text: '10. Technical Debt Has a Half-Life', link: '/novel/chapter-10' },
+            { text: '11. The Shape of Debt', link: '/novel/chapter-11' },
+            { text: '12. What Michal Learned at the Conference', link: '/novel/chapter-12' },
+            { text: '13. Bounded Context', link: '/novel/chapter-13' },
+            { text: '14. The Language of the Domain', link: '/novel/chapter-14' },
+            { text: '15. Dani\'s Spreadsheet', link: '/novel/chapter-15' },
+            { text: '16. The Product Owner', link: '/novel/chapter-16' },
+            { text: '17. The Board', link: '/novel/chapter-17' },
+            { text: '18. Yoav', link: '/novel/chapter-18' },
+            { text: '19. The Story That Bounced', link: '/novel/chapter-19' },
+            { text: '20. Story Mapping', link: '/novel/chapter-20' },
+            { text: '21. Releases', link: '/novel/chapter-21' },
+          ],
+        },
+        {
+          text: 'Part Three — Onstream',
+          items: [
+            { text: '22. Tamir', link: '/novel/chapter-22' },
+            { text: '23. Netta', link: '/novel/chapter-23' },
+            { text: '24. Three AM', link: '/novel/chapter-24' },
+            { text: '25. The SLO Conversation', link: '/novel/chapter-25' },
+            { text: '26. Shira\'s Postmortem', link: '/novel/chapter-26' },
+            { text: '27. What Carmit Said', link: '/novel/chapter-27' },
+          ],
+        },
+        {
+          text: 'Part Four — Offstream',
+          items: [
+            { text: '28. Netta\'s Loop', link: '/novel/chapter-28' },
+            { text: '29. The OKR Conversation', link: '/novel/chapter-29' },
+            { text: '30. The Clinic That Left', link: '/novel/chapter-30' },
+            { text: '31. Michal\'s Portfolio', link: '/novel/chapter-31' },
+            { text: '32. Leading Signals', link: '/novel/chapter-32' },
+            { text: '33. Eran\'s Last Scene', link: '/novel/chapter-33' },
+            { text: '34. Dina\'s Tuesday', link: '/novel/chapter-34' },
+            { text: '35. The New Project', link: '/novel/chapter-35' },
           ],
         },
       ],
