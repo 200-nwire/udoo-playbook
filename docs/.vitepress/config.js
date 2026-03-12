@@ -20,9 +20,9 @@ const agreementSidebar = [
     ],
   },
 
-  // ── Part I — The Cost of Not Knowing ──
+  // ── Part 1 — The Cost of Not Knowing ──
   {
-    text: 'Part I — The Cost of Not Knowing',
+    text: 'Part 1 — The Cost of Not Knowing',
     items: [
       { text: 'Start Here', link: '/guide/start-here' },
       { text: 'The Manifesto', link: '/guide/manifesto' },
@@ -31,9 +31,9 @@ const agreementSidebar = [
     ],
   },
 
-  // ── Part II — The Architecture of Work ──
+  // ── Part 2 — The Architecture of Work ──
   {
-    text: 'Part II — The Architecture of Work',
+    text: 'Part 2 — The Architecture of Work',
     items: [
       { text: 'Introduction', link: '/guide/introduction' },
       { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
@@ -43,9 +43,9 @@ const agreementSidebar = [
     ],
   },
 
-  // ── Part III — Discovery ──
+  // ── Part 3 — Discovery ──
   {
-    text: 'Part III — Discovery',
+    text: 'Part 3 — Discovery',
     items: [
       { text: 'Overview', link: '/upstream/' },
       { text: 'Roles & Ownership', link: '/upstream/roles' },
@@ -117,9 +117,9 @@ const agreementSidebar = [
     ],
   },
 
-  // ── Part IV — Delivery ──
+  // ── Part 4 — Delivery ──
   {
-    text: 'Part IV — Delivery',
+    text: 'Part 4 — Delivery',
     items: [
       { text: 'Overview', link: '/downstream/' },
       { text: 'Roles & Ownership', link: '/downstream/roles' },
@@ -154,9 +154,9 @@ const agreementSidebar = [
     ],
   },
 
-  // ── Part V — Resilience ──
+  // ── Part 5 — Resilience ──
   {
-    text: 'Part V — Resilience',
+    text: 'Part 5 — Resilience',
     items: [
       { text: 'Overview', link: '/onstream/' },
       { text: 'Roles & Ownership', link: '/onstream/roles' },
@@ -189,9 +189,9 @@ const agreementSidebar = [
     ],
   },
 
-  // ── Part VI — Growth ──
+  // ── Part 6 — Growth ──
   {
-    text: 'Part VI — Growth',
+    text: 'Part 6 — Growth',
     items: [
       { text: 'Overview', link: '/offstream/' },
       { text: 'Roles & Ownership', link: '/offstream/roles' },
@@ -204,9 +204,9 @@ const agreementSidebar = [
     ],
   },
 
-  // ── Part VII — Governance ──
+  // ── Part 7 — Governance ──
   {
-    text: 'Part VII — Governance',
+    text: 'Part 7 — Governance',
     items: [
       { text: 'Portfolio Overview', link: '/portfolio/' },
       { text: 'Roadmap Planning', link: '/portfolio/roadmap' },
@@ -224,6 +224,7 @@ const craftOfWarSidebar = [
     text: 'The Craft of War',
     items: [
       { text: 'About This Book', link: '/field-guide/' },
+      { text: 'How to Write a Story Worth Building', link: '/field-guide/how-to-write-a-story' },
     ],
   },
   {
@@ -386,7 +387,7 @@ export default withMermaid(
           ],
         },
         {
-          text: 'Part One — Upstream',
+          text: 'Part 1 — Upstream',
           items: [
             { text: '1. Tuesday', link: '/novel/chapter-01' },
             { text: '2. The Standup', link: '/novel/chapter-02' },
@@ -400,7 +401,7 @@ export default withMermaid(
           ],
         },
         {
-          text: 'Part Two — Downstream',
+          text: 'Part 2 — Downstream',
           items: [
             { text: '10. Technical Debt Has a Half-Life', link: '/novel/chapter-10' },
             { text: '11. The Shape of Debt', link: '/novel/chapter-11' },
@@ -417,7 +418,7 @@ export default withMermaid(
           ],
         },
         {
-          text: 'Part Three — Onstream',
+          text: 'Part 3 — Onstream',
           items: [
             { text: '22. Tamir', link: '/novel/chapter-22' },
             { text: '23. Netta', link: '/novel/chapter-23' },
@@ -428,7 +429,7 @@ export default withMermaid(
           ],
         },
         {
-          text: 'Part Four — Offstream',
+          text: 'Part 4 — Offstream',
           items: [
             { text: '28. Netta\'s Loop', link: '/novel/chapter-28' },
             { text: '29. The OKR Conversation', link: '/novel/chapter-29' },

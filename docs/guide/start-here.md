@@ -1,95 +1,69 @@
-# Where Do I Start?
+# What a Team Actually Is
 
-The one thing that changes everything: **never write a story straight from an idea.** Every story must trace to a Feature, an Epic, and an Initiative — not ceremony, but the chain that makes the "why" answerable at every step.
+Most teams were never designed.
 
----
+They were assembled. Someone hired three developers, then a PM, then a designer when it became obvious that nobody was thinking about what it should look like. Someone added a QA lead after two bad releases. Someone promoted a developer to tech lead because they were the most senior, not because the role was defined. A customer success manager started sitting in on planning meetings because the complaints were getting worse.
 
-## The Mental Model
+At some point the headcount reached eight or twelve or twenty, and someone said: we need a process. And the team adopted Scrum, or Shape Up, or Kanban, or a hybrid nobody could fully describe. Sprints started. Retrospectives happened. Tickets were created and assigned and closed.
 
-Four things to hold before anything else makes sense.
+And still — the same problems. The developer who builds the wrong thing. The designer whose work gets lost between Figma and production. The QA lead who finds, on the last day, that the feature doesn't match the spec nobody remembered existed. The CSM who has been watching an account degrade for three months but hasn't found a way to make that visible to anyone who could act on it.
 
-### The 4-phase loop
-
-The framework runs in parallel across initiatives — not sequentially:
-
-- 🔵 **Upstream** — shape the work before it reaches engineering
-- 🟢 **Downstream** — build and ship with discipline
-- 🟠 **Onstream** — keep it running reliably
-- 🟣 **Offstream** — turn production into the next discovery
-
-While one initiative is being built, another is being shaped. Your job is to make sure every initiative is in the right phase for its current state.
-
-### The hierarchy
-
-`Initiative → Feature → Epic → Story`
-
-- **Initiative** — a business problem worth solving, tied to a KPI
-- **Feature** — a new user capability within an initiative
-- **Epic** — a coherent cluster of stories that delivers part of a feature
-- **Story** — one user action in one scene, sized 1–3 days
-
-A story is a scene, not a chapter. It traces back up the chain or it isn't ready.
-
-### The 3 handoffs
-
-Three boundaries you never skip:
-
-- **DoR** (Definition of Ready) — protects the developer. A story doesn't start until all 9 checkpoints pass. → [DoR checklist](/upstream/definition-of-ready)
-- **DoD** (Definition of Done) — protects QA and ops. A story isn't done until it ships with monitoring and a runbook. → [DoD checklist](/downstream/definition-of-done)
-- **SLO check** — protects Customer Success. A feature isn't handed to Offstream until it's running reliably within SLOs. → [SLA & SLO Framework](/onstream/sla-slo)
-
-Each boundary protects the person who comes next.
-
-### The spiral
-
-Discovery nests: Initiative Discovery → Feature Discovery → Epic Refinement.
-
-Each level means you revisit. You don't finish Station 1 and never return — you cycle through, adding fidelity each time. Each level produces a concrete output (Initiative Brief, Feature Brief, DoR-ready stories) that unlocks the next.
+The process improved things. But it didn't fix the thing underneath.
 
 ---
 
-## Where Are You Right Now?
+The thing underneath is this: a team is not a group of people working on the same product. A team is a system for moving knowledge from the person who has it to the person who needs it.
 
-**Starting from nothing** — no codebase, no backlog, no conventions yet.
-→ [Full Discovery — New Project](/upstream/discovery-types#new-project)
+That's all. That's the whole job.
 
-**Have an idea or spotted an opportunity** — something new, not sure how big.
-→ [Idea Triage](/upstream/idea-triage)
+Every role is a knowledge role. The PM holds knowledge about what the user needs and what the business requires. The designer holds knowledge about what the experience should feel like and why. The developer holds knowledge about what is technically possible, what the cost of different choices will be, what the system is actually doing at 3am. The QA lead holds knowledge about where things break. The CSM holds knowledge about what customers are experiencing after the product ships.
 
-**Adding a feature to an existing product** — bigger than a story, smaller than a new product.
-→ [Feature Activities](/upstream/feature-activities)
+The product gets built in the gaps between them.
 
-**Have epics, need DoR-ready stories** — the feature is understood, stories need shaping.
-→ [Epic Activities](/upstream/epic-activities) · [Definition of Ready](/upstream/definition-of-ready)
+When the handoffs are clean — when what one person knows arrives intact at the next person who needs it — the product gets built right. When the handoffs leak — when knowledge gets compressed into a ticket title, or left in someone's head, or lost in the translation from discovery to development — the product gets built wrong, or slowly, or twice.
 
-**Something is broken in production** — an alert fired, a user reported it, a customer escalated.
-→ [Bug Taxonomy](/onstream/bug-taxonomy)
+This is not a communication problem. It is a structural problem. And you cannot fix a structural problem with a Slack channel.
 
-**New to the team** — want to understand the system before working inside it:
-1. [The Manifesto](/guide/manifesto) — why we work this way
-2. [Lifecycle at a Glance](/guide/lifecycle) — the full loop in one page
-3. [The 4-Layer Hierarchy](/guide/hierarchy) — how work is structured
-4. [Wrong Way / Right Way tutorial](/tutorials/wrong-way-right-way) — the fastest 30 minutes
-5. [How to Use This Book](/guide/how-to-use) — your role-specific path
+## The Agreement This System Makes
 
-**Building a team or scaling a company** — want to adopt the framework progressively, solving real problems at each step.
-→ [The Growth Path](/guide/ship-clean) — start with Ship Clean, grow from there
+This playbook is built around a single claim:
 
-**Small team (2–3 people)** — same thinking model, compressed ceremonies.
-→ [Lite Mode](/guide/lite-mode)
+**You can design the handoffs.**
+
+Not control them. Not eliminate the uncertainty. Not guarantee that every piece of knowledge makes it to the right person at the right time. But design a system where the transfer has a place to happen — a ceremony, an artifact, a gate — and where the cost of not transferring becomes visible before it becomes expensive.
+
+The [Definition of Ready](/upstream/definition-of-ready) is a designed handoff. It says: before a story crosses from the PM to the developer, it must contain these things. Not because we don't trust the PM. Because we've learned what developers need to start work without guessing, and we've made that need explicit and contractual.
+
+The Three Amigos session is a designed handoff. It says: before the first line of code is written, the PM, the developer, and the QA lead will sit together and walk through the story until each of them sees the same thing. Not the same ticket. The same thing.
+
+The [blameless post-mortem](/onstream/post-mortem-template) is a designed handoff in reverse: it takes what happened in production — what the on-call engineer lived through — and moves it back into the system, so the team that built it can understand what they built.
+
+Every practice in this system exists because a specific handoff was failing and someone decided to design it instead of complain about it.
+
+## What You're Agreeing To
+
+This is not a framework to adopt. It is an agreement to make — with your team, explicitly, about how you're going to work together.
+
+The agreement has three parts.
+
+**The first: we will make knowledge visible before we need it.** Not after the developer is stuck. Not after QA finds the defect. Not after the incident. Before. This is what every gate is for. Every checkpoint, every artifact, every ceremony — they are not bureaucracy. They are the places where private knowledge becomes shared infrastructure.
+
+**The second: we will treat the next person as the customer of our work.** The PM's customer is not the end user of the product — it is the developer who will build what the PM specifies. The developer's customer is not just the user of the deployed application — it is the QA lead who will test it and the on-call engineer who will maintain it. When you write a story, write it for the person who reads it at 9am with three other stories in front of them. When you write a runbook, write it for the person who reads it at 3am with a production alert open.
+
+**The third: we will treat the loop as continuous.** What ships is not the end. What CS learns from what ships is the beginning of the next decision. The feedback that comes back from production is not an interruption — it is the most honest signal the system produces. Offstream is not cleanup. It is intelligence.
+
+These three commitments are the whole agreement. Everything else in this playbook is a specific implementation of one of them.
 
 ---
 
-## Reading Paths by Role
+You don't need to implement it all. You need to start where the handoffs are most broken, hold to the fix until it becomes habit, and then look for the next gap.
 
-For detailed 10-step reading paths for each role (PM, Developer, QA, Designer, DevOps, CS), see → [How to Use This Book](/guide/how-to-use#role-based-reading-paths)
+The teams that use this well don't use it because it's required. They use it because they understand, at a level below policy, what it costs to leave the handoffs undesigned.
+
+That understanding is what this book is trying to produce.
 
 ---
 
-**→** [The Growth Path](/guide/ship-clean) — adopt the framework step by step, starting where it hurts
+**→** [The Chain](/guide/the-chain) — what happens when the handoffs fail, traced from one decision to its full cost
 
-**→** [The Manifesto](/guide/manifesto) — the spirit behind the practices
-
-**→** [Introduction](/guide/introduction) — full overview with projects and personas
-
-**→** [Wrong Way / Right Way Tutorial](/tutorials/wrong-way-right-way) — 30 minutes, the fastest way to get it
+**→** [The Growth Path](/guide/ship-clean) — where to start, based on where it hurts
