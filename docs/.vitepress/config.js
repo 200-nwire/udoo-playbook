@@ -1,30 +1,16 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
-const guideSidebar = [
+const agreementSidebar = [
+  // ── The Chain (emotional opener) ──
   {
-    text: '📖 Foundations',
-    items: [
-      { text: 'The Manifesto', link: '/guide/manifesto' },
-      { text: '🚀 Start Here', link: '/guide/start-here' },
-      { text: 'Why Teams Fail', link: '/guide/why-teams-fail' },
-      { text: 'The 5 Core Principles', link: '/guide/principles' },
-    ],
+    text: 'The Chain',
+    link: '/guide/the-chain',
   },
+
+  // ── The Growth Path (on-ramp) ──
   {
-    text: '📐 The Framework',
-    items: [
-      { text: 'Introduction', link: '/guide/introduction' },
-      { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
-      { text: 'The 4-Layer Hierarchy', link: '/guide/hierarchy' },
-      { text: 'The 4-Layer Hierarchy (Deep Dive)', link: '/four-layers' },
-      { text: 'Framework Overview', link: '/framework-overview' },
-      { text: 'How Teams Actually Run This', link: '/guide/parallel-work' },
-      { text: '📖 The Narrative Framework', link: '/guide/narrative' },
-    ],
-  },
-  {
-    text: '🧭 The Growth Path',
+    text: 'The Growth Path',
     items: [
       { text: 'Ship Clean', link: '/guide/ship-clean' },
       { text: 'Shape Before You Build', link: '/guide/shape-before-you-build' },
@@ -33,35 +19,211 @@ const guideSidebar = [
       { text: 'Close the Loop', link: '/guide/close-the-loop' },
     ],
   },
+
+  // ── Part I — The Cost of Not Knowing ──
   {
-    text: '⚖️ Scale & Roles',
+    text: 'Part I — The Cost of Not Knowing',
     items: [
+      { text: 'Start Here', link: '/guide/start-here' },
+      { text: 'The Manifesto', link: '/guide/manifesto' },
+      { text: 'Why Teams Fail', link: '/guide/why-teams-fail' },
+      { text: 'The 5 Core Principles', link: '/guide/principles' },
+    ],
+  },
+
+  // ── Part II — The Architecture of Work ──
+  {
+    text: 'Part II — The Architecture of Work',
+    items: [
+      { text: 'Introduction', link: '/guide/introduction' },
+      { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
+      { text: 'The 4-Layer Hierarchy', link: '/four-layers' },
+      { text: 'The Narrative Framework', link: '/guide/narrative' },
+      { text: 'How Teams Actually Run This', link: '/guide/parallel-work' },
+    ],
+  },
+
+  // ── Part III — Discovery ──
+  {
+    text: 'Part III — Discovery',
+    items: [
+      { text: 'Overview', link: '/upstream/' },
+      { text: 'Roles & Ownership', link: '/upstream/roles' },
+      {
+        text: 'Starting Points',
+        collapsed: true,
+        items: [
+          { text: 'What Kind of Discovery?', link: '/upstream/discovery-types' },
+          { text: 'Idea Triage', link: '/upstream/idea-triage' },
+          { text: 'Epic or Feature?', link: '/upstream/epic-vs-feature' },
+          { text: 'What Bad Framing Costs', link: '/upstream/framing-matters' },
+          { text: 'Business Goals → Initiatives', link: '/upstream/business-goals' },
+        ],
+      },
+      {
+        text: 'The Discovery Workshop',
+        collapsed: true,
+        items: [
+          { text: 'Station 1 — Vision & Context', link: '/upstream/station-1-vision' },
+          { text: 'Station 2 — Problem Framing', link: '/upstream/station-2-problem' },
+          { text: 'Station 3 — User Journey & Slices', link: '/upstream/station-3-journey' },
+          { text: 'Station 4 — Solution Options', link: '/upstream/station-4-options' },
+          { text: 'Station 5 — Decision & Scope', link: '/upstream/station-5-decision' },
+        ],
+      },
+      {
+        text: 'Practices & Artifacts',
+        collapsed: true,
+        items: [
+          { text: 'Definition of Ready (DoR)', link: '/upstream/definition-of-ready' },
+          { text: 'Experience Snapshot', link: '/upstream/experience-snapshot' },
+          { text: 'Initiative Brief', link: '/upstream/initiative-brief' },
+          { text: 'Discovery Backbone', link: '/upstream/discovery-backbone' },
+          { text: 'User Journey Mapping', link: '/upstream/user-journey' },
+          { text: 'Discovery Frameworks Catalog', link: '/upstream/discovery-frameworks' },
+          { text: 'Scrum for Discovery', link: '/upstream/scrum-for-discovery' },
+        ],
+      },
+      {
+        text: 'Refinement',
+        collapsed: true,
+        items: [
+          { text: 'Story Mapping', link: '/upstream/story-mapping' },
+          { text: 'The Cut', link: '/upstream/the-cut' },
+          { text: 'Grooming Session', link: '/upstream/grooming-session' },
+        ],
+      },
+      {
+        text: 'The Upstream Spiral',
+        collapsed: true,
+        items: [
+          { text: 'The Spiral Model', link: '/upstream/spiral-model' },
+          { text: 'Initiative Discovery', link: '/upstream/activities-sprint' },
+          { text: 'Feature Discovery', link: '/upstream/feature-activities' },
+          { text: 'Epic Refinement', link: '/upstream/epic-activities' },
+          { text: 'Jira Setup for the Spiral', link: '/upstream/jira-setup' },
+          { text: 'Project Master Document', link: '/upstream/project-master-doc' },
+        ],
+      },
+      {
+        text: 'Discovery Operations',
+        collapsed: true,
+        items: [
+          { text: 'Cadence & Meeting Recipes', link: '/upstream/cadence' },
+          { text: 'Anti-Patterns', link: '/upstream/anti-patterns' },
+          { text: 'Initiative Walkthrough', link: '/upstream/initiative-walkthrough' },
+        ],
+      },
+    ],
+  },
+
+  // ── Part IV — Delivery ──
+  {
+    text: 'Part IV — Delivery',
+    items: [
+      { text: 'Overview', link: '/downstream/' },
+      { text: 'Roles & Ownership', link: '/downstream/roles' },
+      {
+        text: 'Execution',
+        collapsed: true,
+        items: [
+          { text: 'Story Workflow', link: '/downstream/story-workflow' },
+          { text: 'Subtask Checklist', link: '/downstream/subtask-checklist' },
+          { text: 'Kanban Flow', link: '/downstream/kanban-flow' },
+          { text: 'Feature Branches & SSDLC', link: '/downstream/feature-branches' },
+          { text: 'Release Slicing', link: '/downstream/release-slicing' },
+        ],
+      },
+      {
+        text: 'Quality',
+        collapsed: true,
+        items: [
+          { text: 'Definition of Done (DoD)', link: '/downstream/definition-of-done' },
+          { text: 'Gherkin & BDD Patterns', link: '/downstream/gherkin' },
+          { text: 'Developer Workflow E2E', link: '/downstream/dev-workflow-e2e' },
+        ],
+      },
+      {
+        text: 'Delivery Operations',
+        collapsed: true,
+        items: [
+          { text: 'Cadence & Ceremonies', link: '/downstream/cadence' },
+          { text: 'Anti-Patterns', link: '/downstream/anti-patterns' },
+        ],
+      },
+    ],
+  },
+
+  // ── Part V — Resilience ──
+  {
+    text: 'Part V — Resilience',
+    items: [
+      { text: 'Overview', link: '/onstream/' },
+      { text: 'Roles & Ownership', link: '/onstream/roles' },
+      {
+        text: 'Reliability',
+        collapsed: true,
+        items: [
+          { text: 'SLA & SLO Framework', link: '/onstream/sla-slo' },
+          { text: 'Incident Management', link: '/onstream/incident-management' },
+          { text: 'On-Call Runbook Template', link: '/onstream/runbook-template' },
+        ],
+      },
+      {
+        text: 'Learning from Failure',
+        collapsed: true,
+        items: [
+          { text: 'Bug Taxonomy', link: '/onstream/bug-taxonomy' },
+          { text: 'RCA Template', link: '/onstream/rca-template' },
+          { text: 'Post-Mortem Template', link: '/onstream/post-mortem-template' },
+        ],
+      },
+      {
+        text: 'Resilience Operations',
+        collapsed: true,
+        items: [
+          { text: 'Cadence & Service Reviews', link: '/onstream/cadence' },
+          { text: 'Anti-Patterns', link: '/onstream/anti-patterns' },
+        ],
+      },
+    ],
+  },
+
+  // ── Part VI — Growth ──
+  {
+    text: 'Part VI — Growth',
+    items: [
+      { text: 'Overview', link: '/offstream/' },
+      { text: 'Roles & Ownership', link: '/offstream/roles' },
+      { text: 'Customer Lifecycle Model', link: '/offstream/customer-lifecycle' },
+      { text: 'Health Score Framework', link: '/offstream/health-score' },
+      { text: 'The Feedback Loop', link: '/offstream/feedback-loop' },
+      { text: 'Strategic Synthesis', link: '/offstream/strategic-synthesis' },
+      { text: 'Account & Revenue Cadence', link: '/offstream/account-cadence' },
+      { text: 'Anti-Patterns', link: '/offstream/anti-patterns' },
+    ],
+  },
+
+  // ── Part VII — Governance ──
+  {
+    text: 'Part VII — Governance',
+    items: [
+      { text: 'Portfolio Overview', link: '/portfolio/' },
+      { text: 'Roadmap Planning', link: '/portfolio/roadmap' },
+      { text: 'Cross-team Dependencies', link: '/portfolio/dependencies' },
       { text: 'Scale Tiers (1→3)', link: '/guide/scale-tiers' },
       { text: 'Roles', link: '/guide/roles' },
       { text: 'Lite Mode (Small Teams)', link: '/guide/lite-mode' },
-    ],
-  },
-  {
-    text: '🗺️ Using This Book',
-    items: [
       { text: 'How to Use This Book', link: '/guide/how-to-use' },
-    ],
-  },
-  {
-    text: '📋 Portfolio',
-    items: [
-      { text: 'Overview', link: '/portfolio/' },
-      { text: 'Roadmap Planning', link: '/portfolio/roadmap' },
-      { text: 'Cross-team Dependencies', link: '/portfolio/dependencies' },
     ],
   },
 ]
 
-const fieldGuideSidebar = [
+const craftOfWarSidebar = [
   {
-    text: '📘 The Field Guide',
+    text: 'The Craft of War',
     items: [
-      { text: 'About the Field Guide', link: '/field-guide/' },
+      { text: 'About This Book', link: '/field-guide/' },
     ],
   },
   {
@@ -111,7 +273,7 @@ const fieldGuideSidebar = [
 
 const referenceSidebar = [
   {
-    text: '📋 Reference',
+    text: 'Reference',
     items: [
       { text: 'Overview', link: '/reference/' },
       { text: 'The 10 Non-Negotiables', link: '/reference/non-negotiables' },
@@ -133,7 +295,7 @@ const referenceSidebar = [
     ],
   },
   {
-    text: '📐 Standards',
+    text: 'Standards',
     items: [
       { text: 'Overview', link: '/standards/' },
       { text: 'Jira Issue Type Guide', link: '/standards/jira-issue-types' },
@@ -144,7 +306,7 @@ const referenceSidebar = [
     ],
   },
   {
-    text: '📂 Examples',
+    text: 'Examples',
     items: [
       { text: 'Examples Gallery', link: '/examples/' },
       { text: 'Initiative — Pninei Halacha', link: '/examples/initiative-pninei-halacha' },
@@ -160,200 +322,47 @@ const referenceSidebar = [
 export default withMermaid(
   defineConfig({
   base: '/udoo-playbook/',
-  title: 'UDOO Playbook',
-  description: 'A battle-tested R&D operating framework: Upstream (discovery), Downstream (delivery), Onstream (operations), Offstream (growth). From idea to value — and back.',
+  title: 'UDOO — The R&D Saga',
+  description: 'An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth. One continuous loop.',
   lang: 'en-US',
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/udoo-playbook/logo.svg' }],
     ['meta', { name: 'theme-color', content: '#1A3C5E' }],
-    ['meta', { property: 'og:title', content: 'UDOO Playbook — R&D Operating Framework' }],
-    ['meta', { property: 'og:description', content: 'A battle-tested framework for product teams. Upstream discovery, lean delivery, SRE operations, and customer growth — in one continuous loop.' }],
+    ['meta', { property: 'og:title', content: 'UDOO — The R&D Saga' }],
+    ['meta', { property: 'og:description', content: 'An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth. One continuous loop.' }],
     ['meta', { property: 'og:image', content: 'https://200-nwire.github.io/udoo-playbook/og-image.png' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'UDOO Playbook — R&D Operating Framework' }],
-    ['meta', { name: 'twitter:description', content: 'Upstream → Downstream → Onstream → Offstream. A complete operating guide for product teams.' }],
+    ['meta', { name: 'twitter:title', content: 'UDOO — The R&D Saga' }],
+    ['meta', { name: 'twitter:description', content: 'An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth.' }],
   ],
 
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: 'R&D Framework',
+    siteTitle: 'UDOO — The R&D Saga',
 
     nav: [
-      { text: 'Guide', link: '/guide/introduction' },
-      {
-        text: 'Phases',
-        items: [
-          { text: '🔵 Upstream — Product & Discovery', link: '/upstream/' },
-          { text: '🟢 Downstream — Engineering & Execution', link: '/downstream/' },
-          { text: '🟠 Onstream — Service Delivery & SLA', link: '/onstream/' },
-          { text: '🟣 Offstream — Growth & Customer Success', link: '/offstream/' },
-        ],
-      },
-      { text: 'Tutorials', link: '/tutorials/' },
-      { text: 'Field Guide', link: '/field-guide/' },
-      { text: 'Reference', link: '/reference/' },
       { text: 'The Weight of Knowing', link: '/novel/' },
+      { text: 'The Agreement', link: '/guide/the-chain' },
+      { text: 'The Craft of War', link: '/field-guide/' },
+      { text: 'Tutorials', link: '/tutorials/' },
+      { text: 'Reference', link: '/reference/' },
     ],
 
     sidebar: {
-      '/guide/': guideSidebar,
-      '/portfolio/': guideSidebar,
-      '/four-layers': guideSidebar,
-      '/framework-overview': guideSidebar,
+      '/guide/': agreementSidebar,
+      '/portfolio/': agreementSidebar,
+      '/four-layers': agreementSidebar,
+      '/framework-overview': agreementSidebar,
 
-      '/upstream/': [
-        {
-          text: '🔵 Upstream — Discovery',
-          items: [
-            { text: 'Overview', link: '/upstream/' },
-            { text: 'Roles & Ownership', link: '/upstream/roles' },
-          ],
-        },
-        {
-          text: '5 Discovery Stations',
-          items: [
-            { text: 'Station 1 — Vision & Context', link: '/upstream/station-1-vision' },
-            { text: 'Station 2 — Problem Framing', link: '/upstream/station-2-problem' },
-            { text: 'Station 3 — User Journey & Slices', link: '/upstream/station-3-journey' },
-            { text: 'Station 4 — Solution Options', link: '/upstream/station-4-options' },
-            { text: 'Station 5 — Decision & Scope', link: '/upstream/station-5-decision' },
-          ],
-        },
-        {
-          text: 'Entry Points',
-          items: [
-            { text: 'What Kind of Discovery Do I Need?', link: '/upstream/discovery-types' },
-            { text: 'Idea Triage — Where Does This Belong?', link: '/upstream/idea-triage' },
-            { text: 'Epic or Feature? How to Tell', link: '/upstream/epic-vs-feature' },
-            { text: 'What Bad Framing Costs', link: '/upstream/framing-matters' },
-            { text: 'Business Goals → KPIs → Initiatives', link: '/upstream/business-goals' },
-          ],
-        },
-        {
-          text: 'Quality Gates & Practices',
-          items: [
-            { text: 'Definition of Ready (DoR)', link: '/upstream/definition-of-ready' },
-            { text: 'Experience Snapshot', link: '/upstream/experience-snapshot' },
-            { text: 'Initiative Brief', link: '/upstream/initiative-brief' },
-            { text: 'Story Mapping', link: '/upstream/story-mapping' },
-            { text: 'The Cut', link: '/upstream/the-cut' },
-            { text: 'Discovery Backbone', link: '/upstream/discovery-backbone' },
-            { text: 'User Journey Mapping', link: '/upstream/user-journey' },
-            { text: 'Discovery Frameworks Catalog', link: '/upstream/discovery-frameworks' },
-            { text: 'Scrum for Discovery', link: '/upstream/scrum-for-discovery' },
-          ],
-        },
-        {
-          text: 'The Upstream Spiral',
-          items: [
-            { text: '🌀 The Upstream Spiral', link: '/upstream/spiral-model' },
-            { text: 'Project Master Document', link: '/upstream/project-master-doc' },
-            { text: 'Initiative Discovery', link: '/upstream/activities-sprint' },
-            { text: 'Feature Discovery', link: '/upstream/feature-activities' },
-            { text: 'Epic Refinement', link: '/upstream/epic-activities' },
-            { text: 'Jira Setup for the Spiral', link: '/upstream/jira-setup' },
-          ],
-        },
-        {
-          text: 'Sprint Operations',
-          items: [
-            { text: 'Grooming Session', link: '/upstream/grooming-session' },
-            { text: 'Cadence & Meeting Recipes', link: '/upstream/cadence' },
-            { text: 'Anti-Patterns', link: '/upstream/anti-patterns' },
-            { text: 'Initiative Walkthrough', link: '/upstream/initiative-walkthrough' },
-          ],
-        },
-      ],
-
-      '/downstream/': [
-        {
-          text: '🟢 Downstream — Delivery',
-          items: [
-            { text: 'Overview', link: '/downstream/' },
-            { text: 'Roles & Ownership', link: '/downstream/roles' },
-          ],
-        },
-        {
-          text: 'Execution',
-          items: [
-            { text: 'Story Workflow', link: '/downstream/story-workflow' },
-            { text: 'Subtask Checklist', link: '/downstream/subtask-checklist' },
-            { text: 'Kanban Flow', link: '/downstream/kanban-flow' },
-            { text: 'Feature Branches & SSDLC', link: '/downstream/feature-branches' },
-            { text: 'Release Slicing', link: '/downstream/release-slicing' },
-          ],
-        },
-        {
-          text: 'Quality',
-          items: [
-            { text: 'Definition of Done (DoD)', link: '/downstream/definition-of-done' },
-            { text: 'Gherkin & BDD Patterns', link: '/downstream/gherkin' },
-            { text: 'Developer Workflow E2E', link: '/downstream/dev-workflow-e2e' },
-          ],
-        },
-        {
-          text: 'Operations',
-          items: [
-            { text: 'Cadence & Ceremonies', link: '/downstream/cadence' },
-            { text: 'Anti-Patterns', link: '/downstream/anti-patterns' },
-          ],
-        },
-      ],
-
-      '/onstream/': [
-        {
-          text: '🟠 Onstream — Operations',
-          items: [
-            { text: 'Overview', link: '/onstream/' },
-            { text: 'Roles & Ownership', link: '/onstream/roles' },
-          ],
-        },
-        {
-          text: 'Reliability',
-          items: [
-            { text: 'SLA & SLO Framework', link: '/onstream/sla-slo' },
-            { text: 'Incident Management', link: '/onstream/incident-management' },
-            { text: 'On-Call Runbook Template', link: '/onstream/runbook-template' },
-          ],
-        },
-        {
-          text: 'Bug & Issue Management',
-          items: [
-            { text: 'Bug Taxonomy', link: '/onstream/bug-taxonomy' },
-            { text: 'RCA Template', link: '/onstream/rca-template' },
-            { text: 'Post-Mortem Template', link: '/onstream/post-mortem-template' },
-          ],
-        },
-        {
-          text: 'Operations',
-          items: [
-            { text: 'Cadence & Service Reviews', link: '/onstream/cadence' },
-            { text: 'Anti-Patterns', link: '/onstream/anti-patterns' },
-          ],
-        },
-      ],
-
-      '/offstream/': [
-        {
-          text: '🟣 Offstream — Growth',
-          items: [
-            { text: 'Overview', link: '/offstream/' },
-            { text: 'Roles & Ownership', link: '/offstream/roles' },
-            { text: 'Customer Lifecycle Model', link: '/offstream/customer-lifecycle' },
-            { text: 'Health Score Framework', link: '/offstream/health-score' },
-            { text: 'The Feedback Loop', link: '/offstream/feedback-loop' },
-            { text: 'Strategic Synthesis', link: '/offstream/strategic-synthesis' },
-            { text: 'Account & Revenue Cadence', link: '/offstream/account-cadence' },
-            { text: 'Anti-Patterns', link: '/offstream/anti-patterns' },
-          ],
-        },
-      ],
-
+      '/upstream/': agreementSidebar,
+      '/downstream/': agreementSidebar,
+      '/onstream/': agreementSidebar,
+      '/offstream/': agreementSidebar,
 
       '/tutorials/': [
         {
-          text: '🎓 Tutorials',
+          text: 'Tutorials',
           items: [
             { text: 'Tutorial Hub', link: '/tutorials/' },
             { text: 'Your First Week with UDOO', link: '/tutorials/first-week' },
@@ -371,7 +380,7 @@ export default withMermaid(
 
       '/novel/': [
         {
-          text: '📕 The Weight of Knowing',
+          text: 'The Weight of Knowing',
           items: [
             { text: 'About the Novel', link: '/novel/' },
           ],
@@ -433,7 +442,7 @@ export default withMermaid(
         },
       ],
 
-      '/field-guide/': fieldGuideSidebar,
+      '/field-guide/': craftOfWarSidebar,
 
       '/reference/': referenceSidebar,
       '/standards/': referenceSidebar,
