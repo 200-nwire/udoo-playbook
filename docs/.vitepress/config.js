@@ -323,24 +323,24 @@ const referenceSidebar = [
 export default withMermaid(
   defineConfig({
   base: '/udoo-playbook/',
-  title: 'UDOO — The R&D Saga',
+  title: 'UDOO — The Tale of R&D',
   description: 'An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth. One continuous loop.',
   lang: 'en-US',
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/udoo-playbook/logo.svg' }],
     ['meta', { name: 'theme-color', content: '#1A3C5E' }],
-    ['meta', { property: 'og:title', content: 'UDOO — The R&D Saga' }],
+    ['meta', { property: 'og:title', content: 'UDOO — The Tale of R&D' }],
     ['meta', { property: 'og:description', content: 'An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth. One continuous loop.' }],
     ['meta', { property: 'og:image', content: 'https://200-nwire.github.io/udoo-playbook/og-image.png' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'UDOO — The R&D Saga' }],
+    ['meta', { name: 'twitter:title', content: 'UDOO — The Tale of R&D' }],
     ['meta', { name: 'twitter:description', content: 'An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth.' }],
   ],
 
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: 'UDOO — The R&D Saga',
+    siteTitle: 'UDOO — The Tale of R&D',
 
     nav: [
       { text: 'The Weight of Knowing', link: '/novel/' },
