@@ -1,78 +1,75 @@
-# Introduction
+# The Four Phases
 
-## What This Framework Is
+Most product teams run one continuous stream of work: ideas come in, features get built, things ship, bugs get fixed, repeat. The stream never stops. The roles blur. The PM is sometimes doing discovery, sometimes reviewing PRs, sometimes writing support documentation. The developer is sometimes implementing, sometimes in discovery sessions, sometimes on call. Nobody is quite sure whose job it is to decide when something is ready to move from one stage to the next.
 
-UDOO is a product development operating model — a shared language and a set of practices for teams who build software together and want to do it well.
+This system divides that stream into four distinct phases. Not because the work is actually sequential — it isn't, and that distinction matters — but because each phase requires a different kind of attention, different roles taking the lead, and different artifacts to make the handoff to the next phase trustworthy.
 
-It covers four connected phases: discovering what to build, building it, keeping it running, and learning from customers. It is not a methodology for any single phase. It is the loop that connects all four.
+The four phases are: Upstream, Downstream, Onstream, and Offstream.
 
-The reason it exists as a single framework rather than four separate guides is the same reason those phases break down without one: they are not independent. The quality of what gets built depends on how well it was discovered. The reliability of what runs depends on how it was handed from development to operations. The relevance of what comes next depends on how carefully customer signals were heard after the last release.
+Understanding each one is not about learning new vocabulary. It's about recognizing work you're already doing — and seeing where your current version of it is costing you.
 
-Every phase feeds the next. And the last feeds the first.
+## Upstream — Discovery & Shaping
+
+Upstream is everything that happens before a developer writes a line of code.
+
+It begins with a signal — a customer complaint, a strategic priority, a metric moving in the wrong direction — and ends with a story that a developer can pick up and build without guessing. Everything in between is Upstream work: understanding the problem, validating that it's worth solving, designing the solution well enough to specify it, breaking it into pieces small enough to build in a sprint.
+
+Most teams underinvest here. The pressure to build is immediate and visible. The pressure to understand first is diffuse and easy to defer. So teams discover their requirements during development — when they're most expensive to change.
+
+The PM leads Upstream. But not alone. The tech lead is present in discovery because technical constraints shape solution options. The designer is present before any UI work begins because the user's experience is a product decision, not a deliverable. Together, they produce work that can cross the handoff cleanly: a story with a persona, a situation, acceptance criteria, edge cases, and a design reference. A story that a developer can read and build.
+
+The gate at the end of Upstream is the [Definition of Ready](/upstream/definition-of-ready). Nothing crosses into Downstream until it passes. This is not a quality check. It is a protection for the developer — the first person in the chain who has no visibility into what came before unless someone gives it to them.
+
+## Downstream — Development & Delivery
+
+Downstream is where the product gets built.
+
+A story enters Downstream when it meets the Definition of Ready. From there, it moves through a defined state machine: pulled into development, unit tested, PR opened, peer review completed, merged, deployed to staging, QA verified, released. Each state has exit criteria. A story doesn't move until it's actually ready to move.
+
+The developer leads Downstream. But not alone. The tech lead is running the sprint — watching WIP, unblocking dependencies, making architectural decisions, keeping the board honest. QA is present before development ends, not after — ideally involved in the Three Amigos session where PM, developer, and QA walk through the story together before the first keystroke.
+
+The gate at the end of Downstream is the [Definition of Done](/downstream/definition-of-done), and then the Release Gate — a final check before a feature ships to users. Neither gate is about catching failure. Both are about ensuring the next person inherits something worth inheriting.
+
+Downstream is where most of the team's time is spent. It is also the phase that most playbooks describe in the most detail — the sprint ceremonies, the ticket workflow, the PR conventions — and the phase that is most often described without asking why any of it is there. The ceremonies exist because the handoffs exist. When you understand the handoffs, the ceremonies stop being rituals and start being logic.
+
+## Onstream — Operations & Resilience
+
+Onstream begins the moment a feature ships to production.
+
+Most teams treat shipping as an endpoint. Onstream treats it as a transition: from the team that built something to the system that runs it. That transition has a cost. The developer who built the feature knows how it behaves under load, what the edge cases look like in practice, what to do when it fails. Nobody else does. When it fails at 3am — and everything fails eventually — the on-call engineer inherits all of that undocumented knowledge as a crisis.
+
+The practices of Onstream are designed to move that knowledge before the crisis: [runbooks](/onstream/runbook-template) written by the developer who built the feature, not the engineer who inherits it. [SLOs](/onstream/sla-slo) defined before the feature ships, not after the first incident. [Post-mortems](/onstream/post-mortem-template) that treat failure as signal rather than as someone's fault.
+
+No single role owns Onstream — it is shared between engineering leads and whoever is on call. But the PM and the product organization have a stake in it that most playbooks don't acknowledge: a service that is unstable, poorly documented, and expensive to maintain consumes capacity that could be building new things. Technical debt is a product problem. SLA violations are a business problem. The on-call rotation's health is a team retention problem.
+
+Onstream is where you find out what Upstream and Downstream actually produced.
+
+## Offstream — Growth & Learning
+
+Offstream is everything that happens after the product is in production and running.
+
+It begins with observation — watching what users actually do with what you built — and ends with a signal that feeds back into Upstream. The CS team is the primary intelligence source here: they talk to the users who are confused, the accounts that are degrading, the customers who are quietly about to churn. The PM is the primary consumer of that intelligence: translating it from noise into a clear signal, from a signal into a decision.
+
+Most teams have Offstream activity — support tickets get logged, accounts get reviewed, usage data gets pulled. What most teams don't have is a practice that moves the intelligence from where it lives to where it's needed. The CSM has the signal. The PM needs the signal. Between them is a gap that fills with compressed data, informal conversations, and quarterly reviews that are always a month too late.
+
+[Strategic Synthesis](/offstream/strategic-synthesis) is the Offstream ceremony that closes that gap deliberately: a quarterly practice where everyone who holds a signal — PM, CS, engineering lead — reads across all of it at once and asks whether the direction still makes sense. Not a status meeting. Not a roadmap review. A reading session, followed by a recommendation.
+
+Offstream feeds Upstream. What you learn from what you shipped shapes what you choose to build next. The loop is not a metaphor — it is a designed channel through which intelligence travels from the edge of the product back to the people who decide what to build.
+
+Without Offstream, the loop is broken. The team builds in the dark, guided by what seemed like a good idea at the last planning session. With Offstream, the product gets smarter with every release — not because the team is working harder, but because they're reading the right signals and feeding them back into the right decisions.
+
+## The Four Phases Together
+
+Upstream produces clarity. Downstream produces software. Onstream produces reliability. Offstream produces intelligence.
+
+Each phase produces something the next phase needs. Each gate is where you verify that the handoff is actually ready. Each failure mode from the [previous chapter](/guide/why-teams-fail) maps to a place where one of these phases was skipped, rushed, or disconnected from the one that follows.
+
+The phases don't run sequentially. A mature team runs all four simultaneously — discovery happening for next quarter's initiatives while this quarter's features are in development, while last quarter's releases are in production, while the CS team is synthesizing signals from the features shipped six months ago. The four phases are not a pipeline. They are concurrent streams, each one feeding the others.
+
+What they share is the same commitment: the work done in each phase is done for the person who comes next.
 
 ---
 
-## What Problem This Solves
+**→** [The 4-Layer Hierarchy](/four-layers) — how work is structured within the phases
 
-Most teams we've seen don't struggle from lack of ability. They struggle from lack of shared agreement on how to work.
-
-The PM writes specs alone and presents them at planning. The designer finishes mockups the team sees for the first time in review. The tech lead raises an architectural concern after two sprints of work. QA joins the last three days of a sprint to test something already built. Customers send feedback to CS that never reaches the product team.
-
-Each of these, taken separately, looks like a communication problem. Together, they are a structural problem: the team has no shared model of what good collaboration looks like at each stage.
-
-UDOO names that model. It makes explicit what was previously assumed, different for each team member, and therefore constantly disappointing.
-
----
-
-## The Four Phases
-
-Each phase answers a different question, involves different people, and produces different outputs:
-
-| Phase | Question | Primary job |
-|---|---|---|
-| 🔵 **Upstream** | Are we building the right thing? | Discover, frame, shape |
-| 🟢 **Downstream** | Are we building it right? | Build, review, release |
-| 🟠 **Onstream** | Is it running reliably? | Monitor, respond, improve |
-| 🟣 **Offstream** | Is it creating value? | Listen, measure, feed back |
-
-These don't run sequentially across the whole team — they run in parallel across different initiatives. While one feature is being built, another is being discovered. While one service is being stabilised, a customer signal from it is already feeding the next discovery cycle.
-
----
-
-## The Three Handoffs That Matter
-
-Between each phase, there is a gate. Not bureaucracy — a shared agreement about what the next person needs before they can do their job well.
-
-**Commitment Point** (Upstream → Downstream): A story crosses this point only when it meets the Definition of Ready. Everything the developer needs to start — and finish — is already decided.
-
-**Delivery Point** (Downstream → Onstream): A feature crosses this point only when it meets the Definition of Done. A runbook exists. Observability is in place. The on-call team has been briefed.
-
-**Stability Point** (Onstream → Offstream): A feature reaches this point when it has run within SLOs for a meaningful period. Customer Success can now confidently present it.
-
-The handoffs protect the next person. That is their only purpose.
-
----
-
-## The Projects We Follow
-
-Throughout this book we use real project patterns — the kind of problems and decisions that come from building actual software for actual people. The names and details are drawn from 200apps' portfolio, with context compressed for teaching.
-
-**Maya, Avi, and Noa** are the recurring personas — not abstract role labels, but people doing specific jobs in specific moments. When you see Maya writing a journal entry at 10pm, or Avi studying halacha on his commute, or Noa looking for coffee with someone in a new city, you're seeing the Experience Snapshot in action: a named person in a named moment, making every design decision that follows obvious.
-
-The projects:
-- **Living Wondrously / Momentum** — a daily reflection and habit-building app
-- **Pninei Halacha** — a multilingual, offline-first religious study app
-- **Someone for Coffee** — a women-only social networking platform
-- **Amit LMS / Analytics Layer** — a ministry-grade learning management system
-
----
-
-## A Note on Judgment
-
-This framework is not a rulebook. It is an operating model — a set of agreements a team makes with itself about how to work.
-
-When a story is simple and the answer is obvious, the DoR checklist takes five minutes. When a technical decision is genuinely reversible, a note in Slack is enough and a full ADR is waste. When a team is three people on a two-week project, Lite Mode is the right configuration.
-
-The non-negotiables are few: don't start building unclear work, don't ship without knowing how you'll monitor it, don't close an incident without a learning, don't let a customer signal disappear.
-
-Everything else is calibration. Master the principles. Adapt the practice.
+**→** [Upstream — Discovery](/upstream/) — the full discovery practice

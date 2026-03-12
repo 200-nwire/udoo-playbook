@@ -1,116 +1,65 @@
 # Why Teams Fail
 
-::: tip Read the manifesto first
-If you came here directly, consider reading [The Manifesto](/guide/manifesto) first — it frames why we're naming these failures honestly, and the spirit behind what UDOO is trying to be. Then come back here.
-:::
+There are four ways a product team fails. Not forty. Not a long list of organizational dysfunctions. Four structural failure modes, each one a different place where the knowledge transfer breaks down. Every team that struggles is struggling with one of these, or several of them at once.
 
-Not in the ways they think they do.
+Naming them matters. Not to assign blame — but because a problem you can name is a problem you can locate. And a problem you can locate is a problem you can design around.
 
-When a project goes wrong, the postmortem usually points to: "we didn't communicate enough," "scope crept," "the spec wasn't clear," "we ran out of time." These are symptoms. The root causes are fewer, uglier, and more predictable than anyone wants to admit.
+## Failure Mode 1: Work Starts Before It's Understood
 
-This page names them. Honestly.
+The sprint begins. Stories enter development. Three days in, the developer realizes the story doesn't cover the edge case they've just encountered. They make a decision — the best one available with what they have — and keep building. The PM reviews the PR four days later and asks for changes. The change takes a day. QA has to retest. The sprint slips.
 
----
+Nobody failed. Nobody was careless. The problem was structural: work crossed the handoff before the handoff was ready.
 
-## The Seven Ways Product Teams Actually Fail
+This is the most common failure mode, and the cheapest to fix. It doesn't require more people, more meetings, or more process. It requires one commitment: nothing enters development until it meets a defined standard of readiness. A [Definition of Ready](/upstream/definition-of-ready) is not a bureaucratic gate. It is the answer to the question: what does a developer need to start work without guessing? Written down. Agreed to. Enforced — not by a manager, but by the developer themselves, who has standing to push a story back.
 
-### 1. Solo Discovery
+Teams that haven't solved this failure mode spend 20–30% of their development time on rework that was predictable at the story-writing stage. The rework isn't the cost. The confidence erosion is the cost — the developers who stop reading stories carefully because it doesn't help, the PMs who stop writing them carefully because nobody pushes back. The low standard becomes the culture.
 
-One person — usually the PM — goes away, thinks hard, writes a spec, and presents it to the team as a "done" document. The team nods. Dev starts. Three weeks later it turns out the tech lead knew the data model made half the feature impossible, the designer had a fundamentally different mental model, and no one had spoken to a user in six months.
+## Failure Mode 2: Work Finishes Before It's Verified
 
-**What went wrong:** Discovery is a collaborative act. A PM working alone has one perspective, one set of blind spots, one level of technical knowledge. Discovery done alone is not discovery — it is guessing dressed up as research.
+The story is done. The developer marks it complete and moves on. QA picks it up two days later and finds three issues the developer didn't catch — not because the developer was careless, but because the acceptance criteria were ambiguous about what "complete" meant, and developer-done and QA-done turned out to be different things.
 
-**The signal:** Specs that arrive to the team as announcements, not conversations.
+This failure mode lives at the other end of the story: not what it means to start, but what it means to finish. A [Definition of Done](/downstream/definition-of-done) is the answer to the question: what does a story need to be before it leaves development? Not "it works on my machine." Not "the happy path is covered." A specific list of conditions — unit tests passing, edge cases handled, PR reviewed and approved, design verified, no console errors — that every story must meet before it moves.
 
----
+Without a shared Definition of Done, "done" means whatever the developer decided it meant on the day they finished. Sometimes that's right. Often it isn't. And the cost always falls on the next person: QA who has to retest, the PM who has to re-review, the on-call engineer who inherits code that was shipped before it was ready.
 
-### 2. Design in a Silo
+The deeper problem with this failure mode is that it erodes trust between roles. When QA regularly finds issues that should have been caught in development, QA stops trusting developers. When developers regularly get push-back from QA on things they thought were done, developers start to resent QA. The friction isn't interpersonal. It's definitional. Fix the definition, and the friction disappears.
 
-The designer finishes mockups after talking only to the PM. Dev sees designs for the first time at sprint planning. The QA lead sees them for the first time when the feature is in staging. Three people have three different mental models of what was built and what it should do.
+## Failure Mode 3: What Ships Is Not Observed
 
-**What went wrong:** Design is not a phase that happens before development. It is a shared language that the whole team builds together — from Station 1 through to DoD.
+The feature deploys. The team moves to the next sprint. Three weeks later, someone mentions in passing that the feature is barely being used. Nobody knows why. There are no metrics attached to it. No one owns watching it. The CS team has gotten two tickets about confusing behavior, but those tickets live in a support queue and haven't made it into a planning conversation.
 
-**The signal:** Pull requests where developers ask "wait, what's supposed to happen here?"
+This failure mode happens after the code ships, which is why most process systems miss it. Scrum ends at the retrospective. Shape Up ends at the cooldown. Almost every methodology treats shipping as the conclusion. But shipping is a hypothesis, not a conclusion. The hypothesis is: this feature, built this way, will produce this outcome for users. Every deployment is a test of that hypothesis. And most teams never read the results.
 
----
+Without observation, the team is flying blind in the most expensive possible way — making decisions about what to build next based on intuition and requests rather than on what they can see about how the last thing performed. The roadmap fills with work that sounds plausible. The users get features they didn't ask for and don't use. And the team gets progressively less confident in their ability to build things that matter, because they've lost the [feedback loop](/offstream/feedback-loop) that would tell them when they're getting it right.
 
-### 3. No Tech in Upstream
+Observation is not dashboards. It is a defined practice of watching what you shipped, reading the signal, and feeding it back into the next decision.
 
-Developers join the conversation when stories are already shaped and estimates are being demanded. The upstream work — framing the problem, exploring the solution space, identifying architectural risks — happened entirely in rooms without them.
+## Failure Mode 4: What's Known Is Not Shared
 
-**What went wrong:** Technical feasibility is not an afterthought. Some ideas are cheap. Some are architectural rewrites. You cannot know which without a developer in the room. More importantly: developers who didn't participate in discovery will not believe in or care about the outcome. They'll estimate defensively and build mechanically.
+The CSM has talked to thirty customers this quarter. She knows that the new export feature has a confusing flow for enterprise accounts — three of them have called about it. She's logged the tickets. She's mentioned it in a team channel. But it hasn't made it into a planning meeting. It hasn't influenced the roadmap. It's sitting in a spreadsheet that the PM doesn't have a reason to look at.
 
-**The signal:** Estimates that come back 5x the PM's expectation. Developers who say "that's impossible" about things that were never discussed.
+This failure mode is the most expensive because it's invisible until it's catastrophic. The knowledge exists. The person who has it is doing their job. The system just doesn't have a channel that moves the knowledge from where it lives to where it's needed.
 
----
+It shows up in multiple places: the developer who knows the architecture is fragile and hasn't had a forum to say so before the new feature compounds the fragility. The designer who has watched user testing sessions and has strong intuitions about a problem the team is about to build the wrong solution to. The on-call engineer who knows the service misbehaves in a specific way under a specific load pattern, and hasn't written it down.
 
-### 4. QA After Dev
+Every team has people sitting on knowledge that the rest of the team needs. The failure is not in the people. It is in the absence of a practice that moves the knowledge deliberately — a ceremony, a document, a ritual — rather than hoping it travels through conversation.
 
-The quality team joins the process when the feature is "done" and waiting for sign-off. They find ten bugs. Five go back to dev. Three get "accepted" as known issues. Two ship. The PM wonders why there's no time to finish features properly.
+## The Pattern
 
-**What went wrong:** QA in UDOO is not a phase — it is a practice that runs parallel to development. Acceptance criteria written in Gherkin format (Given/When/Then) before a single line of code is written means both the developer and the QA lead are building toward the same definition of done. The "testing phase" disappears because testing was never separate.
+Look at these four failure modes together and a pattern appears.
 
-**The signal:** Bugs found in staging that were entirely predictable from the spec. A QA team that writes test cases by reading code instead of by reading acceptance criteria.
+The first two are about the boundary between knowing and building. The third and fourth are about the boundary between shipping and learning.
 
----
+Every team operates on both sides of these boundaries, all the time. The question is whether those boundaries are managed — whether the handoffs are designed — or whether the team is relying on individual effort and good intentions to carry the knowledge across.
 
-### 5. No WIP Limits
+Individual effort and good intentions are not reliable. They scale with person-hours, not with system design. When the team is small and everyone is in the same room and the PM is also the designer and the developer is also the QA lead, the knowledge travels easily because the distances are short. As the team grows, the distances grow. The knowledge doesn't travel automatically anymore. It has to be moved deliberately.
 
-Five developers, eleven stories "in progress." No one is finishing anything. Everything is half-done. The daily standup is people describing motion, not progress. The sprint review is explaining why the three most important things aren't ready yet.
+This system is the deliberate movement of knowledge. Every practice in it exists because one of these four failure modes was producing a specific, recurring cost — and someone decided to design the handoff instead of absorb the cost indefinitely.
 
-**What went wrong:** Flow requires constraint. WIP (work-in-progress) limits force the team to finish things before starting new ones. Without them, the team optimizes for looking busy instead of creating value. A story that is 80% done delivers 0% of its value.
-
-**The signal:** A Kanban board that looks like a rainbow with no swimlane having fewer than three cards in it.
+You don't need to fix all four at once. You need to identify which one is your current ceiling, and hold to the fix until it stops being a ceiling.
 
 ---
 
-### 6. Stale PRs
+**→** [The Four Phases](/guide/introduction) — the architecture that prevents these failures
 
-A pull request sits open for four days. The developer moved on to the next story. The reviewer is "busy." By the time it's reviewed, the branch is out of date, the context is gone, and the merge causes three conflicts. The fix takes as long as the original work.
-
-**What went wrong:** Code review is a blocking constraint on flow. A PR that is not reviewed within one business day is a failure of team coordination, not individual discipline. The team needs an explicit norm: reviewing open PRs takes priority over starting new work.
-
-**The signal:** PRs older than 24 hours with no comments. A team that tracks "stories started" but not "stories finished."
-
----
-
-### 7. No MVP Slicing
-
-The team scopes a feature for three months of work. Month one: mostly done. Month two: mostly done. Month three: still mostly done. At month three-and-a-half, it ships — late, over-engineered, and not what users needed once they finally saw it.
-
-**What went wrong:** Scope is a risk. Every week of unshipped code is a week of unvalidated assumptions. The discipline of MVP slicing — asking "what is the minimum that proves or disproves our bet?" — is not a quality compromise. It is the only way to learn at a reasonable cost.
-
-**The signal:** Features that are "almost ready" for two sprints in a row. A team that talks about features as big/medium/small but cannot identify which piece could ship first and teach them something.
-
----
-
-## Which Failures Apply to You?
-
-::: tip Honest Assessment
-Before reading the rest of the playbook, sit with this list. Not to find what's wrong with other people on your team — to find what you personally contribute to. The PM who never invites the tech lead to discovery conversations. The designer who presents mockups as finished work. The developer who never pushes back on vague acceptance criteria.
-
-UDOO doesn't work if it's something you do to your team. It only works if it's something you do together.
-:::
-
-| Failure | UDOO Answer |
-|---|---|
-| Solo discovery | Upstream is a team sport — 5 stations, multi-role, not a PM solo |
-| Design in a silo | Design enters at Station 1; DoR requires a visual reference |
-| No tech in upstream | Tech lead is a required participant in discovery, not a downstream handoff |
-| QA after dev | Gherkin ACs written before dev begins; DoD includes QA sign-off |
-| No WIP limits | Downstream = real Lean Kanban with enforced WIP limits |
-| Stale PRs | PR review is a team constraint, tracked in cadence |
-| No MVP slicing | Story Mapping + Release Slicing are core upstream practices |
-
----
-
-## The Uncomfortable Truth About Frameworks
-
-Most teams that fail with a framework don't fail because the framework is wrong. They fail because they adopt the vocabulary without changing the behavior.
-
-They say "DoR" but still let vague stories into sprints. They say "upstream sprint" but the PM writes alone and calls it discovery. They say "Definition of Done" but ship on Friday afternoon and test in production.
-
-UDOO will not help a team that treats it as a compliance exercise. It helps teams that are genuinely uncomfortable with how they're working today and want to change it.
-
-If that's you, keep reading.
-
+**→** [The Growth Path](/guide/ship-clean) — where to start fixing, based on where it hurts most

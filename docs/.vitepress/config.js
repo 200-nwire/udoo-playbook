@@ -35,7 +35,7 @@ const agreementSidebar = [
   {
     text: 'Part 2 — The Architecture of Work',
     items: [
-      { text: 'Introduction', link: '/guide/introduction' },
+      { text: 'The Four Phases', link: '/guide/introduction' },
       { text: 'The Lifecycle at a Glance', link: '/guide/lifecycle' },
       { text: 'The 4-Layer Hierarchy', link: '/four-layers' },
       { text: 'The Narrative Framework', link: '/guide/narrative' },
