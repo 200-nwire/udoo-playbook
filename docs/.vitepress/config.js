@@ -57,6 +57,58 @@ const guideSidebar = [
   },
 ]
 
+const fieldGuideSidebar = [
+  {
+    text: '📘 The Field Guide',
+    items: [
+      { text: 'About the Field Guide', link: '/field-guide/' },
+    ],
+  },
+  {
+    text: 'Part 1 — Discovery Craft',
+    items: [
+      { text: 'How to Run a Discovery Interview', link: '/field-guide/discovery-interview' },
+    ],
+  },
+  {
+    text: 'Part 2 — Shaping Craft',
+    items: [
+      { text: 'Story Mapping Workshop', link: '/field-guide/story-mapping-workshop' },
+    ],
+  },
+  {
+    text: 'Part 3 — Design Craft',
+    items: [
+      { text: 'The Designer in Discovery', link: '/field-guide/designer-in-discovery' },
+    ],
+  },
+  {
+    text: 'Part 4 — Build Craft',
+    items: [
+      { text: 'Code Review as Craft', link: '/field-guide/code-review' },
+    ],
+  },
+  {
+    text: 'Part 5 — Operations Craft',
+    items: [
+      { text: 'Blameless Post-Mortem Facilitation', link: '/field-guide/blameless-postmortem' },
+    ],
+  },
+  {
+    text: 'Part 6 — Growth Craft',
+    items: [
+      { text: 'Feedback to Signal', link: '/field-guide/feedback-to-signal' },
+    ],
+  },
+  {
+    text: 'Part 7 — Tension Scenarios',
+    items: [
+      { text: 'P0 Drops Mid-Sprint', link: '/field-guide/tension-p0-mid-sprint' },
+      { text: 'PM Promised 3 Weeks, Engineer Says 3 Months', link: '/field-guide/tension-scope-mismatch' },
+    ],
+  },
+]
+
 const referenceSidebar = [
   {
     text: '📋 Reference',
@@ -139,6 +191,7 @@ export default withMermaid(
         ],
       },
       { text: 'Tutorials', link: '/tutorials/' },
+      { text: 'Field Guide', link: '/field-guide/' },
       { text: 'Reference', link: '/reference/' },
       { text: 'The Weight of Knowing', link: '/novel/' },
     ],
@@ -379,6 +432,8 @@ export default withMermaid(
           ],
         },
       ],
+
+      '/field-guide/': fieldGuideSidebar,
 
       '/reference/': referenceSidebar,
       '/standards/': referenceSidebar,
