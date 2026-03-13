@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "The Tale of R&D"
   text: "From idea to value. And back."
-  tagline: "An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth. One continuous loop."
+  tagline: "An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth."
   actions:
     - theme: brand
       text: Start with a Story →
