@@ -323,7 +323,7 @@ const referenceSidebar = [
 export default withMermaid(
   defineConfig({
   base: '/udoo-playbook/',
-  title: 'UDOO — The Tale of R&D',
+  title: 'The Tale of R&D',
   description: 'An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth. One continuous loop.',
   lang: 'en-US',
 
@@ -340,7 +340,7 @@ export default withMermaid(
 
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: 'UDOO — The Tale of R&D',
+    siteTitle: 'The Tale of R&D',
 
     nav: [
       { text: 'The Weight of Knowing', link: '/novel/' },

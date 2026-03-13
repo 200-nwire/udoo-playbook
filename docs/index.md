@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "UDOO — The Tale of R&D"
+  name: "The Tale of R&D"
   text: "From idea to value. And back."
   tagline: "An operating system for product teams — upstream discovery, lean delivery, SRE operations, customer growth. One continuous loop."
   actions:
