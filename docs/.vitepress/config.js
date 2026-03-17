@@ -316,6 +316,7 @@ const referenceSidebar = [
       { text: 'RCA — Wallet Balance Bug', link: '/examples/rca-wallet-balance' },
       { text: 'Post-Mortem — JWT Outage', link: '/examples/postmortem-jwt-outage' },
       { text: 'Story — Journal Entry', link: '/examples/story-journal-entry' },
+      { text: 'Journey & Story Map — Exam Feature', link: '/udoo-playbook/examples/journey-story-map-exam.html' },
     ],
   },
 ]

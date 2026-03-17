@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amit LMS — Exam Feature · Journey &amp; Story Map</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font: system-ui, -apple-system, sans-serif;
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --surface-2: #f1efe8;
+  --border: rgba(0,0,0,0.09);
+  --border-mid: rgba(0,0,0,0.16);
+  --text: #1a1a18;
+  --text-2: #5f5e5a;
+  --text-3: #888780;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --col-l: 130px;
+  --c1: #EEEDFE; --c1b: #AFA9EC; --c1t: #3C3489;
+  --c2: #E1F5EE; --c2b: #5DCAA5; --c2t: #085041;
+  --c3: #FAEEDA; --c3b: #EF9F27; --c3t: #633806;
+  --c4: #FAECE7; --c4b: #F0997B; --c4t: #712B13;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  padding: 28px 20px 56px;
+}
+
+/* ── PAGE HEADER ── */
+.page-header { margin-bottom: 20px; }
+.page-header .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 4px; }
+.page-header h1 { font-size: 19px; font-weight: 500; }
+.page-header .sub { font-size: 12px; color: var(--text-2); margin-top: 2px; }
+
+/* ── PERSONA BAR ── */
+.persona-bar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+.persona-chip {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--surface); border: 0.5px solid var(--border-mid);
+  border-radius: 20px; padding: 5px 14px 5px 6px;
+  font-size: 12px; cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+  user-select: none;
+}
+.persona-chip:hover { box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.persona-chip.active { border-color: #534AB7; box-shadow: 0 0 0 1.5px #534AB7; }
+.persona-chip.active-green { border-color: #0F6E56; box-shadow: 0 0 0 1.5px #0F6E56; }
+.avatar { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; }
+.av-gal  { background: #EEEDFE; color: #3C3489; }
+.av-yoav { background: #E1F5EE; color: #085041; }
+.persona-hint { font-size: 11px; color: var(--text-3); margin-left: 4px; }
+
+/* ── SHARED GRID ── */
+.map-grid {
+  display: grid;
+  grid-template-columns: var(--col-l) 1fr 1fr 1fr 1fr;
+  border: 0.5px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  margin-bottom: 0;
+}
+
+/* Phase header row (top of grid) */
+.phase-header-row {
+  display: grid;
+  grid-template-columns: var(--col-l) 1fr 1fr 1fr 1fr;
+  gap: 0;
+  border-bottom: 0.5px solid var(--border-mid);
+}
+.ph-spacer { background: var(--surface-2); border-right: 0.5px solid var(--border); }
+.phase-cap {
+  padding: 9px 13px 8px;
+  font-size: 11px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+  border-right: 0.5px solid var(--border);
+}
+.phase-cap:last-child { border-right: none; }
+.ph-1 { background: var(--c1); color: var(--c1t); }
+.ph-2 { background: var(--c2); color: var(--c2t); }
+.ph-3 { background: var(--c3); color: var(--c3t); }
+.ph-4 { background: var(--c4); color: var(--c4t); }
+
+/* Section dividers */
+.section-divider {
+  grid-column: 1 / -1;
+  background: var(--surface-2);
+  padding: 6px 13px;
+  font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-3);
+  border-bottom: 0.5px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.section-divider .conf-badge {
+  font-size: 9px; font-weight: 500; padding: 1px 7px; border-radius: 20px;
+  border: 0.5px solid; text-transform: none; letter-spacing: 0;
+}
+.conf-validated { background: #E1F5EE; color: #085041; border-color: #5DCAA5; }
+.conf-hypothesis { background: #FAEEDA; color: #633806; border-color: #EF9F27; }
+
+/* Row label */
+.row-label {
+  background: var(--surface-2);
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 10px 12px;
+  font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--text-2);
+  display: flex; align-items: flex-start;
+}
+
+/* Journey cells */
+.jcell {
+  padding: 10px 13px;
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  font-size: 12px; line-height: 1.5; color: var(--text);
+}
+.jcell:last-child { border-right: none; }
+.step-title { font-weight: 500; font-size: 12px; margin-bottom: 3px; }
+.step-sub { color: var(--text-2); font-size: 11px; line-height: 1.45; }
+.quote { font-style: italic; color: var(--text-2); font-size: 11px; line-height: 1.5; }
+.badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; margin-top: 5px; }
+.badge-ok   { background: #E1F5EE; color: #085041; }
+.badge-risk { background: #FAEEDA; color: #633806; }
+.badge-fail { background: #FCEBEB; color: #791F1F; }
+.badge-info { background: #EEEDFE; color: #3C3489; }
+
+/* Emotion row */
+.emo-cell {
+  padding: 8px 13px 10px;
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+.emo-cell:last-child { border-right: none; }
+.emo-label { font-size: 10px; color: var(--text-3); text-align: center; margin-top: 3px; }
+svg.emocurve { display: block; width: 100%; }
+
+/* ── STORY MAP SECTION ── */
+.story-section-header {
+  grid-column: 1 / -1;
+  background: #f1efe8;
+  padding: 10px 13px 8px;
+  border-top: 1.5px solid var(--border-mid);
+  border-bottom: 0.5px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.story-section-header .sh-title { font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--text-2); }
+.story-section-header .sh-sub { font-size: 11px; color: var(--text-3); }
+
+/* Slice header */
+.slice-header {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 0;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--surface);
+}
+.slice-label-cell {
+  width: var(--col-l);
+  min-width: var(--col-l);
+  padding: 7px 12px;
+  font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--text-3);
+  border-right: 0.5px solid var(--border);
+  flex-shrink: 0;
+}
+.slice-band {
+  flex: 1; padding: 7px 13px;
+  font-size: 11px; font-weight: 500;
+  display: flex; align-items: center; gap: 10px;
+}
+.sl1-band { background: #EEEDFE; color: #3C3489; border-bottom: 2px solid #AFA9EC; }
+.sl2-band { background: #E1F5EE; color: #085041; border-bottom: 2px solid #5DCAA5; }
+.sl3-band { background: #FAEEDA; color: #633806; border-bottom: 2px solid #EF9F27; }
+.sl-est { font-size: 10px; opacity: .7; font-weight: 400; }
+.sl-cond { font-size: 10px; font-weight: 500; padding: 1px 7px; border-radius: 20px; background: rgba(0,0,0,.06); }
+
+/* Story row */
+.story-row-label {
+  background: var(--surface-2);
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 10px 12px;
+  font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--text-2);
+  display: flex; align-items: flex-start;
+}
+
+/* Story card cell */
+.scell {
+  padding: 8px 10px;
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  vertical-align: top;
+}
+.scell:last-child { border-right: none; }
+
+.story-card {
+  border: 0.5px solid var(--border-mid);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  background: var(--surface);
+  color: var(--text);
+  transition: opacity .25s, border-color .2s;
+  cursor: default;
+  position: relative;
+}
+.story-card .s-who { font-size: 10px; font-weight: 500; color: var(--text-3); margin-bottom: 3px; letter-spacing: .03em; }
+.story-card .s-body { font-size: 11px; line-height: 1.5; }
+.story-card .s-tag { display: inline-block; font-size: 9px; font-weight: 500; padding: 1px 6px; border-radius: 3px; margin-top: 5px; }
+.tag-adr    { background: #EEEDFE; color: #3C3489; }
+.tag-cond   { background: #FAEEDA; color: #633806; }
+.tag-slo    { background: #E6F1FB; color: #0C447C; }
+
+/* Focused vs dimmed state */
+.story-card.dimmed {
+  opacity: .22;
+  border-color: transparent;
+}
+.story-card.focused {
+  border-color: var(--focus-color, #534AB7);
+  box-shadow: 0 0 0 1px var(--focus-color, #534AB7);
+}
+
+/* Empty story placeholder */
+.story-empty {
+  border: 0.5px dashed var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 10px;
+  color: var(--text-3);
+  opacity: .4;
+  font-style: italic;
+}
+
+/* Deferred row */
+.deferred-row {
+  grid-column: 1 / -1;
+  padding: 12px 13px;
+  border-top: 0.5px solid var(--border);
+  background: var(--surface);
+}
+.deferred-title { font-size: 10px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
+.deferred-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.def-chip {
+  font-size: 10px; color: var(--text-2);
+  background: var(--surface-2); border: 0.5px solid var(--border);
+  padding: 2px 9px; border-radius: 20px;
+}
+.def-never { background: #FCEBEB; color: #791F1F; border-color: #F7C1C1; }
+
+/* ── Footer ── */
+.footer-note {
+  margin-top: 14px; font-size: 11px; color: var(--text-3);
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+}
+.legend-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+
+/* Persona visibility */
+.gal-row   { display: contents; }
+.yoav-row  { display: contents; }
+[data-persona="yoav"] .gal-only  { display: none !important; }
+[data-persona="gal"]  .yoav-only { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">200apps / NWIRE · Amit LMS · Exam Feature · Discovery Package v1.0 · March 2026</div>
+  <h1>Journey &amp; Story Map</h1>
+  <div class="sub">Switch persona to focus the stories that belong to each user's path</div>
+</div>
+
+<div class="persona-bar">
+  <div class="persona-chip active" id="chip-gal" onclick="switchPersona('gal')">
+    <div class="avatar av-gal">G</div>
+    <span>Gal · Teacher</span>
+  </div>
+  <div class="persona-chip" id="chip-yoav" onclick="switchPersona('yoav')">
+    <div class="avatar av-yoav">Y</div>
+    <span>Yoav · Student</span>
+  </div>
+  <div class="persona-chip" id="chip-all" onclick="switchPersona('all')">
+    <span style="padding: 0 2px; color: var(--text-2)">All personas</span>
+  </div>
+  <span class="persona-hint">— stories not belonging to the selected user are grayed out</span>
+</div>
+
+<div id="map-root" data-persona="all">
+
+  <!-- Phase header (always visible) -->
+  <div class="phase-header-row">
+    <div class="ph-spacer"></div>
+    <div class="phase-cap ph-1">Create exam</div>
+    <div class="phase-cap ph-2">Deliver exam</div>
+    <div class="phase-cap ph-3">Grade &amp; review</div>
+    <div class="phase-cap ph-4">Publish grades</div>
+  </div>
+
+  <div class="map-grid">
+
+    <!-- ════════════════════════════════════════
+         JOURNEY MAP — GAL
+    ════════════════════════════════════════ -->
+    <div class="section-divider gal-only">
+      Gal · Science Teacher
+      <span class="conf-badge conf-validated">Validated</span>
+    </div>
+
+    <div class="row-label gal-only">Actions</div>
+    <div class="jcell gal-only">
+      <div class="step-title">Builds exam in builder</div>
+      <div class="step-sub">Sets title, 3 sections, 45-min exam timer, section timers, navigation lock rules</div>
+      <span class="badge badge-info">30 min target</span>
+    </div>
+    <div class="jcell gal-only">
+      <div class="step-title">Publishes to class</div>
+      <div class="step-sub">Distributes to 28 students. Monitors live status per student</div>
+    </div>
+    <div class="jcell gal-only">
+      <div class="step-title">Reviews &amp; grades results</div>
+      <div class="step-sub">Auto-scores loaded. Marks 5 open-ended per student. Releases retry for Maya</div>
+      <span class="badge badge-risk">3 hr today → 36 min target</span>
+    </div>
+    <div class="jcell gal-only">
+      <div class="step-title">Publishes grades</div>
+      <div class="step-sub">One action sends grades to students + syncs to EMS</div>
+      <span class="badge badge-ok">No manual transfer</span>
+    </div>
+
+    <div class="row-label gal-only">Thoughts</div>
+    <div class="jcell gal-only"><div class="quote">"Which timer takes priority if I set all three levels?"</div></div>
+    <div class="jcell gal-only"><div class="quote">"What happens if a student loses connection mid-exam?"</div></div>
+    <div class="jcell gal-only"><div class="quote">"I need to find Maya's submission and release a retry — where is that?"</div></div>
+    <div class="jcell gal-only"><div class="quote">"Did grades actually reach the EMS? I can't verify in a second system anymore."</div></div>
+
+    <div class="row-label gal-only">Pain points</div>
+    <div class="jcell gal-only">
+      <span class="badge badge-risk">Multi-level timer confusion</span>
+      <div class="step-sub" style="margin-top:5px">Resolved by timer summary view — shows governing rule in real time (ADR-001)</div>
+    </div>
+    <div class="jcell gal-only">
+      <span class="badge badge-ok">Resolved — ADR-002</span>
+      <div class="step-sub" style="margin-top:5px">Server-side state + disconnection recovery eliminates data loss</div>
+    </div>
+    <div class="jcell gal-only">
+      <span class="badge badge-fail">Highest-value gap</span>
+      <div class="step-sub" style="margin-top:5px">Grading was 1 sentence in spec. Snapshot revealed it's the more valuable half of the feature</div>
+    </div>
+    <div class="jcell gal-only">
+      <span class="badge badge-risk">Slice 3 — conditional</span>
+      <div class="step-sub" style="margin-top:5px">EMS sync blocked on external API team. Slices 1–2 deliver full value without it</div>
+    </div>
+
+    <div class="row-label gal-only">Emotion</div>
+    <div class="emo-cell gal-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 30 C20 30 30 12 50 10 C70 8 80 18 100 18" fill="none" stroke="#7F77DD" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="30" r="3" fill="#7F77DD"/><circle cx="100" cy="18" r="3" fill="#7F77DD"/>
+      </svg>
+      <div class="emo-label">Uncertain → focused</div>
+    </div>
+    <div class="emo-cell gal-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 20 C20 14 40 9 60 8 C80 7 90 13 100 11" fill="none" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="20" r="3" fill="#1D9E75"/><circle cx="100" cy="11" r="3" fill="#1D9E75"/>
+      </svg>
+      <div class="emo-label">Confident → watchful</div>
+    </div>
+    <div class="emo-cell gal-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 12 C10 12 20 32 38 38 C55 42 65 22 80 16 C92 12 97 10 100 9" fill="none" stroke="#BA7517" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="12" r="3" fill="#BA7517"/><circle cx="100" cy="9" r="3" fill="#BA7517"/>
+      </svg>
+      <div class="emo-label">Overwhelmed → relieved</div>
+    </div>
+    <div class="emo-cell gal-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 22 C30 22 50 8 70 6 C85 5 95 5 100 5" fill="none" stroke="#D85A30" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="22" r="3" fill="#D85A30"/><circle cx="100" cy="5" r="3" fill="#D85A30"/>
+      </svg>
+      <div class="emo-label">Anxious → accomplished</div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         JOURNEY MAP — YOAV
+    ════════════════════════════════════════ -->
+    <div class="section-divider yoav-only">
+      Yoav · Student, age 14
+      <span class="conf-badge conf-hypothesis">Hypothesis — direct observation pending</span>
+    </div>
+
+    <div class="row-label yoav-only">Actions</div>
+    <div class="jcell yoav-only">
+      <div class="step-title">Opens exam in course</div>
+      <div class="step-sub">Reads pre-exam screen: total time, sections, nav rules. Clicks Start</div>
+    </div>
+    <div class="jcell yoav-only">
+      <div class="step-title">Takes exam under timer</div>
+      <div class="step-sub">Answers questions, watches timer, navigates sections per rules, submits manually</div>
+    </div>
+    <div class="jcell yoav-only">
+      <div class="step-title">Receives confirmation</div>
+      <div class="step-sub">Timestamped screen. Read-only view of submitted answers accessible from course</div>
+      <span class="badge badge-ok">Certainty achieved</span>
+    </div>
+    <div class="jcell yoav-only">
+      <div class="step-title">Sees published grade</div>
+      <div class="step-sub">Grade visible in same course view as lesson activity</div>
+    </div>
+
+    <div class="row-label yoav-only">Thoughts</div>
+    <div class="jcell yoav-only"><div class="quote">"How long do I have? Can I go back to Section 1?"</div></div>
+    <div class="jcell yoav-only"><div class="quote">"Is the timer going? What if my laptop loses connection?"</div></div>
+    <div class="jcell yoav-only"><div class="quote">"Did my answers actually submit? I need proof for the teacher."</div></div>
+    <div class="jcell yoav-only"><div class="quote">"Where is my grade? Is it in the same system as my lessons?"</div></div>
+
+    <div class="row-label yoav-only">Pain points</div>
+    <div class="jcell yoav-only">
+      <span class="badge badge-info">Addressed by design</span>
+      <div class="step-sub" style="margin-top:5px">Pre-exam screen surfaces all rules before Start is clicked</div>
+    </div>
+    <div class="jcell yoav-only">
+      <span class="badge badge-risk">Hypothesis</span>
+      <div class="step-sub" style="margin-top:5px">Behavior under exam pressure not yet directly observed — known risk for Slice 2</div>
+    </div>
+    <div class="jcell yoav-only">
+      <span class="badge badge-ok">Resolved</span>
+      <div class="step-sub" style="margin-top:5px">Timestamped confirmation screen is the explicit success signal</div>
+    </div>
+    <div class="jcell yoav-only">
+      <span class="badge badge-risk">Depends on teacher publish</span>
+      <div class="step-sub" style="margin-top:5px">Grade visibility is gated on teacher completing publication</div>
+    </div>
+
+    <div class="row-label yoav-only">Emotion</div>
+    <div class="emo-cell yoav-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 32 C20 32 40 20 60 14 C80 10 92 8 100 8" fill="none" stroke="#534AB7" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="32" r="3" fill="#534AB7"/><circle cx="100" cy="8" r="3" fill="#534AB7"/>
+      </svg>
+      <div class="emo-label">Nervous → ready</div>
+    </div>
+    <div class="emo-cell yoav-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 16 C15 16 25 28 40 32 C55 36 68 22 82 16 C92 12 97 10 100 10" fill="none" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="16" r="3" fill="#1D9E75"/><circle cx="100" cy="10" r="3" fill="#1D9E75"/>
+      </svg>
+      <div class="emo-label">Focused → tense near end</div>
+    </div>
+    <div class="emo-cell yoav-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 24 C30 24 50 8 70 6 C85 5 95 5 100 4" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="24" r="3" fill="#0F6E56"/><circle cx="100" cy="4" r="3" fill="#0F6E56"/>
+      </svg>
+      <div class="emo-label">Tense → relieved</div>
+    </div>
+    <div class="emo-cell yoav-only">
+      <svg class="emocurve" viewBox="0 0 100 44" preserveAspectRatio="none" height="44">
+        <path d="M0 30 C20 30 40 14 60 10 C80 6 92 5 100 5" fill="none" stroke="#BA7517" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="0" cy="30" r="3" fill="#BA7517"/><circle cx="100" cy="5" r="3" fill="#BA7517"/>
+      </svg>
+      <div class="emo-label">Waiting → satisfied</div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         STORY MAP
+    ════════════════════════════════════════ -->
+    <div class="story-section-header">
+      <span class="sh-title">Steps</span>
+      <span class="sh-sub">— user stories as INVEST-ready slices, one per card · click a persona above to focus their path</span>
+    </div>
+
+    <!-- ── SLICE 1 ── -->
+    <div class="slice-header">
+      <div class="slice-label-cell">Slice 1</div>
+      <div class="slice-band sl1-band">
+        End-to-end exam flow demonstrated
+        <span class="sl-est">3–4 weeks · Fixed estimate</span>
+      </div>
+    </div>
+
+    <div class="story-row-label">Step 1</div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can create an exam topic in my course so that it is clearly separate from lesson topics and exam-specific settings are available</div>
+        <span class="s-tag tag-adr">ADR-001 — is_exam flag</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="yoav">
+        <div class="s-who">As Yoav</div>
+        <div class="s-body">I can read a pre-exam screen showing total time, section count, and navigation rules before the timer starts so that I know exactly what I'm entering</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can see all submitted students in a results overview with their auto-calculated MCQ scores so that I know where each student stands without opening individual submissions</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-empty">Grade publication — not in Slice 1</div>
+    </div>
+
+    <div class="story-row-label">Step 2</div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can configure an exam-level timer with a summary view showing the governing rule so that I understand which timer takes priority without trial and error</div>
+        <span class="s-tag tag-adr">ADR-001 — timer summary</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="yoav">
+        <div class="s-who">As Yoav</div>
+        <div class="s-body">I can manually submit my exam and receive a timestamped confirmation screen so that I have proof my answers were received</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can see auto-aggregated scores for every auto-checkable question so that I only need to spend time on open-ended responses</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-empty">EMS integration — not in Slice 1</div>
+    </div>
+
+    <div class="story-row-label">Step 3</div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can pick only content and exercise components in exam mode so that collaborative components are never accidentally added to a formal assessment</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="yoav">
+        <div class="s-who">As Yoav</div>
+        <div class="s-body">My exam is automatically submitted when the timer expires so that a session ending while I'm mid-answer doesn't leave my submission in an unknown state</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-empty"></div>
+    </div>
+    <div class="scell">
+      <div class="story-empty"></div>
+    </div>
+
+    <!-- ── SLICE 2 ── -->
+    <div class="slice-header">
+      <div class="slice-label-cell">Slice 2</div>
+      <div class="slice-band sl2-band">
+        Teacher's core workflow complete · manual grade transfer eliminated
+        <span class="sl-est">4–5 weeks · Fixed estimate</span>
+      </div>
+    </div>
+
+    <div class="story-row-label">Step 4</div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can set a timer on each section and lock navigation so that students cannot return to earlier sections once they move forward</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="yoav">
+        <div class="s-who">As Yoav</div>
+        <div class="s-body">When I lose internet during the exam, my answers are saved and my timer is paused so that a brief disconnection doesn't cost me answered questions or time</div>
+        <span class="s-tag tag-adr">ADR-002 — exam_session</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can enter a score for each open-ended response on a student's detail view so that I can mark all 28 submissions in one place without switching tools</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can publish all grades in a single action so that students see their results and the system records them without any manual re-entry from my side</div>
+      </div>
+    </div>
+
+    <div class="story-row-label">Step 5</div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">Students see a confirmation screen before leaving a locked section so that no one loses access to their answers by accidentally navigating away</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="yoav">
+        <div class="s-who">As Yoav</div>
+        <div class="s-body">When I reconnect after losing internet, I land on the page I was on with all my answers intact so that I can continue without having to restart</div>
+        <span class="s-tag tag-adr">ADR-002 — recovery</span>
+        <span class="s-tag tag-slo">P99 &lt;200ms write SLO</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can release a new attempt for a specific student with a custom timer so that Maya's connection failure doesn't result in an unfair final score</div>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I see an explicit confirmation that grades were published and whether they reached the system so that I'm never uncertain whether the EMS received them</div>
+      </div>
+    </div>
+
+    <!-- ── SLICE 3 ── -->
+    <div class="slice-header">
+      <div class="slice-label-cell">Slice 3</div>
+      <div class="slice-band sl3-band">
+        Full feature · external grade integration live
+        <span class="sl-est">3–4 weeks</span>
+        <span class="sl-cond">Conditional on EMS API schema confirmation</span>
+      </div>
+    </div>
+
+    <div class="story-row-label">Step 6</div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can add a page-level timer that overrides the section timer so that specific high-stakes questions have their own strict time limit</div>
+        <span class="s-tag tag-cond">Conditional</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="yoav">
+        <div class="s-who">As Yoav</div>
+        <div class="s-body">If my disconnection outlasts my remaining exam time, my answers are automatically submitted from the last saved state so that I don't receive a zero for a technical failure</div>
+        <span class="s-tag tag-cond">Conditional</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can see a per-question class summary showing which questions were most commonly missed so that I can adjust my teaching before the next unit</div>
+        <span class="s-tag tag-cond">Conditional</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">Grades I publish are automatically sent to the EMS so that I never manually enter a grade into a second system after an exam cycle</div>
+        <span class="s-tag tag-adr">ADR-003 — EMS export</span>
+        <span class="s-tag tag-cond">Conditional on EMS API</span>
+      </div>
+    </div>
+
+    <div class="story-row-label">Step 7</div>
+    <div class="scell">
+      <div class="story-empty"></div>
+    </div>
+    <div class="scell">
+      <div class="story-empty"></div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I can mark all student answers to the same question in one view so that I can grade consistently and spot outliers without switching between student records</div>
+        <span class="s-tag tag-cond">Conditional</span>
+      </div>
+    </div>
+    <div class="scell">
+      <div class="story-card" data-who="gal">
+        <div class="s-who">As Gal</div>
+        <div class="s-body">I see the EMS sync status per student after publishing so that a failed sync is immediately visible and I can act before the school reporting deadline</div>
+        <span class="s-tag tag-adr">ADR-003 — sync status</span>
+      </div>
+    </div>
+
+    <!-- Deferred -->
+    <div class="deferred-row">
+      <div class="deferred-title">Deferred &amp; out of scope</div>
+      <div class="deferred-chips">
+        <span class="def-chip">Configurable section lock (nav rules)</span>
+        <span class="def-chip">Class performance statistics (non-EMS)</span>
+        <span class="def-chip">Bulk retry release</span>
+        <span class="def-chip">Exam templates between teachers</span>
+        <span class="def-chip">Scheduled exam publishing</span>
+        <span class="def-chip">Grade analytics &amp; reporting</span>
+        <span class="def-chip">Parent notifications</span>
+        <span class="def-chip">Standards alignment</span>
+        <span class="def-chip def-never">Never — real-time proctoring</span>
+        <span class="def-chip def-never">Never — AI question generation</span>
+        <span class="def-chip def-never">Never — collaborative components in exams</span>
+        <span class="def-chip def-never">Never — student grade appeal flow</span>
+        <span class="def-chip def-never">Never — parent-facing grade portal</span>
+      </div>
+    </div>
+
+  </div><!-- /map-grid -->
+</div><!-- /map-root -->
+
+<div class="footer-note">
+  <span><span class="legend-dot" style="background:#3C3489"></span>Create</span>
+  <span><span class="legend-dot" style="background:#085041"></span>Deliver</span>
+  <span><span class="legend-dot" style="background:#633806"></span>Grade</span>
+  <span><span class="legend-dot" style="background:#712B13"></span>Publish</span>
+  <span style="margin-left:auto">200apps / NWIRE · Amit LMS Exam Feature · Discovery Package v1.0 · March 2026</span>
+</div>
+
+<script>
+const FOCUS_COLORS = { gal: '#534AB7', yoav: '#0F6E56' };
+
+function switchPersona(p) {
+  const root = document.getElementById('map-root');
+  const chipGal  = document.getElementById('chip-gal');
+  const chipYoav = document.getElementById('chip-yoav');
+  const chipAll  = document.getElementById('chip-all');
+
+  // Reset chip states
+  chipGal.classList.remove('active','active-green');
+  chipYoav.classList.remove('active','active-green');
+  chipAll.classList.remove('active');
+
+  if (p === 'gal')  { chipGal.classList.add('active'); root.dataset.persona = 'gal'; }
+  else if (p === 'yoav') { chipYoav.classList.add('active-green'); root.dataset.persona = 'yoav'; }
+  else { chipAll.classList.add('active'); root.dataset.persona = 'all'; }
+
+  // Update story cards
+  const cards = document.querySelectorAll('.story-card');
+  cards.forEach(card => {
+    const who = card.dataset.who;
+    card.classList.remove('dimmed', 'focused');
+    if (p === 'all') return;
+    if (who === p) {
+      card.classList.add('focused');
+      card.style.setProperty('--focus-color', FOCUS_COLORS[p]);
+    } else {
+      card.classList.add('dimmed');
+    }
+  });
+}
+</script>
+</body>
+</html>

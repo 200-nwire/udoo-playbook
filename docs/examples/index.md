@@ -22,6 +22,7 @@ Copy the structure. Adapt the content. Delete what doesn't serve your team.
 | 4 | [RCA — Wallet Balance Bug](./rca-wallet-balance) | Root Cause Analysis | FinTech dashboard | How a single line of code caused a trust-breaking display bug — and how to prevent it |
 | 5 | [Post-Mortem — JWT API Outage](./postmortem-jwt-outage) | Post-Mortem | SaaS platform (API gateway) | Blameless post-mortem for a 44-minute production outage caused by a configuration change |
 | 6 | [Fully Shaped Story — Journal Entry Creation](./story-journal-entry) | Story | Wellness / habit-forming mobile app | What "ready for dev" actually looks like: Gherkin scenarios, data model, API contract, DoR checklist |
+| 7 | <a href="/udoo-playbook/examples/journey-story-map-exam.html" target="_blank">Journey & Story Map — Exam Feature</a> | Journey + Story Map | LMS exam feature | Interactive dual-persona journey map with sliced story map, emotion curves, and deferred scope — a complete discovery artifact in one view |
 
 ---
 
