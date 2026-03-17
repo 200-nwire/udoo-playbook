@@ -892,7 +892,7 @@ p { margin-bottom: 14px; font-size: 14px; }
 ════════════════════════════════════════ -->
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-header">
-    <div class="logo">200apps / NWIRE</div>
+    <div class="logo">200apps</div>
     <h2>Amit LMS<br>Exam Feature</h2>
     <div class="version">Discovery Package v1.0 &middot; March 2026</div>
   </div>
@@ -922,9 +922,7 @@ p { margin-bottom: 14px; font-size: 14px; }
   <div class="nav-group">
     <div class="nav-group-title">M2 &mdash; Scope Committed</div>
     <a class="nav-link" data-target="feature-brief">Feature Brief</a>
-    <a class="nav-link" data-target="four-epics">The Four Epics</a>
-    <a class="nav-link" data-target="scope">Scope (In / Deferred / Never)</a>
-    <a class="nav-link" data-target="release-slices">Release Slices</a>
+    <a class="nav-link" data-target="journey-story-map">Journey &amp; Story Map</a>
     <a class="nav-link" data-target="adr-001">ADR-001 &mdash; Timer Model</a>
     <a class="nav-link" data-target="adr-002">ADR-002 &mdash; State Persistence</a>
     <a class="nav-link" data-target="adr-003">ADR-003 &mdash; Grading Architecture</a>
@@ -952,7 +950,7 @@ p { margin-bottom: 14px; font-size: 14px; }
 
   <!-- HEADER -->
   <div class="doc-header">
-    <div class="eyebrow">200apps / NWIRE &middot; Discovery Package &middot; Post Milestone 3</div>
+    <div class="eyebrow">200apps &middot; Discovery Package &middot; Post Milestone 3</div>
     <h1>Amit LMS &mdash; Exam Feature</h1>
     <div class="sub">Ready for client sign-off and delivery planning</div>
   </div>
@@ -993,7 +991,7 @@ p { margin-bottom: 14px; font-size: 14px; }
     <div class="metadata-grid">
       <div class="metadata-item">
         <div class="mi-label">Prepared by</div>
-        <div class="mi-value">200apps / NWIRE</div>
+        <div class="mi-value">200apps</div>
       </div>
       <div class="metadata-item">
         <div class="mi-label">Project</div>
@@ -1375,140 +1373,18 @@ p { margin-bottom: 14px; font-size: 14px; }
     </div>
   </div>
 
-  <h2 class="section-title section-anchor" id="four-epics" data-section="four-epics">
+  <h2 class="section-title section-anchor" id="journey-story-map" data-section="journey-story-map">
     <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
-    The Four Epics
+    Journey &amp; Story Map
   </h2>
-  <div class="section-content" data-section-content="four-epics">
-    <table class="doc-table">
-      <thead>
-        <tr><th>Epic</th><th>User Activity</th><th>Stories (examples)</th><th>Appears in</th><th>Owner</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Epic 1</strong></td>
-          <td>Create the exam</td>
-          <td>Add exam topic, configure timer, restrict components, set navigation rules</td>
-          <td>Slices 1, 2, 3</td>
-          <td>PM + Designer</td>
-        </tr>
-        <tr>
-          <td><strong>Epic 2</strong></td>
-          <td>Deliver the exam</td>
-          <td>Student start screen, timer display, section navigation, submission, auto-submit, disconnection recovery</td>
-          <td>Slices 1, 2, 3</td>
-          <td>PM + Designer + TL</td>
-        </tr>
-        <tr>
-          <td><strong>Epic 3</strong></td>
-          <td>Grade the exam</td>
-          <td>Results overview, auto-score display, manual marking, class performance summary, retry release</td>
-          <td>Slices 1, 2, 3</td>
-          <td>PM + Backend Dev</td>
-        </tr>
-        <tr>
-          <td><strong>Epic 4</strong></td>
-          <td>Publish the grades</td>
-          <td>Grade publication to class, EMS integration, publication confirmation, error handling</td>
-          <td>Slices 2, 3</td>
-          <td>PM + Backend Dev</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size: 13px; color: var(--text-2);"><strong>Why four Epics, not five:</strong> The original specification implied five areas by including timer configuration as a separate concern. Timer configuration is part of exam creation &mdash; the teacher configures rules while building the exam. Separating them creates false complexity.</p>
-  </div>
-
-  <h2 class="section-title section-anchor" id="scope" data-section="scope">
-    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
-    Scope &mdash; In / Deferred / Never
-  </h2>
-  <div class="section-content" data-section-content="scope">
-    <div class="scope-grid">
-      <div class="scope-col scope-in">
-        <h5>In This Release</h5>
-        <ul>
-          <li>Exam creation in the builder</li>
-          <li>Course editor and teacher permissions</li>
-          <li>Exam-level and section-level timer</li>
-          <li>Timer summary view in builder</li>
-          <li>Free navigation between pages</li>
-          <li>Student pre-exam start screen</li>
-          <li>Student exam player with timer</li>
-          <li>Manual submission with confirmation</li>
-          <li>Auto-submit on timer expiry</li>
-          <li>Disconnection recovery</li>
-          <li>Teacher results overview</li>
-          <li>Auto-score aggregation</li>
-          <li>Manual marking for open-ended</li>
-          <li>Retry release per student</li>
-          <li>Grade publication to class</li>
-          <li>EMS grade export</li>
-          <li>Review app source filter update</li>
-        </ul>
-      </div>
-      <div class="scope-col scope-deferred">
-        <h5>Deferred</h5>
-        <ul>
-          <li>Page-level timer</li>
-          <li>Configurable section lock (nav rules)</li>
-          <li>Class performance statistics</li>
-          <li>Question-centric marking view</li>
-          <li>Grade analytics and reporting</li>
-          <li>Bulk retry release</li>
-          <li>Exam templates between teachers</li>
-          <li>Scheduled exam publishing</li>
-        </ul>
-      </div>
-      <div class="scope-col scope-never">
-        <h5>Never</h5>
-        <ul>
-          <li>Collaborative components in exams</li>
-          <li>Real-time monitoring / proctoring</li>
-          <li>Student-facing grade appeals flow</li>
-          <li>Parent-facing grade portal</li>
-          <li>AI-generated question suggestions</li>
-        </ul>
-      </div>
+  <div class="section-content" data-section-content="journey-story-map">
+    <div class="intro-block" style="border-left-color: var(--c2b); font-style: normal;">
+      The journey map and story map live on a single surface. The top half is the problem space &mdash; what Gal and Yoav actually experience today. The bottom half is the solution space &mdash; every story card is a direct response to something observed above it. Epics, scope, and release slices are all visible in context. Switch persona to focus on each user's path.
     </div>
-  </div>
-
-  <h2 class="section-title section-anchor" id="release-slices" data-section="release-slices">
-    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
-    Release Slices
-  </h2>
-  <div class="section-content" data-section-content="release-slices">
-    <table class="doc-table">
-      <thead>
-        <tr><th>Slice</th><th>Epics</th><th>What Ships</th><th>User Value</th><th>Estimate</th><th>Status</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Slice 1</strong></td>
-          <td>Epics 1&ndash;3</td>
-          <td>Create basic exam, exam-level timer, student submits, teacher sees results list</td>
-          <td>End-to-end exam flow demonstrated</td>
-          <td>3&ndash;4 wks</td>
-          <td><span class="badge badge-complete">Ready</span></td>
-        </tr>
-        <tr>
-          <td><strong>Slice 2</strong></td>
-          <td>Epics 1&ndash;4</td>
-          <td>Section timers, disconnection recovery, auto-score, manual marking, grade publication to class (no EMS)</td>
-          <td>Teacher's core workflow complete. Manual grade transfer eliminated for internal use.</td>
-          <td>4&ndash;5 wks</td>
-          <td><span class="badge badge-complete">Ready</span></td>
-        </tr>
-        <tr>
-          <td><strong>Slice 3</strong></td>
-          <td>All Epics</td>
-          <td>Page timers, EMS integration, class statistics, question-centric marking, retry with custom timer</td>
-          <td>Full feature. External grade integration live.</td>
-          <td>3&ndash;4 wks</td>
-          <td><span class="badge badge-blocked">Blocked &mdash; EMS confirmation pending</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size: 13px; color: var(--text-2);"><strong>Range estimate at Milestone 2:</strong> Based on the Story Map, four Epic definitions, and three Spike recommendations: this Feature is 10&ndash;13 weeks of delivery across three slices.</p>
+    <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 16px;">
+      <iframe src="/examples/journey-story-map-exam.html" style="width: 100%; height: 80vh; border: none; display: block;"></iframe>
+    </div>
+    <p style="font-size: 13px; color: var(--text-2); margin-top: 12px;"><a href="/examples/journey-story-map-exam.html" target="_blank" style="color: var(--c1t);">Open full screen &rarr;</a></p>
   </div>
 
   <!-- ADR-001 -->
@@ -2022,7 +1898,7 @@ p { margin-bottom: 14px; font-size: 14px; }
 
   <!-- FOOTER -->
   <div class="doc-footer">
-    200apps / NWIRE &middot; Amit LMS &mdash; Exam Feature &middot; Discovery Package v1.0 &middot; March 2026
+    200apps &middot; Amit LMS &mdash; Exam Feature &middot; Discovery Package v1.0 &middot; March 2026
   </div>
 
 </main>
