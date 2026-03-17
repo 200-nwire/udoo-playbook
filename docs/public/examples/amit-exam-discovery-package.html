@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amit LMS — Exam Feature · Discovery Package</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font: system-ui, -apple-system, sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --surface-2: #f1efe8;
+  --surface-3: #e8e6dd;
+  --border: rgba(0,0,0,0.09);
+  --border-mid: rgba(0,0,0,0.16);
+  --text: #1a1a18;
+  --text-2: #5f5e5a;
+  --text-3: #888780;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --c1: #EEEDFE; --c1b: #AFA9EC; --c1t: #3C3489;
+  --c2: #E1F5EE; --c2b: #5DCAA5; --c2t: #085041;
+  --c3: #FAEEDA; --c3b: #EF9F27; --c3t: #633806;
+  --c4: #FAECE7; --c4b: #F0997B; --c4t: #712B13;
+  --sidebar-w: 260px;
+  --green-bg: #E1F5EE; --green-text: #085041; --green-border: #5DCAA5;
+  --amber-bg: #FAEEDA; --amber-text: #633806; --amber-border: #EF9F27;
+  --red-bg: #FCEBEB; --red-text: #791F1F; --red-border: #F7C1C1;
+  --purple-bg: #EEEDFE; --purple-text: #3C3489; --purple-border: #AFA9EC;
+  --blue-bg: #E6F1FB; --blue-text: #0C447C; --blue-border: #93C5F6;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: var(--sidebar-w);
+  min-width: var(--sidebar-w);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+  padding: 24px 0 40px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidebar-header {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.sidebar-header .logo {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+
+.sidebar-header h2 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.sidebar-header .version {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 4px;
+}
+
+.nav-group { margin-bottom: 4px; }
+
+.nav-group-title {
+  padding: 10px 20px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.nav-link {
+  display: block;
+  padding: 5px 20px 5px 28px;
+  font-size: 12.5px;
+  color: var(--text-2);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all .15s;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.nav-link.active {
+  color: var(--c1t);
+  border-left-color: var(--c1b);
+  background: var(--c1);
+  font-weight: 500;
+}
+
+/* ── MOBILE SIDEBAR TOGGLE ── */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 200;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.sidebar-toggle svg { width: 18px; height: 18px; }
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 90;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  max-width: 860px;
+  padding: 32px 40px 80px;
+}
+
+/* ── PROGRESS BAR ── */
+.progress-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 40px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-mid);
+  background: var(--surface);
+}
+
+.progress-step {
+  flex: 1;
+  padding: 14px 16px;
+  text-align: center;
+  position: relative;
+  border-right: 1px solid var(--border);
+}
+
+.progress-step:last-child { border-right: none; }
+
+.progress-step.complete {
+  background: var(--green-bg);
+}
+
+.progress-step .step-num {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--green-text);
+  margin-bottom: 2px;
+}
+
+.progress-step .step-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--green-text);
+}
+
+.progress-step .step-check {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 18px;
+  height: 18px;
+  background: var(--green-text);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-step .step-check svg {
+  width: 10px;
+  height: 10px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── TYPOGRAPHY ── */
+.doc-header { margin-bottom: 36px; }
+
+.doc-header .eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 8px;
+}
+
+.doc-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.doc-header .sub {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.section-anchor {
+  scroll-margin-top: 24px;
+}
+
+h2.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 48px 0 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+h2.section-title .collapse-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform .2s;
+  color: var(--text-3);
+}
+
+h2.section-title.collapsed .collapse-icon {
+  transform: rotate(-90deg);
+}
+
+h2.section-title:first-child { margin-top: 0; }
+
+h3.sub-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 28px 0 8px;
+  color: var(--text);
+}
+
+p { margin-bottom: 14px; font-size: 14px; }
+
+.section-content {
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+
+.section-content.collapsed {
+  max-height: 0 !important;
+  overflow: hidden;
+}
+
+/* ── BADGES ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.badge-validated {
+  background: var(--green-bg);
+  color: var(--green-text);
+  border-color: var(--green-border);
+}
+
+.badge-hypothesis {
+  background: var(--amber-bg);
+  color: var(--amber-text);
+  border-color: var(--amber-border);
+}
+
+.badge-complete {
+  background: var(--green-bg);
+  color: var(--green-text);
+  border-color: var(--green-border);
+}
+
+.badge-blocked {
+  background: var(--amber-bg);
+  color: var(--amber-text);
+  border-color: var(--amber-border);
+}
+
+.badge-never {
+  background: var(--red-bg);
+  color: var(--red-text);
+  border-color: var(--red-border);
+}
+
+.badge-info {
+  background: var(--purple-bg);
+  color: var(--purple-text);
+  border-color: var(--purple-border);
+}
+
+.badge-method {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .02em;
+}
+
+.badge-post { background: #085041; color: #fff; border-color: #085041; }
+.badge-put { background: #633806; color: #fff; border-color: #633806; }
+.badge-get { background: #3C3489; color: #fff; border-color: #3C3489; }
+
+/* ── TABLES ── */
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 13px;
+}
+
+.doc-table th {
+  background: var(--surface-2);
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+}
+
+.doc-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.doc-table tr:nth-child(even) td {
+  background: rgba(0,0,0,0.015);
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.card-header h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card .field-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 2px;
+  margin-top: 12px;
+}
+
+.card .field-label:first-child { margin-top: 0; }
+
+.card .field-value {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ── SNAPSHOT CARDS ── */
+.snapshot-card {
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.snapshot-header {
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.snapshot-header .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.av-gal { background: var(--c1); color: var(--c1t); }
+.av-yoav { background: var(--c2); color: var(--c2t); }
+
+.snapshot-header .persona-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.snapshot-header .persona-role {
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.snapshot-body {
+  padding: 0;
+}
+
+.snapshot-field {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.snapshot-field:last-child { border-bottom: none; }
+
+.snapshot-field .sf-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 4px;
+}
+
+.snapshot-field .sf-value {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ── ADR CARDS ── */
+.adr-card {
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.adr-header {
+  padding: 14px 24px;
+  background: var(--purple-bg);
+  border-bottom: 1px solid var(--purple-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adr-header h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple-text);
+}
+
+.adr-body {
+  padding: 0;
+}
+
+.adr-field {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.adr-field:last-child { border-bottom: none; }
+
+.adr-field .af-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 4px;
+}
+
+.adr-field .af-value {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ── SCOPE COLUMNS ── */
+.scope-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.scope-col {
+  border-radius: var(--radius-md);
+  padding: 16px;
+  border: 1px solid;
+}
+
+.scope-col.scope-in {
+  background: var(--green-bg);
+  border-color: var(--green-border);
+}
+
+.scope-col.scope-deferred {
+  background: var(--amber-bg);
+  border-color: var(--amber-border);
+}
+
+.scope-col.scope-never {
+  background: var(--red-bg);
+  border-color: var(--red-border);
+}
+
+.scope-col h5 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.scope-col.scope-in h5 { color: var(--green-text); }
+.scope-col.scope-deferred h5 { color: var(--amber-text); }
+.scope-col.scope-never h5 { color: var(--red-text); }
+
+.scope-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.scope-col li {
+  font-size: 12.5px;
+  padding: 3px 0;
+  line-height: 1.4;
+}
+
+.scope-col.scope-in li { color: var(--green-text); }
+.scope-col.scope-deferred li { color: var(--amber-text); }
+.scope-col.scope-never li { color: var(--red-text); }
+
+.scope-col li::before {
+  margin-right: 6px;
+  font-weight: 600;
+}
+
+.scope-col.scope-in li::before { content: '\2713'; }
+.scope-col.scope-deferred li::before { content: '\2192'; }
+.scope-col.scope-never li::before { content: '\2717'; }
+
+/* ── CODE BLOCKS ── */
+.code-block {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 12px 0 20px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.code-block .ck { color: #569cd6; }
+.code-block .cs { color: #ce9178; }
+.code-block .cn { color: #b5cea8; }
+.code-block .cc { color: #6a9955; }
+.code-block .ct { color: #4ec9b0; }
+
+/* ── API ENDPOINT ── */
+.api-endpoint {
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.api-endpoint-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.api-endpoint-header .api-path {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.api-endpoint-body {
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+.api-endpoint-body .api-detail {
+  margin: 0;
+  font-size: 12.5px;
+}
+
+/* ── WIREFRAME GRID ── */
+.wireframe-section {
+  margin: 16px 0;
+}
+
+.wireframe-section-header {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border: 1px solid;
+  border-bottom: none;
+}
+
+.wf-epic1 .wireframe-section-header { background: var(--c1); color: var(--c1t); border-color: var(--c1b); }
+.wf-epic2 .wireframe-section-header { background: var(--c2); color: var(--c2t); border-color: var(--c2b); }
+.wf-epic3 .wireframe-section-header { background: var(--c3); color: var(--c3t); border-color: var(--c3b); }
+
+.wireframe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--border-mid);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  overflow: hidden;
+}
+
+.wireframe-state {
+  padding: 10px 14px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.wireframe-state:nth-child(3n) { border-right: none; }
+
+.wireframe-state .ws-num {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-3);
+  margin-bottom: 2px;
+}
+
+.wireframe-state .ws-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── CHECKLIST ── */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.checklist li {
+  padding: 8px 0;
+  font-size: 13.5px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.check-icon {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  background: var(--green-text);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.check-icon svg {
+  width: 10px;
+  height: 10px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── INTRO BLOCK ── */
+.intro-block {
+  background: var(--surface);
+  border-left: 3px solid var(--c1b);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+}
+
+/* ── QUOTE BLOCK ── */
+.quote-block {
+  background: var(--surface-2);
+  border-left: 3px solid var(--green-border);
+  padding: 14px 20px;
+  margin: 14px 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-2);
+  font-style: italic;
+}
+
+/* ── ASSUMPTION TABLE ── */
+.assumption-row-high td:first-child::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--red-text); margin-right: 6px; vertical-align: middle; }
+.assumption-row-medium td:first-child::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber-text); margin-right: 6px; vertical-align: middle; }
+.assumption-row-low td:first-child::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green-text); margin-right: 6px; vertical-align: middle; }
+
+/* ── DESIGN DECISION ── */
+.design-decision {
+  background: var(--surface);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  margin: 10px 0;
+  padding: 14px 20px;
+}
+
+.design-decision .dd-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.design-decision .dd-body {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ── METADATA TABLE ── */
+.metadata-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.metadata-item {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.metadata-item:nth-child(2n) { border-right: none; }
+
+.metadata-item .mi-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 2px;
+}
+
+.metadata-item .mi-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── FOOTER ── */
+.doc-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-3);
+  text-align: center;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+  }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-toggle { display: flex; }
+  .sidebar-overlay.open { display: block; }
+  .main { margin-left: 0; padding: 60px 20px 60px; }
+  .scope-grid { grid-template-columns: 1fr; }
+  .wireframe-grid { grid-template-columns: 1fr 1fr; }
+  .metadata-grid { grid-template-columns: 1fr; }
+  .metadata-item { border-right: none; }
+}
+
+@media (max-width: 540px) {
+  .progress-bar { flex-direction: column; }
+  .progress-step { border-right: none; border-bottom: 1px solid var(--border); }
+  .progress-step:last-child { border-bottom: none; }
+  .wireframe-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile sidebar toggle -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ════════════════════════════════════════
+     SIDEBAR
+════════════════════════════════════════ -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">200apps / NWIRE</div>
+    <h2>Amit LMS<br>Exam Feature</h2>
+    <div class="version">Discovery Package v1.0 &middot; March 2026</div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Overview</div>
+    <a class="nav-link" data-target="metadata">Metadata</a>
+    <a class="nav-link" data-target="milestone-status">Milestone Status</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Strategic Context</div>
+    <a class="nav-link" data-target="initiative">Initiative</a>
+    <a class="nav-link" data-target="okr">OKR</a>
+    <a class="nav-link" data-target="how-feature-serves">How This Feature Serves It</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">M1 &mdash; Problem Confirmed</div>
+    <a class="nav-link" data-target="problem-statement">Problem Statement</a>
+    <a class="nav-link" data-target="snapshot-gal-creating">Snapshot: Gal (Creating)</a>
+    <a class="nav-link" data-target="snapshot-yoav">Snapshot: Yoav (Student)</a>
+    <a class="nav-link" data-target="snapshot-gal-grading">Snapshot: Gal (Grading)</a>
+    <a class="nav-link" data-target="assumption-map">Assumption Map</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">M2 &mdash; Scope Committed</div>
+    <a class="nav-link" data-target="feature-brief">Feature Brief</a>
+    <a class="nav-link" data-target="four-epics">The Four Epics</a>
+    <a class="nav-link" data-target="scope">Scope (In / Deferred / Never)</a>
+    <a class="nav-link" data-target="release-slices">Release Slices</a>
+    <a class="nav-link" data-target="adr-001">ADR-001 &mdash; Timer Model</a>
+    <a class="nav-link" data-target="adr-002">ADR-002 &mdash; State Persistence</a>
+    <a class="nav-link" data-target="adr-003">ADR-003 &mdash; Grading Architecture</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">M3 &mdash; Feature Ready</div>
+    <a class="nav-link" data-target="schema-changes">Schema Changes</a>
+    <a class="nav-link" data-target="api-contract">API Contract</a>
+    <a class="nav-link" data-target="wireframe-coverage">Wireframe Coverage</a>
+    <a class="nav-link" data-target="design-decisions">Design Decisions</a>
+    <a class="nav-link" data-target="fixed-estimates">Fixed Estimates</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Sign-Off</div>
+    <a class="nav-link" data-target="sign-off">Sign-Off</a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════ -->
+<main class="main">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <div class="eyebrow">200apps / NWIRE &middot; Discovery Package &middot; Post Milestone 3</div>
+    <h1>Amit LMS &mdash; Exam Feature</h1>
+    <div class="sub">Ready for client sign-off and delivery planning</div>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar">
+    <div class="progress-step complete">
+      <div class="step-num">Milestone 1</div>
+      <div class="step-label">Problem Confirmed</div>
+      <div class="step-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+    </div>
+    <div class="progress-step complete">
+      <div class="step-num">Milestone 2</div>
+      <div class="step-label">Scope Committed</div>
+      <div class="step-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+    </div>
+    <div class="progress-step complete">
+      <div class="step-num">Milestone 3</div>
+      <div class="step-label">Feature Ready</div>
+      <div class="step-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+    </div>
+  </div>
+
+  <!-- OPENING TEXT -->
+  <div class="intro-block">
+    This is the upstream delivery package produced before a single line of code was written. It replaces the traditional functional specification with something more valuable: confirmed user understanding, validated architectural decisions, a designed feature, and a scope commitment both sides can trust.<br><br>
+    Everything in this document is either observed and confirmed, or explicitly marked as a hypothesis. Nothing is assumed without acknowledgment. The client signs on the basis of this document. The development team builds on it.
+  </div>
+
+  <!-- ════════════════════════════════════════
+       OVERVIEW
+  ════════════════════════════════════════ -->
+  <h2 class="section-title section-anchor" id="metadata" data-section="metadata">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Metadata
+  </h2>
+  <div class="section-content" data-section-content="metadata">
+    <div class="metadata-grid">
+      <div class="metadata-item">
+        <div class="mi-label">Prepared by</div>
+        <div class="mi-value">200apps / NWIRE</div>
+      </div>
+      <div class="metadata-item">
+        <div class="mi-label">Project</div>
+        <div class="mi-value">Amit LMS &mdash; Exam Feature</div>
+      </div>
+      <div class="metadata-item">
+        <div class="mi-label">Version</div>
+        <div class="mi-value">1.0 &mdash; Post Milestone 3</div>
+      </div>
+      <div class="metadata-item">
+        <div class="mi-label">Date</div>
+        <div class="mi-value">March 2026</div>
+      </div>
+      <div class="metadata-item" style="grid-column: 1 / -1;">
+        <div class="mi-label">Status</div>
+        <div class="mi-value">Ready for client sign-off and delivery planning</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="milestone-status" data-section="milestone-status">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Milestone Status
+  </h2>
+  <div class="section-content" data-section-content="milestone-status">
+    <table class="doc-table">
+      <thead>
+        <tr><th>Milestone</th><th>What it confirmed</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>M1 &mdash; Problem Confirmed</strong></td>
+          <td>Real user, real problem, client confirmed it is their actual pain</td>
+          <td><span class="badge badge-complete">&#10003; Complete</span></td>
+        </tr>
+        <tr>
+          <td><strong>M2 &mdash; Scope Committed</strong></td>
+          <td>What is built, why, by whom, in what Epic and Slice sequence</td>
+          <td><span class="badge badge-complete">&#10003; Complete</span></td>
+        </tr>
+        <tr>
+          <td><strong>M3 &mdash; Feature Ready</strong></td>
+          <td>Every Epic shaped. Spec Sessions can begin. No design or architecture question will block them.</td>
+          <td><span class="badge badge-complete">&#10003; Complete</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       STRATEGIC CONTEXT
+  ════════════════════════════════════════ -->
+  <h2 class="section-title section-anchor" id="initiative" data-section="initiative">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Initiative &mdash; Teacher-Connected Learning
+  </h2>
+  <div class="section-content" data-section-content="initiative">
+    <div style="margin-bottom: 12px;"><span class="badge badge-hypothesis">Hypothesis &mdash; inferred, not yet validated against full client strategy</span></div>
+    <div class="card">
+      <div class="field-label">Name</div>
+      <div class="field-value">Teacher-Connected Learning</div>
+
+      <div class="field-label">Strategic Bet</div>
+      <div class="field-value">If the full teacher workflow &mdash; lesson delivery, assessment, grading, and reporting &mdash; lives in one system, then learning outcomes improve, teacher administrative burden decreases, and the Amit LMS becomes indispensable rather than optional across the school network.</div>
+
+      <div class="field-label">What It Solves</div>
+      <div class="field-value">Today assessment results are disconnected from learning data. Teachers operate across multiple tools &mdash; the LMS for lessons, external tools for exams, separate systems for grades. The initiative bets that closing this gap creates measurable value for teachers, students, and the school network.</div>
+
+      <div class="field-label">This Feature</div>
+      <div class="field-value">The Exam Feature is the first delivery within this Initiative. It proves the bet is real by closing the most painful gap in the current teacher workflow: the disconnection between assessment and learning.</div>
+
+      <div class="field-label">Future Features</div>
+      <div class="field-value">Grade Analytics, Student Progress Reports, Parent Notification, Standards Alignment, Ministry Reporting. These are not committed &mdash; they are the natural continuation if this feature validates the Initiative direction.</div>
+
+      <div class="field-label">What It Is Not</div>
+      <div class="field-value">This is not a product roadmap commitment. It is a direction. Future features within this initiative will be scoped through the same upstream process &mdash; each with its own Problem Confirmed milestone before any design begins.</div>
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="okr" data-section="okr">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    OKR
+  </h2>
+  <div class="section-content" data-section-content="okr">
+    <div style="margin-bottom: 12px;"><span class="badge badge-hypothesis">Hypothesis</span></div>
+    <p><strong>Objective:</strong> Make the Amit LMS the system teachers rely on for the full learning and assessment cycle &mdash; not just content delivery.</p>
+    <table class="doc-table">
+      <thead>
+        <tr><th></th><th>Key Result</th><th>Measurement</th><th>Baseline today</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>KR1</strong></td>
+          <td>Teacher time spent on manual administrative work outside the platform is reduced by 80% across all assessment activity</td>
+          <td>Minutes per assessment cycle outside the platform, measured monthly</td>
+          <td>~3 hours per exam cycle today</td>
+        </tr>
+        <tr>
+          <td><strong>KR2</strong></td>
+          <td>Learning activity and assessment results are connected in one system for 100% of courses that run formal assessments</td>
+          <td>% of assessment submissions linked to a course record in the LMS</td>
+          <td>0% today</td>
+        </tr>
+        <tr>
+          <td><strong>KR3</strong></td>
+          <td>Active teacher retention in the platform increases &mdash; measured by weekly sessions per teacher completing a full lesson-to-assessment workflow</td>
+          <td>Weekly active teachers completing end-to-end workflow / total active teachers</td>
+          <td>Baseline to be established at release</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title section-anchor" id="how-feature-serves" data-section="how-feature-serves">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    How This Feature Serves the OKR
+  </h2>
+  <div class="section-content" data-section-content="how-feature-serves">
+    <table class="doc-table">
+      <thead>
+        <tr><th>Key Result</th><th>How the Exam Feature moves it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>KR1</strong></td>
+          <td>Exam creation, delivery, grading, and EMS grade publication inside the platform eliminates the current 3-hour manual cycle. Target: under 36 minutes end to end.</td>
+        </tr>
+        <tr>
+          <td><strong>KR2</strong></td>
+          <td>Exam submissions are linked to course records. Auto-checked scores and manual grades live alongside lesson activity data in the same system.</td>
+        </tr>
+        <tr>
+          <td><strong>KR3</strong></td>
+          <td>Teachers who complete the full exam cycle in the platform have a demonstrated reason to return. The exam workflow is sticky.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       MILESTONE 1 — PROBLEM CONFIRMED
+  ════════════════════════════════════════ -->
+  <h2 class="section-title section-anchor" id="problem-statement" data-section="problem-statement">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Problem Statement
+  </h2>
+  <div class="section-content" data-section-content="problem-statement">
+    <div class="intro-block" style="border-left-color: var(--green-border); font-style: normal;">
+      Before any design or architecture work began, the team explored who would use this feature and what problem it actually solves. What follows is not a summary of the client's requirements &mdash; it is a record of what was observed, what was concluded, and what the client confirmed is their genuine pain.
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h4>Problem Statement</h4>
+        <span class="badge badge-validated">Validated</span>
+      </div>
+      <p style="margin-bottom:0;">When a teacher needs to run a formal summative assessment for their class, they are forced to use external tools because the Amit LMS has no exam capability. Assessment results exist outside the system where all other learning activity is tracked. The teacher manually transfers grades between systems, cannot see assessment data alongside learning data, and loses the connection between what students learned and how they performed.</p>
+    </div>
+
+    <div class="quote-block">
+      <strong>Client confirmed:</strong> "Yes &mdash; this is our actual pain. Teachers spend approximately 3 hours per exam on manual grade transfer alone. The feature is not about a new assessment tool. It is about connecting assessment to learning and eliminating manual grade transfer entirely."
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="snapshot-gal-creating" data-section="snapshot-gal-creating">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Experience Snapshot &mdash; Gal, Creating
+  </h2>
+  <div class="section-content" data-section-content="snapshot-gal-creating">
+    <div class="snapshot-card">
+      <div class="snapshot-header">
+        <div class="avatar av-gal">G</div>
+        <div>
+          <div class="persona-name">Gal &mdash; Science Teacher</div>
+          <div class="persona-role">Middle school &middot; 2 years using Amit LMS</div>
+        </div>
+        <span class="badge badge-validated" style="margin-left:auto;">Validated</span>
+      </div>
+      <div class="snapshot-body">
+        <div class="snapshot-field">
+          <div class="sf-label">Who</div>
+          <div class="sf-value">Gal. Middle school science teacher. Two years using the Amit LMS. Comfortable with the course builder for lessons. Has distributed the science curriculum to her class of 28 students. Has never created a formal exam in this system. Her mental model for exams comes from Google Forms or printed Word documents.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Situation</div>
+          <div class="sf-value">Two weeks before end of term. Creating a summative exam covering three curriculum units. Wants a 45-minute total time limit. Three sections for three units. Wants to prevent students returning to earlier sections. Wants automatic submission when time runs out. Building the exam the afternoon before it is given. She has two hours. She is alone in the teachers' room.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Goal</div>
+          <div class="sf-value">Create a 45-minute three-section exam with 15 questions, publish it to her class for tomorrow morning, and trust that submissions and grades will flow to the school system without manual re-entry.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Current Experience</div>
+          <div class="sf-value">Google Forms with a third-party timer add-on. Shares the link via class WhatsApp. Manually checks who submitted. Downloads a response spreadsheet. Enters scores into a separate grade spreadsheet. Enters the final grade into the Education Management System (EMS) separately. Total time: approximately 3 hours per exam including marking.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">What Success Looks Like</div>
+          <div class="sf-value">Gal creates the exam in under 30 minutes. Sets the timer without confusion. Publishes to her class. The next morning all 28 submissions arrive with auto-checked scores for multiple choice. She marks open-ended responses in one view, publishes grades, and they reach the EMS automatically. Total time: under 36 minutes.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">What Failure Looks Like</div>
+          <div class="sf-value">Gal is confused by three simultaneous timer options and sets all three without understanding their interaction. One student loses internet mid-exam and she cannot find the retry option. Students submit with unanswered questions and she cannot tell if this was intentional. Grades do not reach the EMS automatically and she enters them by hand as before.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="snapshot-yoav" data-section="snapshot-yoav">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Experience Snapshot &mdash; Yoav, Student
+  </h2>
+  <div class="section-content" data-section-content="snapshot-yoav">
+    <div class="snapshot-card">
+      <div class="snapshot-header">
+        <div class="avatar av-yoav">Y</div>
+        <div>
+          <div class="persona-name">Yoav &mdash; Student, Age 14</div>
+          <div class="persona-role">Multiple subjects on Amit LMS</div>
+        </div>
+        <span class="badge badge-hypothesis" style="margin-left:auto;">Hypothesis &mdash; direct observation pending</span>
+      </div>
+      <div class="snapshot-body">
+        <div class="snapshot-field">
+          <div class="sf-label">Who</div>
+          <div class="sf-value">Yoav. Age 14. Uses the Amit LMS for multiple subjects. Comfortable with lesson navigation and exercise submission. Has never taken a timed exam in this system. His mental model for formal exams is physical paper or a standardized test platform used for national assessments.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Situation</div>
+          <div class="sf-value">Tuesday morning. First period. 28 students in the room. Teacher is watching. Yoav opens the exam on the school laptop. He has 45 minutes. Mild but real pressure.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Goal</div>
+          <div class="sf-value">Complete the exam, submit it, and know with certainty that his answers were received.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Current Experience</div>
+          <div class="sf-value">In lessons he can go back, skip, return. No time pressure. No submission event &mdash; exercises are checked as he answers. If he loses connection the lesson is there when he reconnects.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">What Success Looks Like</div>
+          <div class="sf-value">Clear start screen: time, sections, navigation rules. Timer visible but not panic-inducing. Section transitions are unambiguous. Manual submit with a confirmation. A timestamped confirmation screen he can show the teacher.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">What Failure Looks Like</div>
+          <div class="sf-value">He misses the timer until too late. A section timer expires mid-question and submits a blank answer. His laptop disconnects and on reconnect he is on a different page with no indication of whether answers were saved. Submit button greyed out with no explanation of why.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="snapshot-gal-grading" data-section="snapshot-gal-grading">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Experience Snapshot &mdash; Gal, Grading
+  </h2>
+  <div class="section-content" data-section-content="snapshot-gal-grading">
+    <div class="snapshot-card">
+      <div class="snapshot-header">
+        <div class="avatar av-gal">G</div>
+        <div>
+          <div class="persona-name">Gal &mdash; Grading Mode</div>
+          <div class="persona-role">Same teacher &middot; The exam ran yesterday</div>
+        </div>
+        <span class="badge badge-hypothesis" style="margin-left:auto;">Hypothesis</span>
+      </div>
+      <div class="snapshot-body">
+        <div class="snapshot-field">
+          <div class="sf-label">Who</div>
+          <div class="sf-value">Gal. Same teacher. The exam ran yesterday. 28 students submitted.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Situation</div>
+          <div class="sf-value">Wednesday morning free period. 45 minutes available. 28 submissions to review. Five open-ended questions per submission &mdash; 140 manual marks needed. One student (Maya) lost internet mid-exam and submitted with three empty answers.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Goal</div>
+          <div class="sf-value">Review all 28 submissions, handle Maya's exception, publish grades to students and the EMS &mdash; all before end of day.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">Current Experience</div>
+          <div class="sf-value">No exam-specific review exists. Gal opens individual submissions, marks manually, calculates totals per student by hand, enters grades into the EMS separately. No aggregate class view. Cannot see which questions the class struggled with. Cannot compare answers to the same question across students.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">What Success Looks Like</div>
+          <div class="sf-value">Results view shows all 28 students with auto-calculated scores for multiple choice already done. She works through open-ended responses. Sees a class performance summary showing which questions were most commonly missed. Releases a retry for Maya in two clicks. Publishes all grades at once. Confirmation that grades were synced to the EMS.</div>
+        </div>
+        <div class="snapshot-field">
+          <div class="sf-label">What Failure Looks Like</div>
+          <div class="sf-value">Individual exercise scores with no exam aggregate. Manual total calculation per student. Maya's submission is hard to find. Retry release buried in an admin panel she has never used. Grade publication fails silently and she discovers the EMS did not receive grades three days later.</div>
+        </div>
+        <div class="snapshot-field" style="background: var(--amber-bg);">
+          <div class="sf-label">Critical Finding</div>
+          <div class="sf-value"><strong>Gal spends 30 minutes creating an exam. She spends 3 hours grading it.</strong> The original specification spent three pages on creation and one sentence on grading. The grading journey is the higher-value journey. Without it the feature does not move KR1.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="assumption-map" data-section="assumption-map">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Assumption Map &mdash; Highest Risk Items
+  </h2>
+  <div class="section-content" data-section-content="assumption-map">
+    <table class="doc-table">
+      <thead>
+        <tr><th>Assumption</th><th>Risk at M1 / Status at M3</th></tr>
+      </thead>
+      <tbody>
+        <tr class="assumption-row-high">
+          <td>Existing exercise checking system handles bulk exam submission</td>
+          <td><strong>HIGH &mdash; resolved.</strong> Extension required. See ADR-003.</td>
+        </tr>
+        <tr class="assumption-row-high">
+          <td>Timer interaction between three levels is self-evident to the user</td>
+          <td><strong>HIGH &mdash; resolved.</strong> Teachers need a summary view. See wireframe decision.</td>
+        </tr>
+        <tr class="assumption-row-high">
+          <td>Current player supports continuous server-side state persistence</td>
+          <td><strong>HIGH &mdash; resolved.</strong> New exam_session table required. See ADR-002.</td>
+        </tr>
+        <tr class="assumption-row-high">
+          <td>Grading is a minor feature delegable to existing systems</td>
+          <td><strong>HIGH &mdash; invalidated.</strong> Grading Snapshot showed Feature B is larger than Feature A.</td>
+        </tr>
+        <tr class="assumption-row-medium">
+          <td>Assessment profile calculation covers exam scoring automatically</td>
+          <td><strong>MEDIUM &mdash; resolved.</strong> Exam scoring bypasses assessment profile. See ADR-003.</td>
+        </tr>
+        <tr class="assumption-row-medium">
+          <td>EMS accepts exam grade data in its current schema</td>
+          <td><strong>MEDIUM &mdash; partially resolved.</strong> EMS schema confirmation pending for Slice 3.</td>
+        </tr>
+        <tr class="assumption-row-medium">
+          <td>Teachers intuitively understand three-level timer options</td>
+          <td><strong>MEDIUM &mdash; resolved.</strong> Observation confirmed teachers need guided configuration.</td>
+        </tr>
+        <tr class="assumption-row-low">
+          <td>Review app is unaffected by grading system extension</td>
+          <td><strong>LOW &mdash; resolved.</strong> Minor source filter update required. 1 day of work.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       MILESTONE 2 — SCOPE COMMITTED
+  ════════════════════════════════════════ -->
+  <h2 class="section-title section-anchor" id="feature-brief" data-section="feature-brief">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Feature Brief
+  </h2>
+  <div class="section-content" data-section-content="feature-brief">
+    <div class="intro-block" style="border-left-color: var(--c2b); font-style: normal;">
+      Everyone knows what is being built, why, in what Epic and Slice sequence. No blocking unknowns remain.
+    </div>
+    <div class="card">
+      <div class="field-label">Feature Name</div>
+      <div class="field-value">Exam Feature</div>
+
+      <div class="field-label">Initiative</div>
+      <div class="field-value">Teacher-Connected Learning</div>
+
+      <div class="field-label">OKR Served</div>
+      <div class="field-value">Objective: Make the Amit LMS the system teachers rely on for the full learning and assessment cycle. Moves KR1, KR2, KR3.</div>
+
+      <div class="field-label">What It Is</div>
+      <div class="field-value">A product capability that enables teachers to create timed formal exams inside the Amit LMS, deliver them to students in the learning player, grade results in a structured review interface, and publish grades directly to the school Education Management System (EMS) &mdash; closing the manual grade transfer gap entirely.</div>
+
+      <div class="field-label">Who It Serves</div>
+      <div class="field-value">Primary: Gal and all teachers. Secondary: Yoav and all students. Enabling: School administrators who receive grade data through the EMS.</div>
+
+      <div class="field-label">Hypothesis</div>
+      <div class="field-value">If teachers can create, deliver, grade, and publish exams entirely within the Amit LMS, then assessment results will be connected to learning data, manual grade transfer will be eliminated, and teacher adoption will increase measurably within 90 days.</div>
+
+      <div class="field-label">Success Metrics</div>
+      <div class="field-value">Exam creation time under 30 minutes. Manual grade transfer eliminated (EMS success &gt;95%). 60% of active teachers create at least one exam within 60 days. Student submission success &gt;99% including disconnection events.</div>
+
+      <div class="field-label">Constraints</div>
+      <div class="field-value">EMS integration schema requires external confirmation. Review app requires minor source filter update (1 day).</div>
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="four-epics" data-section="four-epics">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    The Four Epics
+  </h2>
+  <div class="section-content" data-section-content="four-epics">
+    <table class="doc-table">
+      <thead>
+        <tr><th>Epic</th><th>User Activity</th><th>Stories (examples)</th><th>Appears in</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Epic 1</strong></td>
+          <td>Create the exam</td>
+          <td>Add exam topic, configure timer, restrict components, set navigation rules</td>
+          <td>Slices 1, 2, 3</td>
+          <td>PM + Designer</td>
+        </tr>
+        <tr>
+          <td><strong>Epic 2</strong></td>
+          <td>Deliver the exam</td>
+          <td>Student start screen, timer display, section navigation, submission, auto-submit, disconnection recovery</td>
+          <td>Slices 1, 2, 3</td>
+          <td>PM + Designer + TL</td>
+        </tr>
+        <tr>
+          <td><strong>Epic 3</strong></td>
+          <td>Grade the exam</td>
+          <td>Results overview, auto-score display, manual marking, class performance summary, retry release</td>
+          <td>Slices 1, 2, 3</td>
+          <td>PM + Backend Dev</td>
+        </tr>
+        <tr>
+          <td><strong>Epic 4</strong></td>
+          <td>Publish the grades</td>
+          <td>Grade publication to class, EMS integration, publication confirmation, error handling</td>
+          <td>Slices 2, 3</td>
+          <td>PM + Backend Dev</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--text-2);"><strong>Why four Epics, not five:</strong> The original specification implied five areas by including timer configuration as a separate concern. Timer configuration is part of exam creation &mdash; the teacher configures rules while building the exam. Separating them creates false complexity.</p>
+  </div>
+
+  <h2 class="section-title section-anchor" id="scope" data-section="scope">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Scope &mdash; In / Deferred / Never
+  </h2>
+  <div class="section-content" data-section-content="scope">
+    <div class="scope-grid">
+      <div class="scope-col scope-in">
+        <h5>In This Release</h5>
+        <ul>
+          <li>Exam creation in the builder</li>
+          <li>Course editor and teacher permissions</li>
+          <li>Exam-level and section-level timer</li>
+          <li>Timer summary view in builder</li>
+          <li>Free navigation between pages</li>
+          <li>Student pre-exam start screen</li>
+          <li>Student exam player with timer</li>
+          <li>Manual submission with confirmation</li>
+          <li>Auto-submit on timer expiry</li>
+          <li>Disconnection recovery</li>
+          <li>Teacher results overview</li>
+          <li>Auto-score aggregation</li>
+          <li>Manual marking for open-ended</li>
+          <li>Retry release per student</li>
+          <li>Grade publication to class</li>
+          <li>EMS grade export</li>
+          <li>Review app source filter update</li>
+        </ul>
+      </div>
+      <div class="scope-col scope-deferred">
+        <h5>Deferred</h5>
+        <ul>
+          <li>Page-level timer</li>
+          <li>Configurable section lock (nav rules)</li>
+          <li>Class performance statistics</li>
+          <li>Question-centric marking view</li>
+          <li>Grade analytics and reporting</li>
+          <li>Bulk retry release</li>
+          <li>Exam templates between teachers</li>
+          <li>Scheduled exam publishing</li>
+        </ul>
+      </div>
+      <div class="scope-col scope-never">
+        <h5>Never</h5>
+        <ul>
+          <li>Collaborative components in exams</li>
+          <li>Real-time monitoring / proctoring</li>
+          <li>Student-facing grade appeals flow</li>
+          <li>Parent-facing grade portal</li>
+          <li>AI-generated question suggestions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title section-anchor" id="release-slices" data-section="release-slices">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Release Slices
+  </h2>
+  <div class="section-content" data-section-content="release-slices">
+    <table class="doc-table">
+      <thead>
+        <tr><th>Slice</th><th>Epics</th><th>What Ships</th><th>User Value</th><th>Estimate</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Slice 1</strong></td>
+          <td>Epics 1&ndash;3</td>
+          <td>Create basic exam, exam-level timer, student submits, teacher sees results list</td>
+          <td>End-to-end exam flow demonstrated</td>
+          <td>3&ndash;4 wks</td>
+          <td><span class="badge badge-complete">Ready</span></td>
+        </tr>
+        <tr>
+          <td><strong>Slice 2</strong></td>
+          <td>Epics 1&ndash;4</td>
+          <td>Section timers, disconnection recovery, auto-score, manual marking, grade publication to class (no EMS)</td>
+          <td>Teacher's core workflow complete. Manual grade transfer eliminated for internal use.</td>
+          <td>4&ndash;5 wks</td>
+          <td><span class="badge badge-complete">Ready</span></td>
+        </tr>
+        <tr>
+          <td><strong>Slice 3</strong></td>
+          <td>All Epics</td>
+          <td>Page timers, EMS integration, class statistics, question-centric marking, retry with custom timer</td>
+          <td>Full feature. External grade integration live.</td>
+          <td>3&ndash;4 wks</td>
+          <td><span class="badge badge-blocked">Blocked &mdash; EMS confirmation pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--text-2);"><strong>Range estimate at Milestone 2:</strong> Based on the Story Map, four Epic definitions, and three Spike recommendations: this Feature is 10&ndash;13 weeks of delivery across three slices.</p>
+  </div>
+
+  <!-- ADR-001 -->
+  <h2 class="section-title section-anchor" id="adr-001" data-section="adr-001">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    ADR-001 &mdash; Timer Entity Model
+  </h2>
+  <div class="section-content" data-section-content="adr-001">
+    <div class="adr-card">
+      <div class="adr-header">
+        <h4>ADR-001 &mdash; Timer Entity Model</h4>
+        <span class="badge badge-info">Architecture Decision Record</span>
+      </div>
+      <div class="adr-body">
+        <div class="adr-field">
+          <div class="af-label">Context</div>
+          <div class="af-value">The specification describes timers at exam, section, and page level simultaneously. No data model exists for timer configuration. No interaction model defines what governs when multiple timers are active. Eight of twelve possible timer interaction states were undefined.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Decision</div>
+          <div class="af-value">Timer configuration is stored as a nullable JSON column (<code>timer_config</code>) on Topic, Section, and Page entities. A boolean field (<code>is_exam</code>) on Topic gates all timer behavior. Lesson topics are never affected &mdash; timer fields are read only when <code>is_exam = true</code>.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Timer Interaction Rule</div>
+          <div class="af-value">When multiple timer levels are active, the most restrictive timer governs at any moment. Page timer overrides section timer overrides exam timer. This resolves all eight previously undefined states.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Migration</div>
+          <div class="af-value">Three additive ALTER TABLE statements. No existing data is affected. Rollback: drop the three <code>timer_config</code> columns and the <code>is_exam</code> column.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Consequences</div>
+          <div class="af-value">Builder UI must check <code>is_exam</code> before rendering timer controls. Player must read timer config from all three entity levels on session start. A timer summary view in the builder settings panel is required.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADR-002 -->
+  <h2 class="section-title section-anchor" id="adr-002" data-section="adr-002">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    ADR-002 &mdash; Exam State Persistence Model
+  </h2>
+  <div class="section-content" data-section-content="adr-002">
+    <div class="adr-card">
+      <div class="adr-header">
+        <h4>ADR-002 &mdash; Exam State Persistence Model</h4>
+        <span class="badge badge-info">Architecture Decision Record</span>
+      </div>
+      <div class="adr-body">
+        <div class="adr-field">
+          <div class="af-label">Context</div>
+          <div class="af-value">The specification requires local draft saving on every answer change AND disconnection recovery. Together these imply continuous server-side state persistence. The current player uses local-only exercise state which cannot survive device restart or network loss.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Decision</div>
+          <div class="af-value">Exam state is persisted server-side on every answer change (debounced at 2 seconds). New table: <code>exam_session</code>, storing <code>student_id</code>, <code>exam_id</code>, <code>current_page</code>, <code>answer_state</code> (JSON), <code>timer_state</code> (JSON), <code>started_at</code>, <code>last_saved_at</code>, <code>submitted_at</code>, <code>submission_status</code>.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Disconnection Recovery</div>
+          <div class="af-value">On reconnect, the player fetches the last <code>exam_session</code> record. Timer is recalculated from <code>started_at</code> minus total elapsed at last save. Student lands on their last active page with all answers intact.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Timer Security</div>
+          <div class="af-value">Timer is authoritative server-side. Client display only. Discrepancies over 30 seconds flag the submission for teacher review.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Performance</div>
+          <div class="af-value">28 simultaneous students at average 30-second answer intervals produce approximately 14 server writes per minute. Within current infrastructure capacity.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Consequences</div>
+          <div class="af-value">New <code>exam_session</code> table required. Composite index on <code>(student_id, exam_id)</code>. The continuous write endpoint carries an explicit performance SLO of P99 &lt; 200ms.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADR-003 -->
+  <h2 class="section-title section-anchor" id="adr-003" data-section="adr-003">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    ADR-003 &mdash; Exam Grading Architecture
+  </h2>
+  <div class="section-content" data-section-content="adr-003">
+    <div class="adr-card">
+      <div class="adr-header">
+        <h4>ADR-003 &mdash; Exam Grading Architecture</h4>
+        <span class="badge badge-info">Architecture Decision Record</span>
+      </div>
+      <div class="adr-body">
+        <div class="adr-field">
+          <div class="af-label">Context</div>
+          <div class="af-value">The specification delegates exam grading to the existing exercise checking system in one sentence. Investigation found: the checking system handles individual exercise submissions only &mdash; it does not support bulk exam submission. The assessment profile does not accommodate exam-specific scoring. EMS integration expects a specific grade schema that has never received exam data.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Decision</div>
+          <div class="af-value">The existing checking system is extended with a new <code>exam_submission</code> endpoint accepting bulk submission. New table: <code>exam_result</code>, aggregating per-student results: <code>total_score</code>, <code>max_score</code>, <code>auto_checked_score</code>, <code>manual_score</code>, <code>status</code>, <code>published_at</code>, <code>ems_sync_status</code>.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Assessment Profile</div>
+          <div class="af-value">Exam topics bypass the standard assessment profile calculation. Exam scores are calculated directly from <code>exam_result</code>.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Manual Grading</div>
+          <div class="af-value">Open-ended responses flagged <code>requires_manual_review = true</code>. Teacher grading view filters for these. Marking updates <code>exercise_response</code> and triggers <code>exam_result</code> recalculation.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">EMS Integration</div>
+          <div class="af-value">Exam results are sent to the EMS as grade type <code>assessment_exam</code>. Schema confirmation from EMS API team is pending. This is the one external dependency blocking Slice 3.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Review App</div>
+          <div class="af-value">A <code>source_type</code> column (<code>lesson</code> / <code>exam</code>) is added to <code>exercise_response</code>. The review app adds a source filter. Impact: 1 day of development.</div>
+        </div>
+        <div class="adr-field">
+          <div class="af-label">Consequences</div>
+          <div class="af-value">Two new tables. Extended checking system endpoint. EMS integration is a hard dependency for Slice 3 only &mdash; Slices 1 and 2 deliver full value without it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       MILESTONE 3 — FEATURE READY
+  ════════════════════════════════════════ -->
+  <h2 class="section-title section-anchor" id="schema-changes" data-section="schema-changes">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Schema Changes &mdash; All Additive
+  </h2>
+  <div class="section-content" data-section-content="schema-changes">
+    <div class="intro-block" style="border-left-color: var(--c3b); font-style: normal;">
+      Milestone 3 is the point at which the feature has enough concrete form that developers can enter Spec Sessions without design or architecture questions. Stories have not yet been written &mdash; that happens in the Spec Sessions. What exists is everything needed to write them without gaps.<br><br>
+      The done criteria for Milestone 3 is not "developer can start building." It is: "developer can attend a Spec Session tomorrow and write complete Gherkin scenarios without needing to ask anything about design, architecture, or data."
+    </div>
+
+    <!-- Schema 1 -->
+    <h3 class="sub-title">timer_config on Topic, Section, Page</h3>
+    <div class="code-block">
+<span class="cc">-- Nullable JSON column on 3 entities</span>
+<span class="ck">ALTER TABLE</span> <span class="ct">topic</span>   <span class="ck">ADD COLUMN</span> timer_config <span class="ct">JSON</span> <span class="ck">DEFAULT NULL</span>;
+<span class="ck">ALTER TABLE</span> <span class="ct">section</span> <span class="ck">ADD COLUMN</span> timer_config <span class="ct">JSON</span> <span class="ck">DEFAULT NULL</span>;
+<span class="ck">ALTER TABLE</span> <span class="ct">page</span>    <span class="ck">ADD COLUMN</span> timer_config <span class="ct">JSON</span> <span class="ck">DEFAULT NULL</span>;
+
+<span class="cc">-- Structure: { enabled: bool, duration_minutes: int }</span>
+<span class="cc">-- Lesson topics ignore this field.</span>
+<span class="cc">-- Rollback: 3 x ALTER TABLE DROP COLUMN</span>
+    </div>
+
+    <!-- Schema 2 -->
+    <h3 class="sub-title">is_exam on Topic</h3>
+    <div class="code-block">
+<span class="ck">ALTER TABLE</span> <span class="ct">topic</span> <span class="ck">ADD COLUMN</span> is_exam <span class="ct">BOOLEAN</span> <span class="ck">DEFAULT</span> <span class="cn">false</span>;
+
+<span class="cc">-- Gates all exam-specific UI and behavior.</span>
+<span class="cc">-- Rollback: ALTER TABLE DROP COLUMN</span>
+    </div>
+
+    <!-- Schema 3 -->
+    <h3 class="sub-title">exam_session (new table)</h3>
+    <div class="code-block">
+<span class="ck">CREATE TABLE</span> <span class="ct">exam_session</span> (
+  id               <span class="ct">UUID</span> <span class="ck">PRIMARY KEY</span>,
+  student_id       <span class="ct">UUID</span> <span class="ck">NOT NULL</span>,
+  exam_id          <span class="ct">UUID</span> <span class="ck">NOT NULL</span>,
+  started_at       <span class="ct">TIMESTAMP</span> <span class="ck">NOT NULL</span>,
+  last_saved_at    <span class="ct">TIMESTAMP</span>,
+  submitted_at     <span class="ct">TIMESTAMP</span>,
+  submission_status <span class="ct">ENUM</span>(<span class="cs">'active'</span>, <span class="cs">'submitted'</span>, <span class="cs">'expired'</span>, <span class="cs">'recovered'</span>),
+  current_page_id  <span class="ct">UUID</span>,
+  answer_state     <span class="ct">JSON</span>,
+  timer_state      <span class="ct">JSON</span>
+);
+
+<span class="ck">CREATE INDEX</span> idx_session_student_exam
+  <span class="ck">ON</span> <span class="ct">exam_session</span> (student_id, exam_id);
+<span class="ck">CREATE INDEX</span> idx_session_submitted
+  <span class="ck">ON</span> <span class="ct">exam_session</span> (submitted_at);
+
+<span class="cc">-- Rollback: DROP TABLE exam_session</span>
+    </div>
+
+    <!-- Schema 4 -->
+    <h3 class="sub-title">exam_result (new table)</h3>
+    <div class="code-block">
+<span class="ck">CREATE TABLE</span> <span class="ct">exam_result</span> (
+  id                <span class="ct">UUID</span> <span class="ck">PRIMARY KEY</span>,
+  exam_id           <span class="ct">UUID</span> <span class="ck">NOT NULL</span>,
+  student_id        <span class="ct">UUID</span> <span class="ck">NOT NULL</span>,
+  total_score       <span class="ct">DECIMAL</span>,
+  max_score         <span class="ct">DECIMAL</span>,
+  auto_checked_score <span class="ct">DECIMAL</span>,
+  manual_score      <span class="ct">DECIMAL</span>,
+  status            <span class="ct">ENUM</span>(<span class="cs">'pending'</span>, <span class="cs">'pending_manual_review'</span>, <span class="cs">'complete'</span>),
+  published_at      <span class="ct">TIMESTAMP</span>,
+  ems_sync_status   <span class="ct">ENUM</span>(<span class="cs">'not_sent'</span>, <span class="cs">'pending'</span>, <span class="cs">'synced'</span>, <span class="cs">'failed'</span>),
+  ems_sync_at       <span class="ct">TIMESTAMP</span>
+);
+
+<span class="ck">CREATE INDEX</span> idx_result_exam_student
+  <span class="ck">ON</span> <span class="ct">exam_result</span> (exam_id, student_id);
+
+<span class="cc">-- Rollback: DROP TABLE exam_result</span>
+    </div>
+
+    <!-- Schema 5 -->
+    <h3 class="sub-title">source_type on exercise_response</h3>
+    <div class="code-block">
+<span class="ck">ALTER TABLE</span> <span class="ct">exercise_response</span>
+  <span class="ck">ADD COLUMN</span> source_type <span class="ct">ENUM</span>(<span class="cs">'lesson'</span>, <span class="cs">'exam'</span>) <span class="ck">DEFAULT</span> <span class="cs">'lesson'</span>;
+
+<span class="ck">UPDATE</span> <span class="ct">exercise_response</span> <span class="ck">SET</span> source_type = <span class="cs">'lesson'</span>;
+
+<span class="cc">-- Enables review app filter.</span>
+<span class="cc">-- Rollback: ALTER TABLE DROP COLUMN</span>
+    </div>
+  </div>
+
+  <!-- API CONTRACT -->
+  <h2 class="section-title section-anchor" id="api-contract" data-section="api-contract">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    API Contract &mdash; All Endpoints
+  </h2>
+  <div class="section-content" data-section-content="api-contract">
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-post">POST</span>
+        <span class="api-path">/exams</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Create exam topic. Auth: <code>course_editor</code> or <code>teacher</code> role. Returns <code>exam_id</code> and default config.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-put">PUT</span>
+        <span class="api-path">/exams/:id/config</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Update timer configuration and navigation rules. Auth: <code>course_editor</code> or <code>teacher</code> (own course only). Validates timer interaction rules server-side.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-get">GET</span>
+        <span class="api-path">/exams/:id/session</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Get or create student exam session. Auth: student, must be enrolled. Returns existing session or creates new <code>exam_session</code> with status = active.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-put">PUT</span>
+        <span class="api-path">/exams/:id/session</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Continuous state write. Debounced client-side at 2s. Auth: student. <strong>SLO: P99 &lt; 200ms.</strong> Updates <code>answer_state</code> and <code>timer_state</code> on <code>exam_session</code>. Performance-critical endpoint.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-post">POST</span>
+        <span class="api-path">/exams/:id/submit</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Final submission. Auth: student. Server validates timer has not expired independently. If race condition with timer expiry: server processes first request, returns 409 Conflict to duplicate. Creates <code>exam_result</code>.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-get">GET</span>
+        <span class="api-path">/exams/:id/results</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">All student results for this exam. Auth: teacher who owns the course. Returns student list with status, scores, final status.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-get">GET</span>
+        <span class="api-path">/exams/:id/results/:studentId</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">One student's full response detail. Auth: teacher. Returns all <code>exercise_response</code> records with marking status.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-put">PUT</span>
+        <span class="api-path">/exams/:id/results/:studentId/mark</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Add manual score to one open-ended response. Auth: teacher. Validates score within <code>max_score</code>. Triggers <code>exam_result</code> recalculation.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-post">POST</span>
+        <span class="api-path">/exams/:id/results/publish</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Publish all grades. Auth: teacher. Sets <code>published_at</code>. Triggers EMS sync if Slice 3. Returns sync status.</p>
+      </div>
+    </div>
+
+    <div class="api-endpoint">
+      <div class="api-endpoint-header">
+        <span class="badge badge-method badge-post">POST</span>
+        <span class="api-path">/exams/:id/students/:studentId/retry</span>
+      </div>
+      <div class="api-endpoint-body">
+        <p class="api-detail">Release retry attempt. Auth: teacher. Preserves previous session as Attempt 1. Creates new <code>exam_session</code>. Teacher sets custom timer duration.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WIREFRAME COVERAGE -->
+  <h2 class="section-title section-anchor" id="wireframe-coverage" data-section="wireframe-coverage">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Wireframe Coverage
+  </h2>
+  <div class="section-content" data-section-content="wireframe-coverage">
+
+    <!-- Epic 1 -->
+    <div class="wireframe-section wf-epic1">
+      <div class="wireframe-section-header">Epic 1 &mdash; Create Exam (Builder) &middot; 6 states</div>
+      <div class="wireframe-grid">
+        <div class="wireframe-state"><div class="ws-num">1</div><div class="ws-name">Topic type selection</div></div>
+        <div class="wireframe-state"><div class="ws-num">2</div><div class="ws-name">Exam topic in course structure</div></div>
+        <div class="wireframe-state"><div class="ws-num">3</div><div class="ws-name">Exam settings panel</div></div>
+        <div class="wireframe-state"><div class="ws-num">4</div><div class="ws-name">Timer configuration with summary view</div></div>
+        <div class="wireframe-state"><div class="ws-num">5</div><div class="ws-name">Component picker in exam context</div></div>
+        <div class="wireframe-state"><div class="ws-num">6</div><div class="ws-name">Exam published state</div></div>
+      </div>
+    </div>
+
+    <!-- Epic 2 -->
+    <div class="wireframe-section wf-epic2">
+      <div class="wireframe-section-header">Epic 2 &mdash; Deliver Exam (Student Player) &middot; 12 states</div>
+      <div class="wireframe-grid">
+        <div class="wireframe-state"><div class="ws-num">1</div><div class="ws-name">Pre-exam start screen</div></div>
+        <div class="wireframe-state"><div class="ws-num">2</div><div class="ws-name">In-exam active</div></div>
+        <div class="wireframe-state"><div class="ws-num">3</div><div class="ws-name">Section transition</div></div>
+        <div class="wireframe-state"><div class="ws-num">4</div><div class="ws-name">Low time warning</div></div>
+        <div class="wireframe-state"><div class="ws-num">5</div><div class="ws-name">Section timer expiry</div></div>
+        <div class="wireframe-state"><div class="ws-num">6</div><div class="ws-name">Exam timer expiry</div></div>
+        <div class="wireframe-state"><div class="ws-num">7</div><div class="ws-name">Manual submit</div></div>
+        <div class="wireframe-state"><div class="ws-num">8</div><div class="ws-name">Submit confirmation</div></div>
+        <div class="wireframe-state"><div class="ws-num">9</div><div class="ws-name">Disconnection indicator</div></div>
+        <div class="wireframe-state"><div class="ws-num">10</div><div class="ws-name">Reconnection recovery</div></div>
+        <div class="wireframe-state"><div class="ws-num">11</div><div class="ws-name">Extended disconnection</div></div>
+        <div class="wireframe-state"><div class="ws-num">12</div><div class="ws-name">Post-submission read-only</div></div>
+      </div>
+    </div>
+
+    <!-- Epic 3 -->
+    <div class="wireframe-section wf-epic3">
+      <div class="wireframe-section-header">Epic 3 &mdash; Grade Exam (Teacher) &middot; 7 states</div>
+      <div class="wireframe-grid">
+        <div class="wireframe-state"><div class="ws-num">1</div><div class="ws-name">Results overview</div></div>
+        <div class="wireframe-state"><div class="ws-num">2</div><div class="ws-name">Student detail view</div></div>
+        <div class="wireframe-state"><div class="ws-num">3</div><div class="ws-name">Manual marking complete</div></div>
+        <div class="wireframe-state"><div class="ws-num">4</div><div class="ws-name">Class performance summary</div></div>
+        <div class="wireframe-state"><div class="ws-num">5</div><div class="ws-name">Retry release</div></div>
+        <div class="wireframe-state"><div class="ws-num">6</div><div class="ws-name">Grade publication</div></div>
+        <div class="wireframe-state"><div class="ws-num">7</div><div class="ws-name">Post-publication</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DESIGN DECISIONS -->
+  <h2 class="section-title section-anchor" id="design-decisions" data-section="design-decisions">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Key Design Decisions Made During Shaping
+  </h2>
+  <div class="section-content" data-section-content="design-decisions">
+
+    <div class="design-decision">
+      <div class="dd-title">1. Submit does not block on unanswered questions</div>
+      <div class="dd-body">The spec said "must answer all questions to submit" but also "timer expiry submits empty answers." Contradiction. Resolution: manual submit is always available. Popup warns about unanswered. Student decides. Auto-submit on timer expiry always submits.</div>
+    </div>
+
+    <div class="design-decision">
+      <div class="dd-title">2. Timer summary view required in builder</div>
+      <div class="dd-body">Teachers set all three timer levels without understanding interaction. Summary panel shows all active timers and governing rule.</div>
+    </div>
+
+    <div class="design-decision">
+      <div class="dd-title">3. Retry timer is teacher-configurable</div>
+      <div class="dd-body">Spec said timer resets to full. Client confirmed: teachers should set custom duration. Full reset creates unfair advantage.</div>
+    </div>
+
+    <div class="design-decision">
+      <div class="dd-title">4. Question-centric marking view deferred to Slice 3</div>
+      <div class="dd-body">Found in grading Snapshot. Teachers want to mark all answers to question 7 together. Client confirmed. Added to Slice 3.</div>
+    </div>
+
+    <div class="design-decision">
+      <div class="dd-title">5. Concurrent submit and timer expiry resolved</div>
+      <div class="dd-body">Race condition: timer expires at exact moment student clicks Submit. Server processes first request, returns 409 Conflict to duplicate. Prevents double submission.</div>
+    </div>
+
+  </div>
+
+  <!-- FIXED ESTIMATES -->
+  <h2 class="section-title section-anchor" id="fixed-estimates" data-section="fixed-estimates">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Fixed Estimates
+  </h2>
+  <div class="section-content" data-section-content="fixed-estimates">
+    <table class="doc-table">
+      <thead>
+        <tr><th>Slice</th><th>Epics</th><th>What Ships</th><th>User Value</th><th>Estimate</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Slice 1</strong></td>
+          <td>Epics 1&ndash;3 (basic)</td>
+          <td>Exam creation with exam-level timer, student player through to manual submission and auto-submit, teacher results list with auto-checked scores</td>
+          <td>Proves the initiative direction</td>
+          <td>3&ndash;4 wks</td>
+          <td><span class="badge badge-complete">Fixed &mdash; ready to sign</span></td>
+        </tr>
+        <tr>
+          <td><strong>Slice 2</strong></td>
+          <td>All 4 Epics</td>
+          <td>Section timers, disconnection recovery, manual marking interface, grade publication to class (EMS not required)</td>
+          <td>Teacher's full workflow complete. KR1 and KR2 measurable.</td>
+          <td>4&ndash;5 wks</td>
+          <td><span class="badge badge-complete">Fixed &mdash; ready to sign</span></td>
+        </tr>
+        <tr>
+          <td><strong>Slice 3</strong></td>
+          <td>All 4 Epics</td>
+          <td>Page timers, EMS integration, class performance statistics, question-centric marking view, retry with custom timer</td>
+          <td>Full feature. KR1 at full impact. KR3 measurable.</td>
+          <td>3&ndash;4 wks</td>
+          <td><span class="badge badge-blocked">Blocked &mdash; EMS confirmation required</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--text-2);">These estimates are derived from the API contract, wireframes, and data model. They are readings of known scope &mdash; not range estimates.</p>
+    <p style="font-size: 13px; color: var(--text-2);"><strong>EMS dependency &mdash; Slice 3:</strong> Slice 3 contains the EMS grade export. This requires schema confirmation from the EMS API team. We have escalated through the client. Slice 1 and Slice 2 proceed and deliver full value without EMS integration.</p>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SIGN-OFF
+  ════════════════════════════════════════ -->
+  <h2 class="section-title section-anchor" id="sign-off" data-section="sign-off">
+    <svg class="collapse-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+    Sign-Off
+  </h2>
+  <div class="section-content" data-section-content="sign-off">
+    <p>This document represents the output of three upstream milestone sprints. It replaces a traditional functional specification with validated user understanding, confirmed architectural decisions, a designed feature across four Epics, and a fixed scope commitment per release slice.</p>
+
+    <h3 class="sub-title">What the Client Is Authorising</h3>
+    <ul class="checklist">
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Strategic Context &mdash; confirmed as accurate hypothesis</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Problem Statement &mdash; describes real user pain, not just the feature requested</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Experience Snapshots &mdash; Gal (creation) and Gal (grading) confirmed as accurate</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Scope decision &mdash; In / Deferred / Never reflects agreed decisions</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Four-Epic structure &mdash; Create, Deliver, Grade, Publish</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Architecture Decisions &mdash; ADR-001, ADR-002, ADR-003 approved</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Wireframe intent &mdash; all three surfaces confirmed</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Five design decisions &mdash; confirmed</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Slice 1 fixed estimate &mdash; 3&ndash;4 weeks accepted</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Slice 2 fixed estimate &mdash; 4&ndash;5 weeks accepted</li>
+      <li><span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></span>Slice 3 is conditional &mdash; acknowledged as blocked on EMS API</li>
+    </ul>
+
+    <h3 class="sub-title">What Happens Next</h3>
+    <table class="doc-table">
+      <thead>
+        <tr><th>Stage</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Immediately after sign-off</strong></td>
+          <td>Delivery planning begins for Slice 1. Spec Sessions scheduled. PM writes stories from Story Map. Each story goes through Spec Session with PM + Developer + QA.</td>
+        </tr>
+        <tr>
+          <td><strong>During delivery of Slice 1</strong></td>
+          <td>Upstream sprint continues in parallel. Slice 2 stories written and reach DoR. Stories enter delivery Kanban as they pass DoR.</td>
+        </tr>
+        <tr>
+          <td><strong>On EMS API confirmation</strong></td>
+          <td>Slice 3 estimate is fixed. Change order prepared and signed separately.</td>
+        </tr>
+        <tr>
+          <td><strong>Change order trigger</strong></td>
+          <td>Any capability not in the In This Release column requires a change order before shaping work begins.</td>
+        </tr>
+        <tr>
+          <td><strong>OKR validation</strong></td>
+          <td>Strategic alignment session scheduled within 30 days of Slice 2 delivery. KR measurements begin at Slice 2 release.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    200apps / NWIRE &middot; Amit LMS &mdash; Exam Feature &middot; Discovery Package v1.0 &middot; March 2026
+  </div>
+
+</main>
+
+<script>
+// ── SIDEBAR NAVIGATION ──
+const navLinks = document.querySelectorAll('.nav-link[data-target]');
+const sections = [];
+
+navLinks.forEach(link => {
+  const targetId = link.dataset.target;
+  const targetEl = document.getElementById(targetId);
+  if (targetEl) {
+    sections.push({ id: targetId, el: targetEl, link: link });
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Close mobile sidebar
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('sidebarOverlay').classList.remove('open');
+    });
+  }
+});
+
+// Intersection Observer for active state
+const observer = new IntersectionObserver((entries) => {
+  // Find the topmost visible section
+  let topSection = null;
+  let topY = Infinity;
+  sections.forEach(s => {
+    const rect = s.el.getBoundingClientRect();
+    if (rect.top < 120 && rect.top < topY) {
+      // Prefer the one closest to the top but still above the fold
+    }
+  });
+
+  // Simpler approach: mark the last section whose top is above 120px
+  let activeId = null;
+  sections.forEach(s => {
+    const rect = s.el.getBoundingClientRect();
+    if (rect.top < 120) {
+      activeId = s.id;
+    }
+  });
+
+  if (activeId) {
+    navLinks.forEach(l => l.classList.remove('active'));
+    const activeLink = document.querySelector(`.nav-link[data-target="${activeId}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+      // Scroll sidebar to keep active link visible
+      const sidebar = document.getElementById('sidebar');
+      const linkRect = activeLink.getBoundingClientRect();
+      const sidebarRect = sidebar.getBoundingClientRect();
+      if (linkRect.bottom > sidebarRect.bottom - 40 || linkRect.top < sidebarRect.top + 80) {
+        activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    }
+  }
+}, { threshold: 0 });
+
+// Observe all section anchors
+sections.forEach(s => observer.observe(s.el));
+
+// Also use scroll event for more reliable tracking
+let scrollTicking = false;
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) {
+    window.requestAnimationFrame(() => {
+      let activeId = null;
+      sections.forEach(s => {
+        const rect = s.el.getBoundingClientRect();
+        if (rect.top < 140) {
+          activeId = s.id;
+        }
+      });
+      if (activeId) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-link[data-target="${activeId}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+      scrollTicking = false;
+    });
+    scrollTicking = true;
+  }
+});
+
+// ── COLLAPSIBLE SECTIONS ──
+document.querySelectorAll('h2.section-title[data-section]').forEach(heading => {
+  heading.addEventListener('click', () => {
+    const sectionId = heading.dataset.section;
+    const content = document.querySelector(`[data-section-content="${sectionId}"]`);
+    if (!content) return;
+
+    if (heading.classList.contains('collapsed')) {
+      heading.classList.remove('collapsed');
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.classList.remove('collapsed');
+      // After transition, remove max-height to allow dynamic content
+      setTimeout(() => { content.style.maxHeight = 'none'; }, 300);
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      // Force reflow
+      content.offsetHeight;
+      heading.classList.add('collapsed');
+      content.style.maxHeight = '0px';
+      content.classList.add('collapsed');
+    }
+  });
+});
+
+// ── MOBILE SIDEBAR ──
+document.getElementById('sidebarToggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+});
+
+document.getElementById('sidebarOverlay').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+});
+
+// Initialize: set first link as active
+if (navLinks.length > 0) navLinks[0].classList.add('active');
+</script>
+
+</body>
+</html>
