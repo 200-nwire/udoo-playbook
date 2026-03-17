@@ -1382,9 +1382,18 @@ p { margin-bottom: 14px; font-size: 14px; }
       The journey map and story map live on a single surface. The top half is the problem space &mdash; what Gal and Yoav actually experience today. The bottom half is the solution space &mdash; every story card is a direct response to something observed above it. Epics, scope, and release slices are all visible in context. Switch persona to focus on each user's path.
     </div>
     <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 16px;">
-      <iframe src="/examples/journey-story-map-exam.html" style="width: 100%; height: 80vh; border: none; display: block;"></iframe>
+      <iframe id="journey-map-iframe" style="width: 100%; height: 80vh; border: none; display: block;"></iframe>
     </div>
-    <p style="font-size: 13px; color: var(--text-2); margin-top: 12px;"><a href="/examples/journey-story-map-exam.html" target="_blank" style="color: var(--c1t);">Open full screen &rarr;</a></p>
+    <p style="font-size: 13px; color: var(--text-2); margin-top: 12px;"><a id="journey-map-link" target="_blank" style="color: var(--c1t);">Open full screen &rarr;</a></p>
+    <script>
+    (function() {
+      // Detect base path from current URL (works in both dev and production)
+      var base = location.pathname.substring(0, location.pathname.indexOf('/examples/'));
+      var mapUrl = base + '/examples/journey-story-map-exam.html';
+      document.getElementById('journey-map-iframe').src = mapUrl;
+      document.getElementById('journey-map-link').href = mapUrl;
+    })();
+    </script>
   </div>
 
   <!-- ADR-001 -->
